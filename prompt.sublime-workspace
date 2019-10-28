@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"get_ter",
+				"get_terms"
+			],
+			[
+				"get_template",
+				"get_template_directory"
+			],
+			[
+				"watch",
+				"watchForChanges"
+			],
+			[
 				"WP_DEBU",
 				"WP_DEBUG_LOG"
 			],
@@ -15,22 +27,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "sidebar.php",
-			"settings":
-			{
-				"buffer_size": 352,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "header.php",
-			"settings":
-			{
-				"buffer_size": 1860,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -44,6 +40,26 @@
 		"selected_items":
 		[
 			[
+				"togg",
+				"Toggle Comment"
+			],
+			[
+				"comm",
+				"Snippet: Comment Form Template"
+			],
+			[
+				"ren",
+				"Rename File"
+			],
+			[
+				"ww",
+				"Word Wrap: Toggle"
+			],
+			[
+				"rena",
+				"Rename File"
+			],
+			[
 				"wra",
 				"Emmet: Wrap With Abbreviation"
 			],
@@ -54,10 +70,6 @@
 			[
 				"instal",
 				"Package Control: Install Package"
-			],
-			[
-				"ww",
-				"Word Wrap: Toggle"
 			],
 			[
 				"syntaxscs",
@@ -78,10 +90,6 @@
 			[
 				"toglg",
 				"Toggle Comment"
-			],
-			[
-				"comm",
-				"Snippet: Comment Form Template"
 			]
 		],
 		"width": 0.0
@@ -104,10 +112,29 @@
 	},
 	"expanded_folders":
 	[
-		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt"
+		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt",
+		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/inc"
 	],
 	"file_history":
 	[
+		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/functions.php",
+		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/inc/custom-fields.php",
+		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/inc/template-functions.php",
+		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/sass/navigation/_menus.scss",
+		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/sass/navigation/_navigation.scss",
+		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/gulpfile.babel.js",
+		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/header.php",
+		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/home.php",
+		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/footer.php",
+		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/sass/style.scss",
+		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/sass/site/_site.scss",
+		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/sass/site/secondary/_items.scss",
+		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/template-parts/obras.php",
+		"/home/donhilo/Documents/WebDev/prompt/server/phpdocker/php-fpm/php-ini-overrides.ini",
+		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/plugins/cmb2-taxonomy/example-functions.php",
+		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/style.css",
+		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/package.json",
+		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/.babelrc",
 		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/readme.txt",
 		"/home/donhilo/Documents/WebDev/csd/server/public/wp-content/themes/universe_theme/page-informacion-matricula-2018.php",
 		"/home/donhilo/Documents/WebDev/csd/assets/matricula2020.html",
@@ -155,66 +182,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "sidebar.php",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 352,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								351,
-								351
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "header.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1860,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 233.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -267,8 +236,36 @@
 		"selected_items":
 		[
 			[
+				"templ",
+				"inc/template-functions.php"
+			],
+			[
+				"func",
+				"functions.php"
+			],
+			[
 				"head",
 				"header.php"
+			],
+			[
+				"",
+				"sass/style.scss"
+			],
+			[
+				"menus",
+				"sass/navigation/_menus.scss"
+			],
+			[
+				"nav",
+				"sass/navigation/_navigation.scss"
+			],
+			[
+				"foot",
+				"footer.php"
+			],
+			[
+				"p",
+				"package.json"
 			],
 			[
 				"gulp",
@@ -281,10 +278,6 @@
 			[
 				"build",
 				"core/css/build.css"
-			],
-			[
-				"func",
-				"functions.php"
 			],
 			[
 				"matric",

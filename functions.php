@@ -132,6 +132,14 @@ function prompt_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'prompt_scripts' );
 
+function prompt_head() {
+	?>
+	 <script src="https://kit.fontawesome.com/14643ca681.js" crossorigin="anonymous"></script>
+	 <?php
+}
+
+add_action( 'wp_head', 'prompt_head', 10, 0 );
+
 /**
  * Implement the Custom Header feature.
  */
@@ -159,3 +167,19 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Load Custom Fields
+ */
+require get_template_directory() . '/inc/custom-fields.php';
+
+/**
+ * Load Custom Content
+ */
+
+require get_template_directory() . '/inc/custom-content.php';
+
+/**
+ * Load Custom Taxonomies
+ */
+
+require get_template_directory() . '/inc/custom-taxonomies.php';

@@ -35,3 +35,55 @@ function prompt_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'prompt_pingback_header' );
+
+
+/**
+ * Obra metadata
+ */
+function prompt_obra_metadata( $obraid ) {
+	$prefix = '_prompt_';
+	$field_data = [];
+	$fields = [
+				'imagen',
+				'video',
+				'estreno',
+				'temporada_inicio',
+				'temporada_fin',
+				'funciones',
+				'duracion',
+				'sala',
+				'review',
+				'direccion',
+				'dramaturgia',
+				'escenografia_iluminacion',
+				'vestuario',
+				'elenco',
+				'musicos',
+				'asistente',
+				'direccion_musical',
+				'direccion_coreografica'
+			];
+
+	foreach($fields as $field) {
+		if(get_term_meta($obraid, $prefix . $field)):
+			$field_data[$field] = get_term_meta($obraid, $prefix . $field);
+		endif;
+	}
+
+	return $field_data;
+}
+
+function prompt_multifields( $fields, $separator ) {
+	$fieldstring = '';
+	if($fields):
+		$size = count($fields);
+			foreach($fields as $key=>$field):
+				if($key == $size - 1):
+					$fieldstring .= $field;
+				else:
+					$fieldstring .= $field . $separator;
+				endif;
+			endforeach;
+	endif;
+	return $fieldstring;
+}
