@@ -120,3 +120,61 @@ function prompt_tax_add_metabox( array $meta_boxes ) {
 	return $meta_boxes;
 
 }
+
+add_action( 'cmb2_init', 'cmb2_add_metabox_hitos' );
+
+function cmb2_add_metabox_hitos() {
+
+	$prefix = '_prompt_';
+
+	$cmb = new_cmb2_box( array(
+		'id'           => $prefix . 'hitos',
+		'title'        => __( 'Información hito', 'promptbook' ),
+		'object_types' => array( 'hitos' ),
+		'context'      => 'normal',
+		'priority'     => 'high',
+	) );
+
+	$cmb->add_field( array(
+		'name' => __( 'Fecha Inicio', 'promptbook' ),
+		'id' => $prefix . 'inicio',
+		'type' => 'text_date',
+		'attributes' => array(
+						'data-datepicker' => json_encode(array(
+												'yearRange' => '-100:+0'
+											))
+						)
+	) );
+
+	$cmb->add_field( array(
+		'name' => __( 'Fecha Fin', 'promptbook' ),
+		'id' => $prefix . 'fin',
+		'type' => 'text_date',
+		'attributes' => array(
+						'data-datepicker' => json_encode(array(
+												'yearRange' => '-100:+0'
+											))
+						),
+		'desc' => __( 'opcional si es que se pone una fecha de fin el evento queda marcado como un período', 'promptbook' ),
+	) );
+
+	$cmb->add_field( array(
+		'name' => __( 'Mostrar', 'cmb2' ),
+		'id' => $prefix . 'datetype',
+		'type' => 'radio',
+		'options' => array(
+			'full' => __( 'fecha completa', 'cmb2' ),
+			'year' => __( 'solo año', 'cmb2' ),
+		),
+	) );
+
+	$cmb->add_field( array(
+		'name' => __('Enlace', 'promptbook'),
+		'id' => $prefix . 'enlace',
+		'type' => 'text_url',
+		'desc' => __( 'opcional enlace externo a información sobre el evento', 'promptbook' ),
+	) );
+
+
+
+}

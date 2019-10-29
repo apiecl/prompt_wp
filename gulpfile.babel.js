@@ -30,7 +30,7 @@ const server = browserSync.create();
 
 export const serve = done => {
 	server.init({
-		proxy: "http://localhost:1026"
+		proxy: "http://promptbook.local"
 	});
 	done();
 }
