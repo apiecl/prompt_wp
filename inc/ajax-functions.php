@@ -12,14 +12,16 @@ function get_main_timeline_events() {
 
 	if($hitos):
 		foreach($hitos as $hito):
+
+			$yearonly = get_post_meta($hito->ID, '_prompt_datetype', true ) == 'year' ? true : false;
 			$start_date_field 	= get_post_meta( $hito->ID, '_prompt_inicio', true );
 			$end_date_field 	= get_post_meta( $hito->ID, '_prompt_fin', true );
 			$media_field		= get_the_post_thumbnail_url( $hito->ID, 'medium' );
 
-			$start_date 		= parse_field_date_for_json( $start_date_field );
+			$start_date 		= parse_field_date_for_json( $start_date_field, $yearonly );
 			
 			if($end_date_field):
-				$end_date 			= parse_field_date_for_json( $end_date_field );
+				$end_date 			= parse_field_date_for_json( $end_date_field, $yearonly );
 			endif;
 
 			$event = array(
@@ -51,12 +53,20 @@ function get_main_timeline_events() {
 	return json_encode($json);
 }
 
-function parse_field_date_for_json( $datestring ) {
+function parse_field_date_for_json( $datestring, $yearonly = false ) {
 	$date_processed = new DateTime($datestring);
-	$date_sorted 	= array(
+	
+	if($yearonly == true):
+		$date_sorted 	= array(
 							'year' 	=> $date_processed->format('Y'),
-							'month'	=> $date_processed->format('m'),
-							'day'	=> $date_processed->format('d')
 							);
+	else:
+		$date_sorted 	= array(
+								'year' 	=> $date_processed->format('Y'),
+								'month'	=> $date_processed->format('m'),
+								'day'	=> $date_processed->format('d')
+							);
+	endif;
+
 	return $date_sorted;
 }
