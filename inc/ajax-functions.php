@@ -41,8 +41,8 @@ function get_main_timeline_events() {
 			endif;
 
 
-			if($media):
-				$event['media'] = $media;
+			if($media_field):
+				$event['media']['url'] = $media_field;
 			endif;	
 
 			array_push($json['events'], $event);			

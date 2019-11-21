@@ -1,12 +1,11 @@
 .obra-item {
 	display: block;
-	border: 1px solid #ccc;
-	margin: 12px;
 	background: #333;
 	color: white;
 	position: relative;
 	text-align: center;
-	min-height: 318px;
+	height: 318px;
+	overflow: hidden;
 
 	a {
 		color: white;

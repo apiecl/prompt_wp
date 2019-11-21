@@ -1,6 +1,10 @@
 <section id="obras">
 <div class="row justify-content-md-center">
-
+	<div class="col-md">
+		<h2>Obras</h2>
+	</div>
+</div>
+<div class="row justify-content-md-center d-flex align-items-stretch">
 <?php
 	$obras = get_terms( array(
 						'taxonomy' => 'obra',
@@ -11,21 +15,21 @@ if($obras):
 	foreach($obras as $obra):
 		$fields = prompt_obra_metadata($obra->term_id);
 	?>
-	<div class="col">
+	<div class="col-md-6">
 		<div class="obra obra-item" id="<?php echo $obra->slug;?>">
 			<div class="imagen-obra">
 				<video autoplay="true" loop="true" src="<?php echo $fields['video'][0];?>"></video>
 			</div>
 
 			<div class="info-obra">
+				<span class="date">Estrenada el <?php echo prompt_format_date($fields['estreno'][0]);?></span>
+				<span class="director">Dirigida por <?php echo prompt_multifields($fields['direccion'][0], ', ');?> | 
+									   Escrita por <?php echo prompt_multifields($fields['dramaturgia'][0], ', ');?></span>
 				<h1 class="titulo-obra">
 					<a href="<?php echo get_term_link( $obra->term_id, 'obra' );?>">
 						<?php echo $obra->name;?>
 					</a>
-				</h1>	
-				
-				<span class="date">Estrenada el <?php echo $fields['estreno'][0];?></span>
-				<span class="director">Dirigida por <?php echo prompt_multifields(['direccion'][0], ', ');?></span>
+				</h1>					
 			</div>
 			
 			<!-- <ul class="accesos-obra">

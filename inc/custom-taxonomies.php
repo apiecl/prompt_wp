@@ -29,6 +29,6 @@ function cptui_register_my_taxes() {
 		"rest_controller_class" => "WP_REST_Terms_Controller",
 		"show_in_quick_edit" => false,
 		);
-	register_taxonomy( "obra", array( "work_in_progress", "situaciones", "texto_obra", "objetos", "personas" ), $args );
+	register_taxonomy( "obra", array( "work_in_progress", "situaciones", "texto_obra", "objetos", "personas", "hitos" ), $args );
 }
 add_action( 'init', 'cptui_register_my_taxes' );

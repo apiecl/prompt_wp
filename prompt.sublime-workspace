@@ -4,24 +4,52 @@
 		"selected_items":
 		[
 			[
-				"get_ter",
-				"get_terms"
+				"innovacion_page",
+				"innovacion_page_ids"
 			],
 			[
-				"get_template",
-				"get_template_directory"
+				"innon",
+				"innovacion_page_ids"
 			],
 			[
-				"watch",
-				"watchForChanges"
+				"innovaci",
+				"innovacion_pages"
 			],
 			[
-				"WP_DEBU",
-				"WP_DEBUG_LOG"
+				"get_templ",
+				"get_template_part"
+			],
+			[
+				"get_term",
+				"get_term_by"
+			],
+			[
+				"start_da",
+				"start_date_processed"
+			],
+			[
+				"get_post_thum",
+				"get_the_post_thumbnail_url"
+			],
+			[
+				"wp_enqueue",
+				"wp_enqueue_style"
+			],
+			[
+				"wp_enqueu",
+				"wp_enqueue_script"
 			],
 			[
 				"WP_DEBUG",
 				"WP_DEBUG_DISPLAY"
+			],
+			[
+				"wp_enque",
+				"wp_enqueue_style"
+			],
+			[
+				"wp_enq",
+				"wp_enqueue_style"
 			]
 		]
 	},
@@ -40,56 +68,40 @@
 		"selected_items":
 		[
 			[
-				"togg",
-				"Toggle Comment"
-			],
-			[
-				"comm",
-				"Snippet: Comment Form Template"
-			],
-			[
-				"ren",
-				"Rename File"
-			],
-			[
-				"ww",
-				"Word Wrap: Toggle"
-			],
-			[
-				"rena",
-				"Rename File"
-			],
-			[
-				"wra",
-				"Emmet: Wrap With Abbreviation"
-			],
-			[
-				"wr",
-				"Emmet: Wrap With Abbreviation"
-			],
-			[
-				"instal",
-				"Package Control: Install Package"
-			],
-			[
-				"syntaxscs",
-				"Set Syntax: SCSS"
+				"remove pac",
+				"Package Control: Remove Package"
 			],
 			[
 				"insta",
 				"Package Control: Install Package"
 			],
 			[
-				"synsa",
-				"Set Syntax: Sass"
+				"rein",
+				"Indentation: Reindent Lines"
 			],
 			[
-				"inst",
+				"syntles",
+				"Set Syntax: Less"
+			],
+			[
+				"ins",
 				"Package Control: Install Package"
 			],
 			[
-				"toglg",
+				"ren",
+				"Rename File"
+			],
+			[
+				"comm",
 				"Toggle Comment"
+			],
+			[
+				"sass",
+				"Set Syntax: Sass"
+			],
+			[
+				"installp",
+				"Package Control: Install Package"
 			]
 		],
 		"width": 0.0
@@ -112,42 +124,73 @@
 	},
 	"expanded_folders":
 	[
-		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt",
-		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/inc"
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt"
 	],
 	"file_history":
 	[
-		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/functions.php",
-		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/inc/custom-fields.php",
-		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/inc/template-functions.php",
-		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/sass/navigation/_menus.scss",
-		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/sass/navigation/_navigation.scss",
-		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/gulpfile.babel.js",
-		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/header.php",
-		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/home.php",
-		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/footer.php",
-		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/sass/style.scss",
-		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/sass/site/_site.scss",
-		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/sass/site/secondary/_items.scss",
-		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/template-parts/obras.php",
-		"/home/donhilo/Documents/WebDev/prompt/server/phpdocker/php-fpm/php-ini-overrides.ini",
-		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/plugins/cmb2-taxonomy/example-functions.php",
-		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/style.css",
-		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/package.json",
-		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/.babelrc",
-		"/home/donhilo/Documents/WebDev/prompt/server/public/wp-content/themes/prompt/readme.txt",
-		"/home/donhilo/Documents/WebDev/csd/server/public/wp-content/themes/universe_theme/page-informacion-matricula-2018.php",
-		"/home/donhilo/Documents/WebDev/csd/assets/matricula2020.html",
-		"/home/donhilo/Documents/GameDev/quiensoy/assets/cambiosjuego_071019.txt",
-		"/home/donhilo/Documents/WebDev/cedet/server/public/wp-content/themes/cedetgore/comments.php",
-		"/home/donhilo/Documents/WebDev/cedet/server/public/wp-content/themes/cedetgore/single.php",
-		"/home/donhilo/Documents/WebDev/cedet/server/public/wp-content/themes/cedetgore/archive-material_diplomado.php",
-		"/home/donhilo/Documents/WebDev/cedet/server/public/wp-content/themes/cedetgore/page-template-noticias.php",
-		"/home/donhilo/Documents/WebDev/cedet/server/public/wp-content/themes/cedetgore/reunion_2309.txt",
-		"/home/donhilo/Documents/WebDev/cedet/server/public/wp-content/themes/cedetgore/inc/user-functions.php",
-		"/home/donhilo/Documents/WebDev/cedet/server/public/wp-content/themes/cedetgore/single-biblioteca.php",
-		"/home/donhilo/Documents/WebDev/cedet/server/public/wp-content/themes/cedetgore/home.php",
-		"/home/donhilo/Documents/WebDev/cedet/server/public/wp-content/themes/cedetgore/template-parts/home-logged-in.php"
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/template-parts/timeline.php",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/template-parts/obras.php",
+		"/home/pablo/Documents/WebDev/local_sites/programagores/app/public/wp-content/themes/cedetgore/reunion_1511.txt",
+		"/home/pablo/Documents/WebDev/local_sites/csdweb/app/public/wp-content/themes/universe_theme/add-ons/extras.php",
+		"/home/pablo/Documents/WebDev/local_sites/csdweb/app/public/wp-content/plugins/formulario-convivencia/admin/class-formulario-convivencia-admin.php",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/phpcs.xml.dist",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/dploy.yaml",
+		"/home/pablo/Documents/WebDev/projects/automark/reunion_111119.txt",
+		"/home/pablo/Documents/WebDev/local_sites/csdweb/app/public/wp-config.php",
+		"/home/pablo/Documents/WebDev/local_sites/programagores/app/public/wp-content/themes/cedetgore/reunion_1106.txt",
+		"/home/pablo/Documents/WebDev/local_sites/programagores/app/public/wp-content/themes/cedetgore/inc/custom-content.php",
+		"/home/pablo/Documents/WebDev/projects/cedet/assets/reunion_081119.txt",
+		"/home/pablo/Documents/WebDev/local_sites/programagores/app/public/wp-content/themes/cedetgore/inc/custom-fields.php",
+		"/home/pablo/Documents/WebDev/local_sites/programagores/app/public/wp-content/debug.log",
+		"/home/pablo/Documents/WebDev/local_sites/programagores/app/public/wp-config.php",
+		"/home/pablo/Documents/WebDev/local_sites/programagores/app/public/wp-content/themes/cedetgore/single.php",
+		"/home/pablo/Documents/WebDev/local_sites/programagores/app/public/wp-content/themes/cedetgore/template-parts/content.php",
+		"/home/pablo/Documents/WebDev/local_sites/programagores/app/public/wp-content/themes/cedetgore/template-parts/content-biblioteca.php",
+		"/home/pablo/Documents/WebDev/local_sites/programagores/app/public/wp-content/themes/cedetgore/single-biblioteca.php",
+		"/home/pablo/Documents/WebDev/local_sites/programagores/app/public/wp-content/themes/cedetgore/page-template-diplomados.php",
+		"/home/pablo/Documents/WebDev/local_sites/programagores/app/public/wp-content/themes/cedetgore/page.php",
+		"/home/pablo/Documents/WebDev/local_sites/programagores/app/public/wp-content/themes/cedetgore/page-template-diplomado-single.php",
+		"/home/pablo/Documents/WebDev/local_sites/programagores/app/public/wp-content/themes/cedetgore/sass/elements/_diplomado-box.scss",
+		"/home/pablo/Documents/WebDev/local_sites/programagores/app/public/wp-content/themes/cedetgore/sass/style.scss",
+		"/home/pablo/Documents/WebDev/local_sites/programagores/app/public/wp-content/themes/cedetgore/sass/elements/_wpcore.scss",
+		"/home/pablo/Documents/WebDev/local_sites/programagores/app/public/wp-content/themes/cedetgore/package.json",
+		"/home/pablo/Documents/WebDev/local_sites/programagores/app/public/wp-content/themes/cedetgore/template-parts/section-diplomados.php",
+		"/home/pablo/Documents/WebDev/local_sites/programagores/app/public/wp-content/themes/cedetgore/template-parts/content-entrevistas.php",
+		"/home/pablo/Documents/WebDev/local_sites/programagores/app/public/wp-content/themes/cedetgore/template-parts/content-archivo_prensa.php",
+		"/home/pablo/Documents/WebDev/local_sites/programagores/app/public/wp-content/themes/cedetgore/template-parts/content-archive-biblioteca.php",
+		"/home/pablo/Documents/WebDev/projects/csd/server/public/wp-content/themes/universe_theme/core/css/main.css",
+		"/home/pablo/Documents/WebDev/projects/csd/server/public/wp-content/themes/universe_theme/core/includes/theme-enqueue.php",
+		"/home/pablo/Documents/WebDev/projects/csd/server/public/wp-content/themes/universe_theme/core/sass/main.scss",
+		"/home/pablo/Documents/WebDev/projects/csd/server/public/wp-content/themes/universe_theme/package.json",
+		"/home/pablo/Documents/WebDev/projects/csd/server/public/wp-content/themes/universe_theme/functions.php",
+		"/home/pablo/Documents/WebDev/projects/csd/server/public/wp-content/themes/universe_theme/core/sass/partials/convivencia/landing-convivencia.scss",
+		"/home/pablo/Documents/WebDev/projects/csd/server/public/wp-content/themes/universe_theme/gulpfile.js",
+		"/home/pablo/Documents/WebDev/projects/csd/server/public/wp-content/themes/universe_theme/core/css/build.css",
+		"/home/pablo/Documents/WebDev/projects/csd/server/public/wp-content/themes/universe_theme/page-informacion-matricula-2020.php",
+		"/home/pablo/Documents/WebDev/projects/csd/server/public/wp-content/themes/universe_theme/html/info_matricula_2020.html",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/functions.php",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/sass/site/_timeline.scss",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/sass/site/secondary/_items.scss",
+		"/home/donhilo/.gitignore",
+		"/home/pablo/.gitignore",
+		"/home/pablo/.gitconfig",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/inc/custom-content.php",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/inc/custom-fields.php",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/inc/ajax-functions.php",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/inc/custom-taxonomies.php",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/debug.log",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/home.php",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/package.json",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/sass/style.scss",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/gulpfile.babel.js",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/taxonomy-obra.php",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-config.php",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/inc/template-functions.php",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/sass/site/_taxonomy-obra.scss",
+		"/home/pablo/Documents/WebDev/projects/itrend/reunion_301019.txt",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/style.css",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/template-parts/custom-taxonomies.php",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/template-parts/custom-content.php"
 	],
 	"find":
 	{
@@ -193,7 +236,7 @@
 	},
 	"input":
 	{
-		"height": 38.0
+		"height": 0.0
 	},
 	"layout":
 	{
@@ -236,91 +279,83 @@
 		"selected_items":
 		[
 			[
-				"templ",
-				"inc/template-functions.php"
+				"timeline",
+				"template-parts/timeline.php"
+			],
+			[
+				"obras",
+				"template-parts/obras.php"
+			],
+			[
+				"header-c",
+				"header-convivencia.php"
+			],
+			[
+				"conv",
+				"page-convivencia-escolar.php"
+			],
+			[
+				"extr",
+				"add-ons/extras.php"
 			],
 			[
 				"func",
 				"functions.php"
 			],
 			[
-				"head",
-				"header.php"
-			],
-			[
-				"",
-				"sass/style.scss"
-			],
-			[
-				"menus",
-				"sass/navigation/_menus.scss"
-			],
-			[
-				"nav",
-				"sass/navigation/_navigation.scss"
-			],
-			[
-				"foot",
-				"footer.php"
-			],
-			[
-				"p",
-				"package.json"
-			],
-			[
-				"gulp",
-				"gulpfile.js"
-			],
-			[
 				"enqueu",
 				"core/includes/theme-enqueue.php"
 			],
 			[
-				"build",
-				"core/css/build.css"
-			],
-			[
-				"matric",
-				"page-informacion-matricula-2018.php"
+				"obra",
+				"template-parts/obras.php"
 			],
 			[
 				"dpl",
 				"dploy.yaml"
 			],
 			[
-				"pack",
-				"package.json"
-			],
-			[
-				"gul",
-				"gulpfile.js"
-			],
-			[
-				"matri",
-				"core/sass/partials/matricula.scss"
-			],
-			[
-				"matricul",
-				"page-informacion-matricula-2018.php"
-			],
-			[
-				"singl",
-				"single-biblioteca.php"
-			],
-			[
-				"comments",
-				"comments.php"
-			],
-			[
 				"single",
 				"single.php"
 			],
 			[
-				"notici",
-				"page-template-noticias.php"
+				"fun",
+				"functions.php"
 			],
 			[
-				"home-lo",
+				"diplom",
+				"sass/elements/_diplomado-box.scss"
+			],
+			[
+				"diplo",
+				"sass/elements/_diplomado-box.scss"
+			],
+			[
+				"home-",
+				"template-parts/home-logged-in.php"
+			],
+			[
+				"reun",
+				"~/Documents/WebDev/projects/cedet/assets/reunion_081119.txt"
+			],
+			[
+				"slide",
+				"sass/elements/_slider-item.scss"
+			],
+			[
+				"vide",
+				"template-parts/videos-destacados.php"
+			],
+			[
+				"home-l",
+				"template-parts/home-logged-in.php"
+			],
+			[
+				"video",
+				"template-parts/videos-destacados.php"
+			],
+			[
+				"logge",
 				"template-parts/home-logged-in.php"
 			],
 			[
@@ -328,24 +363,208 @@
 				"home.php"
 			],
 			[
-				"user-f",
-				"inc/user-functions.php"
+				"wpc",
+				"sass/elements/_wpcore.scss"
+			],
+			[
+				"comme",
+				"comments.php"
+			],
+			[
+				"style",
+				"sass/style.scss"
+			],
+			[
+				"custom-cont",
+				"inc/custom-content.php"
+			],
+			[
+				"content-arci",
+				"template-parts/content-archive-noticias.php"
+			],
+			[
+				"content-arc",
+				"template-parts/content-archive-biblioteca.php"
+			],
+			[
+				"archive",
+				"archive-material_diplomado.php"
+			],
+			[
+				"diplomado",
+				"sass/elements/_diplomado-box.scss"
+			],
+			[
+				"content",
+				"template-parts/content-archive-biblioteca.php"
+			],
+			[
+				"content-en",
+				"template-parts/content-entrevistas.php"
+			],
+			[
+				"fun c",
+				"functions.php"
+			],
+			[
+				"conten",
+				"template-parts/content-biblioteca.php"
+			],
+			[
+				"bibl",
+				"single-biblioteca.php"
+			],
+			[
+				"prensa",
+				"template-parts/content-archivo_prensa.php"
+			],
+			[
+				"entrev",
+				"template-parts/content-entrevistas.php"
+			],
+			[
+				"wpcor",
+				"sass/elements/_wpcore.scss"
+			],
+			[
+				"",
+				"sass/style.scss"
+			],
+			[
+				"reu",
+				"~/Documents/WebDev/projects/cedet/assets/reunion_081119.txt"
+			],
+			[
+				"page",
+				"page.php"
+			],
+			[
+				"pack",
+				"package.json"
+			],
+			[
+				"singl",
+				"single.php"
+			],
+			[
+				"conte",
+				"template-parts/content.php"
+			],
+			[
+				"custom",
+				"inc/custom-fields.php"
+			],
+			[
+				"bui",
+				"core/css/build.css"
+			],
+			[
+				"buil",
+				"core/css/build.css"
+			],
+			[
+				"gulp",
+				"gulpfile.js"
+			],
+			[
+				"land",
+				"core/sass/partials/convivencia/landing-convivencia.scss"
+			],
+			[
+				"themee",
+				"core/includes/theme-enqueue.php"
+			],
+			[
+				"pac",
+				"package.json"
+			],
+			[
+				"main",
+				"core/sass/main.scss"
+			],
+			[
+				"2020",
+				"html/info_matricula_2020.html"
+			],
+			[
+				"matricul",
+				"page-informacion-matricula-2020.php"
+			],
+			[
+				"como-pos",
+				"assets/less/sections/como-postular.less"
+			],
+			[
+				"valor",
+				"parts/valores.php"
+			],
+			[
+				"ajax",
+				"inc/ajax-functions.php"
+			],
+			[
+				"time",
+				"sass/site/_timeline.scss"
+			],
+			[
+				"sty",
+				"sass/style.scss"
+			],
+			[
+				"ite",
+				"sass/site/secondary/_items.scss"
+			],
+			[
+				"ti",
+				"template-parts/timeline.php"
+			],
+			[
+				"aja",
+				"inc/ajax-functions.php"
+			],
+			[
+				"templ",
+				"inc/template-functions.php"
+			],
+			[
+				"obr",
+				"template-parts/obras.php"
+			],
+			[
+				"taxo",
+				"taxonomy-obra.php"
+			],
+			[
+				"item",
+				"sass/site/secondary/_items.scss"
+			],
+			[
+				"ob",
+				"template-parts/obras.php"
+			],
+			[
+				"custom-fie",
+				"inc/custom-fields.php"
+			],
+			[
+				"custom-con",
+				"inc/custom-content.php"
+			],
+			[
+				"packa",
+				"package.json"
 			]
 		],
 		"width": 0.0
 	},
 	"select_project":
 	{
-		"height": 500.0,
+		"height": 0.0,
 		"last_filter": "",
 		"selected_items":
 		[
-			[
-				"",
-				"~/Documents/WebDev/csd/server/public/wp-content/themes/universe_theme/csdweb.sublime-project"
-			]
 		],
-		"width": 380.0
+		"width": 0.0
 	},
 	"select_symbol":
 	{
@@ -364,7 +583,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 382.0,
+	"side_bar_width": 313.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

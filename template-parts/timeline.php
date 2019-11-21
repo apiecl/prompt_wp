@@ -1,5 +1,8 @@
 <section id="timeline-main">
 	<div class="row">
+		<h2>Línea de tiempo</h2>
+	</div>
+	<div class="row">
 		<div class="col-md-12">
 			<div id="timeline-embed"></div>
 		</div>

@@ -36,6 +36,22 @@ function prompt_pingback_header() {
 }
 add_action( 'wp_head', 'prompt_pingback_header' );
 
+function prompt_format_date($datestring) {
+	setlocale(LC_TIME, 'es_ES');
+	$newdate = strftime('%e %B de %Y',  strtotime($datestring));
+
+	return $newdate;
+}
+
+function prompt_cycle_fields( $fields, $title ) {
+	$cycled_fields = array();
+
+	foreach($fields as $field) {
+		$cycled_fields[] = '<div class="prompt_cycle_fields">' . $field[0] . '</div>';
+	}
+
+	return implode('', $cycled_fields);
+}
 
 /**
  * Obra metadata
