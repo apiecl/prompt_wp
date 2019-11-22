@@ -77,11 +77,7 @@ $fields = prompt_obra_metadata( $term->term_id );
 				<?php echo $fields['review'][0];?>
 			</div>
 
-			<div class="timeline-dark">
-				<h2>Línea de tiempo</h2>
-			</div>
-
-
+				<?php get_template_part( 'template-parts/timeline-obra' );?>
 
 		</div>
 	</div>

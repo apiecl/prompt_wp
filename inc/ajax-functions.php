@@ -1,13 +1,33 @@
 <?php 
 // Custom ajax calls
 
-function get_main_timeline_events() {
+function get_main_timeline_events($obra = null) {
 	$json = [];
 	$json['events'] = [];
-	$args = array(
-		'post_type' 	=> 'hitos',
-		'numberposts' 	=> -1,
-	);
+	if($obra != null):
+		$args = array(
+			'post_type' 	=> 'hitos',
+			'numberposts' 	=> -1,
+			'tax_query'		=> array(
+								array(
+									'taxonomy' => 'obra',
+									'terms' => array($obra),
+									'field'	=> 'slug'
+								)
+							)
+		);
+	else:
+		$args = array(
+			'post_type' 	=> 'hitos',
+			'numberposts' 	=> -1,
+			'meta_query'	=> array(
+								array(
+									'field'	=> '_prompt_principal',
+									'value'	=> true
+								)
+			)
+		);
+	endif;
 	$hitos = get_posts($args);
 
 	if($hitos):

@@ -135,6 +135,21 @@ function prompt_scripts() {
 	wp_enqueue_style( 'timeline', 'https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css', array(), '3.6.5', 'screen' );
 
 	wp_localize_script( 'timelinejs', 'prompt_hitos', get_main_timeline_events() );
+
+	//Localiza la info de una obra en Json
+	if(is_taxonomy( 'obra' )):
+		$args = array(
+			'taxonomy' => 'obra',
+			'hide_empty' => false,
+		);
+		$obras = get_terms( $args );
+		if($obras):
+			foreach($obras as $obra):
+				$obraslugjs = prompt_obraslugjs($obra->slug);
+				wp_localize_script( 'timelinejs', 'prompt_hitos_' . $obraslugjs , get_main_timeline_events($obra->slug) );
+			endforeach;
+		endif;
+	endif;
 }
 add_action( 'wp_enqueue_scripts', 'prompt_scripts' );
 

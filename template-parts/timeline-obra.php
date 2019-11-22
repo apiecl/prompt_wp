@@ -1,4 +1,10 @@
-<section id="timeline-main" class="with-home-section-divider">
+<?php 
+	global $wp_query;
+	$term = 'prompt_hitos_' . prompt_obraslugjs($wp_query->query_vars['obra']);
+	
+?>
+
+<section id="timeline-obra">
 	<div class="container">
 		<div class="row">
 			<h2>Línea de tiempo</h2>
@@ -14,6 +20,6 @@
 	var timeline_options = {
 		language: "es"
 	}
-	var timeline_events = JSON.parse(prompt_hitos);
+	var timeline_events = JSON.parse(<?php echo $term;?>);
 	window.timeline = new TL.Timeline('timeline-embed', timeline_events, timeline_options);	
 </script>

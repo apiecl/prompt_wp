@@ -103,3 +103,7 @@ function prompt_multifields( $fields, $separator ) {
 	endif;
 	return $fieldstring;
 }
+
+function prompt_obraslugjs($slug) {
+	return str_replace('-', '_', $slug);
+}

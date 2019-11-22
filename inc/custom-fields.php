@@ -175,6 +175,13 @@ function cmb2_add_metabox_hitos() {
 		'desc' => __( 'opcional enlace externo a información sobre el evento', 'promptbook' ),
 	) );
 
+	$cmb->add_field( array(
+		'name'		=> 'Principal',
+		'id'		=> $prefix . 'esprincipal',
+		'type'		=> 'checkbox',
+		'desc'		=> 'Marcar si quieres que este evento esté en la línea de tiempo principal'
+	));
+
 
 
 }
