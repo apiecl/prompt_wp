@@ -1,3 +1,19 @@
 #timeline-embed {
 	min-height: 360px;
 }
+
+#timeline-obra #timeline-embed {
+	min-height: 360px;
+	.tl-timenav,
+	.tl-slider-container-mask {
+		background-color: #333;
+	}
+
+	.tl-timeaxis-background {
+		background-color: #000;
+	}
+}
+
+.timeline-section {
+	padding: 24px 0;
+}

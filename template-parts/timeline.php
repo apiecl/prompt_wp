@@ -1,4 +1,4 @@
-<section id="timeline-main" class="with-home-section-divider">
+<section id="timeline-main" class="timeline-section with-home-section-divider">
 	<div class="container">
 		<div class="row">
 			<h2>Línea de tiempo</h2>
