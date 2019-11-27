@@ -3,81 +3,42 @@ get_header();
 
 $term = get_term_by( 'slug', get_query_var( 'term' ), 'obra' );
 $fields = prompt_obra_metadata( $term->term_id );
-	//var_dump($fields);
 ?>
 
-<div class="single-obra container">
+<div class="single-obra container" style="background-image: url(<?php echo $fields['imagen'][0];?>)">
 	<div class="row">
 		<div class="col-md-12">
-			<img class="tax-thumbnail" src="<?php echo $fields['imagen'][0];?>" alt="<?php single_term_title();?>">
-
+			
 			<h1><?php single_term_title();?></h1>
+			
+			<nav class="nav nav-pills nav-justified" id="obraTab" role="tablist">
+				<a aria-selected="true" id="info-tab" data-toggle="tab" href="#info" class="nav-item nav-link active">Información general</a>
+				<a aria-selected="false" id="texto-tab" data-toggle="tab" href="#texto" class="nav-item nav-link">Texto dramático</a>
+				<a aria-selected="false" id="materiales-tab" data-toggle="tab" href="#materiales" class="nav-item nav-link">Materiales</a>
+			</nav>
 
-			<div class="ficha-obra">
-				<div class="row">
-					<dl class="col-md-3">
+			<div class="tab-content" id="obraTabContent">
+				<div class="tab-pane fade show active" id="info" role="tabpanel" aria-labelledby="info-tab">
 
-						<dt>Fecha de estreno</dt>
-						<dd><?php echo prompt_format_date($fields['estreno'][0]);?></dd>
+					<?php get_template_part( 'template-parts/ficha-obra' );?>
 
-						<dt>Inicio de la temporada</dt>
-						<dd><?php echo prompt_format_date($fields['temporada_inicio'][0]);?></dd>
+					<div class="intro-obra">
+						<h2>Reseña</h2>
+						<?php echo $fields['review'][0];?>
+					</div>
 
-						<dt>Fin de la temporada</dt>
-						<dd><?php echo prompt_format_date($fields['temporada_fin'][0]);?></dd>
+					<?php get_template_part( 'template-parts/timeline-obra' );?>
 
-					</dl>
-
-					<dl class="col-md-3">
-
-						<dt>Dirección</dt> 
-						<dd><?php echo prompt_multifields($fields['direccion'][0], ', ');?></dd>
-
-						<dt>Dramaturgia</dt> 
-						<dd><?php echo prompt_multifields($fields['dramaturgia'][0], ', ');?></dd>
-
-						<dt>Asistente de Dirección</dt> 
-						<dd><?php echo prompt_multifields($fields['asistente'][0], ', ');?></dd>
-
-						<dt>Dirección musical</dt> 
-						<dd><?php echo prompt_multifields($fields['direccion_musical'][0], ', ');?></dd>
-
-						<dt>Dirección coreográfica</dt> 
-						<dd><?php echo prompt_multifields($fields['direccion_coreografica'][0], ', ');?></dd>
-						
-						<dt>Escenografía e Iluminación</dt> 
-						<dd><?php echo prompt_multifields($fields['escenografia_iluminacion'][0], ', ');?></dd>
-
-						<dt>Vestuario</dt> 
-						<dd><?php echo prompt_multifields($fields['vestuario'][0], ', ');?></dd>
-
-					</dl>
-
-					<dl class="col-md-3">
-						<dt>Elenco</dt> 
-						<dd><?php echo prompt_multifields($fields['elenco'][0], ' <br> ');?></dd>
-					</dl>
-
-					<dl class="col-md-3">
-						<dt>Sala de presentación</dt> 
-						<dd><?php echo prompt_multifields($fields['sala'][0], ' <br> ');?></dd>
-
-						<dt>Número de funciones</dt>
-						<dd><?php echo prompt_format_date($fields['funciones'][0]);?></dd>
-
-						<dt>Duración de la obra</dt>
-						<dd><?php echo prompt_format_date($fields['duracion'][0]);?> minutos</dd>
-					</dl>
-
+				</div>
+				<div class="tab-pane fade" id="texto" role="tabpanel" aria-labelledby="texto-tab">
+					
+				</div>
+				
+				<div class="tab-pane fade" id="materiales" role="tabpanel" aria-labelledby="materiales-tab">
+					
 				</div>
 			</div>
 
-			<div class="intro-obra">
-				<h2>Reseña</h2>
-				<?php echo $fields['review'][0];?>
-			</div>
-
-				<?php get_template_part( 'template-parts/timeline-obra' );?>
 
 		</div>
 	</div>

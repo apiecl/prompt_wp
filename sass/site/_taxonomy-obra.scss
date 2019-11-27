@@ -3,6 +3,10 @@
 	color: white;
 	text-align: center;
 	margin: 12px 0;
+	padding-top: 390px;
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: contain;
 }
 
 .intro-obra {
@@ -28,4 +32,22 @@
 .timeline-dark {
 	text-align: left;
 	padding: 12px;
+}
+
+#obraTab {
+	a.nav-item,
+	a.nav-item:visited,
+	a.nav-item:focus {
+		text-decoration: none;
+		color: white;
+		outline: none;
+	}
+
+	a.nav-item:hover {
+		color: #ccc;
+	}
+
+	.tab-pane {
+		min-height: 200px;
+	}
 }

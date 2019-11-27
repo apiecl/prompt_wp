@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"get_templat",
+				"get_template_part"
+			],
+			[
+				"wp_enqueue",
+				"wp_enqueue_script"
+			],
+			[
 				"innovacion_page",
 				"innovacion_page_ids"
 			],
@@ -32,10 +40,6 @@
 				"get_the_post_thumbnail_url"
 			],
 			[
-				"wp_enqueue",
-				"wp_enqueue_style"
-			],
-			[
 				"wp_enqueu",
 				"wp_enqueue_script"
 			],
@@ -56,148 +60,10 @@
 	"buffers":
 	[
 		{
-			"file": "home.php",
-			"settings":
-			{
-				"buffer_size": 314,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "template-parts/obras.php",
-			"settings":
-			{
-				"buffer_size": 1662,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "header.php",
-			"settings":
-			{
-				"buffer_size": 1366,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "functions.php",
-			"settings":
-			{
-				"buffer_size": 5781,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/debug.log",
-			"settings":
-			{
-				"buffer_size": 1297696,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "inc/custom-fields.php",
 			"settings":
 			{
-				"buffer_size": 4490,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "inc/template-functions.php",
-			"settings":
-			{
-				"buffer_size": 2265,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "template-parts/timeline.php",
-			"settings":
-			{
-				"buffer_size": 330,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "inc/ajax-functions.php",
-			"settings":
-			{
-				"buffer_size": 1680,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "sass/navigation/_menus.scss",
-			"settings":
-			{
-				"buffer_size": 1288,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "taxonomy-obra.php",
-			"settings":
-			{
-				"buffer_size": 2459,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "sass/site/_taxonomy-obra.scss",
-			"settings":
-			{
-				"buffer_size": 373,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "sass/site/secondary/_items.scss",
-			"settings":
-			{
-				"buffer_size": 934,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "package.json",
-			"settings":
-			{
-				"buffer_size": 661,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "gulpfile.babel.js",
-			"settings":
-			{
-				"buffer_size": 1190,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "inc/custom-content.php",
-			"settings":
-			{
-				"buffer_size": 6011,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "inc/custom-taxonomies.php",
-			"settings":
-			{
-				"buffer_size": 934,
+				"buffer_size": 4694,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -219,7 +85,11 @@
 				"Indentation: Reindent Lines"
 			],
 			[
-				"remove pac",
+				"removep",
+				"Package Control: Remove Package"
+			],
+			[
+				"remove",
 				"Package Control: Remove Package"
 			],
 			[
@@ -227,12 +97,20 @@
 				"Package Control: Install Package"
 			],
 			[
-				"syntles",
-				"Set Syntax: Less"
-			],
-			[
 				"ins",
 				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"remove pac",
+				"Package Control: Remove Package"
+			],
+			[
+				"syntles",
+				"Set Syntax: Less"
 			],
 			[
 				"ren",
@@ -272,14 +150,34 @@
 	"expanded_folders":
 	[
 		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt",
-		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/sass",
-		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/sass/layout",
-		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/sass/navigation"
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/inc",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/js",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/template-parts"
 	],
 	"file_history":
 	[
-		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/template-parts/timeline.php",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/inc/custom-taxonomies.php",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/inc/custom-content.php",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/sass/site/_taxonomy-obra.scss",
 		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/template-parts/obras.php",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/gulpfile.babel.js",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/package.json",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/sass/site/secondary/_items.scss",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/sass/site/_timeline.scss",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/template-parts/ficha-obra.php",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/taxonomy-obra.php",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/sass/navigation/_menus.scss",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/home.php",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/header.php",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/functions.php",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/inc/custom-fields.php",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/inc/template-functions.php",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/template-parts/timeline.php",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/template-parts/timeline-obra.php",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/debug.log",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/sass/site/_site.scss",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/sass/style.scss",
+		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/inc/ajax-functions.php",
 		"/home/pablo/Documents/WebDev/local_sites/programagores/app/public/wp-content/themes/cedetgore/reunion_1511.txt",
 		"/home/pablo/Documents/WebDev/local_sites/csdweb/app/public/wp-content/themes/universe_theme/add-ons/extras.php",
 		"/home/pablo/Documents/WebDev/local_sites/csdweb/app/public/wp-content/plugins/formulario-convivencia/admin/class-formulario-convivencia-admin.php",
@@ -318,25 +216,10 @@
 		"/home/pablo/Documents/WebDev/projects/csd/server/public/wp-content/themes/universe_theme/core/css/build.css",
 		"/home/pablo/Documents/WebDev/projects/csd/server/public/wp-content/themes/universe_theme/page-informacion-matricula-2020.php",
 		"/home/pablo/Documents/WebDev/projects/csd/server/public/wp-content/themes/universe_theme/html/info_matricula_2020.html",
-		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/functions.php",
-		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/sass/site/_timeline.scss",
-		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/sass/site/secondary/_items.scss",
 		"/home/donhilo/.gitignore",
 		"/home/pablo/.gitignore",
 		"/home/pablo/.gitconfig",
-		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/inc/custom-content.php",
-		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/inc/custom-fields.php",
-		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/inc/ajax-functions.php",
-		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/inc/custom-taxonomies.php",
-		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/debug.log",
-		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/home.php",
-		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/package.json",
-		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/sass/style.scss",
-		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/gulpfile.babel.js",
-		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/taxonomy-obra.php",
 		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-config.php",
-		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/inc/template-functions.php",
-		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/sass/site/_taxonomy-obra.scss",
 		"/home/pablo/Documents/WebDev/projects/itrend/reunion_301019.txt",
 		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/style.css",
 		"/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/themes/prompt/template-parts/custom-taxonomies.php",
@@ -344,7 +227,7 @@
 	],
 	"find":
 	{
-		"height": 41.0
+		"height": 28.0
 	},
 	"find_in_files":
 	{
@@ -358,6 +241,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			" {",
+			"show active",
+			"<a",
+			"<a ",
+			"obra"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -375,573 +263,24 @@
 	"groups":
 	[
 		{
-			"selected": 18,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "home.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 314,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "template-parts/obras.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1662,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								509,
-								509
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "header.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1366,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1365,
-								1365
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "functions.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5781,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								127,
-								127
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/home/pablo/Documents/WebDev/local_sites/promptbook/app/public/wp-content/debug.log",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1297696,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 169019.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
 					"file": "inc/custom-fields.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4490,
+						"buffer_size": 4694,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1837,
-								1837
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 857.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "inc/template-functions.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2265,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1052,
-								1052
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 341.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "template-parts/timeline.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 330,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								127,
-								127
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 17,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "inc/ajax-functions.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1680,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								243,
-								243
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 161.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 16,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "sass/navigation/_menus.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1288,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								722,
-								722
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Sass/Syntaxes/SCSS.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 620.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "taxonomy-obra.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2459,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2409,
-								2409
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 4.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "sass/site/_taxonomy-obra.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 373,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Sass/Syntaxes/SCSS.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 15,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "sass/site/secondary/_items.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 934,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								29,
-								29
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Sass/Syntaxes/SCSS.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "package.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 661,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								341,
-								341
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 19,
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "gulpfile.babel.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1190,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 18,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "template-parts/obras.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1662,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								926,
-								926
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "sass/site/_taxonomy-obra.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 373,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								269,
-								269
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Sass/Syntaxes/SCSS.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 15,
-					"file": "inc/custom-content.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6011,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5128,
-								5128
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 3388.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 16,
-					"file": "inc/custom-taxonomies.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 934,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								247,
-								247
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "inc/custom-fields.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4490,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
+								743,
+								743
 							]
 						],
 						"settings":
@@ -953,7 +292,7 @@
 						"translation.y": 38.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -1008,16 +347,84 @@
 		"selected_items":
 		[
 			[
+				"styl",
+				"sass/style.scss"
+			],
+			[
+				"taxon",
+				"sass/site/_taxonomy-obra.scss"
+			],
+			[
+				"func",
+				"functions.php"
+			],
+			[
+				"gul",
+				"gulpfile.babel.js"
+			],
+			[
+				"tax",
+				"taxonomy-obra.php"
+			],
+			[
+				"fun",
+				"functions.php"
+			],
+			[
+				"obr",
+				"sass/site/_taxonomy-obra.scss"
+			],
+			[
+				"timelin",
+				"sass/site/_timeline.scss"
+			],
+			[
+				"aja",
+				"inc/ajax-functions.php"
+			],
+			[
+				"",
+				"template-parts/timeline-obra.php"
+			],
+			[
+				"timel",
+				"sass/site/_timeline.scss"
+			],
+			[
+				"taxo",
+				"inc/custom-taxonomies.php"
+			],
+			[
+				"custom",
+				"inc/custom-content.php"
+			],
+			[
+				"debu",
+				"~/Documents/WebDev/local_sites/promptbook/app/public/wp-content/debug.log"
+			],
+			[
+				"templ",
+				"inc/template-functions.php"
+			],
+			[
+				"timeli",
+				"template-parts/timeline.php"
+			],
+			[
+				"ti",
+				"template-parts/timeline.php"
+			],
+			[
+				"hom",
+				"home.php"
+			],
+			[
 				"customta",
 				"inc/custom-taxonomies.php"
 			],
 			[
 				"conte",
 				"inc/custom-content.php"
-			],
-			[
-				"tax",
-				"sass/site/_taxonomy-obra.scss"
 			],
 			[
 				"fiel",
@@ -1028,24 +435,12 @@
 				"template-parts/obras.php"
 			],
 			[
-				"func",
-				"functions.php"
-			],
-			[
 				"head",
 				"header.php"
 			],
 			[
-				"fun",
-				"inc/template-functions.php"
-			],
-			[
 				"items",
 				"sass/site/secondary/_items.scss"
-			],
-			[
-				"taxo",
-				"sass/site/_taxonomy-obra.scss"
 			],
 			[
 				"taxono",
@@ -1060,20 +455,12 @@
 				"template-parts/timeline.php"
 			],
 			[
-				"gul",
-				"gulpfile.babel.js"
-			],
-			[
 				"pack",
 				"package.json"
 			],
 			[
 				"obras",
 				"template-parts/obras.php"
-			],
-			[
-				"hom",
-				"home.php"
 			],
 			[
 				"timeline",
@@ -1204,10 +591,6 @@
 				"sass/elements/_wpcore.scss"
 			],
 			[
-				"",
-				"sass/style.scss"
-			],
-			[
 				"reu",
 				"~/Documents/WebDev/projects/cedet/assets/reunion_081119.txt"
 			],
@@ -1218,10 +601,6 @@
 			[
 				"singl",
 				"single.php"
-			],
-			[
-				"custom",
-				"inc/custom-fields.php"
 			],
 			[
 				"bui",
@@ -1280,22 +659,6 @@
 				"sass/site/secondary/_items.scss"
 			],
 			[
-				"ti",
-				"template-parts/timeline.php"
-			],
-			[
-				"aja",
-				"inc/ajax-functions.php"
-			],
-			[
-				"templ",
-				"inc/template-functions.php"
-			],
-			[
-				"obr",
-				"template-parts/obras.php"
-			],
-			[
 				"item",
 				"sass/site/secondary/_items.scss"
 			],
@@ -1324,6 +687,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"",
+				"~/Documents/WebDev/local_sites/automark/app/public/wp-content/themes/automark/automark.sublime-project"
+			]
 		],
 		"width": 380.0
 	},
@@ -1343,7 +710,7 @@
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": false,
+	"side_bar_visible": true,
 	"side_bar_width": 313.0,
 	"status_bar_visible": true,
 	"template_settings":

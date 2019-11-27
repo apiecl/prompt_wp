@@ -23,7 +23,7 @@ function get_main_timeline_events($obra = null) {
 			'meta_query'	=> array(
 								array(
 									'field'	=> '_prompt_principal',
-									'value'	=> true
+									'value'	=> "on"
 								)
 			)
 		);
