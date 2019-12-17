@@ -185,3 +185,38 @@ function cmb2_add_metabox_hitos() {
 
 
 }
+
+function prompt_roles_fields( array $meta_boxes) {
+	$prefix = '_prompt_';
+
+	$meta_boxes['tareasbox'] = array(
+		'id'           => $prefix . '_roles_fields',
+		'title'        => __( 'Información extra rol', 'itrend' ),
+		'object_types' => array( 'rol' ),
+		'context'      => 'normal',
+		'priority'     => 'default',
+		'fields'	   => array(
+			array(
+				'name'	=> __('Dimensión', 'prompt'),
+				'type'	=> 'taxonomy_select',
+				'id'	=> $prefix . 'dimension',
+				'taxonomy'	=> 'dimensiones'
+			),
+			array(
+				'name'	=> __('Interno - Externo', 'prompt'),
+				'type'	=> 'select',
+				'id'	=> $prefix . 'internoexterno',
+				'show_option_none' => true,
+				'options'	=> array(
+								'interno' => 'Interno',
+								'externo' => 'Externo'
+								)
+			)
+		)
+	);
+
+	return $meta_boxes;
+}
+
+add_filter('cmb2-taxonomy_meta_boxes', 'prompt_roles_fields');
+

@@ -60,10 +60,22 @@
 	"buffers":
 	[
 		{
+			"contents": "<?php\n\n//add_action( 'cmb2_init', 'prompt_tax_add_metabox' );\n\nadd_filter('cmb2-taxonomy_meta_boxes', 'prompt_tax_add_metabox');\n\nfunction prompt_tax_add_metabox( array $meta_boxes ) {\n\n\t$prefix = '_prompt_';\n\n\t$meta_boxes['fichaobra'] = array(\n\t\t'id'           => $prefix . 'fichaobra',\n\t\t'title'        => __( 'Ficha de la Obra', 'prompt' ),\n\t\t'object_types' => array( 'obra' ),\n\t\t'context'      => 'normal',\n\t\t'priority'     => 'default',\n\t\t'fields'\t   => array(\n\t\t\tarray(\n\t\t\t\t'name' => __( 'Imagen destacada', 'prompt' ),\n\t\t\t\t'id' => $prefix . 'imagen',\n\t\t\t\t'type' => 'file',\n\t\t\t),\n\t\t\tarray(\n\t\t\t\t'name' => __( 'Fragmento de video de la obra (maximo 5 segs)', 'prompt' ),\n\t\t\t\t'id' => $prefix . 'video',\n\t\t\t\t'type' => 'file',\n\t\t\t),\n\t\t\tarray(\n\t\t\t\t'name' => __( 'Estreno de la obra', 'prompt' ),\n\t\t\t\t'id' => $prefix . 'estreno',\n\t\t\t\t'type' => 'text_date',\n\t\t\t),\n\t\t\tarray(\n\t\t\t\t'name' => __( 'Inicio de la temporada', 'prompt' ),\n\t\t\t\t'id' => $prefix . 'temporada_inicio',\n\t\t\t\t'type' => 'text_date',\n\t\t\t),\n\t\t\tarray(\n\t\t\t\t'name' => __( 'Fin de la temporada', 'prompt' ),\n\t\t\t\t'id' => $prefix . 'temporada_fin',\n\t\t\t\t'type' => 'text_date',\n\t\t\t),\n\t\t\tarray(\n\t\t\t\t'name' => __( 'Número de funciones', 'prompt' ),\n\t\t\t\t'id' => $prefix . 'funciones',\n\t\t\t\t'type' => 'text_small',\n\t\t\t),\n\t\t\tarray(\n\t\t\t\t'name' => __( 'Duración estimada (en minutos)', 'prompt' ),\n\t\t\t\t'id' => $prefix . 'duracion',\n\t\t\t\t'type' => 'text_small',\n\t\t\t),\n\t\t\tarray(\n\t\t\t\t'name' => __( 'Sala de presentación', 'prompt' ),\n\t\t\t\t'id' => $prefix . 'sala',\n\t\t\t\t'type' => 'text',\n\t\t\t),\n\t\t\tarray(\n\t\t\t\t'name' => __( 'Reseña oficial', 'prompt' ),\n\t\t\t\t'id' => $prefix . 'review',\n\t\t\t\t'type' => 'wysiwyg',\n\t\t\t),\n\t\t\tarray(\n\t\t\t\t'name' => __( 'Dirección', 'prompt' ),\n\t\t\t\t'id' => $prefix . 'direccion',\n\t\t\t\t'type' => 'text',\n\t\t\t\t'repeatable' => true,\n\t\t\t),\n\t\t\tarray(\n\t\t\t\t'name' => __( 'Dramaturgia', 'prompt' ),\n\t\t\t\t'id' => $prefix . 'dramaturgia',\n\t\t\t\t'type' => 'text',\n\t\t\t\t'repeatable' => true,\n\t\t\t),\n\t\t\tarray(\n\t\t\t\t'name' => __( 'Escenografía e Iluminación', 'prompt' ),\n\t\t\t\t'id' => $prefix . 'escenografia_iluminacion',\n\t\t\t\t'type' => 'text',\n\t\t\t\t'repeatable' => true,\n\t\t\t),\n\t\t\tarray(\n\t\t\t\t'name' => __( 'Vestuario', 'prompt' ),\n\t\t\t\t'id' => $prefix . 'vestuario',\n\t\t\t\t'type' => 'text',\n\t\t\t\t'repeatable' => true,\n\t\t\t),\n\t\t\tarray(\n\t\t\t\t'name' => __( 'Elenco', 'prompt' ),\n\t\t\t\t'id' => $prefix . 'elenco',\n\t\t\t\t'type' => 'text',\n\t\t\t\t'repeatable' => true,\n\t\t\t),\n\t\t\tarray(\n\t\t\t\t'name' => __( 'Músicos', 'prompt' ),\n\t\t\t\t'id' => $prefix . 'musicos',\n\t\t\t\t'type' => 'text',\n\t\t\t\t'repeatable' => true,\n\t\t\t), \n\t\t\tarray(\n\t\t\t\t'name' => __( 'Asistente de dirección', 'prompt' ),\n\t\t\t\t'id' => $prefix . 'asistente',\n\t\t\t\t'type' => 'text',\n\t\t\t\t'repeatable' => true,\n\t\t\t),\n\t\t\tarray(\n\t\t\t\t'name' => __( 'Dirección musical', 'prompt' ),\n\t\t\t\t'id' => $prefix . 'direccion_musical',\n\t\t\t\t'type' => 'text',\n\t\t\t\t'repeatable' => true,\n\t\t\t),\n\t\t\tarray(\n\t\t\t\t'name' => __( 'Dirección coreográfica', 'prompt' ),\n\t\t\t\t'id' => $prefix . 'direccion_coreografica',\n\t\t\t\t'type' => 'text',\n\t\t\t\t'repeatable' => true,\n\t\t\t) \n\t\t)\n\t);\n\n\treturn $meta_boxes;\n\n}\n\nadd_action( 'cmb2_init', 'cmb2_add_metabox_hitos' );\n\nfunction cmb2_add_metabox_hitos() {\n\n\t$prefix = '_prompt_';\n\n\t$cmb = new_cmb2_box( array(\n\t\t'id'           => $prefix . 'hitos',\n\t\t'title'        => __( 'Información hito', 'promptbook' ),\n\t\t'object_types' => array( 'hitos' ),\n\t\t'context'      => 'normal',\n\t\t'priority'     => 'high',\n\t) );\n\n\t$cmb->add_field( array(\n\t\t'name' => __( 'Fecha Inicio', 'promptbook' ),\n\t\t'id' => $prefix . 'inicio',\n\t\t'type' => 'text_date',\n\t\t'attributes' => array(\n\t\t\t\t\t\t'data-datepicker' => json_encode(array(\n\t\t\t\t\t\t\t\t\t\t\t\t'yearRange' => '-100:+0'\n\t\t\t\t\t\t\t\t\t\t\t))\n\t\t\t\t\t\t)\n\t) );\n\n\t$cmb->add_field( array(\n\t\t'name' => __( 'Fecha Fin', 'promptbook' ),\n\t\t'id' => $prefix . 'fin',\n\t\t'type' => 'text_date',\n\t\t'attributes' => array(\n\t\t\t\t\t\t'data-datepicker' => json_encode(array(\n\t\t\t\t\t\t\t\t\t\t\t\t'yearRange' => '-100:+0'\n\t\t\t\t\t\t\t\t\t\t\t))\n\t\t\t\t\t\t),\n\t\t'desc' => __( 'opcional si es que se pone una fecha de fin el evento queda marcado como un período', 'promptbook' ),\n\t) );\n\n\t$cmb->add_field( array(\n\t\t'name' => __( 'Mostrar', 'cmb2' ),\n\t\t'id' => $prefix . 'datetype',\n\t\t'type' => 'radio',\n\t\t'options' => array(\n\t\t\t'full' => __( 'fecha completa', 'cmb2' ),\n\t\t\t'year' => __( 'solo año', 'cmb2' ),\n\t\t),\n\t) );\n\n\t$cmb->add_field( array(\n\t\t'name' => __('Enlace', 'promptbook'),\n\t\t'id' => $prefix . 'enlace',\n\t\t'type' => 'text_url',\n\t\t'desc' => __( 'opcional enlace externo a información sobre el evento', 'promptbook' ),\n\t) );\n\n\t$cmb->add_field( array(\n\t\t'name'\t\t=> 'Principal',\n\t\t'id'\t\t=> $prefix . 'esprincipal',\n\t\t'type'\t\t=> 'checkbox',\n\t\t'desc'\t\t=> 'Marcar si quieres que este evento esté en la línea de tiempo principal'\n\t));\n\n\n\n}\n\n",
 			"file": "inc/custom-fields.php",
+			"file_size": 4712,
+			"file_write_time": 132189208141807540,
 			"settings":
 			{
-				"buffer_size": 4694,
+				"buffer_size": 4696,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "taxonomy-obra.php",
+			"settings":
+			{
+				"buffer_size": 1476,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -227,7 +239,7 @@
 	],
 	"find":
 	{
-		"height": 28.0
+		"height": 41.0
 	},
 	"find_in_files":
 	{
@@ -272,15 +284,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4694,
+						"buffer_size": 4696,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								743,
-								743
+								4696,
+								4696
 							]
 						],
 						"settings":
@@ -289,10 +301,39 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 38.0,
+						"translation.y": 2179.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "taxonomy-obra.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1476,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								334,
+								334
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -347,6 +388,14 @@
 		"selected_items":
 		[
 			[
+				"cus",
+				"inc/custom-fields.php"
+			],
+			[
+				"tax",
+				"taxonomy-obra.php"
+			],
+			[
 				"styl",
 				"sass/style.scss"
 			],
@@ -361,10 +410,6 @@
 			[
 				"gul",
 				"gulpfile.babel.js"
-			],
-			[
-				"tax",
-				"taxonomy-obra.php"
 			],
 			[
 				"fun",
@@ -689,6 +734,10 @@
 		[
 			[
 				"",
+				"~/Documents/WebDev/local_sites/itrend/app/public/wp-content/plugins/itrend_custom_content/itrend.sublime-project"
+			],
+			[
+				"autom",
 				"~/Documents/WebDev/local_sites/automark/app/public/wp-content/themes/automark/automark.sublime-project"
 			]
 		],
