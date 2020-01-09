@@ -46,6 +46,16 @@ function prompt_tax_add_metabox( array $meta_boxes ) {
 				'type' => 'text_small',
 			),
 			array(
+				'name' => __( 'Número de temporadas', 'prompt' ),
+				'id' => $prefix . 'temporadas',
+				'type' => 'text_small',
+			),
+			array(
+				'name' => __( 'Número total de funciones', 'prompt' ),
+				'id' => $prefix . 'totalfunciones',
+				'type' => 'text_small',
+			),
+			array(
 				'name' => __( 'Duración estimada (en minutos)', 'prompt' ),
 				'id' => $prefix . 'duracion',
 				'type' => 'text_small',

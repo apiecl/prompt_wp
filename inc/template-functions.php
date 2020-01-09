@@ -91,7 +91,7 @@ function prompt_obra_metadata( $obraid ) {
 
 function prompt_multifields( $fields, $separator ) {
 	$fieldstring = '';
-	if($fields):
+	if($fields && is_array($fields) ):
 		$size = count($fields);
 			foreach($fields as $key=>$field):
 				if($key == $size - 1):

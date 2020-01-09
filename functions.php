@@ -134,7 +134,7 @@ function prompt_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	wp_enqueue_style( 'timeline', 'https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css', array(), '3.6.5', 'screen' );
+	wp_enqueue_style( 'timeline', get_template_directory_uri() . '/TL.Timeline.css', array(), '3.6.5', 'screen' );
 
 	wp_localize_script( 'timelinejs', 'prompt_hitos', get_main_timeline_events() );
 

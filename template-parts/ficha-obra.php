@@ -49,13 +49,13 @@ $fields = prompt_obra_metadata( $term->term_id );
 
 		<dl class="col-md-3">
 			<dt>Sala de presentación</dt> 
-			<dd><?php echo prompt_multifields($fields['sala'][0], ' <br> ');?></dd>
+			<dd><?php echo $fields['sala'][0];?></dd>
 
 			<dt>Número de funciones</dt>
-			<dd><?php echo prompt_format_date($fields['funciones'][0]);?></dd>
-
+			<dd><?php echo $fields['funciones'][0];?></dd>
+	
 			<dt>Duración de la obra</dt>
-			<dd><?php echo prompt_format_date($fields['duracion'][0]);?> minutos</dd>
+			<dd><?php echo $fields['duracion'][0];?> minutos</dd>
 		</dl>
 
 	</div>
