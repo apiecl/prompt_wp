@@ -31,11 +31,11 @@ $fields = prompt_obra_metadata( $term->term_id );
 
 				</div>
 				<div class="tab-pane fade" id="texto" role="tabpanel" aria-labelledby="texto-tab">
-					
+					<?php get_template_part( 'template-parts/texto-obra');?>
 				</div>
 				
 				<div class="tab-pane fade" id="materiales" role="tabpanel" aria-labelledby="materiales-tab">
-					
+					<?php get_template_part( 'template-parts/materiales-obra');?>
 				</div>
 			</div>
 

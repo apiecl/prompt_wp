@@ -39,7 +39,7 @@ const server = browserSync.create();
 
 export const serve = done => {
 	server.init({
-		proxy: "http://promptbook.local"
+		proxy: "http://bitacora.local"
 	});
 	done();
 }
