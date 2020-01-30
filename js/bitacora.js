@@ -20,6 +20,13 @@ jQuery(document).ready(function($) {
 			enableMedia($(this).attr('data-assoc'), $(this).attr('data-plain-id'));
 		}
 	});
+
+	$('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
+		console.log($(this));
+		if($(this).attr('data-function') == 'timeline') {
+			window.timeline = new TL.Timeline('timeline-embed', timeline_events, timeline_options);
+		}
+	})
 });
 
 function disableMedia( target ) {
@@ -46,7 +53,8 @@ function enableMedia( media, target ) {
 			var slider = tns({
 				container: carouselID,
 				items: 1,
-				nav: false,
+				nav: true,
+				navPosition: 'bottom',
 				controlsText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>' ],
 				center: true
 			});

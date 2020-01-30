@@ -21,5 +21,4 @@
 		language: "es"
 	}
 	var timeline_events = JSON.parse(<?php echo $term;?>);
-	window.timeline = new TL.Timeline('timeline-embed', timeline_events, timeline_options);	
 </script>

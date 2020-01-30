@@ -17,7 +17,7 @@ $fields = prompt_obra_metadata( $term->term_id );
 			<nav class="nav nav-pills nav-justified" id="obraTab" role="tablist">
 				<a aria-selected="true" id="info-tab" data-toggle="tab" href="#info" class="nav-item nav-link active">Ficha</a>
 				<a aria-selected="false" id="texto-tab" data-toggle="tab" href="#texto" class="nav-item nav-link">Texto Dramático</a>
-				<a aria-selected="false" id="timeline-tab" data-toggle="tab" href="#timeline" class="nav-item nav-link">Línea de Tiempo</a>
+				<a aria-selected="false" id="timeline-tab" data-toggle="tab" href="#timeline" data-function="timeline" class="nav-item nav-link">Línea de Tiempo</a>
 				<!-- <a aria-selected="false" id="materiales-tab" data-toggle="tab" href="#materiales" class="nav-item nav-link">Materiales</a> -->
 			</nav>
 			

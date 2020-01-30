@@ -11,6 +11,16 @@
 	}
 }
 
+.info-texto {
+	padding: 24px;
+	background-color: #f0f0f0;
+	color: #555;
+	margin: 24px 0;
+	p {
+		margin: 0;
+	}
+}
+
 .media-zone {
 	display: none;
 	text-align: center;
@@ -18,7 +28,8 @@
 
 a.trigger-media {
 	color: #333;
-	padding: 12px;
+	padding: 3px;
+	text-decoration: none;
 	&:hover, &.active {
 		color: red;
 	}
@@ -96,17 +107,42 @@ a.trigger-media {
 	margin: 140px 0;
 }
 
+.wavecontainer {
+	margin: 24px 0 48px 0;
+}
+
 a.document-download-button {
 	padding: 60px 24px;
 	margin: 24px auto;
 	max-width: 460px;
 	display: block;
-	color: #333;
-	border: 1px solid #333;
-	border-radius: 3px;
 	text-decoration: none;
 	font-size: 24px;
 	&:hover {
-		background-color: #f0f0f0;
+		//background-color: #f0f0f0;
 	}
+}
+
+.tns-horizontal.tns-subpixel>.tns-item {
+	vertical-align: middle !important;
+}
+
+.tns-nav {
+	button {
+		border: 0;
+		border-radius: 12px;
+		height: 24px;
+		width: 20px;
+		background-color: #ccc;
+		margin: 6px;
+	}
+	button.tns-nav-active {
+		background-color: #333;
+	}
+}
+
+.utils {
+	padding: 24px;
+	border: 1px dashed #555;
+	margin: 24px 0;
 }
