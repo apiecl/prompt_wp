@@ -16,7 +16,7 @@
 				foreach($obras as $obra):
 					$fields = prompt_obra_metadata($obra->term_id);
 					?>
-					<div class="col-md-6">
+					<div class="col-md-10">
 						<div class="obra obra-item" id="<?php echo $obra->slug;?>">
 							<div class="imagen-obra">
 								<video autoplay="true" loop="true" src="<?php echo $fields['video'][0];?>"></video>
