@@ -64,9 +64,49 @@ a.trigger-media {
 	margin: 24px auto;
 	max-width: 98%;
 	text-align: center;
+	display: flex;
+	align-items: center;
 	img, 
 	video {
 		max-width: 100%;
 		height: auto;
+	}
+}
+
+.media-caption {
+	p {
+		display: inline-block;
+		margin: 0;
+		&:after {
+			content: ' - ';
+		}
+	}
+	p:empty {
+		display: none;
+	}
+	p.item-descext {
+		display: block;
+		&:empty {
+			display: none;
+		}
+	}
+}
+
+.audiocontainer {
+	margin: 140px 0;
+}
+
+a.document-download-button {
+	padding: 60px 24px;
+	margin: 24px auto;
+	max-width: 460px;
+	display: block;
+	color: #333;
+	border: 1px solid #333;
+	border-radius: 3px;
+	text-decoration: none;
+	font-size: 24px;
+	&:hover {
+		background-color: #f0f0f0;
 	}
 }

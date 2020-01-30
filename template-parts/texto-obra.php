@@ -31,7 +31,6 @@ $playtext = bit_get_play($term->term_id);
 			<div class="row full-row media-zone" id="<?php echo $mediazoneid;?>">
 				<div class="col-md-12">
 							<!-- ajax loaded content-->
-							<?php //echo bit_render_mediazone($media);?>
 				</div>
 			</div>	
 			<?php

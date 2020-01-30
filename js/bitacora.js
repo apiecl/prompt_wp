@@ -48,7 +48,7 @@ function enableMedia( media, target ) {
 				items: 1,
 				nav: false,
 				controlsText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>' ],
-				
+				center: true
 			});
 		}
 	});
