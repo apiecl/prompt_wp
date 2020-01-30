@@ -1,24 +1,25 @@
 .single-obra {
-	background-color: #333;
-	color: white;
+	//background-color: #333;
+	color: #333;
 	text-align: center;
-	margin: 12px 0;
-	padding-top: 390px;
+	margin: 0;
 	background-repeat: no-repeat;
 	background-position: top center;
 	background-size: contain;
+	@media screen and (max-width: 768px) {
+		padding-top: 140px;
+	}
 }
 
 .intro-obra {
 	text-align: left;
-	padding: 24px;
 }
 
 .ficha-obra {
 	border: 1px solid #555;
-	margin: 12px;
+	margin: 0;
 	text-align: left;
-	padding: 12px;
+	padding: 24px;
 	dd {
 		margin:0 0 1.5em 0;
 	}
@@ -34,17 +35,31 @@
 	padding: 12px;
 }
 
+h1.play-title {
+	margin: 0;
+	font-weight: normal;
+	font-size: 32px;
+}
+
 #obraTab {
 	a.nav-item,
 	a.nav-item:visited,
 	a.nav-item:focus {
 		text-decoration: none;
-		color: white;
+		color: #333;
 		outline: none;
+		background-color: transparent;
+		border: 0;
+		border-radius: 0;
+		margin: 12px 0 -1px 0;
+		text-transform: uppercase;
 	}
 
-	a.nav-item:hover {
-		color: #ccc;
+	a.nav-item.active {
+		border-width: 1px;
+		border-style: solid;
+		border-color: #333;
+		border-bottom-color: white;
 	}
 
 	.tab-pane {

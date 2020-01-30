@@ -2,7 +2,7 @@
 	<div class="container">	
 		<div class="row justify-content-md-center">
 			<div class="col-md">
-				<h2>Obras</h2>
+				<h2 class="section-title">Obras</h2>
 			</div>
 		</div>
 		<div class="row justify-content-md-center d-flex align-items-stretch">

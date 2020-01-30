@@ -16,7 +16,13 @@
 --------------------------------------------------------------*/
 
 .site-header {
-	background-color: #ccc;
+	background-color: transparent;
+	border-bottom: 1px solid #555;
+	color: #333;
+	a {
+		color: #333;
+		text-decoration: none;
+	}
 }
 
 .site-branding {
@@ -24,7 +30,13 @@
 }
 
 section.with-home-section-divider {
-	border-top: 1px solid #ccc;
+	border-top: 1px solid #555;
 	padding-top: 12px;
 	margin-top: 24px;
+}
+
+.section-title {
+	color: #333;
+	text-align: center;
+	width: 100%;
 }

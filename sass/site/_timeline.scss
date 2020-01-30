@@ -6,18 +6,26 @@
 	text-align: left;
 }
 
+#timeline-main .col-md-12 {
+	padding: 0;
+}
+
 #timeline-obra #timeline-embed {
 	min-height: 360px;
 	.tl-timenav,
 	.tl-slider-container-mask {
-		background-color: #333;
+		//background-color: #333;
 	}
 
 	.tl-timeaxis-background {
-		background-color: #000;
+		//background-color: #000;
 	}
 }
 
 .timeline-section {
+	padding: 24px 0;
+}
+
+.tl-timeline {
 	padding: 24px 0;
 }

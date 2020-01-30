@@ -2,7 +2,7 @@
 $term = get_term_by( 'slug', get_query_var( 'term' ), 'obra' );
 $fields = prompt_obra_metadata( $term->term_id );
 ?>
-<div class="ficha-obra">
+
 	<div class="row">
 		<dl class="col-md-3">
 
@@ -59,4 +59,3 @@ $fields = prompt_obra_metadata( $term->term_id );
 		</dl>
 
 	</div>
-</div>

@@ -5,7 +5,6 @@
 ?>
 
 <section id="timeline-obra" class="timeline-section">
-	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
 				<h2>Línea de tiempo</h2>
@@ -16,7 +15,6 @@
 				<div id="timeline-embed"></div>
 			</div>
 		</div>
-	</div>
 </section>
 <script>
 	var timeline_options = {

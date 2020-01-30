@@ -1,4 +1,72 @@
+.texto-dramatico {
+}
+
 .text-item {
 	text-align: left;
 	margin-bottom: 12px;
+	padding-left: 12px;
+
+	&.hasmedia {
+		border-left: 1px solid #333;
+	}
+}
+
+.media-zone {
+	display: none;
+	text-align: center;
+}
+
+a.trigger-media {
+	color: #333;
+	padding: 12px;
+	&:hover, &.active {
+		color: red;
+	}
+}
+
+
+
+.full-row {
+	margin: 12px -15px;
+	padding: 12px 0;
+	border-top: 1px solid #333;
+	border-bottom: 1px solid #333;
+}
+
+.tns-outer {
+	position: relative;
+	.tns-controls {
+		position: absolute;
+		top: 40%;
+		width: 100%;
+		height: 100px;
+		button {
+			position: absolute;
+			padding: 0;
+			top: 50%;
+			z-index: 10;
+			border: 0;
+			background-color: transparent;
+			font-size: 36px;
+			text-shadow: 0 0 4px white;
+		}
+		[data-controls="next"] {
+			right: 0;
+		}
+		[data-controls="prev"] {
+			left: 0;
+		}
+	}
+}
+
+.carousel-item {
+	padding: 24px;
+	margin: 24px auto;
+	max-width: 98%;
+	text-align: center;
+	img, 
+	video {
+		max-width: 100%;
+		height: auto;
+	}
 }

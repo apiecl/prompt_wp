@@ -21,23 +21,25 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'prompt' ); ?></a>
+	<div id="page" class="site">
+		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'prompt' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-		</div><!-- .site-branding -->
+		<header id="masthead" class="site-header">
+			<div class="container">
+				<div class="site-branding">
+					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'prompt' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+				<nav id="site-navigation" class="main-navigation">
+					<span class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fas fa-bars"></i></span>
+					<?php
+					wp_nav_menu( array(
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'primary-menu',
+					) );
+					?>
+				</nav><!-- #site-navigation -->
+			</div>
+		</header><!-- #masthead -->
 
-	<div id="content" class="site-content">
+		<div id="content" class="site-content">
