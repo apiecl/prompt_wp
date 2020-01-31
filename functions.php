@@ -128,7 +128,7 @@ function prompt_scripts() {
 
 	wp_enqueue_script('wavesurfer', 'https://unpkg.com/wavesurfer.js', array(), '0.1', false);
 
-	wp_enqueue_script('bitacora', get_template_directory_uri() . '/js/bitacora.js', array('jquery', 'tinysliderjs', 'bootstrap', 'wavesurfer'), '0.1', false);
+	wp_enqueue_script('bitacora', get_template_directory_uri() . '/js/bitacora.js', array('jquery', 'tinysliderjs', 'bootstrap', 'wavesurfer'), '0.2', false);
 
 	wp_enqueue_script( 'prompt-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
