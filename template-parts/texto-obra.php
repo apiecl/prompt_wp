@@ -17,12 +17,22 @@ $playtext = bit_get_play($term->term_id);
 		</div>
 		<div class="col-md-4">
 			<div class="custom-control custom-checkbox">
-				<input type="checkbox" class="custom-control-input" id="enableMedia">
-				<label class="custom-control-label" for="enableMedia">Ver sólo textos con materiales asociados</label>
+				<input type="checkbox" class="custom-control-input" id="onlyMedia">
+				<label class="custom-control-label" for="onlyMedia">Ver sólo textos con materiales asociados</label>
 			</div>
 		</div>
 	</div>
 	
+	<div class="row textlegend">
+		<div class="col-md-12">
+			<span class="typelabel acotacion">Acotación</span>
+			<span class="typelabel descripcion">Descripción</span>
+			<span class="typelabel cancion">Canción</span>
+			<span class="typelabel dialogo">Diálogo</span>
+			<span class="typelabel monologo">Monólogo</span>
+			<span class="typelabel letra">Letra</span>
+		</div>
+	</div>
 </div>
 
 <div class="texto-dramatico">
@@ -34,7 +44,7 @@ $playtext = bit_get_play($term->term_id);
 		$mediazoneid = uniqid();
 			//echo $media;
 		?>
-		<div class="row">
+		<div class="row playtext-row" data-type="<?php echo $tipo;?>" data-hasmedia="<?php echo ($media != null ? 'true' : 'false');?>">
 			<div class="col-1">
 				<?php if($media):?>
 					<a href="#" class="btn btn-light trigger-media" data-plain-id="<?php echo $mediazoneid;?>" data-expand="#<?php echo $mediazoneid;?>" data-assoc="<?php echo $media;?>" title="Ver el material asociado a esta sección del texto.">

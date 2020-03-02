@@ -1,6 +1,8 @@
 jQuery(document).ready(function($) {
 	console.log('init bitacora js');
 
+	var textContainer = $('.texto-dramatico');
+
 	$('.trigger-media').on('click', function(event) {
 		event.preventDefault();
 		var el = $(this);
@@ -26,7 +28,27 @@ jQuery(document).ready(function($) {
 		if($(this).attr('data-function') == 'timeline') {
 			window.timeline = new TL.Timeline('timeline-embed', timeline_events, timeline_options);
 		}
-	})
+	});
+
+
+	$('#enableType').change(function() {
+		var textLegend = $('.textlegend');
+		if(this.checked == true) {
+			textContainer.addClass('withTypes');
+			textLegend.addClass('active');
+		} else {
+			textContainer.removeClass('withTypes');
+			textLegend.removeClass('active');
+		}
+	});
+
+	$('#onlyMedia').change(function() {
+		if(this.checked == true) {
+			textContainer.addClass('onlyMedia');
+		} else {
+			textContainer.removeClass('onlyMedia');
+		}
+	});
 });
 
 function disableMedia( target ) {
