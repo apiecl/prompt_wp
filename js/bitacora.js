@@ -2,6 +2,7 @@ jQuery(document).ready(function($) {
 	console.log('init bitacora js');
 
 	var textContainer = $('.texto-dramatico');
+	var $grid = $('.bit-gallery').masonry();
 
 	$('.trigger-media').on('click', function(event) {
 		event.preventDefault();
@@ -27,18 +28,22 @@ jQuery(document).ready(function($) {
 		console.log($(this));
 		if($(this).attr('data-function') == 'timeline') {
 			window.timeline = new TL.Timeline('timeline-embed', timeline_events, timeline_options);
+		} else if($(this).attr('data-function') == 'materiales') {
+			$grid.masonry('layout');
 		}
 	});
 
 
 	$('#enableType').change(function() {
 		var textLegend = $('.textlegend');
+		animateCSS('.textlegend', 'fadeIn');
 		if(this.checked == true) {
 			textContainer.addClass('withTypes');
 			textLegend.addClass('active');
 		} else {
 			textContainer.removeClass('withTypes');
 			textLegend.removeClass('active');
+			
 		}
 	});
 
@@ -49,6 +54,11 @@ jQuery(document).ready(function($) {
 			textContainer.removeClass('onlyMedia');
 		}
 	});
+
+	$grid.imagesLoaded().progress(function() {
+		$grid.masonry('layout');
+	});
+
 });
 
 function disableMedia( target ) {
@@ -82,4 +92,18 @@ function enableMedia( media, target ) {
 			});
 		}
 	});
+}
+
+function animateCSS(element, animationName, callback) {
+    const node = document.querySelector(element)
+    node.classList.add('animated', animationName)
+
+    function handleAnimationEnd() {
+        node.classList.remove('animated', animationName)
+        node.removeEventListener('animationend', handleAnimationEnd)
+
+        if (typeof callback === 'function') callback()
+    }
+
+    node.addEventListener('animationend', handleAnimationEnd)
 }

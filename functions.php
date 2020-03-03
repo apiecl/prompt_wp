@@ -128,7 +128,7 @@ function prompt_scripts() {
 
 	wp_enqueue_script('wavesurfer', 'https://unpkg.com/wavesurfer.js', array(), '0.1', false);
 
-	wp_enqueue_script('bitacora', get_template_directory_uri() . '/js/bitacora.js', array('jquery', 'tinysliderjs', 'bootstrap', 'wavesurfer'), '0.2', false);
+	wp_enqueue_script('bitacora', get_template_directory_uri() . '/js/bitacora.js', array('jquery', 'tinysliderjs', 'bootstrap', 'wavesurfer', 'masonry'), '0.2', false);
 
 	wp_enqueue_script( 'prompt-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
@@ -137,6 +137,10 @@ function prompt_scripts() {
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '4.0', false );
 
 	wp_enqueue_script( 'timelinejs', 'https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js', array(), '3.6.5', false );
+
+	wp_enqueue_script('masonry', get_template_directory_uri() . '/js/masonry.pkgd.min.js', array('jquery', 'imagesLoaded'), '4.2.2', false);
+
+	wp_enqueue_script('imagesLoaded', 'https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js', array(), 'last', false);
 
 	wp_localize_script( 'bitacora', 'prompt', array(
 												'ajaxurl' => admin_url('admin-ajax.php')
@@ -175,6 +179,7 @@ add_action( 'wp_enqueue_scripts', 'prompt_scripts' );
 function prompt_head() {
 	?>
 	 <script src="https://kit.fontawesome.com/14643ca681.js" crossorigin="anonymous"></script>
+	 <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,400i,700&display=swap" rel="stylesheet">
 	 <?php
 }
 

@@ -1,8 +1,12 @@
 <section id="timeline-main" class="timeline-section with-home-section-divider">
-	<div class="container-fluid">
+	<div class="container">
 		<div class="row">
-			<h2 class="section-title">Línea de tiempo Teatro UC</h2>
+			<div class="col-md">
+				<h2 class="section-title standard-title">Línea de tiempo Teatro UC</h2>
+			</div>
 		</div>
+	</div>
+	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
 				<div id="timeline-embed"></div>

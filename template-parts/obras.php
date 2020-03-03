@@ -2,10 +2,10 @@
 	<div class="container">	
 		<div class="row justify-content-md-center">
 			<div class="col-md">
-				<h2 class="section-title">Obras</h2>
+				<h2 class="section-title standard-title">Obras</h2>
 			</div>
 		</div>
-		<div class="row justify-content-md-center d-flex align-items-stretch">
+		<div class="row d-flex align-items-stretch">
 			<?php
 			$obras = get_terms( array(
 				'taxonomy' => 'obra',
@@ -23,14 +23,15 @@
 							</div>
 
 							<div class="info-obra">
-								<span class="date">Estrenada el <?php echo prompt_format_date($fields['estreno'][0]);?></span>
-								<span class="director">Dirigida por <?php echo prompt_multifields($fields['direccion'][0], ', ');?> | 
-									Escrita por <?php echo prompt_multifields($fields['dramaturgia'][0], ', ');?></span>
+								
 									<h1 class="titulo-obra">
 										<a href="<?php echo get_term_link( $obra->term_id, 'obra' );?>">
 											<?php echo $obra->name;?>
 										</a>
-									</h1>					
+									</h1>
+									<span class="date">Estrenada el <?php echo prompt_format_date($fields['estreno'][0]);?></span>
+									<span class="director">Dirigida por <?php echo prompt_multifields($fields['direccion'][0], ', ');?> | 
+									Escrita por <?php echo prompt_multifields($fields['dramaturgia'][0], ', ');?></span>					
 								</div>
 								
 			<!-- <ul class="accesos-obra">

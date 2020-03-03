@@ -22,10 +22,8 @@ $letracolor: #A1DB00;
 }
 
 .info-texto {
-	padding: 24px;
-	background-color: #f0f0f0;
 	color: #555;
-	margin: 24px 0;
+	margin: 0 0 24px 0;
 	p {
 		margin: 0;
 	}
@@ -140,14 +138,15 @@ a.document-download-button {
 .tns-nav {
 	button {
 		border: 0;
-		border-radius: 12px;
-		height: 24px;
-		width: 20px;
-		background-color: #ccc;
+		border-radius: 50%;
+		height: 28px;
+		width: 24px;
+		background-color: white;
+		border: 2px solid #555;
 		margin: 6px;
 	}
 	button.tns-nav-active {
-		background-color: #333;
+		background-color: #555;
 	}
 }
 
@@ -159,7 +158,7 @@ a.document-download-button {
 
 .textlegend > .col-md-12 {
 	display:flex;
-	padding: 24px 0;
+	padding: 24px 10px 0 10px;
 	.typelabel {
 		display: inline-block;
 		padding: 6px;
@@ -170,29 +169,37 @@ a.document-download-button {
 		font-size: 14px;
 		text-shadow: 0 1px 1px white;
 		margin: 0 5px;
+		border-style: solid;
+		border-width: 2px;
 		
 		&.acotacion {
-			background-color: $acotacioncolor;
+			color: $acotacioncolor;
+			border-color: $acotacioncolor;
 		}
 
 		&.descripcion {
-			background-color: $descripcioncolor;
+			color: $descripcioncolor;
+			border-color: $descripcioncolor;
 		}
 
 		&.cancion {
-			background-color: $cancioncolor;
+			color: $cancioncolor;
+			border-color: $cancioncolor;
 		}
 
 		&.dialogo {
-			background-color: $dialogocolor;
+			color: $dialogocolor;
+			border-color: $dialogocolor;
 		}
 
 		&.monologo {
-			background-color: $monologocolor;
+			color: $monologocolor;
+			border-color: $monologocolor;
 		}
 
 		&.letra {
-			background-color: $letracolor;
+			color: $letracolor;
+			border-color: $letracolor;
 		}
 	}
 }
@@ -230,4 +237,8 @@ a.document-download-button {
 	.playtext-row[data-hasmedia="false"] {
 		display: none;
 	}
+}
+
+.custom-control .custom-control-label {
+	padding-top: 3px;
 }

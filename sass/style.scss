@@ -131,6 +131,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "../node_modules/bootstrap/scss/custom-forms";
 
 /*--------------------------------------------------------------
+# Animate
+--------------------------------------------------------------*/
+
+@import "extras/animate";
+
+/*--------------------------------------------------------------
 # Timeline
 --------------------------------------------------------------*/
 
@@ -141,3 +147,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------------------------*/
 
 @import "elements/playtext";
+
+
+/*--------------------------------------------------------------
+# Materiales
+--------------------------------------------------------------*/
+
+@import "elements/materiales";

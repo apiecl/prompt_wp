@@ -3,22 +3,28 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), 'obra' );
 $playtext = bit_get_play($term->term_id);
 ?>
 
-<div class="info-texto">
-	<p>Aquí puedes leer todo el texto de la obra. Los párrafos con el ícono <i class="fas fa-images"></i> tienen fotos, videos, musica o documentos asociados.</p>
-</div>
-
 <div class="utils">
+	
+	<div class="row">
+		<div class="col-md-12"> 
+			<div class="info-texto">
+				<p>Aquí puedes leer todo el texto de la obra. Los párrafos con el ícono <i class="fas fa-images"></i> tienen fotos, videos, musica o documentos asociados.</p>
+			</div>
+</div>
+	</div>
+	
+
 	<div class="row">
 		<div class="col-md-4">
-			<div class="custom-control custom-checkbox">
+			<div class="custom-control custom-switch">
 				<input type="checkbox" class="custom-control-input" id="enableType">
-				<label class="custom-control-label" for="enableType">Diferenciar el texto por tipos de acción</label>
+				<label class="custom-control-label" for="enableType">Tipos de acción</label>
 			</div>
 		</div>
 		<div class="col-md-4">
-			<div class="custom-control custom-checkbox">
+			<div class="custom-control custom-switch">
 				<input type="checkbox" class="custom-control-input" id="onlyMedia">
-				<label class="custom-control-label" for="onlyMedia">Ver sólo textos con materiales asociados</label>
+				<label class="custom-control-label" for="onlyMedia">Sólo materiales asociados</label>
 			</div>
 		</div>
 	</div>
@@ -42,7 +48,7 @@ $playtext = bit_get_play($term->term_id);
 		$media = $playline->ids_asoc;
 		$mediacount = count(explode(', ', $media));
 		$mediazoneid = uniqid();
-			//echo $media;
+		//echo $media;
 		?>
 		<div class="row playtext-row" data-type="<?php echo $tipo;?>" data-hasmedia="<?php echo ($media != null ? 'true' : 'false');?>">
 			<div class="col-1">
