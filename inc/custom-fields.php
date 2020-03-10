@@ -196,7 +196,95 @@ function cmb2_add_metabox_hitos() {
 
 }
 
-function prompt_roles_fields( array $meta_boxes) {
+function prompt_media_fields( ) {
+	
+	$prefix ='_bit_';
+
+	$cmb = new_cmb2_box( array(
+		'id'           => $prefix . 'infomedia',
+		'title'        => __( 'Información extra media', 'promptbook' ),
+		'object_types' => array( 'attachment' ),
+		'context'      => 'normal',
+		'priority'     => 'high',
+	) );
+
+	$cmb->add_field( array(
+		'name'		=> 'ID',
+		'id'		=> $prefix . 'mediaid',
+		'type'		=> 'text',
+		'desc'		=> 'Id para relacionarlo con el texto dramático'
+	));
+
+	$cmb->add_field( array(
+		'name'		=> 'Categoria',
+		'id'		=> $prefix . 'categoria',
+		'type'		=> 'text',
+		'desc'		=> 'Id para relacionarlo con el texto dramático'
+	));
+
+	$cmb->add_field( array(
+		'name'		=> 'Descripción sintética',
+		'id'		=> $prefix . 'descripcion_sintetica',
+		'type'		=> 'text',
+		'desc'		=> 'Id para relacionarlo con el texto dramático'
+	));
+
+
+	$cmb->add_field( array(
+		'name'		=> 'Descripción detallada',
+		'id'		=> $prefix . 'descripcion_detallada',
+		'type'		=> 'textarea',
+		'desc'		=> 'Id para relacionarlo con el texto dramático'
+	));
+
+
+	$cmb->add_field( array(
+		'name'		=> 'Fuente',
+		'id'		=> $prefix . 'fuente',
+		'type'		=> 'text',
+		'desc'		=> 'Id para relacionarlo con el texto dramático'
+	));
+
+	$cmb->add_field( array(
+		'name'		=> 'Tipo de material',
+		'id'		=> $prefix . 'tipomaterial',
+		'type'		=> 'text',
+		'desc'		=> 'Id para relacionarlo con el texto dramático'
+	));
+
+
+	$cmb->add_field( array(
+		'name'		=> 'Ingreso',
+		'id'		=> $prefix . 'ingreso',
+		'type'		=> 'text',
+		'desc'		=> 'Id para relacionarlo con el texto dramático'
+	));
+
+	$cmb->add_field( array(
+		'name'		=> 'Procesamiento',
+		'id'		=> $prefix . 'procesamiento',
+		'type'		=> 'text',
+		'desc'		=> 'Id para relacionarlo con el texto dramático'
+	));
+
+	$cmb->add_field( array(
+		'name'		=> 'Obra asociada',
+		'id'		=> $prefix . 'play_asoc',
+		'type'		=> 'text',
+		'desc'		=> 'ID de obra asociada'
+	));
+
+	$cmb->add_field( array(
+		'name'		=> 'Obra asociada',
+		'id'		=> $prefix . 'fechatext',
+		'type'		=> 'text',
+		'desc'		=> 'Fecha'
+	));
+}
+
+add_filter('cmb2_init', 'prompt_media_fields');
+
+function prompt_roles_fields( array $meta_boxes ) {
 	$prefix = '_prompt_';
 
 	$meta_boxes['tareasbox'] = array(
