@@ -1,4 +1,7 @@
 .bit-gallery {
+	
+	margin: 24px 0;
+
 	.image-wrap {
 		img {
 			max-width: 200px;
@@ -6,4 +9,11 @@
 			margin: 0 6px;
 		}
 	}	
+}
+
+.materiales-obra {
+	margin: 0;
+	a {
+		text-decoration: none;
+	}
 }

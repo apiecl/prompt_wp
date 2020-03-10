@@ -17,7 +17,7 @@ function cptui_register_my_taxes() {
 		"labels" => $labels,
 		"public" => true,
 		"publicly_queryable" => true,
-		"hierarchical" => false,
+		"hierarchical" => true,
 		"show_ui" => true,
 		"show_in_menu" => true,
 		"show_in_nav_menus" => true,
@@ -29,7 +29,7 @@ function cptui_register_my_taxes() {
 		"rest_controller_class" => "WP_REST_Terms_Controller",
 		"show_in_quick_edit" => false,
 		];
-	register_taxonomy( "obra", [ "work_in_progress", "situaciones", "texto_obra", "objetos", "personas", "hitos" ], $args );
+	register_taxonomy( "obra", [ "work_in_progress", "situaciones", "texto_obra", "objetos", "personas", "hitos", "attachment" ], $args );
 
 	/**
 	 * Taxonomy: Áreas.
@@ -167,6 +167,111 @@ function cptui_register_my_taxes() {
 		"rest_controller_class" => "WP_REST_Terms_Controller",
 		"show_in_quick_edit" => true,
 		];
-	register_taxonomy( "rol", [ "personas" ], $args );
+	register_taxonomy( "rol", [ "personas", "attachment" ], $args );
+
+	// Register Custom Taxonomy
+
+	$labels = array(
+		'name'                       => _x( 'Desarrollo Obras', 'Taxonomy General Name', 'prompt' ),
+		'singular_name'              => _x( 'Desarrollo Obras', 'Taxonomy Singular Name', 'prompt' ),
+		'menu_name'                  => __( 'Desarrollo obras', 'prompt' ),
+		'all_items'                  => __( 'Todas las etapas', 'prompt' ),
+		'parent_item'                => __( 'Parent Item', 'prompt' ),
+		'parent_item_colon'          => __( 'Parent Item:', 'prompt' ),
+		'new_item_name'              => __( 'Nueva etapa', 'prompt' ),
+		'add_new_item'               => __( 'Añadir nueva Etapa', 'prompt' ),
+		'edit_item'                  => __( 'Editar Etapa', 'prompt' ),
+		'update_item'                => __( 'Actualizar Etapas', 'prompt' ),
+		'view_item'                  => __( 'Ver Etapa', 'prompt' ),
+		'separate_items_with_commas' => __( 'Separate items with commas', 'prompt' ),
+		'add_or_remove_items'        => __( 'Add or remove items', 'prompt' ),
+		'choose_from_most_used'      => __( 'Choose from the most used', 'prompt' ),
+		'popular_items'              => __( 'Popular Items', 'prompt' ),
+		'search_items'               => __( 'Buscar Etapas', 'prompt' ),
+		'not_found'                  => __( 'Not Found', 'prompt' ),
+		'no_terms'                   => __( 'No items', 'prompt' ),
+		'items_list'                 => __( 'Items list', 'prompt' ),
+		'items_list_navigation'      => __( 'Items list navigation', 'prompt' ),
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => true,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+	);
+	register_taxonomy( 'desarrollo', array( 'post', 'attachment', ' personas' ), $args );
+
+	$labels = array(
+		'name'                       => _x( 'Espacial Obras', 'Taxonomy General Name', 'prompt' ),
+		'singular_name'              => _x( 'Espacial Obras', 'Taxonomy Singular Name', 'prompt' ),
+		'menu_name'                  => __( 'Espacial', 'prompt' ),
+		'all_items'                  => __( 'Todos los Espacios', 'prompt' ),
+		'parent_item'                => __( 'Parent Item', 'prompt' ),
+		'parent_item_colon'          => __( 'Parent Item:', 'prompt' ),
+		'new_item_name'              => __( 'Nuevo Espacio', 'prompt' ),
+		'add_new_item'               => __( 'Añadir nuevo Espacio', 'prompt' ),
+		'edit_item'                  => __( 'Editar Espacio', 'prompt' ),
+		'update_item'                => __( 'Actualizar Espacio', 'prompt' ),
+		'view_item'                  => __( 'Ver Espacio', 'prompt' ),
+		'separate_items_with_commas' => __( 'Separate items with commas', 'prompt' ),
+		'add_or_remove_items'        => __( 'Add or remove items', 'prompt' ),
+		'choose_from_most_used'      => __( 'Choose from the most used', 'prompt' ),
+		'popular_items'              => __( 'Popular Items', 'prompt' ),
+		'search_items'               => __( 'Buscar Espacios', 'prompt' ),
+		'not_found'                  => __( 'Not Found', 'prompt' ),
+		'no_terms'                   => __( 'No items', 'prompt' ),
+		'items_list'                 => __( 'Items list', 'prompt' ),
+		'items_list_navigation'      => __( 'Items list navigation', 'prompt' ),
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => true,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+	);
+	register_taxonomy( 'espacial_obras', array( 'post', 'attachment', ' personas' ), $args );
+
+	// Register Custom Taxonomy
+
+	$labels = array(
+		'name'                       => _x( 'Identidad / Educación', 'Taxonomy General Name', 'prompt' ),
+		'singular_name'              => _x( 'Identidad / Educación', 'Taxonomy Singular Name', 'prompt' ),
+		'menu_name'                  => __( 'Identidad - Educación', 'prompt' ),
+		'all_items'                  => __( 'Todas las Identidades - Educación', 'prompt' ),
+		'parent_item'                => __( 'Parent Item', 'prompt' ),
+		'parent_item_colon'          => __( 'Parent Item:', 'prompt' ),
+		'new_item_name'              => __( 'Nueva Identidad / Educación', 'prompt' ),
+		'add_new_item'               => __( 'Añadir nueva Identidad / Educación', 'prompt' ),
+		'edit_item'                  => __( 'Editar Identidad / Educación', 'prompt' ),
+		'update_item'                => __( 'Actualizar Identidad / Educación', 'prompt' ),
+		'view_item'                  => __( 'Ver Identidad / Educación', 'prompt' ),
+		'separate_items_with_commas' => __( 'Separate items with commas', 'prompt' ),
+		'add_or_remove_items'        => __( 'Add or remove items', 'prompt' ),
+		'choose_from_most_used'      => __( 'Choose from the most used', 'prompt' ),
+		'popular_items'              => __( 'Popular Items', 'prompt' ),
+		'search_items'               => __( 'Buscar Identidad / Educación', 'prompt' ),
+		'not_found'                  => __( 'Not Found', 'prompt' ),
+		'no_terms'                   => __( 'No items', 'prompt' ),
+		'items_list'                 => __( 'Items list', 'prompt' ),
+		'items_list_navigation'      => __( 'Items list navigation', 'prompt' ),
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => true,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+	);
+	register_taxonomy( 'identidad_educacion', array( 'post', 'attachment', ' personas' ), $args );
+
 }
+
 add_action( 'init', 'cptui_register_my_taxes' );
