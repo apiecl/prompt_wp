@@ -74,6 +74,17 @@ h1.play-title {
 	}
 }
 
+@media screen and (max-width: 768px) {
+	a.nav-item {
+		font-size: 13px;
+		padding: 8px 2px 3px 2px;
+		line-height: 1.2em;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
 .standard-title {
 	font-weight: normal;
 	text-transform: uppercase;

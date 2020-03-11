@@ -31,12 +31,12 @@ $playtext = bit_get_play($term->term_id);
 	
 	<div class="row textlegend">
 		<div class="col-md-12">
-			<span class="typelabel acotacion">Acotación</span>
-			<span class="typelabel descripcion">Descripción</span>
-			<span class="typelabel cancion">Canción</span>
-			<span class="typelabel dialogo">Diálogo</span>
-			<span class="typelabel monologo">Monólogo</span>
-			<span class="typelabel letra">Letra</span>
+			<span class="typelabel acotacion"><i class="fas fa-quote-left"></i> Acotación</span>
+			<span class="typelabel descripcion"><i class="fas fa-scroll"></i> Descripción</span>
+			<span class="typelabel cancion"><i class="fas fa-music"></i> Canción</span>
+			<span class="typelabel dialogo"><i class="fas fa-comments"></i> Diálogo</span>
+			<span class="typelabel monologo"><i class="fas fa-comment-dots"></i> Monólogo</span>
+			<span class="typelabel letra"><i class="fas fa-font"></i> Letra</span>
 		</div>
 	</div>
 </div>

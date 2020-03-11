@@ -34,6 +34,12 @@ $letracolor: #A1DB00;
 	text-align: center;
 }
 
+.media-item-wrapper {
+	.wp-video {
+		margin: 0 auto;
+	}
+}
+
 a.trigger-media {
 	color: #333;
 	padding: 3px;
@@ -212,24 +218,73 @@ a.document-download-button {
 		display: block;
 	}
 
+
+@media screen and (max-width: 768px) {
+	.textlegend > .col-md-12 {
+		display: block;
+		.typelabel {
+			width: 100%;
+			display: block;
+			margin-bottom: 6px;
+		}
+	}	
+}
+
+
 .texto-dramatico.withTypes {
-	.tipo-acotacion {
+	[data-type="acotacion"] {
 		color: $acotacioncolor;
+		a.trigger-media, .badge-light {
+			color: $acotacioncolor;
+		}
+		.text-item.hasmedia {
+			border-color: $acotacioncolor;
+		}
 	}
-	.tipo-descripcion {
+	[data-type="descripcion"] {
 		color: $descripcioncolor;
+		a.trigger-media, .badge-light {
+			color: $descripcioncolor;
+		}
+		.text-item.hasmedia {
+			border-color: $descripcioncolor;
+		}
 	}
-	.tipo-cancion {
+	[data-type="cancion"] {
 		color: $cancioncolor;
+		a.trigger-media, .badge-light {
+			color: $cancioncolor;
+		}
+		.text-item.hasmedia {
+			border-color: $cancioncolor;
+		}
 	}
-	.tipo-dialogo {
+	[data-type="dialogo"] {
 		color: $dialogocolor;
+		a.trigger-media, .badge-light {
+			color: $dialogocolor;
+		}
+		.text-item.hasmedia {
+			border-color: $dialogocolor;
+		}
 	}
-	.tipo-monologo {
+	[data-type="monologo"] {
 		color: $monologocolor;
+		a.trigger-media, .badge-light {
+			color: $monologocolor;
+		}
+		.text-item.hasmedia {
+			border-color: $monologocolor;
+		}
 	}
-	.tipo-letra {
+	[data-type="letra"] {
 		color: $letracolor;
+		a.trigger-media, .badge-light {
+			color: $letracolor;
+		}
+		.text-item.hasmedia {
+			border-color: $letracolor;
+		}
 	}
 }
 

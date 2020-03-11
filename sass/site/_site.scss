@@ -23,6 +23,10 @@
 		color: #333;
 		text-decoration: none;
 	}
+
+	@media screen and (max-width: 768px) {
+		font-size: 14px;
+	}
 }
 
 .site-branding {
