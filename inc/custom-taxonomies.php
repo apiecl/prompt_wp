@@ -81,46 +81,46 @@ function cptui_register_my_taxes() {
 	 * Taxonomy: Dimensiones.
 	 */
 
-	$labels = [
-		"name" => __( "Dimensiones", "prompt" ),
-		"singular_name" => __( "Dimensión", "prompt" ),
-		"menu_name" => __( "Dimensiones", "prompt" ),
-		"all_items" => __( "Todas las Dimensiones", "prompt" ),
-		"edit_item" => __( "Editar Dimensión", "prompt" ),
-		"view_item" => __( "Ver Dimensión", "prompt" ),
-		"update_item" => __( "Actualizar el nombre de la Dimensión", "prompt" ),
-		"add_new_item" => __( "Añadir nueva Dimensión", "prompt" ),
-		"new_item_name" => __( "Nombre de la nueva Dimensión", "prompt" ),
-		"parent_item" => __( "Dimensión superior", "prompt" ),
-		"parent_item_colon" => __( "Dimensión superior:", "prompt" ),
-		"search_items" => __( "Buscar Dimensiones", "prompt" ),
-		"popular_items" => __( "Dimensiones populares", "prompt" ),
-		"separate_items_with_commas" => __( "Separar Dimensiones con comas", "prompt" ),
-		"add_or_remove_items" => __( "Añadir o quitar Dimensiones", "prompt" ),
-		"choose_from_most_used" => __( "Elegir entre las Dimensiones más usadas", "prompt" ),
-		"not_found" => __( "No se encontraron Dimensiones", "prompt" ),
-		"no_terms" => __( "No hay Dimensiones", "prompt" ),
-		"items_list_navigation" => __( "Navegación de listado de Dimensiones", "prompt" ),
-		"items_list" => __( "Lista de Dimensiones", "prompt" ),
-	];
+	// $labels = [
+	// 	"name" => __( "Dimensiones", "prompt" ),
+	// 	"singular_name" => __( "Dimensión", "prompt" ),
+	// 	"menu_name" => __( "Dimensiones", "prompt" ),
+	// 	"all_items" => __( "Todas las Dimensiones", "prompt" ),
+	// 	"edit_item" => __( "Editar Dimensión", "prompt" ),
+	// 	"view_item" => __( "Ver Dimensión", "prompt" ),
+	// 	"update_item" => __( "Actualizar el nombre de la Dimensión", "prompt" ),
+	// 	"add_new_item" => __( "Añadir nueva Dimensión", "prompt" ),
+	// 	"new_item_name" => __( "Nombre de la nueva Dimensión", "prompt" ),
+	// 	"parent_item" => __( "Dimensión superior", "prompt" ),
+	// 	"parent_item_colon" => __( "Dimensión superior:", "prompt" ),
+	// 	"search_items" => __( "Buscar Dimensiones", "prompt" ),
+	// 	"popular_items" => __( "Dimensiones populares", "prompt" ),
+	// 	"separate_items_with_commas" => __( "Separar Dimensiones con comas", "prompt" ),
+	// 	"add_or_remove_items" => __( "Añadir o quitar Dimensiones", "prompt" ),
+	// 	"choose_from_most_used" => __( "Elegir entre las Dimensiones más usadas", "prompt" ),
+	// 	"not_found" => __( "No se encontraron Dimensiones", "prompt" ),
+	// 	"no_terms" => __( "No hay Dimensiones", "prompt" ),
+	// 	"items_list_navigation" => __( "Navegación de listado de Dimensiones", "prompt" ),
+	// 	"items_list" => __( "Lista de Dimensiones", "prompt" ),
+	// ];
 
-	$args = [
-		"label" => __( "Dimensiones", "prompt" ),
-		"labels" => $labels,
-		"public" => true,
-		"publicly_queryable" => true,
-		"hierarchical" => true,
-		"show_ui" => true,
-		"show_in_menu" => true,
-		"show_in_nav_menus" => true,
-		"query_var" => true,
-		"rewrite" => [ 'slug' => 'dimensiones', 'with_front' => true, ],
-		"show_admin_column" => false,
-		"show_in_rest" => true,
-		"rest_base" => "dimensiones",
-		"rest_controller_class" => "WP_REST_Terms_Controller",
-		"show_in_quick_edit" => true,
-		];
+	// $args = [
+	// 	"label" => __( "Dimensiones", "prompt" ),
+	// 	"labels" => $labels,
+	// 	"public" => true,
+	// 	"publicly_queryable" => true,
+	// 	"hierarchical" => true,
+	// 	"show_ui" => true,
+	// 	"show_in_menu" => true,
+	// 	"show_in_nav_menus" => true,
+	// 	"query_var" => true,
+	// 	"rewrite" => [ 'slug' => 'dimensiones', 'with_front' => true, ],
+	// 	"show_admin_column" => false,
+	// 	"show_in_rest" => true,
+	// 	"rest_base" => "dimensiones",
+	// 	"rest_controller_class" => "WP_REST_Terms_Controller",
+	// 	"show_in_quick_edit" => true,
+	// 	];
 	//register_taxonomy( "dimensiones", [ "post", "page", "attachment", "work_in_progress", "situaciones", "texto_obra", "objetos", "personas", "hitos" ], $args );
 
 	/**
@@ -128,17 +128,17 @@ function cptui_register_my_taxes() {
 	 */
 
 	$labels = [
-		"name" => __( "Roles", "prompt" ),
-		"singular_name" => __( "Rol", "prompt" ),
-		"menu_name" => __( "Roles", "prompt" ),
-		"all_items" => __( "Todos los Roles", "prompt" ),
-		"edit_item" => __( "Editar Rol", "prompt" ),
-		"view_item" => __( "Ver Rol", "prompt" ),
-		"update_item" => __( "Actualizar el nombre del Rol", "prompt" ),
-		"add_new_item" => __( "Añadir nuevo Rol", "prompt" ),
-		"new_item_name" => __( "Nombre del nuevo Rol", "prompt" ),
-		"parent_item" => __( "Rol superior", "prompt" ),
-		"parent_item_colon" => __( "Rol superior:", "prompt" ),
+		"name" => __( "Roles Teatrales", "prompt" ),
+		"singular_name" => __( "Rol teatral", "prompt" ),
+		"menu_name" => __( "Roles Teatrales", "prompt" ),
+		"all_items" => __( "Todos los Roles Teatrales", "prompt" ),
+		"edit_item" => __( "Editar Rol Teatral", "prompt" ),
+		"view_item" => __( "Ver Rol Teatral", "prompt" ),
+		"update_item" => __( "Actualizar el nombre del Rol Teatral", "prompt" ),
+		"add_new_item" => __( "Añadir nuevo Rol Teatral", "prompt" ),
+		"new_item_name" => __( "Nombre del nuevo Rol Teatral", "prompt" ),
+		"parent_item" => __( "Rol Teatral superior", "prompt" ),
+		"parent_item_colon" => __( "Rol Teatral superior:", "prompt" ),
 		"search_items" => __( "Buscar Roles", "prompt" ),
 		"popular_items" => __( "Roles populares", "prompt" ),
 		"separate_items_with_commas" => __( "Separar roles con comas", "prompt" ),
@@ -151,7 +151,7 @@ function cptui_register_my_taxes() {
 	];
 
 	$args = [
-		"label" => __( "Roles", "prompt" ),
+		"label" => __( "Roles Teatrales", "prompt" ),
 		"labels" => $labels,
 		"public" => true,
 		"publicly_queryable" => true,
@@ -172,9 +172,9 @@ function cptui_register_my_taxes() {
 	// Register Custom Taxonomy
 
 	$labels = array(
-		'name'                       => _x( 'Desarrollo Obras', 'Taxonomy General Name', 'prompt' ),
-		'singular_name'              => _x( 'Desarrollo Obras', 'Taxonomy Singular Name', 'prompt' ),
-		'menu_name'                  => __( 'Desarrollo obras', 'prompt' ),
+		'name'                       => _x( 'Desarrollo Obra', 'Taxonomy General Name', 'prompt' ),
+		'singular_name'              => _x( 'Desarrollo Obra', 'Taxonomy Singular Name', 'prompt' ),
+		'menu_name'                  => __( 'Desarrollo obra', 'prompt' ),
 		'all_items'                  => __( 'Todas las etapas', 'prompt' ),
 		'parent_item'                => __( 'Parent Item', 'prompt' ),
 		'parent_item_colon'          => __( 'Parent Item:', 'prompt' ),
@@ -205,10 +205,10 @@ function cptui_register_my_taxes() {
 	register_taxonomy( 'desarrollo', array( 'post', 'attachment', ' personas' ), $args );
 
 	$labels = array(
-		'name'                       => _x( 'Espacial Obras', 'Taxonomy General Name', 'prompt' ),
-		'singular_name'              => _x( 'Espacial Obras', 'Taxonomy Singular Name', 'prompt' ),
+		'name'                       => _x( 'Espacial', 'Taxonomy General Name', 'prompt' ),
+		'singular_name'              => _x( 'Espacial', 'Taxonomy Singular Name', 'prompt' ),
 		'menu_name'                  => __( 'Espacial', 'prompt' ),
-		'all_items'                  => __( 'Todos los Espacios', 'prompt' ),
+		'all_items'                  => __( 'Todos los Espacial', 'prompt' ),
 		'parent_item'                => __( 'Parent Item', 'prompt' ),
 		'parent_item_colon'          => __( 'Parent Item:', 'prompt' ),
 		'new_item_name'              => __( 'Nuevo Espacio', 'prompt' ),
@@ -240,22 +240,22 @@ function cptui_register_my_taxes() {
 	// Register Custom Taxonomy
 
 	$labels = array(
-		'name'                       => _x( 'Identidad / Educación', 'Taxonomy General Name', 'prompt' ),
-		'singular_name'              => _x( 'Identidad / Educación', 'Taxonomy Singular Name', 'prompt' ),
-		'menu_name'                  => __( 'Identidad - Educación', 'prompt' ),
-		'all_items'                  => __( 'Todas las Identidades - Educación', 'prompt' ),
+		'name'                       => _x( 'Identidad & Educación', 'Taxonomy General Name', 'prompt' ),
+		'singular_name'              => _x( 'Identidad & Educación', 'Taxonomy Singular Name', 'prompt' ),
+		'menu_name'                  => __( 'Identidad & Educación', 'prompt' ),
+		'all_items'                  => __( 'Todas las Identidad & Educación', 'prompt' ),
 		'parent_item'                => __( 'Parent Item', 'prompt' ),
 		'parent_item_colon'          => __( 'Parent Item:', 'prompt' ),
-		'new_item_name'              => __( 'Nueva Identidad / Educación', 'prompt' ),
-		'add_new_item'               => __( 'Añadir nueva Identidad / Educación', 'prompt' ),
-		'edit_item'                  => __( 'Editar Identidad / Educación', 'prompt' ),
-		'update_item'                => __( 'Actualizar Identidad / Educación', 'prompt' ),
-		'view_item'                  => __( 'Ver Identidad / Educación', 'prompt' ),
+		'new_item_name'              => __( 'Nueva Identidad & Educación', 'prompt' ),
+		'add_new_item'               => __( 'Añadir nueva Identidad & Educación', 'prompt' ),
+		'edit_item'                  => __( 'Editar Identidad & Educación', 'prompt' ),
+		'update_item'                => __( 'Actualizar Identidad & Educación', 'prompt' ),
+		'view_item'                  => __( 'Ver Identidad & Educación', 'prompt' ),
 		'separate_items_with_commas' => __( 'Separate items with commas', 'prompt' ),
 		'add_or_remove_items'        => __( 'Add or remove items', 'prompt' ),
 		'choose_from_most_used'      => __( 'Choose from the most used', 'prompt' ),
 		'popular_items'              => __( 'Popular Items', 'prompt' ),
-		'search_items'               => __( 'Buscar Identidad / Educación', 'prompt' ),
+		'search_items'               => __( 'Buscar Identidad & Educación', 'prompt' ),
 		'not_found'                  => __( 'Not Found', 'prompt' ),
 		'no_terms'                   => __( 'No items', 'prompt' ),
 		'items_list'                 => __( 'Items list', 'prompt' ),
