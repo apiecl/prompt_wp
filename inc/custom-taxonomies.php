@@ -36,30 +36,30 @@ function cptui_register_my_taxes() {
 	 */
 
 	$labels = [
-		"name" => __( "Áreas", "prompt" ),
-		"singular_name" => __( "Área", "prompt" ),
-		"menu_name" => __( "Áreas", "prompt" ),
-		"all_items" => __( "Todas las Áreas", "prompt" ),
-		"edit_item" => __( "Editar Área", "prompt" ),
-		"view_item" => __( "Ver Área", "prompt" ),
-		"update_item" => __( "Actualizar Área", "prompt" ),
-		"add_new_item" => __( "Añadir nueva Área", "prompt" ),
-		"new_item_name" => __( "Nombre de la nueva Área", "prompt" ),
-		"parent_item" => __( "Área superior", "prompt" ),
-		"parent_item_colon" => __( "Área superior:", "prompt" ),
-		"search_items" => __( "Buscar Áreas", "prompt" ),
-		"popular_items" => __( "Áreas populares", "prompt" ),
-		"separate_items_with_commas" => __( "Separar Áreas con comas", "prompt" ),
-		"add_or_remove_items" => __( "Añadir o eliminar Áreas", "prompt" ),
-		"choose_from_most_used" => __( "Elegir Área más usada", "prompt" ),
-		"not_found" => __( "No se encontraron Áreas", "prompt" ),
-		"no_terms" => __( "No hay Áreas", "prompt" ),
-		"items_list_navigation" => __( "Navegación de listado de Áreas", "prompt" ),
-		"items_list" => __( "Lista de Áreas", "prompt" ),
+		"name" => __( "Áreas Teatrales", "prompt" ),
+		"singular_name" => __( "Área teatral", "prompt" ),
+		"menu_name" => __( "Áreas Teatrales", "prompt" ),
+		"all_items" => __( "Todas las Áreas Teatrales", "prompt" ),
+		"edit_item" => __( "Editar Área Teatral", "prompt" ),
+		"view_item" => __( "Ver Área Teatral", "prompt" ),
+		"update_item" => __( "Actualizar Área Teatral", "prompt" ),
+		"add_new_item" => __( "Añadir nueva Área Teatral", "prompt" ),
+		"new_item_name" => __( "Nombre de la nueva Área Teatral", "prompt" ),
+		"parent_item" => __( "Área Teatral superior", "prompt" ),
+		"parent_item_colon" => __( "Área Teatral superior:", "prompt" ),
+		"search_items" => __( "Buscar Áreas Teatrales", "prompt" ),
+		"popular_items" => __( "Áreas Teatrales populares", "prompt" ),
+		"separate_items_with_commas" => __( "Separar Áreas Teatrales con comas", "prompt" ),
+		"add_or_remove_items" => __( "Añadir o eliminar Áreas Teatrales", "prompt" ),
+		"choose_from_most_used" => __( "Elegir Área Teatral más usada", "prompt" ),
+		"not_found" => __( "No se encontraron Áreas Teatrales", "prompt" ),
+		"no_terms" => __( "No hay Áreas Teatrales", "prompt" ),
+		"items_list_navigation" => __( "Navegación de listado de Áreas Teatrales", "prompt" ),
+		"items_list" => __( "Lista de Áreas Teatrales", "prompt" ),
 	];
 
 	$args = [
-		"label" => __( "Áreas", "prompt" ),
+		"label" => __( "Áreas Teatrales", "prompt" ),
 		"labels" => $labels,
 		"public" => true,
 		"publicly_queryable" => true,
@@ -121,7 +121,7 @@ function cptui_register_my_taxes() {
 		"rest_controller_class" => "WP_REST_Terms_Controller",
 		"show_in_quick_edit" => true,
 		];
-	register_taxonomy( "dimensiones", [ "post", "page", "attachment", "work_in_progress", "situaciones", "texto_obra", "objetos", "personas", "hitos" ], $args );
+	//register_taxonomy( "dimensiones", [ "post", "page", "attachment", "work_in_progress", "situaciones", "texto_obra", "objetos", "personas", "hitos" ], $args );
 
 	/**
 	 * Taxonomy: Roles.
