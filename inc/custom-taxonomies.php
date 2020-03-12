@@ -81,47 +81,47 @@ function cptui_register_my_taxes() {
 	 * Taxonomy: Dimensiones.
 	 */
 
-	// $labels = [
-	// 	"name" => __( "Dimensiones", "prompt" ),
-	// 	"singular_name" => __( "Dimensión", "prompt" ),
-	// 	"menu_name" => __( "Dimensiones", "prompt" ),
-	// 	"all_items" => __( "Todas las Dimensiones", "prompt" ),
-	// 	"edit_item" => __( "Editar Dimensión", "prompt" ),
-	// 	"view_item" => __( "Ver Dimensión", "prompt" ),
-	// 	"update_item" => __( "Actualizar el nombre de la Dimensión", "prompt" ),
-	// 	"add_new_item" => __( "Añadir nueva Dimensión", "prompt" ),
-	// 	"new_item_name" => __( "Nombre de la nueva Dimensión", "prompt" ),
-	// 	"parent_item" => __( "Dimensión superior", "prompt" ),
-	// 	"parent_item_colon" => __( "Dimensión superior:", "prompt" ),
-	// 	"search_items" => __( "Buscar Dimensiones", "prompt" ),
-	// 	"popular_items" => __( "Dimensiones populares", "prompt" ),
-	// 	"separate_items_with_commas" => __( "Separar Dimensiones con comas", "prompt" ),
-	// 	"add_or_remove_items" => __( "Añadir o quitar Dimensiones", "prompt" ),
-	// 	"choose_from_most_used" => __( "Elegir entre las Dimensiones más usadas", "prompt" ),
-	// 	"not_found" => __( "No se encontraron Dimensiones", "prompt" ),
-	// 	"no_terms" => __( "No hay Dimensiones", "prompt" ),
-	// 	"items_list_navigation" => __( "Navegación de listado de Dimensiones", "prompt" ),
-	// 	"items_list" => __( "Lista de Dimensiones", "prompt" ),
-	// ];
+	$labels = [
+		"name" => __( "Dimensiones", "prompt" ),
+		"singular_name" => __( "Dimensión", "prompt" ),
+		"menu_name" => __( "Dimensiones", "prompt" ),
+		"all_items" => __( "Todas las Dimensiones", "prompt" ),
+		"edit_item" => __( "Editar Dimensión", "prompt" ),
+		"view_item" => __( "Ver Dimensión", "prompt" ),
+		"update_item" => __( "Actualizar el nombre de la Dimensión", "prompt" ),
+		"add_new_item" => __( "Añadir nueva Dimensión", "prompt" ),
+		"new_item_name" => __( "Nombre de la nueva Dimensión", "prompt" ),
+		"parent_item" => __( "Dimensión superior", "prompt" ),
+		"parent_item_colon" => __( "Dimensión superior:", "prompt" ),
+		"search_items" => __( "Buscar Dimensiones", "prompt" ),
+		"popular_items" => __( "Dimensiones populares", "prompt" ),
+		"separate_items_with_commas" => __( "Separar Dimensiones con comas", "prompt" ),
+		"add_or_remove_items" => __( "Añadir o quitar Dimensiones", "prompt" ),
+		"choose_from_most_used" => __( "Elegir entre las Dimensiones más usadas", "prompt" ),
+		"not_found" => __( "No se encontraron Dimensiones", "prompt" ),
+		"no_terms" => __( "No hay Dimensiones", "prompt" ),
+		"items_list_navigation" => __( "Navegación de listado de Dimensiones", "prompt" ),
+		"items_list" => __( "Lista de Dimensiones", "prompt" ),
+	];
 
-	// $args = [
-	// 	"label" => __( "Dimensiones", "prompt" ),
-	// 	"labels" => $labels,
-	// 	"public" => true,
-	// 	"publicly_queryable" => true,
-	// 	"hierarchical" => true,
-	// 	"show_ui" => true,
-	// 	"show_in_menu" => true,
-	// 	"show_in_nav_menus" => true,
-	// 	"query_var" => true,
-	// 	"rewrite" => [ 'slug' => 'dimensiones', 'with_front' => true, ],
-	// 	"show_admin_column" => false,
-	// 	"show_in_rest" => true,
-	// 	"rest_base" => "dimensiones",
-	// 	"rest_controller_class" => "WP_REST_Terms_Controller",
-	// 	"show_in_quick_edit" => true,
-	// 	];
-	//register_taxonomy( "dimensiones", [ "post", "page", "attachment", "work_in_progress", "situaciones", "texto_obra", "objetos", "personas", "hitos" ], $args );
+	$args = [
+		"label" => __( "Dimensiones", "prompt" ),
+		"labels" => $labels,
+		"public" => true,
+		"publicly_queryable" => true,
+		"hierarchical" => true,
+		"show_ui" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"query_var" => true,
+		"rewrite" => [ 'slug' => 'dimensiones', 'with_front' => true, ],
+		"show_admin_column" => false,
+		"show_in_rest" => true,
+		"rest_base" => "dimensiones",
+		"rest_controller_class" => "WP_REST_Terms_Controller",
+		"show_in_quick_edit" => true,
+		];
+	register_taxonomy( "dimensiones", [ "post", "page", "attachment", "work_in_progress", "situaciones", "texto_obra", "objetos", "personas", "hitos" ], $args );
 
 	/**
 	 * Taxonomy: Roles.
