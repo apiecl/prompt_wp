@@ -3,6 +3,8 @@ jQuery(document).ready(function($) {
 
 	var textContainer = $('.texto-dramatico');
 	var $grid = $('body .bit-gallery').masonry();
+	var mediaid = null;
+	var type = null;
 
 	$('.trigger-media').on('click', function(event) {
 		event.preventDefault();
@@ -67,22 +69,49 @@ jQuery(document).ready(function($) {
 		}
 	});
 
+	$('body').on('click', '.media-item', function(e) {
+		mediaid = $(this).attr('data-mediaid');
+		type = $(this).attr('data-type');
+	})
+
+	$('#modal-media-text').on('shown.bs.modal', function(e) {
+		$.ajax({
+			type: "post",
+			url: prompt.ajaxurl,
+			data: {
+				action: "bit_ajax_get_media",
+				mediaid: mediaid,
+				type: type
+			},
+			error: function( response ) {
+				console.log(response);
+			},
+			success: function( response ) {
+				$('#modal-media-text .modal-body').empty().append(response);
+				if(mediaitem) {
+					var itemInfo = $.parseJSON(mediaitem);
+					$("#modal-media-text .modal-header .modal-title").empty().append(itemInfo.post_title);
+					}
+			}
+		})
+	});
+
 	// $grid.imagesLoaded().progress(function() {
 	// 	$grid.masonry('layout');
 	// });
 
 	function disableMedia( target ) {
+		//$('#' + target).empty();
 		console.log(target);
 	}
 
 	function enableMedia( media, target ) {
 		var carouselID = '#mediacarousel-' + target;
-		console.log(carouselID);
 		$.ajax({
 			type: "post",
 			url: prompt.ajaxurl,
 			data: {
-				action: "bit_render_mediazone",
+				action: "bit_get_mediazone",
 				params: media,
 				id: target
 			},
@@ -90,22 +119,13 @@ jQuery(document).ready(function($) {
 				console.log(response);
 			},
 			success:function(response) {
-				console.log(response);
-				$('#' + target).append(response);
-				var slider = tns({
-					container: carouselID,
-					items: 1,
-					nav: true,
-					navPosition: 'bottom',
-					controlsText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>' ],
-					center: true
-				});
+				console.log(target);
+				$('#' + target).empty().append(response);
 			}
 		});
 	}
 
 	function getMedia( playid, type, target ) {
-		console.log(type);
 		if(!$(target).hasClass('contentloaded')) {
 			$.ajax({
 				type: "post",

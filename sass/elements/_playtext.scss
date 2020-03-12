@@ -297,3 +297,91 @@ a.document-download-button {
 .custom-control .custom-control-label {
 	padding-top: 3px;
 }
+
+.mediaitems-gallery {
+	display: flex;
+	align-items: flex-start;
+	justify-content: left;
+	flex-wrap: wrap;
+	margin: 32px 0;
+}
+
+.media-item {
+	text-align: center;
+	display: block;
+	position: relative;
+	padding: 32px;
+	border: 1px solid #ccc;
+	margin: 3px;
+	width: 200px;
+	height: 140px;
+	background-color: white;
+	transition: all 0.1s linear;
+	cursor: pointer;
+	
+	&:hover {
+		transform: scale3d(1.1, 1.1, 1.1);
+		z-index: 10;
+		box-shadow: 0 0 6px #555;
+	}
+
+	.media-item-text {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		background-color: #333;
+		padding: 6px;
+		text-align: right;
+		color: white;
+		font-size: 12px;
+		text-transform: uppercase;
+		z-index: 2;
+	}
+
+	span.mediaicon {
+		font-size: 48px;
+		position: absolute;
+		width: 198px;
+		text-align: center;
+		left: 0;
+		top: 30px;
+	}
+}
+
+.mediazone-title {
+	margin: 0;
+    font-size: 12px;
+    text-align: right;
+    margin-top: 0;
+    border-width: 0 1px 1px 1px;
+    border-style: solid;
+    border-color: #333;
+    padding: 5px;
+    font-weight: normal;
+    text-transform: uppercase;
+    display: inline-block;
+    position: absolute;
+    top: -44px;
+    right: 0;
+}
+
+#modal-media-text {
+	.modal-title {
+		font-size: 32px;
+		width: 100%;
+		text-align: center;
+		margin: 0;
+	}
+	.modal-body {
+		text-align: center;
+		img, video {
+			max-width: 100%;
+			height: auto;
+			margin: 12px auto;
+		}
+		.wp-video {
+			text-align: center;
+			margin: auto;
+		}
+	}
+}

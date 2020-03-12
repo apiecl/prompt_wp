@@ -10,7 +10,7 @@ $playtext = bit_get_play($term->term_id);
 			<div class="info-texto">
 				<p>Aquí puedes leer todo el texto de la obra. Los párrafos con el ícono <i class="fas fa-images"></i> tienen fotos, videos, musica o documentos asociados.</p>
 			</div>
-</div>
+		</div>
 	</div>
 	
 
@@ -68,11 +68,29 @@ $playtext = bit_get_play($term->term_id);
 
 		</div>
 		<div class="row full-row media-zone" id="<?php echo $mediazoneid;?>">
-			<div class="col-md-12">
-				<!-- ajax loaded content-->
-			</div>
+			<!-- ajax loaded content-->
 		</div>	
 		<?php
 	}
 	?>
+
+	<div class="modal fade modal-media-text" tabindex="-1" role="dialog" id="modal-media-text" aria-hidden="true">
+		<div class="modal-dialog modal-xl" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title"><!-- Title here --></h1>
+					<span type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<i class="fas fa-times"></i>
+					</span>
+				</div>
+				<div class="modal-body">
+					<!-- Content here -->
+				</div>
+       	<div class="modal-footer">
+        	<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+    	</div>
+			</div>
+		</div>
+	</div>
+
 </div>
