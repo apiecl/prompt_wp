@@ -31,11 +31,10 @@ jQuery(document).ready(function($) {
 			window.timeline = new TL.Timeline('timeline-embed', timeline_events, timeline_options);
 		} else if($(this).attr('data-function') == 'materiales') {
 			//activate first tab on materiales
-			var playId = $('#materialesTabs li a.active').attr('data-play-id');
-			var tabAction = $('#materialesTabs li a.active').attr('data-getType');
-			var target = $('#materialesTabs li a.active').attr('href');
+			var playId = $(this).attr('data-play-id');
+			var target = '#todos';
 
-			getMedia(playId, tabAction, target);
+			enableAllMedia(playId, target);
 
 		} else if($(this).attr('data-function') == 'getMedia') {
 			//activate render contents
@@ -45,6 +44,12 @@ jQuery(document).ready(function($) {
 
 			getMedia(playId, tabAction, target);
 			$grid.masonry('layout');
+		} else if($(this).attr('data-function') == 'enableAllMedia') {
+
+			var playId = $(this).attr('data-play-id');
+			var target = $(this).attr('href');
+
+			enableAllMedia(playId, target);
 		}
 	});
 
@@ -74,7 +79,8 @@ jQuery(document).ready(function($) {
 		type = $(this).attr('data-type');
 	})
 
-	$('#modal-media-text').on('shown.bs.modal', function(e) {
+	$('.modal-media-text').on('shown.bs.modal', function(e) {
+		var thisModal = $(this).attr('id');
 		$.ajax({
 			type: "post",
 			url: prompt.ajaxurl,
@@ -87,10 +93,12 @@ jQuery(document).ready(function($) {
 				console.log(response);
 			},
 			success: function( response ) {
-				$('#modal-media-text .modal-body').empty().append(response);
+				$( '#' + thisModal + ' .modal-body').empty().append(response);
+				
 				if(mediaitem) {
 					var itemInfo = $.parseJSON(mediaitem);
-					$("#modal-media-text .modal-header .modal-title").empty().append(itemInfo.post_title);
+					console.log(itemInfo);
+					$( '#' + thisModal + " .modal-header .modal-title").empty().append(itemInfo.post_title);
 					}
 			}
 		})
@@ -105,22 +113,40 @@ jQuery(document).ready(function($) {
 		console.log(target);
 	}
 
-	function enableMedia( media, target ) {
-		var carouselID = '#mediacarousel-' + target;
+	function enableMedia( mediaids, targetid ) {
 		$.ajax({
 			type: "post",
 			url: prompt.ajaxurl,
 			data: {
 				action: "bit_get_mediazone",
-				params: media,
-				id: target
+				params: mediaids,
+				id: targetid
 			},
 			error: function( response ) {
 				console.log(response);
 			},
 			success:function(response) {
+				console.log(targetid);
+				$('#' + targetid).empty().append(response);
+			}
+		});
+	}
+
+	function enableAllMedia( playid, target ) {
+		$.ajax({
+			type: "post",
+			url: prompt.ajaxurl,
+			data: {
+				action: "bit_get_all_mediazone",
+				playid: playid,
+				all: true
+			},
+			error: function( response ) {
+				console.log('error', response);
+			},
+			success:function(response) {
 				console.log(target);
-				$('#' + target).empty().append(response);
+				$(target).empty().append(response);
 			}
 		});
 	}
