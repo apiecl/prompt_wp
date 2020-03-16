@@ -37,7 +37,12 @@ $letracolor: #A1DB00;
 .media-item-wrapper {
 	.wp-video {
 		margin: 0 auto;
+		max-width: 100%;
 	}
+}
+
+.wp-video {
+	max-width: 100%;
 }
 
 a.trigger-media {
@@ -345,6 +350,16 @@ a.document-download-button {
 		text-align: center;
 		left: 0;
 		top: 30px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.media-item {
+		width: 48%;
+		padding: 1%;
+		span.mediaicon {
+			max-width: 100%;
+		}
 	}
 }
 

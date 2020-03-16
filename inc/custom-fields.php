@@ -318,3 +318,44 @@ function prompt_roles_fields( array $meta_boxes ) {
 
 add_filter('cmb2-taxonomy_meta_boxes', 'prompt_roles_fields');
 
+
+add_action( 'cmb2_init', 'prompt_teatrouc_add_metabox' );
+
+function prompt_teatrouc_add_metabox() {
+
+	$prefix = '_prompt_';
+
+	$cmb = new_cmb2_box( array(
+		'id'           => $prefix . 'teatrouc',
+		'title'        => __( 'Datos', 'prompt' ),
+		'object_types' => array( 'page' ),
+		'show_on'	   => array('key' => 'page_template', 'value' => 'page-template-teatro.php'),
+		'context'      => 'normal',
+		'priority'     => 'high',
+	) );
+
+	$cmb->add_field( array(
+		'name' => __( 'Fundación', 'prompt' ),
+		'id' => $prefix . 'fundacion',
+		'type' => 'text',
+	) );
+
+	$cmb->add_field( array(
+		'name' => __( 'Primera obra', 'prompt' ),
+		'id' => $prefix . 'primera_obra',
+		'type' => 'text',
+	) );
+
+	$cmb->add_field( array(
+		'name' => __( 'Primer director', 'prompt' ),
+		'id' => $prefix . 'primer_director',
+		'type' => 'text',
+	) );
+
+	$cmb->add_field( array(
+		'name' => __( 'Locaciones del Teatro', 'prompt' ),
+		'id' => $prefix . 'locaciones',
+		'type' => 'text',
+	) );
+
+}

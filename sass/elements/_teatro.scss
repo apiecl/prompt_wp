@@ -1,0 +1,35 @@
+
+.page-template-page-template-teatro {
+	.single-obra.container > .row > .col-md-12 {
+		position: relative;
+	}
+
+	.obra-info-image {
+		position: relative;
+		height: 360px;
+		overflow: hidden;
+		img {
+			position: absolute;
+			z-index: 1;
+			width: 100%;
+			height: auto;
+			left: 0;
+			bottom: 0;
+		}
+	}
+
+	.datos-teatro {
+		position: absolute;
+		text-align: left;
+		z-index: 2;
+		left: 0;
+		bottom: 0;
+		color: white;
+		padding: 12px 24px;
+		background-color: rgba(0, 0, 0, 0.5);
+
+			dd {
+				margin: 0;
+			}
+	}
+}

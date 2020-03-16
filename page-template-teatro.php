@@ -20,15 +20,44 @@ if ( have_posts() ) :
 			<div class="row">
 				<div class="col-md-12">
 					<h1 class="play-title"><?php the_title();?></h1>
-					<?php if(has_post_thumbnail()):
+					
+					<div class="obra-info-image">
+						<?php if(has_post_thumbnail()):
 								the_post_thumbnail('full');
 						endif;?>
+						
+						<div class="datos-teatro">
+							<?php 
+								$fundacion = get_post_meta($post->ID, '_prompt_fundacion', true);
+								$primera_obra = get_post_meta($post->ID, '_prompt_primera_obra', true);
+								$primer_director = get_post_meta($post->ID, '_prompt_primer_director', true);
+								$locaciones = get_post_meta($post->ID, '_prompt_locaciones', true);
+							?>
+
+							<dl>
+								<dt>Fundación:</dt>
+								<dd><?php echo $fundacion;?></dd>
+							
+								<dt>Primera obra:</dt>
+								<dd><?php echo $primera_obra;?></dd>
+							
+								<dt>Primer director:</dt>
+								<dd><?php echo $primer_director;?></dd>
+
+								<dt>Locaciones del teatro:</dt>
+								<dd><?php echo $locaciones;?></dd>
+							</dl>
+
+						</div>
+
+					</div>
+					
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
 					<nav class="nav nav-pills nav-justified" id="obraTab" role="tablist">
-						<a aria-selected="true" id="info-tab" data-toggle="tab" href="#info" class="nav-item nav-link active">Ficha</a>
+						<a aria-selected="true" id="info-tab" data-toggle="tab" href="#info" class="nav-item nav-link active">El teatro</a>
 						<a aria-selected="false" id="timeline-tab" data-toggle="tab" href="#timeline" data-function="timeline" class="nav-item nav-link">Línea de Tiempo</a>
 						<a aria-selected="false" id="materiales-tab" data-toggle="tab" href="#materiales" data-function="materiales" class="nav-item nav-link">Materiales</a>
 					</nav>
