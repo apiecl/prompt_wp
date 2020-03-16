@@ -59,7 +59,7 @@ if ( have_posts() ) :
 					<nav class="nav nav-pills nav-justified" id="obraTab" role="tablist">
 						<a aria-selected="true" id="info-tab" data-toggle="tab" href="#info" class="nav-item nav-link active">El teatro</a>
 						<a aria-selected="false" id="timeline-tab" data-toggle="tab" href="#timeline" data-function="timeline" class="nav-item nav-link">Línea de Tiempo</a>
-						<a aria-selected="false" id="materiales-tab" data-toggle="tab" href="#materiales" data-function="materiales" class="nav-item nav-link">Materiales</a>
+						<a aria-selected="false" id="materiales-tab" data-toggle="tab" href="#materiales" data-function="materialesTeatro" data-contentTarget="#materialesTabsContent" data-page-id="<?php echo $post->ID;?>" class="nav-item nav-link">Materiales</a>
 					</nav>
 
 					<div class="tab-content" id="obraTabContent">

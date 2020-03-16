@@ -50,6 +50,10 @@ jQuery(document).ready(function($) {
 			var target = $(this).attr('href');
 
 			enableAllMedia(playId, target);
+		} else if($(this).attr('data-function') == 'materialesTeatro') {
+			var pageId = $(this).attr('data-page-id');
+			var target = $(this).attr('data-contentTarget');
+			enableMediaPage(pageId, target);
 		}
 	});
 
@@ -87,7 +91,8 @@ jQuery(document).ready(function($) {
 			data: {
 				action: "bit_ajax_get_media",
 				mediaid: mediaid,
-				type: type
+				type: type,
+				ispage: $(this).attr('data-ispage')
 			},
 			error: function( response ) {
 				console.log(response);
@@ -146,6 +151,24 @@ jQuery(document).ready(function($) {
 			},
 			success:function(response) {
 				console.log(target);
+				$(target).empty().append(response);
+			}
+		});
+	}
+
+	function enableMediaPage( pageid, target) {
+		console.log('calling media page');
+		$.ajax({
+			type: "post",
+			url: prompt.ajaxurl,
+			data: {
+				action: "bit_get_mediapage",
+				pageid: pageid
+			},
+			error: function( response ) {
+				console.log( 'error', response);
+			},
+			success: function( response ) {
 				$(target).empty().append(response);
 			}
 		});
