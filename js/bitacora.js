@@ -84,6 +84,7 @@ jQuery(document).ready(function($) {
 	})
 
 	$('.modal-media-text').on('shown.bs.modal', function(e) {
+		console.log(mediaid);
 		var thisModal = $(this).attr('id');
 		$.ajax({
 			type: "post",
@@ -99,8 +100,7 @@ jQuery(document).ready(function($) {
 			},
 			success: function( response ) {
 				$( '#' + thisModal + ' .modal-body').empty().append(response);
-				
-				if(mediaitem) {
+				if(mediaitem !== null) {
 					var itemInfo = $.parseJSON(mediaitem);
 					console.log(itemInfo);
 					$( '#' + thisModal + " .modal-header .modal-title").empty().append(itemInfo.post_title);
