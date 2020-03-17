@@ -109,6 +109,21 @@ jQuery(document).ready(function($) {
 		})
 	});
 
+	$('body').on('click', '.btn-taxfilter', function(e) {
+		console.log('show taxfilter');
+		var curtax = $(this).attr('data-tax');
+		var availableTerms = [];
+		availableTerms.push($('.media-item').attr('data-' + curtax));
+		availableTerms = unique(availableTerms);
+
+		for(var i=0; i < availableTerms.length; i++) {
+			var curterms = prompt.taxinfo[curtax][availableTerms[i]];
+			$('body .terms-filter-zone').empty().append('<button class="btn btn-term-filter" data-term-filter="' + curterms.slug + '">' + curterms.name + '</button>');
+		};
+
+		
+	});
+
 	// $grid.imagesLoaded().progress(function() {
 	// 	$grid.masonry('layout');
 	// });
@@ -170,6 +185,10 @@ jQuery(document).ready(function($) {
 			},
 			success: function( response ) {
 				$(target).empty().append(response);
+				$grid = $('.mediaitems-gallery').isotope({
+							itemSelector: '.media-item',
+							layoutMode: 'fitRows'
+						});
 			}
 		});
 	}
@@ -213,6 +232,12 @@ jQuery(document).ready(function($) {
 		}
 
 	node.addEventListener('animationend', handleAnimationEnd)
-}
+	}
+
+	function unique(array){
+  		return array.filter(function(el, index, arr) {
+      		return index == arr.indexOf(el);
+  		});
+	}
 
 });
