@@ -118,9 +118,33 @@ jQuery(document).ready(function($) {
 
 		for(var i=0; i < availableTerms.length; i++) {
 			var curterms = prompt.taxinfo[curtax][availableTerms[i]];
-			$('body .terms-filter-zone').empty().append('<button class="btn btn-term-filter" data-term-filter="' + curterms.slug + '">' + curterms.name + '</button>');
+			$('body .terms-filter-zone').empty().append('<button class="btn btn-term-filter" data-tax="' + curtax + '" data-term-filter="' + curterms.slug + '">' + curterms.name + '</button>');
 		};
 
+		
+	});
+
+	$('body').on('click', '.btn-term-filter', function(e) {
+		//console.log('click filter');
+		if($(this).hasClass('active')) {
+			
+			$grid.isotope({
+				filter: ''
+			});
+
+			$(this).removeClass('active');	
+
+		} else {
+
+			var curtax = $(this).attr('data-tax');
+			var curterm = $(this).attr('data-term-filter');
+			console.log(curtax, curterm);
+			$grid.isotope({
+				filter: '[data-' + curtax + '="' + curterm + '"]'
+			});
+			$(this).addClass('active');
+			
+		}
 		
 	});
 

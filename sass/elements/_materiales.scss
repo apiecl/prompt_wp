@@ -31,3 +31,26 @@ ul#materialesTabs {
 		}
 	}
 }
+
+div.filtertax {
+	button.btn {
+		border: 1px solid #333;
+		border-radius: 0;
+		margin-right: 6px;
+		border-style: dotted;
+	
+		&:hover {
+			border-style: solid;
+		}
+	}	
+}
+
+.terms-filter-zone {
+	margin: 24px 0;
+
+	button.btn {
+		margin-right: 6px;
+		border: 1px solid #333;
+		border-style: dotted;
+	}
+}
