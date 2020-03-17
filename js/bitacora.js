@@ -113,12 +113,23 @@ jQuery(document).ready(function($) {
 		console.log('show taxfilter');
 		var curtax = $(this).attr('data-tax');
 		var availableTerms = [];
-		availableTerms.push($('.media-item').attr('data-' + curtax));
+		$('.media-item[data-' + curtax + ']').each(function(idx) {
+			var parseTerms = $(this).attr('data-' + curtax);
+			var arrayTerms = parseTerms.split(",");
+			for(var i = 0; i < arrayTerms.length; i++) {
+				availableTerms.push(arrayTerms[i]);	
+			}
+		});
+
 		availableTerms = unique(availableTerms);
+		console.log(availableTerms);
+
+		$('body .terms-filter-zone').empty();
 
 		for(var i=0; i < availableTerms.length; i++) {
+			console.log(availableTerms[i]);
 			var curterms = prompt.taxinfo[curtax][availableTerms[i]];
-			$('body .terms-filter-zone').empty().append('<button class="btn btn-term-filter" data-tax="' + curtax + '" data-term-filter="' + curterms.slug + '">' + curterms.name + '</button>');
+			$('body .terms-filter-zone').append('<button class="btn btn-term-filter" data-tax="' + curtax + '" data-term-filter="' + curterms.slug + '">' + curterms.name + '</button>');
 		};
 
 		

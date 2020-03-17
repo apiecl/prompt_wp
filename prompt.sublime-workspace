@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"get_taxonomies",
+				"get_taxonomies\tWP Function"
+			],
+			[
+				"get_attached",
+				"get_attached_media\tWP Function"
+			],
+			[
+				"prim",
+				"primera_obra"
+			],
+			[
 				"plugin_dir",
 				"plugin_dir_url\tWP Function"
 			],
@@ -128,20 +140,55 @@
 	"buffers":
 	[
 		{
-			"file": "js/bitacora.js",
+			"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_admin.js",
 			"settings":
 			{
-				"buffer_size": 4488,
+				"buffer_size": 828,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "sass/elements/_playtext.scss",
+			"file": "js/bitacora.js",
 			"settings":
 			{
-				"buffer_size": 5883,
+				"buffer_size": 6885,
 				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/debug.log",
+			"settings":
+			{
+				"buffer_size": 2454507,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/admin-interface.php",
+			"settings":
+			{
+				"buffer_size": 4138,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_wp_functions.php",
+			"settings":
+			{
+				"buffer_size": 4799,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/pabloselin/.config/Local/run/router/nginx/logs/error.log",
+			"settings":
+			{
+				"buffer_size": 935997,
 				"line_ending": "Unix"
 			}
 		},
@@ -158,7 +205,134 @@
 			"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_extensions.php",
 			"settings":
 			{
-				"buffer_size": 9370,
+				"buffer_size": 11674,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sass/elements/_playtext.scss",
+			"settings":
+			{
+				"buffer_size": 6067,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sass/site/_taxonomy-obra.scss",
+			"settings":
+			{
+				"buffer_size": 1447,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "inc/custom-fields.php",
+			"settings":
+			{
+				"buffer_size": 8858,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "page-template-teatro.php",
+			"settings":
+			{
+				"buffer_size": 2683,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sass/elements/_materiales.scss",
+			"settings":
+			{
+				"buffer_size": 695,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "template-parts/materiales-obra.php",
+			"settings":
+			{
+				"buffer_size": 2766,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "template-parts/materiales-teatro.php",
+			"settings":
+			{
+				"buffer_size": 945,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/phploy.ini",
+			"settings":
+			{
+				"buffer_size": 590,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "phploy.ini",
+			"settings":
+			{
+				"buffer_size": 580,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/pabloselin/.gitignore",
+			"settings":
+			{
+				"buffer_size": 98,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "dev:\n    scheme: sftp\n    host: sftp.dc2.gpaas.net\n    port: 22\n    user: '1055981'\n    pass: 'V83K 8[_}5946gr'\n    check: true\n    path:\n        remote: /lamp0/web/vhosts/bitacorateatrouc.apie.cl/htdocs/wp-content/plugins/bit_extensions",
+			"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/dploy.yaml",
+			"file_size": 237,
+			"file_write_time": 132248668412725720,
+			"settings":
+			{
+				"buffer_size": 237,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "dploy.yaml",
+			"settings":
+			{
+				"buffer_size": 228,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sass/style.scss",
+			"settings":
+			{
+				"buffer_size": 5227,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sass/elements/_teatro.scss",
+			"settings":
+			{
+				"buffer_size": 602,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -173,58 +347,22 @@
 			}
 		},
 		{
-			"contents": "Searching 38 files for \"dimensiones\"\n\n/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/inc/custom-fields.php:\n  299  \t\t\t\t'type'\t=> 'taxonomy_select',\n  300  \t\t\t\t'id'\t=> $prefix . 'dimension',\n  301: \t\t\t\t'taxonomy'\t=> 'dimensiones'\n  302  \t\t\t),\n  303  \t\t\tarray(\n\n/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/inc/custom-taxonomies.php:\n   79  \n   80  \t/**\n   81: \t * Taxonomy: Dimensiones.\n   82  \t */\n   83  \n   84  \t// $labels = [\n   85: \t// \t\"name\" => __( \"Dimensiones\", \"prompt\" ),\n   86  \t// \t\"singular_name\" => __( \"Dimensión\", \"prompt\" ),\n   87: \t// \t\"menu_name\" => __( \"Dimensiones\", \"prompt\" ),\n   88: \t// \t\"all_items\" => __( \"Todas las Dimensiones\", \"prompt\" ),\n   89  \t// \t\"edit_item\" => __( \"Editar Dimensión\", \"prompt\" ),\n   90  \t// \t\"view_item\" => __( \"Ver Dimensión\", \"prompt\" ),\n   ..\n   94  \t// \t\"parent_item\" => __( \"Dimensión superior\", \"prompt\" ),\n   95  \t// \t\"parent_item_colon\" => __( \"Dimensión superior:\", \"prompt\" ),\n   96: \t// \t\"search_items\" => __( \"Buscar Dimensiones\", \"prompt\" ),\n   97: \t// \t\"popular_items\" => __( \"Dimensiones populares\", \"prompt\" ),\n   98: \t// \t\"separate_items_with_commas\" => __( \"Separar Dimensiones con comas\", \"prompt\" ),\n   99: \t// \t\"add_or_remove_items\" => __( \"Añadir o quitar Dimensiones\", \"prompt\" ),\n  100: \t// \t\"choose_from_most_used\" => __( \"Elegir entre las Dimensiones más usadas\", \"prompt\" ),\n  101: \t// \t\"not_found\" => __( \"No se encontraron Dimensiones\", \"prompt\" ),\n  102: \t// \t\"no_terms\" => __( \"No hay Dimensiones\", \"prompt\" ),\n  103: \t// \t\"items_list_navigation\" => __( \"Navegación de listado de Dimensiones\", \"prompt\" ),\n  104: \t// \t\"items_list\" => __( \"Lista de Dimensiones\", \"prompt\" ),\n  105  \t// ];\n  106  \n  107  \t// $args = [\n  108: \t// \t\"label\" => __( \"Dimensiones\", \"prompt\" ),\n  109  \t// \t\"labels\" => $labels,\n  110  \t// \t\"public\" => true,\n  ...\n  115  \t// \t\"show_in_nav_menus\" => true,\n  116  \t// \t\"query_var\" => true,\n  117: \t// \t\"rewrite\" => [ 'slug' => 'dimensiones', 'with_front' => true, ],\n  118  \t// \t\"show_admin_column\" => false,\n  119  \t// \t\"show_in_rest\" => true,\n  120: \t// \t\"rest_base\" => \"dimensiones\",\n  121  \t// \t\"rest_controller_class\" => \"WP_REST_Terms_Controller\",\n  122  \t// \t\"show_in_quick_edit\" => true,\n  123  \t// \t];\n  124: \t//register_taxonomy( \"dimensiones\", [ \"post\", \"page\", \"attachment\", \"work_in_progress\", \"situaciones\", \"texto_obra\", \"objetos\", \"personas\", \"hitos\" ], $args );\n  125  \n  126  \t/**\n\n18 matches across 2 files\n",
+			"file": "functions.php",
 			"settings":
 			{
-				"buffer_size": 2522,
-				"line_ending": "Unix",
-				"name": "Find Results",
-				"scratch": true
-			}
-		},
-		{
-			"file": "sass/style.scss",
-			"settings":
-			{
-				"buffer_size": 5055,
+				"buffer_size": 7755,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_db_functions.php",
+			"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_utils.php",
 			"settings":
 			{
-				"buffer_size": 3785,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/admin-interface.php",
-			"settings":
-			{
-				"buffer_size": 4005,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_admin.js",
-			"settings":
-			{
-				"buffer_size": 265,
+				"buffer_size": 2484,
 				"encoding": "UTF-8",
 				"line_ending": "Unix",
-				"name": "$(document).ready(function() {"
-			}
-		},
-		{
-			"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_wp_functions.php",
-			"settings":
-			{
-				"buffer_size": 2254,
-				"line_ending": "Unix"
+				"name": "<?php"
 			}
 		}
 	],
@@ -244,12 +382,24 @@
 				"Toggle Comment"
 			],
 			[
-				"com",
-				"Toggle Comment"
+				"ini",
+				"Set Syntax: INI"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"ww",
+				"Word Wrap: Toggle"
 			],
 			[
 				"rein",
 				"Indentation: Reindent Lines"
+			],
+			[
+				"com",
+				"Toggle Comment"
 			],
 			[
 				"rena",
@@ -312,10 +462,6 @@
 				"Rename File"
 			],
 			[
-				"ww",
-				"Word Wrap: Toggle"
-			],
-			[
 				"install package",
 				"Package Control: Install Package"
 			],
@@ -362,22 +508,28 @@
 	],
 	"file_history":
 	[
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/node_modules/bootstrap/scss/_buttons.scss",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/variables-site/_custom-bootstrap-variables.scss",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/template-parts/materiales-obra.php",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/functions.php",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_extensions.php",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_wp_functions.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/js/bitacora.js",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/elements/_playtext.scss",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/template-parts/texto-obra.php",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/inc/custom-taxonomies.php",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/style.scss",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_db_functions.php",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/admin-interface.php",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_admin.js",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/debug.log",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/site/_site.scss",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/template-parts/texto-obra.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/site/_taxonomy-obra.scss",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/elements/_playtext.scss",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_db_functions.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_admin.php",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_wp_functions.php",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_extensions.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/template-parts/ficha-obra.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/inc/custom-fields.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/tmp/materiales-layout-old.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/elements/_materiales.scss",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/style.scss",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/taxonomy-obra.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/page-template-teatro.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/home.php",
@@ -385,7 +537,6 @@
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/site/_timeline.scss",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/single.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/index.php",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/inc/custom-taxonomies.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bitacora_texto/.gitignore",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/.idea/.gitignore",
 		"/home/pabloselin/.gitignore",
@@ -395,7 +546,6 @@
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/variables-site/_typography.scss",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/template-parts/obras.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/template-parts/timeline-obra.php",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/functions.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-admin/includes/media.php",
 		"/home/pabloselin/Documents/WebDev/projects/bitacorateatrouc/notas_reunion_bitacora_3001.txt",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bitacora_texto/notas_reu_22.md",
@@ -405,7 +555,6 @@
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/elements/_elements.scss",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/navigation/_menus.scss",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/less/Variables.less",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/admin-interface.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/header.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/navigation/_navigation.scss",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/gulpfile.babel.js",
@@ -444,7 +593,7 @@
 	],
 	"find":
 	{
-		"height": 39.0
+		"height": 26.0
 	},
 	"find_in_files":
 	{
@@ -460,6 +609,16 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"border-radius",
+			"$media->ID",
+			"mediaid",
+			"'true'",
+			"all_mediazone",
+			"enableallmed",
+			"mediaitem",
+			"$composed_resource",
+			"get_mediazone",
+			"image_url",
 			"dimensiones",
 			"dimension",
 			"rol",
@@ -519,16 +678,1231 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 20,
 			"sheets":
 			[
 				{
 					"buffer": 0,
+					"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_admin.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 828,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								521,
+								521
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
 					"file": "js/bitacora.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4488,
+						"buffer_size": 6885,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4264,
+								4264
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1845.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/debug.log",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2454507,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 165903.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 40,
+					"type": "text"
+				},
+				{
+					"buffer": 0,
+					"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_admin.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 828,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								400,
+								400
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 42,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/admin-interface.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4138,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2857,
+								2857
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1271.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 33,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_wp_functions.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4799,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3052,
+								3052
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1270.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 22,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/home/pabloselin/.config/Local/run/router/nginx/logs/error.log",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 935997,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								930976,
+								930976
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 99967.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 30,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "template-parts/texto-obra.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3436,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 948.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 41,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_extensions.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11674,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3994,
+								3994
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1731.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "js/bitacora.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6885,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3555,
+								3555
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1501.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "sass/elements/_playtext.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6067,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5780,
+								5780
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/SCSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 5794.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 28,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "sass/site/_taxonomy-obra.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1447,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								560,
+								560
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/SCSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 29,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "inc/custom-fields.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8858,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7947,
+								7947
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 5308.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 27,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "page-template-teatro.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2683,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1215,
+								1215
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 965.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 24,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "sass/elements/_materiales.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 695,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								690,
+								690
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/SCSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "template-parts/materiales-obra.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2766,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2766,
+								2766
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 18,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "template-parts/materiales-teatro.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 945,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								334,
+								334
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 19,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_extensions.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11674,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6066,
+								6066
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2887.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 32,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/phploy.ini",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 590,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								590,
+								590
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/INI/INI.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 31,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "phploy.ini",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 580,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								452,
+								452
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/INI/INI.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 35,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "/home/pabloselin/.gitignore",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 98,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								98,
+								98
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Git Formats/Git Ignore.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/dploy.yaml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 237,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								50,
+								50
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 38,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "template-parts/texto-obra.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3436,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2850,
+								2850
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 687.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 39,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/dploy.yaml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 237,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 37,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/dploy.yaml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 237,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								110,
+								110
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 34,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "dploy.yaml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 228,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								95,
+								95
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 36,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "inc/custom-fields.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8858,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7947,
+								7947
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 5330.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 26,
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "sass/style.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5227,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5227,
+								5227
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/SCSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1878.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "sass/elements/_teatro.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 602,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								293,
+								293
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/Sass/Syntaxes/SCSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 25,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "js/bitacora.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6885,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2715,
+								2715
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1196.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 20,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "js/bitacora.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6885,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1584,
+								1584
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1170.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_extensions.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11674,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2404,
+								2404
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 981.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "page-template-teatro.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2683,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2223,
+								2223
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1017.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 21,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "template-parts/materiales-teatro.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 945,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								389,
+								389
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "sass/elements/_teatro.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 602,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								588,
+								588
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/Sass/Syntaxes/SCSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 23,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "js/bitacora.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6885,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5398,
+								5398
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2336.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 22,
+					"file": "inc/custom-taxonomies.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12554,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3816.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_extensions.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11674,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11307,
+								11307
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 6574.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 23,
+					"file": "functions.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7755,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3491,
+								3491
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1870.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 24,
+					"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_utils.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2484,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2484,
+								2484
+							]
+						],
+						"settings":
+						{
+							"auto_name": "<?php",
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1095.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_extensions.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11674,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11349,
+								11349
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 6253.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 23,
+					"file": "functions.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7755,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5604,
+								5604
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2258.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "js/bitacora.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6885,
 						"regions":
 						{
 						},
@@ -548,380 +1922,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "sass/elements/_playtext.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5883,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4979,
-								4979
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Sass/Syntaxes/SCSS.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 5383.0,
-						"zoom_level": 1.0
-					},
 					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "template-parts/texto-obra.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3436,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2753,
-								2753
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 812.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_extensions.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9370,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1238,
-								1238
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "inc/custom-taxonomies.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 12554,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4306,
-								4306
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1275.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2522,
-						"regions":
-						{
-							"match":
-							{
-								"flags": 112,
-								"regions":
-								[
-									[
-										260,
-										271
-									],
-									[
-										463,
-										474
-									],
-									[
-										546,
-										557
-									],
-									[
-										664,
-										675
-									],
-									[
-										732,
-										743
-									],
-									[
-										1070,
-										1081
-									],
-									[
-										1132,
-										1143
-									],
-									[
-										1225,
-										1236
-									],
-									[
-										1319,
-										1330
-									],
-									[
-										1406,
-										1417
-									],
-									[
-										1493,
-										1504
-									],
-									[
-										1557,
-										1568
-									],
-									[
-										1652,
-										1663
-									],
-									[
-										1720,
-										1731
-									],
-									[
-										1817,
-										1828
-									],
-									[
-										2024,
-										2035
-									],
-									[
-										2169,
-										2180
-									],
-									[
-										2337,
-										2348
-									]
-								],
-								"scope": ""
-							}
-						},
-						"selection":
-						[
-							[
-								996,
-								996
-							]
-						],
-						"settings":
-						{
-							"detect_indentation": false,
-							"line_numbers": false,
-							"output_tag": 1,
-							"result_base_dir": "",
-							"result_file_regex": "^([^ \t].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 3.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "sass/style.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5055,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4371,
-								4371
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Sass/Syntaxes/SCSS.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1662.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_db_functions.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3785,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2276,
-								2276
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/admin-interface.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4005,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3655,
-								3655
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1621.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_admin.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 265,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								234,
-								234
-							]
-						],
-						"settings":
-						{
-							"auto_name": "$(document).ready(function() {",
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_wp_functions.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2254,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1121,
-								1121
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 474.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -976,31 +1977,39 @@
 		"selected_items":
 		[
 			[
-				"customt",
-				"prompt/inc/custom-taxonomies.php"
+				"mater",
+				"prompt/sass/elements/_materiales.scss"
 			],
 			[
-				"wp",
-				"bit_extensions/bit_wp_functions.php"
+				"sty",
+				"prompt/sass/style.scss"
+			],
+			[
+				"style",
+				"prompt/sass/style.scss"
 			],
 			[
 				"bit",
 				"bit_extensions/bit_extensions.php"
 			],
 			[
-				"bi",
+				"fuc",
+				"prompt/functions.php"
+			],
+			[
+				"bitac",
 				"prompt/js/bitacora.js"
 			],
 			[
-				"adm",
-				"bit_extensions/admin-interface.php"
+				"bite",
+				"bit_extensions/bit_extensions.php"
 			],
 			[
-				"db",
-				"bit_extensions/bit_db_functions.php"
+				"func",
+				"prompt/functions.php"
 			],
 			[
-				"ex",
+				"bitex",
 				"bit_extensions/bit_extensions.php"
 			],
 			[
@@ -1008,24 +2017,132 @@
 				"prompt/inc/custom-taxonomies.php"
 			],
 			[
-				"styl",
-				"prompt/sass/style.scss"
+				"bita",
+				"prompt/js/bitacora.js"
 			],
 			[
-				"text",
-				"prompt/template-parts/texto-obra.php"
+				"mT",
+				"prompt/template-parts/materiales-teatro.php"
+			],
+			[
+				"mate",
+				"prompt/template-parts/materiales-teatro.php"
+			],
+			[
+				"bit_e",
+				"bit_extensions/bit_extensions.php"
+			],
+			[
+				"teatro",
+				"prompt/sass/elements/_teatro.scss"
+			],
+			[
+				"tea",
+				"prompt/page-template-teatro.php"
+			],
+			[
+				"",
+				"prompt/page-template-teatro.php"
+			],
+			[
+				"teat",
+				"prompt/page-template-teatro.php"
+			],
+			[
+				"cus",
+				"prompt/inc/custom-fields.php"
+			],
+			[
+				"taxono",
+				"prompt/sass/site/_taxonomy-obra.scss"
+			],
+			[
+				"play",
+				"prompt/sass/elements/_playtext.scss"
 			],
 			[
 				"pla",
 				"prompt/sass/elements/_playtext.scss"
 			],
 			[
-				"bitacora",
-				"prompt/js/bitacora.js"
+				"wp",
+				"bit_extensions/bit_wp_functions.php"
+			],
+			[
+				"b",
+				"bit_extensions/bit_extensions.php"
+			],
+			[
+				"adm",
+				"bit_extensions/admin-interface.php"
+			],
+			[
+				"ex",
+				"bit_extensions/bit_extensions.php"
+			],
+			[
+				"bitx",
+				"bit_extensions/bit_extensions.php"
+			],
+			[
+				"php",
+				"prompt/phploy.ini"
+			],
+			[
+				"dpl",
+				"prompt/dploy.yaml"
+			],
+			[
+				"ph",
+				"bit_extensions/phploy.ini"
+			],
+			[
+				"text",
+				"prompt/template-parts/texto-obra.php"
+			],
+			[
+				"tex",
+				"prompt/template-parts/texto-obra.php"
+			],
+			[
+				"bitwp",
+				"bit_extensions/bit_wp_functions.php"
 			],
 			[
 				"admi",
+				"bit_extensions/bit_admin.js"
+			],
+			[
+				"debug.",
+				"~/Documents/WebDev/local_sites/bitacora/app/public/wp-content/debug.log"
+			],
+			[
+				"bitacor",
+				"prompt/js/bitacora.js"
+			],
+			[
+				"admin",
 				"bit_extensions/admin-interface.php"
+			],
+			[
+				"db",
+				"bit_extensions/bit_db_functions.php"
+			],
+			[
+				"customt",
+				"prompt/inc/custom-taxonomies.php"
+			],
+			[
+				"bi",
+				"prompt/js/bitacora.js"
+			],
+			[
+				"styl",
+				"prompt/sass/style.scss"
+			],
+			[
+				"bitacora",
+				"prompt/js/bitacora.js"
 			],
 			[
 				"mat",
@@ -1034,10 +2151,6 @@
 			[
 				"site",
 				"prompt/sass/site/_site.scss"
-			],
-			[
-				"mate",
-				"prompt/template-parts/materiales-obra.php"
 			],
 			[
 				"texto",
@@ -1050,10 +2163,6 @@
 			[
 				"fich",
 				"prompt/template-parts/ficha-obra.php"
-			],
-			[
-				"tex",
-				"prompt/template-parts/texto-obra.php"
 			],
 			[
 				"playt",
@@ -1070,14 +2179,6 @@
 			[
 				" bit",
 				"bit_extensions/bit_extensions.php"
-			],
-			[
-				"",
-				"bit_extensions/bit_extensions.php"
-			],
-			[
-				"bitac",
-				"prompt/js/bitacora.js"
 			],
 			[
 				"timeli",
@@ -1104,10 +2205,6 @@
 				"prompt/taxonomy-obra.php"
 			],
 			[
-				"style",
-				"prompt/sass/style.scss"
-			],
-			[
 				"giti",
 				"prompt/.idea/.gitignore"
 			],
@@ -1120,20 +2217,8 @@
 				"prompt/inc/ajax-functions.php"
 			],
 			[
-				"bita",
-				"prompt/js/bitacora.js"
-			],
-			[
 				"t",
 				"prompt/taxonomy-obra.php"
-			],
-			[
-				"mater",
-				"prompt/template-parts/materiales-obra.php"
-			],
-			[
-				"bitacor",
-				"prompt/js/bitacora.js"
 			],
 			[
 				"taxo",
@@ -1160,10 +2245,6 @@
 				"prompt/template-parts/materiales-obra.php"
 			],
 			[
-				"taxono",
-				"prompt/taxonomy-obra.php"
-			],
-			[
 				"obras",
 				"prompt/template-parts/obras.php"
 			],
@@ -1188,10 +2269,6 @@
 				"prompt/sass/variables-site/_typography.scss"
 			],
 			[
-				"func",
-				"prompt/functions.php"
-			],
-			[
 				"taxonom",
 				"prompt/sass/site/_taxonomy-obra.scss"
 			],
@@ -1206,10 +2283,6 @@
 			[
 				"obra",
 				"prompt/template-parts/obras.php"
-			],
-			[
-				"play",
-				"prompt/sass/elements/_playtext.scss"
 			],
 			[
 				"reuni",
@@ -1230,10 +2303,6 @@
 			[
 				"items",
 				"prompt/sass/site/secondary/_items.scss"
-			],
-			[
-				"dpl",
-				"bit_extensions/dploy.yaml"
 			],
 			[
 				"ficha",
@@ -1475,7 +2544,7 @@
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 287.0,
 	"status_bar_visible": true,
 	"template_settings":
