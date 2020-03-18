@@ -338,7 +338,7 @@ a.document-download-button {
 		padding: 6px;
 		text-align: right;
 		color: white;
-		font-size: 12px;
+		font-size: 11px;
 		text-transform: uppercase;
 		z-index: 2;
 	}
@@ -393,6 +393,7 @@ a.document-download-button {
 			max-width: 100%;
 			height: auto;
 			margin: 12px auto;
+			max-height: 80vh;
 		}
 		.wp-video {
 			text-align: center;
