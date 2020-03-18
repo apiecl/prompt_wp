@@ -52,7 +52,8 @@ div.filtertax {
 	}	
 }
 
-.terms-filter-zone {
+.terms-filter-zone,
+.filtertype {
 	margin: 24px 0;
 
 	button.btn {
@@ -68,4 +69,23 @@ div.filtertax {
 			box-shadow: 0;
 		}
 	}
+}
+
+a.documento-download {
+	padding: 24px;
+	margin: 24px auto;
+	border: 1px solid #333;
+	color: #333;
+	text-decoration: none;
+	display: block;
+	max-width: 360px;
+}
+
+.row.showfilter {
+	margin: 24px 0;
+}
+
+.filtertax.hidden,
+.filtertype.hidden {
+	display: none;
 }

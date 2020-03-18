@@ -11,43 +11,10 @@ $playtext = bit_get_play($term->term_id);
 	<li class="nav-item">
 		<a href="#todos" class="nav-link active" data-toggle="tab" id="todosTab" data-function="enableAllMedia" data-getType="gallery" data-play-id="<?php echo $term->term_id;?>">Todos los materiales</a>
 	</li>
-	<!-- <li class="nav-item">
-		<a href="#videos" class="nav-link" data-toggle="tab" id="videosTab" data-function="getMedia" data-getType="videos" data-play-id="<?php echo $term->term_id;?>">Materiales por área teatral</a>
-	</li>
-	<li class="nav-item">
-		<a href="#audios" id="audiosTab" class="nav-link" data-toggle="tab" data-function="getMedia" data-getType="audios" data-play-id="<?php echo $term->term_id;?>">Materiales por tipo de material</a>
-	</li>
-	<li class="nav-item">
-		<a href="#documentos" class="nav-link" data-toggle="tab" id="documentosTab" data-function="getMedia" data-getType="documentos" data-play-id="<?php echo $term->term_id;?>">Materiales por rol teatral</a>
-	</li> -->
 </ul>
 
 <div class="tab-content" id="materialesTabsContent">
 	<div class="tab-pane fade show active" id="todos" role="tabpanel" aria-labelledby="todosTab" >
-		<!-- ajax loaded content -->
-	</div>
-
-	<div class="tab-pane fade show" id="videos" role="tabpanel" aria-labelledby="videosTab">
-		<!-- ajax loaded content -->
-	</div>
-
-
-	<div class="tab-pane fade show" id="documentos" role="tabpanel" aria-labelledby="documentosTab">
-		<!-- ajax loaded content -->
-	</div>
-
-
-	<div class="tab-pane fade show" id="audios" role="tabpanel" aria-labelledby="audiosTab">
-		<!-- ajax loaded content -->
-	</div>
-
-
-	<div class="tab-pane fade show" id="bocetos" role="tabpanel" aria-labelledby="bocetosTab">
-		<!-- ajax loaded content -->
-	</div>
-
-
-	<div class="tab-pane fade show" id="papeleria" role="tabpanel" aria-labelledby="papeleriaTab">
 		<!-- ajax loaded content -->
 	</div>
 

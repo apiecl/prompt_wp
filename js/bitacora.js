@@ -2,7 +2,6 @@ jQuery(document).ready(function($) {
 	console.log('init bitacora js');
 
 	var textContainer = $('.texto-dramatico');
-	var $grid = $('body .bit-gallery').masonry();
 	var mediaid = null;
 	var type = null;
 
@@ -43,7 +42,6 @@ jQuery(document).ready(function($) {
 			var target = $(this).attr('href');
 
 			getMedia(playId, tabAction, target);
-			$grid.masonry('layout');
 		} else if($(this).attr('data-function') == 'enableAllMedia') {
 
 			var playId = $(this).attr('data-play-id');
@@ -140,9 +138,6 @@ jQuery(document).ready(function($) {
 				$('body .terms-filter-zone').append('<button class="btn btn-term-filter" data-tax="' + curtax + '" data-term-filter="' + curterms.slug + '">' + curterms.name + '</button>');
 			};
 		}
-
-		
-
 		
 	});
 
@@ -151,13 +146,14 @@ jQuery(document).ready(function($) {
 		//console.log('click filter');
 		if($(this).hasClass('active')) {
 			
+			$(this).removeClass('active');
 			$grid.isotope({
 				filter: ''
-			});
-
-			$(this).removeClass('active');	
+			});	
 
 		} else {
+
+			$('body .btn-term-filter').removeClass('active');
 
 			var curtax = $(this).attr('data-tax');
 			var curterm = $(this).attr('data-term-filter');
@@ -169,6 +165,52 @@ jQuery(document).ready(function($) {
 			
 		}
 		
+	});
+
+	$('body').on('click', '.btn-materialtype', function(e) {
+		console.log('im clicking');
+		if($(this).hasClass('active')) {
+
+			$grid.isotope({
+				filter: ''
+			});
+
+			$(this).removeClass('active');
+
+		} else {
+			
+			console.log($grid);
+
+			var type = $(this).attr('data-type');
+			$grid.isotope({
+				filter: '[data-type="' + type + '"]'
+			});
+			$(this).addClass('active');
+			$('body .btn-materialtype').removeClass('active');
+
+		}
+	});
+
+	$('body').on('change', '.showfilter input', function(e) {
+
+		var target = $('.' + $(this).attr('data-target'));
+		var other = $('.showfilter input').not($(this));
+		var othertarget = $('.' + other.attr('data-target'));
+
+		$grid.isotope({
+				filter: ''
+			});
+
+
+		if($(this).prop('checked') == true) {
+			target.removeClass('hidden');
+			other.prop('checked', false);
+			othertarget.addClass('hidden');
+		} else {
+			target.addClass('hidden');
+		}
+		
+
 	});
 
 	// $grid.imagesLoaded().progress(function() {
@@ -214,6 +256,10 @@ jQuery(document).ready(function($) {
 			success:function(response) {
 				console.log(target);
 				$(target).empty().append(response);
+				$grid = $('.mediaitems-gallery').isotope({
+					itemSelector: '.media-item',
+					layoutMode: 'fitRows'
+				});
 			}
 		});
 	}
@@ -256,12 +302,6 @@ jQuery(document).ready(function($) {
 				success: function( response ) {
 					$(target).append(response);
 					$(target).addClass('contentloaded');
-					if(type == 'gallery' || type == 'bocetos') {
-						var $grid = $('body .bit-gallery').masonry();
-						$grid.imagesLoaded().progress(function() {
-							$grid.masonry('layout');
-						});
-					}
 				}
 			});
 		}
