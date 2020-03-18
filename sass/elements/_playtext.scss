@@ -381,8 +381,15 @@ a.document-download-button {
 }
 
 .modal-media-text {
+	.modal-content {
+		border-radius: 0;
+	}
+	.modal-header {
+		padding: 0.5rem;
+	}
 	.modal-title {
-		font-size: 32px;
+		font-size: 24px;
+		font-weight: normal;
 		width: 100%;
 		text-align: center;
 		margin: 0;
@@ -399,5 +406,15 @@ a.document-download-button {
 			text-align: center;
 			margin: auto;
 		}
+	}
+}
+
+.mediainfotable {
+	text-align: left;
+	padding: 12px;
+	border: 1px solid #333;
+	margin: 24px 0;
+	span.label {
+		font-weight: bold;
 	}
 }
