@@ -332,6 +332,8 @@ a.document-download-button {
 	background-color: white;
 	transition: all 0.1s linear;
 	cursor: pointer;
+	background-repeat: no-repeat;
+	background-size: cover;
 	
 	&:hover {
 		transform: scale3d(1.1, 1.1, 1.1);
@@ -344,12 +346,28 @@ a.document-download-button {
 		bottom: 0;
 		right: 0;
 		background-color: #333;
-		padding: 6px;
+		padding: 3px 6px;
 		text-align: right;
 		color: white;
 		font-size: 11px;
 		text-transform: uppercase;
 		z-index: 2;
+		max-height: 36px;
+		overflow: hidden;
+	}
+
+	&.type-fotografia,
+	&.type-boceto-3d {
+		span.mediaicon {
+			color: white;
+			opacity: 0.7;
+			text-shadow: 0 0 3px #333;
+		}
+
+		.media-item-text {
+			color: #333;
+			background-color: white;
+		}
 	}
 
 	span.mediaicon {
