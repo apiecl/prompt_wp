@@ -4,6 +4,8 @@ jQuery(document).ready(function($) {
 	var textContainer = $('.texto-dramatico');
 	var mediaid = null;
 	var type = null;
+	var personajes = null;
+	
 
 	$('.trigger-media').on('click', function(event) {
 		event.preventDefault();
@@ -73,6 +75,44 @@ jQuery(document).ready(function($) {
 			textContainer.addClass('onlyMedia');
 		} else {
 			textContainer.removeClass('onlyMedia');
+		}
+	});
+
+	$('#filterPersonajes').change(function() {
+		
+		if(personajes == null) {
+			personajes = setPersonajes();
+			console.log(personajes);
+			
+			for(var i = 0; i < personajes.length; i++) {
+				$('.textPersonajes .col-md-12').append('<span class="typelabel personajelabel" data-filterpersonaje="' + personajes[i] + '">' + personajes[i] + '</span>');
+			}
+		}
+		
+
+		if(this.checked == true) {
+			$('.maintext-col').removeClass('col-md-12').addClass('col-md-10');
+			$('.col-personajes').removeClass('hidden');
+			$('.row.textPersonajes').show();
+		} else {
+			$('.maintext-col').removeClass('col-md-10').addClass('col-md-12');
+			$('.col-personajes').addClass('hidden');
+			$('.playtext-row:hidden').show();
+			$('.row.textPersonajes').hide();
+		}
+	});
+
+	$('body').on('click', '.typelabel.personajelabel', function(e) {
+		
+		$('.playtext-row:hidden').show();
+
+		if($(this).hasClass('active')) {
+			$(this).removeClass('active');
+		} else {
+			var curpersonaje = $(this).attr('data-filterpersonaje');
+			$('body .typelabel.personajelabel').removeClass('active');
+			$(this).addClass('active');
+			$('.playtext-row').not('[data-personajes~="' + curpersonaje + '"]').hide();
 		}
 	});
 
@@ -216,6 +256,21 @@ jQuery(document).ready(function($) {
 	// $grid.imagesLoaded().progress(function() {
 	// 	$grid.masonry('layout');
 	// });
+
+	function setPersonajes() {
+		var personajes = [];
+		$('.text-item').each(function(idx) {
+			var linePersonajes = $(this).attr('data-personajes').split(',');
+			for(var i = 0; i < linePersonajes.length; i++) {
+				if(linePersonajes[i].length > 0) {
+					var cleanPersonaje = $.trim(linePersonajes[i]);
+					personajes.push(cleanPersonaje);	
+				}
+			}
+		});
+
+		return unique(personajes);
+	}
 
 	function disableMedia( target ) {
 		//$('#' + target).empty();

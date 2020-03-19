@@ -167,7 +167,8 @@ a.document-download-button {
 	margin: 24px 0;
 }
 
-.textlegend > .col-md-12 {
+.textlegend > .col-md-12,
+.textPersonajes > .col-md-12 {
 	display:flex;
 	padding: 24px 10px 0 10px;
 	.typelabel {
@@ -182,6 +183,7 @@ a.document-download-button {
 		margin: 0 5px;
 		border-style: solid;
 		border-width: 2px;
+		cursor: pointer;
 		
 		&.acotacion {
 			color: $acotacioncolor;
@@ -211,6 +213,13 @@ a.document-download-button {
 		&.letra {
 			color: $letracolor;
 			border-color: $letracolor;
+		}
+
+		&.personajelabel {
+			border-color: #ccc;
+			&:hover, &.active {
+				background-color: #f0f0f0;
+			}
 		}
 	}
 }
@@ -417,4 +426,21 @@ a.document-download-button {
 	span.label {
 		font-weight: bold;
 	}
+}
+
+.col-personajes {
+	text-align: right;
+}
+
+.personajes {
+	font-size: 12px;
+	text-transform: uppercase;
+	color: #666;
+	p {
+		margin: 0;
+	}
+}
+
+.hidden {
+	display: none;
 }

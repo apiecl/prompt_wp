@@ -27,6 +27,12 @@ $playtext = bit_get_play($term->term_id);
 				<label class="custom-control-label" for="onlyMedia">Sólo materiales asociados</label>
 			</div>
 		</div>
+		<div class="col-md-4">
+			<div class="custom-control custom-switch">
+				<input type="checkbox" class="custom-control-input" id="filterPersonajes">
+				<label class="custom-control-label" for="filterPersonajes">Filtrar personajes</label>
+			</div>
+		</div>
 	</div>
 	
 	<div class="row textlegend">
@@ -37,6 +43,12 @@ $playtext = bit_get_play($term->term_id);
 			<span class="typelabel dialogo"><i class="fas fa-comments"></i> Diálogo</span>
 			<span class="typelabel monologo"><i class="fas fa-comment-dots"></i> Monólogo</span>
 			<span class="typelabel letra"><i class="fas fa-font"></i> Letra</span>
+		</div>
+	</div>
+
+	<div class="row textPersonajes">
+		<div class="col-md-12">
+			<!-- Ajax acá van los personajes -->
 		</div>
 	</div>
 </div>
@@ -50,7 +62,7 @@ $playtext = bit_get_play($term->term_id);
 		$mediazoneid = uniqid();
 		//echo $media;
 		?>
-		<div class="row playtext-row" data-type="<?php echo $tipo;?>" data-hasmedia="<?php echo ($media != null ? 'true' : 'false');?>">
+		<div class="row playtext-row" data-type="<?php echo $tipo;?>" data-hasmedia="<?php echo ($media != null ? 'true' : 'false');?>" data-personajes="<?php echo $playline->personajes;?>">
 			<div class="col-1">
 				<?php if($media):?>
 					<a href="#" class="btn btn-light trigger-media" data-plain-id="<?php echo $mediazoneid;?>" data-expand="#<?php echo $mediazoneid;?>" data-assoc="<?php echo $media;?>" title="Ver el material asociado a esta sección del texto.">
@@ -59,11 +71,28 @@ $playtext = bit_get_play($term->term_id);
 				<?php endif;?>
 			</div>
 			<div class="col-11">
-
-				<div class="text-item  <?php echo ($tipo != null ? 'tipo-' . $tipo : '');?> <?php echo ($media != null ? ' hasmedia' : '');?> " data-tipo="<?php echo $tipo;?>" data-personajes="<?php echo $playline->personajes;?>" data-assoc="<?php echo $media;?>"><?php echo $playline->texto;?></div>
-
-
-
+				
+				<div class="row">
+					<div class="col-md-12 maintext-col">
+						<div class="text-item  <?php echo ($tipo != null ? 'tipo-' . $tipo : '');?> <?php echo ($media != null ? ' hasmedia' : '');?> " data-tipo="<?php echo $tipo;?>" data-personajes="<?php echo $playline->personajes;?>" data-assoc="<?php echo $media;?>"><?php echo $playline->texto;?></div>	
+					</div>
+					<div class="col-md-2 col-personajes hidden">
+						<?php 
+						if($playline->personajes) {
+							$personajesline = explode(',', $playline->personajes);
+							?>
+							<div class="personajes">
+								<?php 
+									foreach($personajesline as $personaje) {
+										echo '<p>' . $personaje . '</p>';
+									}
+								?>	
+							</div>
+							<?php 
+						}
+						?>
+					</div>
+				</div>
 			</div>
 
 		</div>
