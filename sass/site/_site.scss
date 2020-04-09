@@ -16,16 +16,42 @@
 --------------------------------------------------------------*/
 
 .site-header {
-	background-color: transparent;
-	border-bottom: 1px solid #555;
+	background-color: $celeste;
+	border-radius: 0 15px 0 0;
 	color: #333;
+	margin: 10px;
 	a {
 		color: #333;
 		text-decoration: none;
 	}
 
-	@media screen and (max-width: 768px) {
+	@include respond-below(sm) {
 		font-size: 14px;
+	}
+
+	.site-branding {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.description {
+		color: white;
+		text-align: right;
+		margin:8px 24px 0 24px;
+		font-weight: 400;
+	}
+
+	h1 {
+		text-align: left;
+		margin: 0;
+		img {
+			max-width: 360px;
+			height: auto;
+			@include respond-below(sm) {
+				max-width: 120px;
+			}
+		}
 	}
 }
 

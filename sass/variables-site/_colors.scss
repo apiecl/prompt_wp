@@ -1,4 +1,11 @@
-$color__background-body: #fff;
+//Colores de Bitacora
+
+$celeste: #006CFF;
+$gris: rgb(154, 168, 179);
+$negro: rgb(35, 31, 32);
+
+
+$color__background-body: $negro;
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
 $color__background-button: #e6e6e6;
@@ -18,3 +25,4 @@ $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
+

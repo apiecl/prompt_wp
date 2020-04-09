@@ -44,6 +44,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------------------------*/
 @import "variables-site/variables-site";
 @import "mixins/mixins-master";
+@import "mixins/media-queries";
 
 /*--------------------------------------------------------------
 # Normalize
@@ -121,23 +122,20 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Bootstrap
 --------------------------------------------------------------*/
 
-@import "../node_modules/bootstrap/scss/mixins";
-@import "../node_modules/bootstrap/scss/bootstrap-grid";
-@import "../node_modules/bootstrap/scss/transitions";
-@import "../node_modules/bootstrap/scss/nav";
-@import "../node_modules/bootstrap/scss/badge";
-@import "../node_modules/bootstrap/scss/buttons";
-@import "../node_modules/bootstrap/scss/forms";
-@import "../node_modules/bootstrap/scss/custom-forms";
-@import "../node_modules/bootstrap/scss/modal";
-@import "../node_modules/bootstrap/scss/functions";
-
+@import "extras/custom-bootstrap";
 
 /*--------------------------------------------------------------
 # Animate
 --------------------------------------------------------------*/
 
 @import "extras/animate";
+
+
+/*--------------------------------------------------------------
+# Home
+--------------------------------------------------------------*/
+
+@import "site/home";
 
 /*--------------------------------------------------------------
 # Timeline

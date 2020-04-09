@@ -1,10 +1,5 @@
 <section id="obras">
 	<div class="container">	
-		<div class="row justify-content-md-center">
-			<div class="col-md">
-				<h2 class="section-title standard-title">Obras</h2>
-			</div>
-		</div>
 		<div class="row d-flex align-items-stretch">
 			<?php
 			$obras = get_terms( array(
