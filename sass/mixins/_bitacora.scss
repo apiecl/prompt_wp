@@ -1,0 +1,57 @@
+@mixin titulo-con-gris {
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 18px;
+
+	&:before {
+		content: '';
+		width: 100%;
+		position: absolute;
+		border-top: 12px solid $gris;
+		margin: 0;
+		top: 50%;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: -1;
+	}
+}
+
+@mixin borderWithEdges($variant) {
+//Requires position relative
+	&:before {
+		content: "";
+		width:14px;
+		height:14px;
+		border-radius: 50%;
+		background-color: $celeste;
+		@if $variant == 'horizontal' {
+			left: 0;	
+			top: -9.5px;
+		} @else if $variant == 'vertical' {
+			top: 0;
+			left: -8.5px;
+		}
+		position: absolute;
+	}
+
+	&:after {
+		content: "";
+		background-color: $celeste;
+		@if $variant == 'horizontal' {
+			right: 0;	
+			width:3px;
+			height:14px;
+			top: -9.5px;
+		} @else if $variant == 'vertical' {
+			bottom: 0;
+			left: -8.5px;
+			width: 14px;
+			height: 3px;		
+		}
+		position: absolute;
+	}
+}

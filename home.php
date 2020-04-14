@@ -20,7 +20,7 @@ get_header();
 								<div class="obra-container">
 									<div class="obra-content">
 										<div class="left">
-											<h1><?php echo $obra->name;?></h1>
+											<h1><a href="<?php echo get_term_link( $obra->term_id, 'obra' );?>"><?php echo $obra->name;?></a></h1>
 											<span class="date"><?php echo $fields['estreno'][0];?></span>
 										</div>
 										<div class="right">

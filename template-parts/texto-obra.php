@@ -1,7 +1,16 @@
 <?php 
 $term = get_term_by( 'slug', get_query_var( 'term' ), 'obra' );
 $playtext = bit_get_play($term->term_id);
+$fields = prompt_obra_metadata( $term->term_id );
 ?>
+
+<div class="row header-texto-dramatico">
+	<div class="col-md-12">
+		<h1>Texto dramático</h1>
+		<h2><?php echo $term->name;?> / <?php echo prompt_format_date($fields['estreno'][0]);?></h2>
+		<p>Historia y texto de <?php echo prompt_multifields($fields['dramaturgia'][0], ', ');?></p>
+	</div>
+</div>
 
 <div class="utils">
 	
@@ -83,9 +92,9 @@ $playtext = bit_get_play($term->term_id);
 							?>
 							<div class="personajes">
 								<?php 
-									foreach($personajesline as $personaje) {
-										echo '<p>' . $personaje . '</p>';
-									}
+								foreach($personajesline as $personaje) {
+									echo '<p>' . $personaje . '</p>';
+								}
 								?>	
 							</div>
 							<?php 
@@ -115,9 +124,9 @@ $playtext = bit_get_play($term->term_id);
 				<div class="modal-body">
 					<!-- Content here -->
 				</div>
-       	<div class="modal-footer">
-        	<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-    	</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+				</div>
 			</div>
 		</div>
 	</div>

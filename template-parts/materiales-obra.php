@@ -3,9 +3,9 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), 'obra' );
 $playtext = bit_get_play($term->term_id);
 ?>
 
-<h2 class="standard-title">
+<h1 class="standard-title">
 	Materiales asociados a la obra
-</h2>
+</h1>
 
 <ul class="nav nav-pills materiales-obra" id="materialesTabs" role="tablist" data-play-id="<?php echo $term->term_id;?>">
 	<li class="nav-item">
@@ -24,7 +24,7 @@ $playtext = bit_get_play($term->term_id);
 		<div class="modal-dialog modal-xl" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h1 class="modal-title"><!-- Title here --></h1>
+					
 					<span type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<i class="fas fa-times"></i>
 					</span>

@@ -1,7 +1,63 @@
+//Taxonomy y pagina de teatro tb
+
+
+.single-obra-container-fluid div.wrapper,
+.page-template-teatro div.wrapper
+ {
+	background-color: white;
+	border-radius: 0 15px 0 0;
+	.imagen-obra {
+		background-color: $celeste;
+		position: relative;
+		h1.play-title {
+			position: absolute;
+			bottom: 24px;
+			left: 12px;
+			color: white;
+			z-index: 20;
+		}
+		div.imagen {
+			background-repeat: no-repeat;
+			background-position: top;
+			background-size: contain;
+			mix-blend-mode: multiply;
+			-webkit-filter: grayscale(100%) contrast(200%);
+			filter: grayscale(100%) contrast(200%);
+			opacity: 1;
+			height: 145px;
+
+			@include respond-above(lg) {
+				height: 310px;
+				background-size: cover;
+			}	
+		}
+	}
+}
+
+.ficha-obra h1 {
+	font-weight: 700;
+	font-size: 24px;
+	color: $celeste;
+	margin: 12px 0;
+}
+
+.header-texto-dramatico {
+	h2 {
+		font-weight: bold;
+		font-size: 18px;
+		color: $celeste;
+		margin-bottom: 0
+	}
+
+	p {
+		font-size: 14px;
+	}
+}
+
+
 .single-obra {
 	//background-color: #333;
 	color: #333;
-	text-align: center;
 	margin: 0;
 	background-repeat: no-repeat;
 	background-position: top center;
@@ -13,27 +69,65 @@
 
 .intro-obra {
 	text-align: left;
-
-	h2 {
-		font-weight: normal;
-		text-transform: uppercase;
+	font-style: italic;
+	@include respond-above(md) {
 		font-size: 18px;
 	}
 }
 
+header.ficha-title {
+	h2 {
+		@include titulo-con-gris;
+	}
+}
+
 .ficha-obra {
-	border: 1px solid #555;
 	margin: 0 0 36px 0;
 	text-align: left;
 	padding: 24px;
+	
+	dt.important,
+	dd.important {
+		color: $celeste;
+		font-weight: 700;
+	}
+
+	dt,
+	dd {
+		line-height: 1.2em;
+		font-size: 14px;
+		@include respond-above(md) {
+			font-size: 16px;
+		}
+	}
+
 	dd {
 		margin:0 0 1.5em 0;
 	}
 }
 
+.strong-dd {
+	font-weight: 700;
+	font-style: italic;
+	br {
+		content: '';
+		display: block;
+		width: 1px;
+		height: 1px;
+		margin-bottom: 8px;
+	}
+}
+
+.strong-dd.elenco {
+	font-size: 13px;
+	@include respond-above(md) {
+		font-size: 16px;
+	}
+}
+
 @media screen and (max-width: 768px) {
 	.ficha-obra {
-		padding: 12px;
+		padding: 0;
 	}
 }
 
@@ -48,13 +142,23 @@
 }
 
 h1.play-title {
-	margin: 32px 0;
-	font-weight: normal;
+	margin: 6px 0;
+	font-weight: 700;
 	font-size: 32px;
-	text-transform: uppercase;
+	color: $celeste;
+}
+
+a.toggleTabs {
+	&:focus, 
+	&:visited {
+		color: $negro;
+	}
 }
 
 #obraTab {
+	background-color: $gris;
+	margin: 0;
+	display: none;
 	a.nav-item,
 	a.nav-item:visited,
 	a.nav-item:focus {
@@ -64,34 +168,60 @@ h1.play-title {
 		background-color: transparent;
 		border: 0;
 		border-radius: 0;
-		margin: 12px 0 -1px 0;
-		text-transform: uppercase;
+		margin: 0 0 -1px 0;
+		font-weight: 700;
+		text-align: left;
+		padding: 6px;
+		font-size: 16px;
 	}
 
+
+
+	a.nav-item:hover,
 	a.nav-item.active {
-		border-width: 1px;
-		border-style: solid;
-		border-color: #333;
-		border-bottom-color: white;
+		border: 0;
+		background-color: $celeste;
+		color: white;
 	}
 
 	.tab-pane {
 		min-height: 200px;
 	}
+
+	@include respond-below(sm) {
+		display: none;
+	}
 }
 
-@media screen and (max-width: 768px) {
+@include respond-below(sm) {
 	a.nav-item {
 		font-size: 13px;
 		padding: 8px 2px 3px 2px;
 		line-height: 1.2em;
 		display: flex;
 		align-items: center;
-		justify-content: center;
+		justify-content: flex-start;
 	}
 }
 
 .standard-title {
-	font-weight: normal;
-	text-transform: uppercase;
+	font-weight: bold;
+	color: $celeste;
+}
+
+a.toggleTabs {
+	display: block;
+	background-color: $gris;
+	color: #333;
+	padding: 6px 10px;
+	border-radius: 0 15px 0 0;
+}
+
+.mini-time {
+	margin-left: 6px;
+	padding-left: 16px;
+	border-left: 3px solid $celeste;
+	position: relative;
+	
+	@include borderWithEdges('vertical');
 }

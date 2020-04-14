@@ -4,20 +4,31 @@ $fields = prompt_obra_metadata( $term->term_id );
 ?>
 
 	<div class="row">
-		<dl class="col-md-3">
-
-			<dt>Fecha de estreno</dt>
-			<dd><?php echo prompt_format_date($fields['estreno'][0]);?></dd>
-
-			<dt>Inicio de la temporada</dt>
-			<dd><?php echo prompt_format_date($fields['temporada_inicio'][0]);?></dd>
-
-			<dt>Fin de la temporada</dt>
-			<dd><?php echo prompt_format_date($fields['temporada_fin'][0]);?></dd>
+		<dl class="col-md-3 col-7">
+			
+			<div class="mini-time">
+				<dt class="important">Fecha de estreno</dt>
+				<dd class="important"><?php echo prompt_format_date($fields['estreno'][0]);?></dd>
+				
+				<dt>Inicio de la temporada</dt>
+				<dd><?php echo prompt_format_date($fields['temporada_inicio'][0]);?></dd>
+				
+				<dt>Sala de presentación</dt> 
+				<dd><?php echo $fields['sala'][0];?></dd>
+				
+				<dt>N° de funciones</dt>
+				<dd><?php echo $fields['funciones'][0];?></dd>
+					
+				<dt>Duración de la obra</dt>
+				<dd><?php echo $fields['duracion'][0];?> minutos</dd>
+				
+				<dt class="important">Fin de la temporada</dt>
+				<dd class="important"><?php echo prompt_format_date($fields['temporada_fin'][0]);?></dd>
+			</div>
 
 		</dl>
 
-		<dl class="col-md-3">
+		<dl class="col-md-3 col-5">
 
 			<dt>Dirección</dt> 
 			<dd><?php echo prompt_multifields($fields['direccion'][0], ', ');?></dd>
@@ -40,22 +51,6 @@ $fields = prompt_obra_metadata( $term->term_id );
 			<dt>Vestuario</dt> 
 			<dd><?php echo prompt_multifields($fields['vestuario'][0], ', ');?></dd>
 
-		</dl>
-
-		<dl class="col-md-3">
-			<dt>Elenco</dt> 
-			<dd><?php echo prompt_multifields($fields['elenco'][0], ' <br> ');?></dd>
-		</dl>
-
-		<dl class="col-md-3">
-			<dt>Sala de presentación</dt> 
-			<dd><?php echo $fields['sala'][0];?></dd>
-
-			<dt>Número de funciones</dt>
-			<dd><?php echo $fields['funciones'][0];?></dd>
-	
-			<dt>Duración de la obra</dt>
-			<dd><?php echo $fields['duracion'][0];?> minutos</dd>
 		</dl>
 
 	</div>

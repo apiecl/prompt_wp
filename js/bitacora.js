@@ -27,6 +27,11 @@ jQuery(document).ready(function($) {
 		}
 	});
 
+	$('a.toggleTabs').on('click', function(e) {
+		e.preventDefault();
+		$('#obraTab').slideToggle();
+	});
+
 	$('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
 		if($(this).attr('data-function') == 'timeline') {
 			window.timeline = new TL.Timeline('timeline-embed', timeline_events, timeline_options);
@@ -116,7 +121,7 @@ jQuery(document).ready(function($) {
 		}
 	});
 
-	$('body').on('click', '.media-item', function(e) {
+	$('body').on('click', '.media-item-wrapper', function(e) {
 		mediaid = $(this).attr('data-mediaid');
 		type = $(this).attr('data-type');
 	})
@@ -140,8 +145,6 @@ jQuery(document).ready(function($) {
 				$( '#' + thisModal + ' .modal-body').empty().append(response);
 				if(mediaitem !== null) {
 					var itemInfo = $.parseJSON(mediaitem);
-					console.log(itemInfo);
-					$( '#' + thisModal + " .modal-header .modal-title").empty().append(itemInfo.post_title);
 				}
 			}
 		})
@@ -161,7 +164,7 @@ jQuery(document).ready(function($) {
 			console.log('show taxfilter');
 			var curtax = $(this).attr('data-tax');
 			var availableTerms = [];
-			$('.media-item[data-' + curtax + ']').each(function(idx) {
+			$('.media-item-wrapper[data-' + curtax + ']').each(function(idx) {
 				var parseTerms = $(this).attr('data-' + curtax);
 				var arrayTerms = parseTerms.split(",");
 				for(var i = 0; i < arrayTerms.length; i++) {
@@ -312,7 +315,7 @@ jQuery(document).ready(function($) {
 				console.log(target);
 				$(target).empty().append(response);
 				$grid = $('.mediaitems-gallery').isotope({
-					itemSelector: '.media-item',
+					itemSelector: '.media-item-wrapper',
 					layoutMode: 'fitRows'
 				});
 			}
@@ -334,7 +337,7 @@ jQuery(document).ready(function($) {
 			success: function( response ) {
 				$(target).empty().append(response);
 				$grid = $('.mediaitems-gallery').isotope({
-					itemSelector: '.media-item',
+					itemSelector: '.media-item-wrappr',
 					layoutMode: 'fitRows'
 				});
 			}

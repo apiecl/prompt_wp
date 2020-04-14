@@ -27,13 +27,55 @@
 	padding: 24px 0;
 }
 
-.tl-timeline {
-	padding: 24px 0;
-	h2.tl-headline {
-		font-size: 22px;
+#timeline-embed {
+	.tl-slide-content {
+		h2.tl-headline-title,
+		h2.tl-headline {
+			padding: 0;
+			font-size: 22px;
+			font-weight: 700;
+			line-height: 1.2em;
+			color: #00213D;
+			@include respond-below(sm) {
+				font-size: 22px;
+			}
+		}	
 	}
+
+	.tl-text-content,
+	.tl-text-content p {
+		color: #00213D;
+	}	
 }
 
 .page-template-page-template-teatro-php .section-title.standard-title {
 	display: none;
+}
+
+#timeline-embed {
+	.tl-timenav {
+		background-color: white;
+		border-top: 0;
+	}
+
+	.tl-timemarker.tl-timemarker-active .tl-timemarker-content-container {
+		background-color: #8FBEFF;
+		border-color: #8FBEFF;
+	}
+
+	.tl-timemarker .tl-timemarker-content-container {
+		background-color: #DAE1E9;
+	}
+
+	.tl-timemarker .tl-timemarker-content-container .tl-timemarker-content.tl-timemarker-content-small .tl-timemarker-text h2.tl-headline {
+		color: #333;
+	}
+
+	.tl-slidenav-previous .tl-slidenav-content-container .tl-slidenav-icon, .tl-slidenav-next .tl-slidenav-content-container .tl-slidenav-icon, .tl-slidenav-previous .tl-slidenav-content-container .tl-slidenav-title, .tl-slidenav-next .tl-slidenav-content-container .tl-slidenav-title, .tl-slidenav-previous .tl-slidenav-content-container .tl-slidenav-description, .tl-slidenav-next .tl-slidenav-content-container .tl-slidenav-description {
+		color: $celeste;
+	}
+
+	.tl-slidenav-content-container .tl-slidenav-title {
+		display: none;
+	}
 }
