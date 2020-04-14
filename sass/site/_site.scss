@@ -1,5 +1,8 @@
-// @import "../layout/content-sidebar";
-// @import "../layout/sidebar-content";
+
+body#page {
+	max-width: 1300px;
+	margin: 0 auto;
+}
 
 /*--------------------------------------------------------------
 ## Posts and pages
