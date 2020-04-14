@@ -42,7 +42,7 @@ if ( have_posts() ) :
 								
 								<div class="tab-pane fade show active" id="el-teatro" role="tabpanel" arial-labelledby="info-tab">
 									<div class="ficha-obra">
-										<div class="ficha-teatro">
+										<div class="info-ficha-teatro">
 											<?php 
 											$fundacion = get_post_meta($post->ID, '_prompt_fundacion', true);
 											$primera_obra = get_post_meta($post->ID, '_prompt_primera_obra', true);
@@ -50,9 +50,9 @@ if ( have_posts() ) :
 											$locaciones = get_post_meta($post->ID, '_prompt_locaciones', true);
 											?>
 										
-											<dl>
-												<dt>Fundación:</dt>
-												<dd><?php echo $fundacion;?></dd>
+											<dl class="ficha-teatro">
+												<dt class="important">Fundación:</dt>
+												<dd class="important"><?php echo $fundacion;?></dd>
 										
 												<dt>Primera obra:</dt>
 												<dd><?php echo $primera_obra;?></dd>

@@ -18,27 +18,11 @@
 		}
 	}
 
-	.datos-teatro {
-		position: absolute;
-		text-align: left;
-		z-index: 2;
-		left: 0;
-		bottom: 0;
-		color: white;
-		padding: 12px 24px;
-		background-color: rgba(0, 0, 0, 0.5);
+	.ficha-teatro {
+		position: relative;
+		padding-left: 16px;
+		border-left: 3px solid $celeste;
 
-			dd {
-				margin: 0;
-			}
-	}
-
-	ul.materiales-teatro {
-		margin: 0;
-		li {
-			a {
-				text-decoration: none;
-			}
-		}
+		@include borderWithEdges('vertical');
 	}
 }

@@ -1,4 +1,4 @@
-<section id="timeline-main" class="timeline-section with-home-section-divider">
+<section id="timeline-main" class="timeline-section">
 	<div class="container">
 		<div class="row">
 			<div class="col-md">
