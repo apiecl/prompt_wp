@@ -44,6 +44,9 @@ div#page {
 		margin:8px 12px 8px 24px;
 		font-weight: 400;
 		font-size: 12px;
+		@include respond-above('md') {
+			font-size: 16px;
+		}
 	}
 
 	h1 {
