@@ -25,4 +25,10 @@
 
 		@include borderWithEdges('vertical');
 	}
+
+	.info-ficha-teatro {
+		@include respond-below('sm') {
+			margin-top: 24px;
+		}
+	}
 }
