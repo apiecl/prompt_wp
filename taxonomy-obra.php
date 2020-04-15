@@ -36,7 +36,7 @@ $fields = prompt_obra_metadata( $term->term_id );
 
 							<div class="ficha-obra">
 								
-								<h1>Ficha técnica</h1>
+								<h1>Ficha artística</h1>
 
 								<?php get_template_part( 'template-parts/ficha-obra' );?>
 								
