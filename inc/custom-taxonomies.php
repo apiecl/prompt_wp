@@ -202,7 +202,7 @@ function cptui_register_my_taxes() {
 		'show_in_nav_menus'          => true,
 		'show_tagcloud'              => true,
 	);
-	register_taxonomy( 'desarrollo', array( 'post', 'attachment', ' personas' ), $args );
+	register_taxonomy( 'desarrollo', array( 'post', 'attachment', ' personas', 'hitos' ), $args );
 
 	$labels = array(
 		'name'                       => _x( 'Espacial', 'Taxonomy General Name', 'prompt' ),
