@@ -7,6 +7,8 @@
  * @package promptbook
  */
 
+define( 'PROMPT_VERSION', '0.5.1');
+
 if ( ! function_exists( 'prompt_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -120,7 +122,8 @@ add_action( 'widgets_init', 'prompt_widgets_init' );
  * Enqueue scripts and styles.
  */
 function prompt_scripts() {
-	wp_enqueue_style( 'prompt-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'prompt-style', get_stylesheet_uri(), array(), PROMPT_VERSION );
+
 
 	wp_enqueue_style( 'tinyslider', 'https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css');
 
@@ -128,9 +131,9 @@ function prompt_scripts() {
 
 	wp_enqueue_script('wavesurfer', 'https://unpkg.com/wavesurfer.js', array(), '0.1', false);
 
-	wp_enqueue_script('bitacora', get_template_directory_uri() . '/js/bitacora.js', array('jquery', 'tinysliderjs', 'bootstrap', 'wavesurfer', 'masonry'), '0.2', false);
+	wp_enqueue_script('bitacora', get_template_directory_uri() . '/js/bitacora.js', array('jquery', 'tinysliderjs', 'bootstrap', 'wavesurfer', 'masonry'), PROMPT_VERSION, false);
 
-	wp_enqueue_script( 'prompt-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'prompt-navigation', get_template_directory_uri() . '/js/navigation.js', array(), PROMPT_VERSION, true );
 
 	wp_enqueue_script( 'prompt-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
