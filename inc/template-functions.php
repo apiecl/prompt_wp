@@ -107,3 +107,29 @@ function prompt_multifields( $fields, $separator ) {
 function prompt_obraslugjs($slug) {
 	return str_replace('-', '_', $slug);
 }
+
+function prompt_rewrite_tag() {
+	add_rewrite_tag( '%tab%', '([^&]+)');
+}
+
+add_action( 'init', 'prompt_rewrite_tag', 10, 0 );
+
+function prompt_cpt_generating_rule($wp_rewrite) {
+    $rules = array();
+    $terms = get_terms( array(
+        'taxonomy' => 'obra',
+        'hide_empty' => false,
+    ) );
+   
+    $post_type = 'resources_post_type';
+
+    foreach ($terms as $term) {    
+                
+        $rules['obra/' . $term->slug . '/([^/]*)$'] = 'index.php?obra=' . $term->slug . '&tab=$matches[1]';
+        
+    }
+
+    // merge with global rules
+    $wp_rewrite->rules = $rules + $wp_rewrite->rules;
+}
+add_filter('generate_rewrite_rules', 'prompt_cpt_generating_rule');

@@ -1,3 +1,4 @@
+<div id="materiales-obra-container" data-function="materiales-obra" data-play-id="<?php echo $term->term_id;?>">
 <?php 
 $term = get_term_by( 'slug', get_query_var( 'term' ), 'obra' );
 $playtext = bit_get_play($term->term_id);
@@ -35,3 +36,5 @@ $playtext = bit_get_play($term->term_id);
 			</div>
 		</div>
 	</div>
+
+</div>

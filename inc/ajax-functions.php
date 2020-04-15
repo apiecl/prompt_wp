@@ -56,7 +56,7 @@ function get_main_timeline_events($obra = null) {
 
 			//Optional fields
 
-			if($end_date):
+			if(isset($end_date)):
 				$event['end_date'] = $end_date;
 			endif;
 

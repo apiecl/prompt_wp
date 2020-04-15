@@ -2,6 +2,8 @@
 $term = get_term_by( 'slug', get_query_var( 'term' ), 'obra' );
 $fields = prompt_obra_metadata( $term->term_id );
 ?>
+	
+	<h1>Ficha artística</h1>
 
 	<div class="row">
 		<dl class="col-md-3 col-7">
@@ -54,3 +56,18 @@ $fields = prompt_obra_metadata( $term->term_id );
 		</dl>
 
 	</div>
+
+	<div class="row">
+									<div class="intro-obra col-md-8 col-7">
+										<header class="ficha-title">
+											<h2>Reseña</h2>
+										</header>
+										<?php echo $fields['review'][0];?>
+									</div>
+									<dl class="col-md-4 col-5">
+										<header class="ficha-title">
+											<h2>Elenco</h2>
+										</header> 
+										<dd class="strong-dd elenco"><?php echo prompt_multifields($fields['elenco'][0], ' <br> ');?></dd>
+									</dl>
+								</div>

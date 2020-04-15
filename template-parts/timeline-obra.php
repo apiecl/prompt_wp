@@ -4,7 +4,7 @@
 	
 ?>
 
-<section id="timeline-obra" class="timeline-section">
+<section id="timeline-obra" class="timeline-section" data-function="timeline">
 		<div class="row">
 			<div class="col-md-12">
 				<div id="timeline-embed"></div>

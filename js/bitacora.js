@@ -32,6 +32,17 @@ jQuery(document).ready(function($) {
 		$('#obraTab').slideToggle();
 	});
 
+	if ($('[data-function="timeline"]').length) {
+		window.timeline = new TL.Timeline('timeline-embed', timeline_events, timeline_options);
+	}
+
+	if($('[data-function="materiales-obra"]').length) {
+		console.log('materiales');
+		var playId = $(this).attr('data-play-id');
+		var target = '#todos';
+		enableAllMedia(playId, target);
+	}
+
 	$('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
 		if($(this).attr('data-function') == 'timeline') {
 			window.timeline = new TL.Timeline('timeline-embed', timeline_events, timeline_options);

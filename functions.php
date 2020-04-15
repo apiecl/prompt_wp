@@ -179,7 +179,7 @@ function prompt_scripts() {
 	wp_localize_script( 'timelinejs', 'prompt_hitos', get_main_timeline_events() );
 
 	//Localiza la info de una obra en Json
-	if(is_taxonomy( 'obra' )):
+	if(is_tax( 'obra' )):
 		$args = array(
 			'taxonomy' => 'obra',
 			'hide_empty' => false,
