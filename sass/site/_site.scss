@@ -44,8 +44,9 @@ div#page {
 		margin:8px 12px 8px 24px;
 		font-weight: 400;
 		font-size: 12px;
+		max-width: 250px;
 		@include respond-above('md') {
-			font-size: 16px;
+			font-size: 18px;
 		}
 	}
 
@@ -89,4 +90,12 @@ section.with-home-section-divider {
 .site-title {
 	font-weight: normal;
 	text-transform: uppercase;
+}
+
+.site-footer {
+	margin: 10px;
+	background-color: $celeste;
+	min-height: 100px;
+	border-radius: 0 0 15px 0;
+	padding: 12px;
 }

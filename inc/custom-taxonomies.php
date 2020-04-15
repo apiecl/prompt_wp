@@ -23,7 +23,7 @@ function cptui_register_my_taxes() {
 		"show_in_nav_menus" => true,
 		"query_var" => true,
 		"rewrite" => [ 'slug' => 'obra', 'with_front' => true, ],
-		"show_admin_column" => false,
+		"show_admin_column" => true,
 		"show_in_rest" => true,
 		"rest_base" => "obra",
 		"rest_controller_class" => "WP_REST_Terms_Controller",
@@ -201,6 +201,7 @@ function cptui_register_my_taxes() {
 		'show_admin_column'          => true,
 		'show_in_nav_menus'          => true,
 		'show_tagcloud'              => true,
+		'show_in_rest'				 => true
 	);
 	register_taxonomy( 'desarrollo', array( 'post', 'attachment', ' personas', 'hitos' ), $args );
 
