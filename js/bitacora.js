@@ -2,9 +2,11 @@ jQuery(document).ready(function($) {
 	console.log('init bitacora js');
 
 	var textContainer = $('.texto-dramatico');
-	var mediaid = null;
-	var type = null;
-	var personajes = null;
+	var mediaid;
+	var type;
+	var personajes;
+	var nextMedia;
+	var prevMedia;
 	
 
 	$('.trigger-media').on('click', function(event) {
@@ -27,6 +29,10 @@ jQuery(document).ready(function($) {
 		}
 	});
 
+	$('#obras-link').on('click', function() {
+		$('.obras-nav-wrapper').toggleClass('obra-0');
+	});
+
 	$('a.toggleTabs').on('click', function(e) {
 		e.preventDefault();
 		$('#obraTab').slideToggle();
@@ -46,26 +52,6 @@ jQuery(document).ready(function($) {
 	$('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
 		if($(this).attr('data-function') == 'timeline') {
 			window.timeline = new TL.Timeline('timeline-embed', timeline_events, timeline_options);
-		} else if($(this).attr('data-function') == 'materiales') {
-			//activate first tab on materiales
-			var playId = $(this).attr('data-play-id');
-			var target = '#todos';
-
-			enableAllMedia(playId, target);
-
-		} else if($(this).attr('data-function') == 'getMedia') {
-			//activate render contents
-			var playId = $(this).attr('data-play-id');
-			var tabAction = $(this).attr('data-getType');
-			var target = $(this).attr('href');
-
-			getMedia(playId, tabAction, target);
-		} else if($(this).attr('data-function') == 'enableAllMedia') {
-
-			var playId = $(this).attr('data-play-id');
-			var target = $(this).attr('href');
-
-			enableAllMedia(playId, target);
 		} else if($(this).attr('data-function') == 'materialesTeatro') {
 			var pageId = $(this).attr('data-page-id');
 			var target = $(this).attr('data-contentTarget');
@@ -135,30 +121,53 @@ jQuery(document).ready(function($) {
 	$('body').on('click', '.media-item-wrapper', function(e) {
 		mediaid = $(this).attr('data-mediaid');
 		type = $(this).attr('data-type');
+		$(this).addClass('activeMedia');
 	})
 
 	$('.modal-media-text').on('shown.bs.modal', function(e) {
 		console.log(mediaid);
-		var thisModal = $(this).attr('id');
-		$.ajax({
-			type: "post",
-			url: prompt.ajaxurl,
-			data: {
-				action: "bit_ajax_get_media",
-				mediaid: mediaid,
-				type: type,
-				ispage: $(this).attr('data-ispage')
-			},
-			error: function( response ) {
-				console.log(response);
-			},
-			success: function( response ) {
-				$( '#' + thisModal + ' .modal-body').empty().append(response);
-				if(mediaitem !== null) {
-					var itemInfo = $.parseJSON(mediaitem);
-				}
+
+		var modal = $(this).attr('id');
+		var ispage = $(this).attr('data-ispage');
+
+		loadMediaInModal(mediaid, modal, ispage);
+
+	});
+
+	$('.prevMediaItem').on('click', function() {
+		if(prevMedia.length) {
+			console.log(prevMedia);
+			mediaid = prevMedia.attr('data-mediaid');
+			modal = $(this).attr('data-modal');
+			ispage = $('#' + modal).attr('data-ispage');
+			type = prevMedia.attr('data-type');
+
+			$('.media-item-wrapper').removeClass('activeMedia');
+			$('.media-item-wrapper[data-mediaid="' + mediaid + '"]').addClass('activeMedia');
+
+			loadMediaInModal(mediaid, modal, ispage);
+		}
+	});
+
+	$('.nextMediaItem').on('click', function() {
+		if(nextMedia.length) {
+			if(nextMedia.length) {
+				console.log(nextMedia);
+				mediaid = nextMedia.attr('data-mediaid');
+				modal = $(this).attr('data-modal');
+				ispage = $('#' + modal).attr('data-ispage');
+				type = nextMedia.attr('data-type');
+
+				$('.media-item-wrapper').removeClass('activeMedia');
+				$('.media-item-wrapper[data-mediaid="' + mediaid + '"]').addClass('activeMedia');
+
+				loadMediaInModal(mediaid, modal, ispage);
 			}
-		})
+		}
+	});
+
+	$('.modal-media-text').on('hide.bs.modal', function(e) {
+		$('.media-item-wrapper').removeClass('activeMedia');
 	});
 
 	$('body').on('click', '.btn-taxfilter', function(e) {
@@ -289,6 +298,32 @@ jQuery(document).ready(function($) {
 	function disableMedia( target ) {
 		//$('#' + target).empty();
 		console.log(target);
+	}
+
+	function loadMediaInModal(mediaid, modal, ispage) {
+		
+		nextMedia = $('.activeMedia').next('.media-item-wrapper');
+		prevMedia = $('.activeMedia').prev('.media-item-wrapper');
+
+		$.ajax({
+			type: "post",
+			url: prompt.ajaxurl,
+			data: {
+				action: "bit_ajax_get_media",
+				mediaid: mediaid,
+				type: type,
+				ispage: ispage
+			},
+			error: function( response ) {
+				console.log(response);
+			},
+			success: function( response ) {
+				$( '#' + modal + ' .modal-body').empty().append(response);
+				if(mediaitem !== null) {
+					var itemInfo = $.parseJSON(mediaitem);
+				}
+			}
+		})
 	}
 
 	function enableMedia( mediaids, targetid ) {

@@ -1,13 +1,15 @@
 .obra-container {
 	background-color: $celeste;
-	min-height: 40vh;
+	height: 40vh;
+	width: 100%;
 	color: white;
 	position: relative;
 	display: flex;
 	align-content: center;
 	align-items: center;
 	margin-bottom: $grid-gutter-width / 2;
-
+	transition: all ease-in 0.3s;
+	
 	 h1 {
 	 	font-weight: bold;
 	 	font-size: 1.2rem;
@@ -78,5 +80,24 @@ div.lines {
 		&.short {
 			width: 30%;
 		} 
+	}
+}
+
+#obras-link {
+	overflow: hidden;
+	height: 40vh;
+	width: 100%;
+	margin-bottom: $grid-gutter-width / 2;
+	position: relative;
+}
+
+.obras-nav-wrapper {
+	transition: all ease-in 0.4s;
+	&.obra-0 {
+		margin-top: -41vh;
+	}
+
+	&.obra-1 {
+		margin-top: -82vh;
 	}
 }

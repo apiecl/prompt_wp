@@ -3,9 +3,24 @@ get_header();
 ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+		<main id="main" class="site-main home">
 			
 			<section id="obras-link" class="container-fluid">
+				<div class="obras-nav-wrapper">
+				<div class="obra-container menu-obras">
+					<div class="obra-content">
+						<div class="left">
+							<h1>Obras</h1>
+							<div class="lines">
+							<span></span>
+							<span></span>
+							<span class="short"></span>
+							</div>
+							<div class="obra-image" style="background-image: url(<?php echo $fields['imagen'][0];?>);"></div>
+						</div>
+					</div>
+				</div>
+
 				<?php 
 					$obras = get_terms( array(
 						'taxonomy' => 'obra',
@@ -15,27 +30,28 @@ get_header();
 					if($obras) {
 						foreach($obras as $obra) {
 							$fields = prompt_obra_metadata( $obra->term_id );
+							$baseurl = get_term_link( $obra->term_id, 'obra' );
 							?>
 								
-								<div class="obra-container">
+								<div class="obra-container obra-item-presentation">
 									<div class="obra-content">
 										<div class="left">
-											<h1><a href="<?php echo get_term_link( $obra->term_id, 'obra' );?>"><?php echo $obra->name;?></a></h1>
+											<h1><a href="<?php echo $baseurl;?>"><?php echo $obra->name;?></a></h1>
 											<span class="date"><?php echo $fields['estreno'][0];?></span>
 										</div>
 										<div class="right">
 											<ul>
 												<li>
-													Ficha técnica
+													<a href="<?php echo $baseurl;?>">Ficha técnica</a>
 												</li>
 												<li>
-													Línea de tiempo
+													<a href="<?php echo $baseurl;?>linea-de-tiempo">Línea de tiempo</a>
 												</li>
 												<li>
-													Texto dramático
+													<a href="<?php echo $baseurl;?>texto-dramatico">Texto dramático</a>
 												</li>
 												<li>
-													Materiales
+													<a href="<?php echo $baseurl;?>materiales">Materiales</a>
 												</li>
 											</ul>
 										</div>
@@ -49,6 +65,7 @@ get_header();
 						}
 					}
 				?>	
+				</div>
 			</section>			
 			
 			<?php 

@@ -107,25 +107,24 @@ $fields = prompt_obra_metadata( $term->term_id );
 		</div>
 		<div class="row full-row media-zone" id="<?php echo $mediazoneid;?>">
 			<!-- ajax loaded content-->
+			<?php get_template_part('template-parts/loading');?>
 		</div>	
 		<?php
 	}
 	?>
 
-	<div class="modal fade modal-media-text" tabindex="-1" role="dialog" id="modal-media-text" aria-hidden="true">
+<div class="modal fade modal-media-text" tabindex="-1" role="dialog" id="modal-media-text-materiales" aria-hidden="true">
 		<div class="modal-dialog modal-xl" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h1 class="modal-title"><!-- Title here --></h1>
+					
 					<span type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<i class="fas fa-times"></i>
 					</span>
 				</div>
 				<div class="modal-body">
 					<!-- Content here -->
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+					<?php get_template_part('template-parts/loading');?>
 				</div>
 			</div>
 		</div>
