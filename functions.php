@@ -131,7 +131,7 @@ function prompt_scripts() {
 
 	wp_enqueue_script('wavesurfer', 'https://unpkg.com/wavesurfer.js', array(), '0.1', false);
 
-	wp_enqueue_script('bitacora', get_template_directory_uri() . '/js/bitacora.js', array('jquery', 'tinysliderjs', 'bootstrap', 'wavesurfer', 'masonry'), PROMPT_VERSION, false);
+	wp_enqueue_script('bitacora', get_template_directory_uri() . '/js/bitacora.js', array('jquery', 'tinysliderjs', 'bootstrap', 'wavesurfer', 'masonry', 'lazyload'), PROMPT_VERSION, false);
 
 	wp_enqueue_script( 'prompt-navigation', get_template_directory_uri() . '/js/navigation.js', array(), PROMPT_VERSION, true );
 
@@ -145,19 +145,26 @@ function prompt_scripts() {
 
 	wp_enqueue_script('imagesLoaded', 'https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js', array(), 'last', false);
 
+	wp_enqueue_script('lazyload', 'https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js', array('jquery'), '1.9.1', false);
+
 	wp_enqueue_script('isotope', 'https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js', array('jquery', 'bitacora'), '2.1.1', false);
 
 	$taxonomies = get_taxonomies();
 	$taxinfo = [];
 
 	foreach($taxonomies as $taxonomy) {
-		$terms = get_terms(array('taxonomy' => $taxonomy));
-		$termdata = [];
-		foreach($terms as $term) {
-			$termdata[$term->slug] = $term;  
-		}
+		
+		if($taxonomy != 'obra'):
+			$terms = get_terms(array('taxonomy' => $taxonomy, 'hide_empty'=> false));
+			$termdata = [];
+			
+			foreach($terms as $term) {
+				$termdata[$term->slug] = $term;  
+			}
 
-		$taxinfo[$taxonomy] =  $termdata;
+			$taxinfo[$taxonomy] =  $termdata;
+
+		endif;
 
 	}
 

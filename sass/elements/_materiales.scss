@@ -100,6 +100,15 @@ a.documento-download {
 .media-item-wrapper {
 	width: 240px;
 	margin: 12px;
+	overflow: hidden;
+	transition: all 0.1s linear;
+	
+	&:hover {
+		transform: scale3d(1.1, 1.1, 1.1);
+		z-index: 10;
+		box-shadow: 0 0 6px #555;
+	}
+
 	@include respond-below(sm) {
 		width: 150px;
 		margin: 6px;
@@ -109,17 +118,20 @@ a.documento-download {
 .media-item {
 	text-align: center;
 	position: relative;
-	transition: all 0.1s linear;
+	
 	cursor: pointer;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-color: $gris;
 	height: 150px;
 
-	&:hover {
-		transform: scale3d(1.1, 1.1, 1.1);
-		z-index: 10;
-		box-shadow: 0 0 6px #555;
+	
+
+	.media-item-image {
+		width: 100%;
+		height: auto;
+		opacity: 0;
+		transition: opacity .3s ease-in-out;
 	}
 
 	.media-item-text {
@@ -152,6 +164,9 @@ a.documento-download {
 	}
 
 	span.mediaicon {
+		position: absolute;
+		top: 6px;
+		right: 6px;
 		text-align: right;
 		padding: 12px 6px 12px 0;
 		display: block;

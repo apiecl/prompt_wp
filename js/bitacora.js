@@ -8,6 +8,7 @@ jQuery(document).ready(function($) {
 	var nextMedia;
 	var prevMedia;
 	
+	
 
 	$('.trigger-media').on('click', function(event) {
 		event.preventDefault();
@@ -181,24 +182,26 @@ jQuery(document).ready(function($) {
 				filter: ""
 			});
 			
-			console.log('show taxfilter');
+			
 			var curtax = $(this).attr('data-tax');
 			var availableTerms = [];
 			$('.media-item-wrapper[data-' + curtax + ']').each(function(idx) {
 				var parseTerms = $(this).attr('data-' + curtax);
 				var arrayTerms = parseTerms.split(",");
 				for(var i = 0; i < arrayTerms.length; i++) {
+					arrayTerms[i] = arrayTerms[i].replace(/\s+/g, '');
 					availableTerms.push(arrayTerms[i]);	
 				}
 			});
 
 			availableTerms = unique(availableTerms);
-			console.log(availableTerms);
+			console.log(curtax, availableTerms);
 
 			for(var i=0; i < availableTerms.length; i++) {
-				console.log(availableTerms[i]);
-				var curterms = prompt.taxinfo[curtax][availableTerms[i]];
-				$('body .terms-filter-zone').append('<button class="btn btn-term-filter" data-tax="' + curtax + '" data-term-filter="' + curterms.slug + '">' + curterms.name + '</button>');
+				var curterm = availableTerms[i];
+				var curtermitem = prompt.taxinfo[curtax][curterm];
+
+				$('body .terms-filter-zone').append('<button class="btn btn-term-filter" data-tax="' + curtax + '" data-term-filter="' + curtermitem.slug + '">' + curtermitem.name + '</button>');
 			};
 		}
 		
@@ -222,7 +225,7 @@ jQuery(document).ready(function($) {
 			var curterm = $(this).attr('data-term-filter');
 			console.log(curtax, curterm);
 			$grid.isotope({
-				filter: '[data-' + curtax + '="' + curterm + '"]'
+				filter: '[data-' + curtax + '*="' + curterm + '"]'
 			});
 			$(this).addClass('active');
 			
@@ -275,6 +278,8 @@ jQuery(document).ready(function($) {
 		
 
 	});
+
+
 
 	// $grid.imagesLoaded().progress(function() {
 	// 	$grid.masonry('layout');
@@ -360,9 +365,18 @@ jQuery(document).ready(function($) {
 			success:function(response) {
 				console.log(target);
 				$(target).empty().append(response);
+				
+					$('img.media-item-image').on('load', function() {
+						this.style.opacity = 1;
+					});
+
+				var images = document.querySelectorAll('.media-item-image');
+				lazyload(images);
+
 				$grid = $('.mediaitems-gallery').isotope({
 					itemSelector: '.media-item-wrapper',
-					layoutMode: 'fitRows'
+					layoutMode: 'fitRows',
+					stagger: 30
 				});
 			}
 		});
@@ -384,7 +398,8 @@ jQuery(document).ready(function($) {
 				$(target).empty().append(response);
 				$grid = $('.mediaitems-gallery').isotope({
 					itemSelector: '.media-item-wrappr',
-					layoutMode: 'fitRows'
+					layoutMode: 'fitRows',
+					stagger: 30
 				});
 			}
 		});
