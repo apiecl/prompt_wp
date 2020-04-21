@@ -8,11 +8,12 @@ $playtext = bit_get_play($term->term_id);
 	Materiales asociados a la obra
 </h1>
 
-<ul class="nav nav-pills materiales-obra" id="materialesTabs" role="tablist" data-play-id="<?php echo $term->term_id;?>">
+<!-- <ul class="nav nav-pills materiales-obra" id="materialesTabs" role="tablist" data-play-id="<?php echo $term->term_id;?>">
 	<li class="nav-item">
 		<a href="#todos" class="nav-link active" data-toggle="tab" id="todosTab" data-function="enableAllMedia" data-getType="gallery" data-play-id="<?php echo $term->term_id;?>">Todos los materiales</a>
 	</li>
 </ul>
+ -->
 
 <div class="tab-content" id="materialesTabsContent">
 	<div class="tab-pane fade show active" id="todos" role="tabpanel" aria-labelledby="todosTab" >

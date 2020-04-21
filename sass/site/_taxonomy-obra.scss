@@ -3,7 +3,7 @@
 
 .single-obra-container-fluid div.wrapper,
 .page-template-teatro div.wrapper
- {
+{
 	background-color: white;
 	border-radius: 0 15px 0 0;
 	.imagen-obra {
@@ -14,7 +14,7 @@
 			bottom: 24px;
 			left: 12px;
 			color: white;
-			z-index: 20;
+			z-index: 1;
 		}
 		div.imagen {
 			background-repeat: no-repeat;
@@ -158,49 +158,51 @@ a.toggleTabs {
 #obraTab {
 	background-color: $gris;
 	margin: 0;
-	display: none;
+	display: flex;
 	a.nav-item,
 	a.nav-item:visited,
 	a.nav-item:focus {
 		text-decoration: none;
 		color: #333;
 		outline: none;
-		background-color: transparent;
+		background-color: $gris;
+		color: white;
 		border: 0;
 		border-radius: 0;
 		margin: 0 0 -1px 0;
 		font-weight: 700;
-		text-align: left;
-		padding: 6px;
+		text-align: center;
+		padding: 12px 6px;
 		font-size: 16px;
+		transition: all linear 0.2s;
 	}
 
 
 
 	a.nav-item:hover,
 	a.nav-item.active {
-		border: 0;
-		background-color: $celeste;
-		color: white;
+		background-color: $celeste_claro;
+		color: black;
 	}
 
 	.tab-pane {
 		min-height: 200px;
 	}
-
-	@include respond-below(sm) {
-		display: none;
-	}
 }
 
 @include respond-below(sm) {
-	a.nav-item {
-		font-size: 13px;
-		padding: 8px 2px 3px 2px;
-		line-height: 1.2em;
-		display: flex;
-		align-items: center;
-		justify-content: flex-start;
+	#obraTab {
+			a.nav-item,
+			a.nav-item:visited,
+			a.nav-item:focus {
+				font-size: 13px;
+				padding: 8px 2px 8px 6px;
+				line-height: 1.2em;
+				text-align: left;
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+			}
 	}
 }
 

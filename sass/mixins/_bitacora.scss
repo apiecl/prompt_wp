@@ -10,7 +10,7 @@
 		content: '';
 		width: 100%;
 		position: absolute;
-		border-top: 12px solid $gris;
+		border-top: 12px solid $celeste_claro;
 		margin: 0;
 		top: 50%;
 		left: 0;
@@ -54,4 +54,10 @@
 		}
 		position: absolute;
 	}
+}
+
+@mixin coolOverlay() {
+	mix-blend-mode: multiply;
+  	-webkit-filter: grayscale(100%) contrast(200%);
+  	filter: grayscale(100%) contrast(200%);
 }

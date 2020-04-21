@@ -1,7 +1,14 @@
 
 div#page {
-	max-width: 1300px;
+	max-width: 1900px;
 	margin: 0 auto;
+	&.hasmenu {
+		margin: 0 0 0 60px;
+
+		@include respond-below('md') {
+			margin: 0 auto;
+		}
+	}
 }
 
 /*--------------------------------------------------------------
@@ -18,11 +25,35 @@ div#page {
 ## Header
 --------------------------------------------------------------*/
 
+body.admin-bar {
+	.site-header {
+		top: 32px;
+		&.nav-up {
+			top: -138px;	
+		}
+	}
+}
+
 .site-header {
-	background-color: $celeste;
-	border-radius: 0 15px 0 0;
 	color: #333;
-	margin: 10px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: 10px;
+	width: 100%;
+	z-index: 10;
+	transition: top .2s ease-in-out;
+	--webkit-transition: top .5s ease-in-out;
+
+	&.nav-up {
+		top: -126px;
+	}
+
+	> .container-fluid {
+		background-color: $celeste;
+		border-radius: 0 15px 0 0;
+	}
+
 	a {
 		color: #333;
 		text-decoration: none;
@@ -42,11 +73,12 @@ div#page {
 		color: white;
 		text-align: right;
 		margin:8px 12px 8px 24px;
-		font-weight: 400;
+		font-weight: 700;
 		font-size: 12px;
-		max-width: 250px;
+		max-width: 350px;
+		line-height: 1.25em;
 		@include respond-above('md') {
-			font-size: 18px;
+			font-size: 24px;
 		}
 	}
 
@@ -54,8 +86,13 @@ div#page {
 		text-align: left;
 		margin: 0;
 		img {
-			max-width: 360px;
+			max-width: 200px;
 			height: auto;
+			transition: all linear 0.2s;
+			&:hover {
+				filter: invert(100%);
+			}
+			
 			@include respond-below(sm) {
 				max-width: 120px;
 			}
@@ -71,6 +108,15 @@ section.with-home-section-divider {
 	border-top: 1px solid #555;
 	padding-top: 0;
 	margin-top: 24px;
+}
+
+.site-content {
+	position: relative;
+	margin-top: 128px;
+
+	@include respond-below(md) {
+		margin-top: 80px;
+	}
 }
 
 .section-title {
@@ -97,5 +143,41 @@ section.with-home-section-divider {
 	background-color: $celeste;
 	min-height: 100px;
 	border-radius: 0 0 15px 0;
-	padding: 12px;
+	padding: 6px 24px;
+}
+
+.footer-links-right {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+a.creditos-link {
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	background-color: white;
+	display: inline-block;
+	padding: 2px 6px;
+	color: $celeste;
+	font-weight: bold;
+	font-size: 14px;
+	margin: 0 24px 0 48px;
+}
+
+.redes-links a {
+	display: inline-block;
+	text-align: center;
+	height: 32px;
+	line-height: 32px;
+	width: 32px;
+	border-radius: 16px;
+	font-size: 18px;
+	color: $celeste;
+	background-color: white;
+	margin: 6px 0;
+}
+
+.site-info {
+	max-width: 900px;
+	margin: 0 auto;
 }

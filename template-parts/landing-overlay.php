@@ -1,19 +1,19 @@
-<?php
-/**
- * The template for displaying the footer
- *
- * Contains the closing of the #content div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package promptbook
- */
+<div id="landing-overlay">
+	<div class="content-top">
 
-?>
+		<div class="wrapper">
+			<h1 class="site-title">
+					<img src="<?php echo get_stylesheet_directory_uri();?>/img/logo_negro.svg" alt="<?php bloginfo( 'name' ); ?>">
+			</h1>
 
-	</div><!-- #content -->
+			<div class="description">
+				<?php bloginfo('description');?>
+			</div>
 
-	<footer id="colophon" class="site-footer hidden">
+		</div>
+	</div>
+
+	<footer class="site-footer">
 		<div class="site-info">
 			<div class="row">
 				<div class="col-8">
@@ -30,10 +30,5 @@
 				</div>
 			</div>			
 		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
-
-<?php wp_footer(); ?>
-
-</body>
-</html>
+	</footer>
+</div>

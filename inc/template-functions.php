@@ -133,3 +133,17 @@ function prompt_cpt_generating_rule($wp_rewrite) {
     $wp_rewrite->rules = $rules + $wp_rewrite->rules;
 }
 add_filter('generate_rewrite_rules', 'prompt_cpt_generating_rule');
+
+function prompt_override_audio( $html, $attr, $content, $instance) {
+		
+	$output = '<div class="prompt-audio-player" id="audio-' . $instance.'">';
+
+	$output .= '<canvas width="100%" height="200" id="audio-vis-canvas"></canvas>';
+	$output .= '<audio class="audio-vis-element" src="' .$attr['src']. '" controls> Tu navegador no permite audio. </audio>';
+	$output .= '</div>';
+
+
+	return $output;
+}
+
+add_filter( 'wp_audio_shortcode_override', 'prompt_override_audio', 10, 4 );

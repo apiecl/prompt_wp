@@ -7,7 +7,10 @@ jQuery(document).ready(function($) {
 	var personajes;
 	var nextMedia;
 	var prevMedia;
-	
+	var didScroll;
+	var lastScrollTop = 0;
+	var delta = 5;
+	var navBarHeight = $('.site-header').outerHeight();
 	
 
 	$('.trigger-media').on('click', function(event) {
@@ -30,8 +33,51 @@ jQuery(document).ready(function($) {
 		}
 	});
 
-	$('#obras-link').on('click', function() {
-		$('.obras-nav-wrapper').toggleClass('obra-0');
+	$('#landing-overlay .content-top').on('click', function() {
+		$('#landing-overlay').fadeOut();
+	});
+
+	$(window).scroll(function(event) {
+		didScroll = true;
+	});
+
+	setInterval(function() {
+		if(didScroll) {
+			hasScrolled();
+			didScroll = false;
+		}
+	});
+
+	function hasScrolled() {
+		var st = $(this).scrollTop();
+
+		if(Math.abs(lastScrollTop-st) <= delta)
+			return;
+
+		if(st > lastScrollTop && st > navBarHeight) {
+			$('.site-header').removeClass('nav-down').addClass('nav-up');
+			$('.main-navigation').addClass('affix');
+		} else {
+			if(st + $(window).height() < $(document).height()) {
+				$('.site-header').removeClass('nav-up').addClass('nav-down');
+				$('.main-navigation').removeClass('affix');
+			}
+		}
+		lastScrollTop = st;
+	}
+
+	$('.teatro-item-presentation, .obra-item-presentation').hide();
+
+
+	$('.menu-toggle').on('click', function() {
+		var nav = $('.main-navigation')
+		nav.toggleClass('active');
+		if(nav.hasClass('active')) {
+			$(this).empty().html('<i class="fas fa-times"></i>');
+		} else {
+			$(this).empty().html('<i class="fas fa-bars"></i>');	
+		}
+		
 	});
 
 	$('a.toggleTabs').on('click', function(e) {
@@ -131,7 +177,7 @@ jQuery(document).ready(function($) {
 		var modal = $(this).attr('id');
 		var ispage = $(this).attr('data-ispage');
 
-		loadMediaInModal(mediaid, modal, ispage);
+		loadMediaInModal(mediaid, modal, ispage, type);
 
 	});
 
@@ -146,7 +192,7 @@ jQuery(document).ready(function($) {
 			$('.media-item-wrapper').removeClass('activeMedia');
 			$('.media-item-wrapper[data-mediaid="' + mediaid + '"]').addClass('activeMedia');
 
-			loadMediaInModal(mediaid, modal, ispage);
+			loadMediaInModal(mediaid, modal, ispage, type);
 		}
 	});
 
@@ -162,7 +208,7 @@ jQuery(document).ready(function($) {
 				$('.media-item-wrapper').removeClass('activeMedia');
 				$('.media-item-wrapper[data-mediaid="' + mediaid + '"]').addClass('activeMedia');
 
-				loadMediaInModal(mediaid, modal, ispage);
+				loadMediaInModal(mediaid, modal, ispage, type);
 			}
 		}
 	});
@@ -172,19 +218,21 @@ jQuery(document).ready(function($) {
 	});
 
 	$('body').on('click', '.btn-taxfilter', function(e) {
-		$('.btn-taxfilter').removeClass('active');
+		
 		$('body .terms-filter-zone').empty();
 
-		if(!$(this).hasClass('active')) {
+		var curtax = $(this).attr('data-tax');
+		var target = $('body .terms-filter-zone[data-for=' + curtax + ']');
 
+		if(!$(this).hasClass('active')) {
+			$('.btn-taxfilter').removeClass('active');
 			$(this).addClass('active');
 			$grid.isotope({
 				filter: ""
 			});
 			
-			
-			var curtax = $(this).attr('data-tax');
 			var availableTerms = [];
+
 			$('.media-item-wrapper[data-' + curtax + ']').each(function(idx) {
 				var parseTerms = $(this).attr('data-' + curtax);
 				var arrayTerms = parseTerms.split(",");
@@ -195,19 +243,22 @@ jQuery(document).ready(function($) {
 			});
 
 			availableTerms = unique(availableTerms);
-			console.log(curtax, availableTerms);
+			
 
 			for(var i=0; i < availableTerms.length; i++) {
 				var curterm = availableTerms[i];
 				var curtermitem = prompt.taxinfo[curtax][curterm];
 
-				$('body .terms-filter-zone').append('<button class="btn btn-term-filter" data-tax="' + curtax + '" data-term-filter="' + curtermitem.slug + '">' + curtermitem.name + '</button>');
+				target.append('<a href="#" class="dropdown-item dropdown-filter" data-tax="' + curtax + '" data-term-filter="' + curtermitem.slug + '">' + curtermitem.name + '</a>');
 			};
+		} else {
+			$('.btn-taxfilter').removeClass('active');
+			target.empty();
 		}
 		
 	});
 
-	$('body').on('click', '.btn-term-filter', function(e) {
+	$('body').on('click', '.dropdown-filter', function(e) {
 		$('body .btn-term-filter').removeClass('active');
 		//console.log('click filter');
 		if($(this).hasClass('active')) {
@@ -219,7 +270,7 @@ jQuery(document).ready(function($) {
 
 		} else {
 
-			$('body .btn-term-filter').removeClass('active');
+			$('body .dropdown-filter').removeClass('active');
 
 			var curtax = $(this).attr('data-tax');
 			var curterm = $(this).attr('data-term-filter');
@@ -277,173 +328,6 @@ jQuery(document).ready(function($) {
 		}
 		
 
+		});
+
 	});
-
-
-
-	// $grid.imagesLoaded().progress(function() {
-	// 	$grid.masonry('layout');
-	// });
-
-	function setPersonajes() {
-		var personajes = [];
-		$('.text-item').each(function(idx) {
-			var linePersonajes = $(this).attr('data-personajes').split(',');
-			for(var i = 0; i < linePersonajes.length; i++) {
-				if(linePersonajes[i].length > 0) {
-					var cleanPersonaje = $.trim(linePersonajes[i]);
-					personajes.push(cleanPersonaje);	
-				}
-			}
-		});
-
-		return unique(personajes);
-	}
-
-	function disableMedia( target ) {
-		//$('#' + target).empty();
-		console.log(target);
-	}
-
-	function loadMediaInModal(mediaid, modal, ispage) {
-		
-		nextMedia = $('.activeMedia').next('.media-item-wrapper');
-		prevMedia = $('.activeMedia').prev('.media-item-wrapper');
-
-		$.ajax({
-			type: "post",
-			url: prompt.ajaxurl,
-			data: {
-				action: "bit_ajax_get_media",
-				mediaid: mediaid,
-				type: type,
-				ispage: ispage
-			},
-			error: function( response ) {
-				console.log(response);
-			},
-			success: function( response ) {
-				$( '#' + modal + ' .modal-body').empty().append(response);
-				if(mediaitem !== null) {
-					var itemInfo = $.parseJSON(mediaitem);
-				}
-			}
-		})
-	}
-
-	function enableMedia( mediaids, targetid ) {
-		$.ajax({
-			type: "post",
-			url: prompt.ajaxurl,
-			data: {
-				action: "bit_get_mediazone",
-				params: mediaids,
-				id: targetid
-			},
-			error: function( response ) {
-				console.log(response);
-			},
-			success:function(response) {
-				console.log(targetid);
-				$('#' + targetid).empty().append(response);
-			}
-		});
-	}
-
-	function enableAllMedia( playid, target ) {
-		$.ajax({
-			type: "post",
-			url: prompt.ajaxurl,
-			data: {
-				action: "bit_get_all_mediazone",
-				playid: playid,
-				all: true
-			},
-			error: function( response ) {
-				console.log('error', response);
-			},
-			success:function(response) {
-				console.log(target);
-				$(target).empty().append(response);
-				
-					$('img.media-item-image').on('load', function() {
-						this.style.opacity = 1;
-					});
-
-				var images = document.querySelectorAll('.media-item-image');
-				lazyload(images);
-
-				$grid = $('.mediaitems-gallery').isotope({
-					itemSelector: '.media-item-wrapper',
-					layoutMode: 'fitRows',
-					stagger: 30
-				});
-			}
-		});
-	}
-
-	function enableMediaPage( pageid, target) {
-		console.log('calling media page');
-		$.ajax({
-			type: "post",
-			url: prompt.ajaxurl,
-			data: {
-				action: "bit_get_mediapage",
-				pageid: pageid
-			},
-			error: function( response ) {
-				console.log( 'error', response);
-			},
-			success: function( response ) {
-				$(target).empty().append(response);
-				$grid = $('.mediaitems-gallery').isotope({
-					itemSelector: '.media-item-wrappr',
-					layoutMode: 'fitRows',
-					stagger: 30
-				});
-			}
-		});
-	}
-
-	function getMedia( playid, type, target ) {
-		if(!$(target).hasClass('contentloaded')) {
-			$.ajax({
-				type: "post",
-				url: prompt.ajaxurl,
-				data: {
-					action: 'bit_get_media',
-					playid: playid,
-					getType: type
-				},
-				error: function( response ) {
-					console.log(response);
-				},
-				success: function( response ) {
-					$(target).append(response);
-					$(target).addClass('contentloaded');
-				}
-			});
-		}
-	}
-
-	function animateCSS(element, animationName, callback) {
-		const node = document.querySelector(element)
-		node.classList.add('animated', animationName)
-
-		function handleAnimationEnd() {
-			node.classList.remove('animated', animationName)
-			node.removeEventListener('animationend', handleAnimationEnd)
-
-			if (typeof callback === 'function') callback()
-		}
-
-	node.addEventListener('animationend', handleAnimationEnd)
-}
-
-function unique(array){
-	return array.filter(function(el, index, arr) {
-		return index == arr.indexOf(el);
-	});
-}
-
-});

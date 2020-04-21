@@ -34,42 +34,55 @@ ul#materialesTabs {
 
 div.filtertax {
 	margin: 24px 0;
+	display: flex;
 	button.btn {
-		border: 1px solid #333;
+		border: 1px solid $celeste;
 		border-radius: 0;
 		margin-right: 6px;
-		border-style: dotted;
+		color: $celeste;
+		position: relative;
+		
+		&:before {
+			display: block;
+			content: attr(title);
+			font-weight: bold;
+			height: 0;
+			overflow: hidden;
+			visibility: hidden;
+		}
 	
-		&:hover {
-			border-style: solid;
+		&:hover, &.active {
+			background-color: black;
+			color: white;
+			font-weight: 700;
+			border: 1px solid black;
 		}
 
-		&.active {
-			background-color: #f0f0f0;
-			border-style: solid;
-			box-shadow: 0;
+		&:focus {
+			box-shadow: none;
 		}
 	}	
 }
 
-.terms-filter-zone,
-.filtertype {
-	margin: 24px 0;
+.dropdown-filters {
+	position: relative;
+}
 
-	button.btn {
-		margin-right: 6px;
-		border: 1px solid #333;
-		border-style: dotted;
-		&.active,
-		&:active,
-		&:focus
-		 {
-			border: 1px solid #333;
-			background-color: #f0f0f0;
-			box-shadow: 0;
-		}
+.terms-filter-zone {
+	position: absolute;
+	top: 42px;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+	z-index: 20;
+	min-width: 260px;
+	
+	a {
+		color: white;
+		font-weight: 700;
+		padding: 6px 12px;
 	}
 }
+
 
 a.documento-download {
 	padding: 24px;
@@ -83,11 +96,6 @@ a.documento-download {
 
 .row.showfilter {
 	margin: 24px 0;
-}
-
-.filtertax.hidden,
-.filtertype.hidden {
-	display: none;
 }
 
 .mediaitems-gallery {
@@ -282,4 +290,30 @@ span.termlabel {
 		margin-right: 24px;
 		color: $celeste;
 	}
+}
+
+.bar-wrapper {
+  height: 300px;
+  position: relative;
+}
+
+.bar {
+  position: relative;
+  bottom: 0;
+  width: 5px;
+  display: inline-block;
+  border: 1px solid red;
+  height: 5px;
+  border-bottom: 3px solid #fff;
+}
+
+canvas#audio-vis-canvas {
+	display: block;
+	width: 60%;
+	min-height: 250px;
+	min-width: 320px;
+	height: 250px;
+	margin: 12px auto;
+	padding: 12px;
+	background-color: $gris;
 }

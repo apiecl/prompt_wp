@@ -1,20 +1,32 @@
+$height-lg: 90vh;
+$height-sm: 40vh;
+
+body.home {
+	overflow: hidden;
+}
+
 .obra-container {
 	background-color: $celeste;
-	height: 40vh;
+	height: $height-sm;
 	width: 100%;
 	color: white;
 	position: relative;
 	display: flex;
-	align-content: center;
-	align-items: center;
+	padding-top: 24px;
 	margin-bottom: $grid-gutter-width / 2;
 	transition: all ease-in 0.3s;
+
+	@include respond-above(lg) {
+		height: $height-lg;
+	}
 	
 	 h1 {
 	 	font-weight: bold;
-	 	font-size: 1.2rem;
-	 	@include respond-above(lg) {
-	 		font-size: 3rem;
+	 	font-size: 2rem;
+	 	max-width: 350px;
+	 	line-height: 1.1em;
+	 	@include respond-above(md) {
+	 		font-size: 4rem;
 	 	}
 	 }
 
@@ -33,9 +45,6 @@
 		width: 100%;
 		height: 100%;
 		z-index: 10;
-		mix-blend-mode: multiply;
-  		-webkit-filter: grayscale(100%) contrast(200%);
-  		filter: grayscale(100%) contrast(200%);
   		opacity: 1;
   		background-repeat: no-repeat;
 		background-size: cover;
@@ -51,7 +60,7 @@
 	.obra-content {
 		
 		z-index: 20;
-		padding: 24px;
+		padding: 0 24px 24px;
 		color: white;
 		display: flex;
 
@@ -83,21 +92,102 @@ div.lines {
 	}
 }
 
-#obras-link {
+main#main.site-main.home {
+	@include respond-above('lg') {
+		display: flex;
+		overflow: hidden;
+	}
+}
+
+#obras-link, #teatro-link {
 	overflow: hidden;
-	height: 40vh;
+	//height: $height-sm;
 	width: 100%;
 	margin-bottom: $grid-gutter-width / 2;
 	position: relative;
+
+	@include respond-above('lg') {
+		//height: $height-lg;
+		width: 50%;
+		margin-bottom: 0;
+	}
 }
+
+
+@include respond-above('lg') {
+	#obras-link {
+		padding-right: 0;
+	}
+}
+
 
 .obras-nav-wrapper {
 	transition: all ease-in 0.4s;
 	&.obra-0 {
-		margin-top: -41vh;
+		margin-top: -77vh;
 	}
 
 	&.obra-1 {
 		margin-top: -82vh;
+	}
+}
+
+.section-desc {
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 1.25em;
+	color: white;
+	max-width: 380px;
+	@include respond-below('sm') {
+		font-size: 18px;
+	}
+}
+
+.home .site-content {
+	z-index: 10;
+}
+
+#landing-overlay {
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	text-align: left;
+	
+	.content-top {
+		border-top: 10px solid black;
+		border-left: 10px solid black;
+		border-right: 10px solid black;
+		border-radius: 0 15px 0 0;
+		height: 85vh;
+		background-color: $celeste;
+
+		h1 img {
+			max-width: 500px;
+		}
+
+		.wrapper {
+			margin-left: 120px;
+			margin-top: 120px;
+		}
+
+		.description {
+			font-weight: 700;
+			font-size: 24px;
+			color: white;
+			text-align: left;
+			max-width: 320px;
+			margin-left: 40px;
+		}
+	}
+
+	.site-footer {
+		margin: 0;
+		width: 100%;
+		background-color: $celeste;
+		border: 10px solid black;
+		padding: 16px 0;
 	}
 }

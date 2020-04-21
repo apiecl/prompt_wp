@@ -1,109 +1,115 @@
+body.admin-bar .main-navigation {
+	top: 160px;
+}
+
 .main-navigation {
 	clear: both;
 	display: block;
-	float: left;
-	width: 100%;
+	background-color: rgba(3, 40, 103, 0.8);
+	z-index: 20;
+	color: white;
+	transition: all ease-in 0.5s;
+
+	.menu-principal-container {
+		margin-top: 48px;
+		text-align: left;
+		padding: 24px;
+	}
+
+	&.active {
+		transition: all ease-out 0.5s;
+	}
 
 	ul {
-		display: none;
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
+	}
 
-		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
-			position: absolute;
-			top: 100%;
-			left: -999em;
-			z-index: 99999;
-
-			ul {
-				left: -999em;
-				top: 0;
+	ul.sub-menu {
+		margin-left: 36px;
+		ul.sub-menu {
+			margin-left: 72px;
+			li a {
+				font-weight: normal;
 			}
-
-			li {
-				&:hover > ul,
-				&.focus > ul {
-					left: 100%;
-				}
-			}
-
-			a {
-				width: 200px;
-				text-transform: uppercase;
-			}
-
-			:hover > a,
-			.focus > a {
-			}
-
-			a:hover,
-			a.focus {
-			}
-		}
-
-		li:hover > ul,
-		li.focus > ul {
-			left: auto;
 		}
 	}
 
 	li {
-		float: left;
-		position: relative;
-
 		&:hover > a,
 		&.focus > a {
+			color: white;
 		}
 	}
 
 	a {
-		display: block;
 		text-decoration: none;
-		padding: 12px;
+		color: white;
+		font-size: 24px;
+		font-weight: 700;
+		&:hover {
+			color: white;
+		}
 	}
 
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
+		font-weight: 700;
 	}
 }
 
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
+.menu-toggle {
+	font-size: 42px;
+	cursor: pointer;
+	color: $celeste_claro;
 }
 
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: block;
-	}
+
+@include respond-above(md) {
+	.main-navigation {
+		width: 450px;
+		position: fixed;
+		top: 128px;
+		left: -380px;
+		height: 100%;
+		
+
+		&.affix {
+			top: 0;
+		}
+
+		.menu-toggle {
+			position: absolute;
+			top: 12px;
+			right: 18px;
+		}
+
+		&.active {
+			left: 0;
+		}
+	}	
 }
 
-.comment-navigation,
-.posts-navigation,
-.post-navigation {
+@include respond-below(md) {
+	.main-navigation {
+		position: fixed;
+		width: 100%;
+		bottom: 0;
+		left: 0;
+		height: 50px;
+		text-align: center;
+		padding: 0;
 
-	.site-main & {
-		margin: 0 0 1.5em;
-		overflow: hidden;
-	}
+		.menu-toggle {
+			font-size: 32px;
+		}
 
-	.nav-previous {
-		float: left;
-		width: 50%;
-	}
-
-	.nav-next {
-		float: right;
-		text-align: right;
-		width: 50%;
+		&.active {
+			left: 0;
+			height: 60vh;
+		}
 	}
 }

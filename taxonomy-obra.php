@@ -12,20 +12,20 @@ $baseurl = get_term_link($term->term_id, 'obra');
 <div class="single-obra-container-fluid container-fluid" >
 	<div class="wrapper">
 		
-		<a href="#" class="toggleTabs"><i class="fas fa-bars"></i></a>
-
-		<nav class="nav nav-pills nav-justified" id="obraTab" role="tablist">
-			<a id="info-tab" href="<?php echo $baseurl;?>" class="nav-item nav-link <?php echo ( is_null($tab) ? 'active' : '');?>">Ficha</a>
-			<a id="texto-tab" href="<?php echo $baseurl . 'texto-dramatico';?>" class="nav-item nav-link <?php echo ($tab == 'texto-dramatico' ? 'active' : '');?>">Texto</a>
-			<a id="timeline-tab" href="<?php echo $baseurl . 'linea-de-tiempo';?>" class="nav-item nav-link <?php echo ($tab == 'linea-de-tiempo' ? 'active' : '');?>">Línea de Tiempo</a>
-			<a id="materiales-tab" href="<?php echo $baseurl . 'materiales';?>" class="nav-item nav-link <?php echo ($tab == null ? 'materiales' : '');?>">Materiales</a>
-		</nav>
-
 		<div class="imagen-obra">
 			<h1 class="play-title"><?php single_term_title();?></h1>
 			<div class="imagen" style="background-image: url(<?php echo $fields['imagen'][0];?>);">
 			</div>
 		</div>
+
+		<nav class="nav nav-pills nav-justified" id="obraTab" role="tablist">
+			<a id="info-tab" href="<?php echo $baseurl;?>" class="nav-item nav-link <?php echo ( is_null($tab) ? 'active' : '');?>">Ficha artística</a>
+			<a id="timeline-tab" href="<?php echo $baseurl . 'linea-de-tiempo';?>" class="nav-item nav-link <?php echo ($tab == 'linea-de-tiempo' ? 'active' : '');?>">Línea de Tiempo</a>
+			<a id="texto-tab" href="<?php echo $baseurl . 'texto-dramatico';?>" class="nav-item nav-link <?php echo ($tab == 'texto-dramatico' ? 'active' : '');?>">Texto dramático</a>
+			<a id="materiales-tab" href="<?php echo $baseurl . 'materiales';?>" class="nav-item nav-link <?php echo ($tab == 'materiales' ? 'active' : '');?>">Materiales</a>
+		</nav>
+
+		
 		
 
 

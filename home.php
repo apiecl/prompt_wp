@@ -1,20 +1,17 @@
 <?php
 get_header();
 ?>
-
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main home">
 			
-			<section id="obras-link" class="container-fluid">
+			<section id="obras-link" class="container-fluid" data-action="show" data-toggle="obra-item-presentation">
 				<div class="obras-nav-wrapper">
 				<div class="obra-container menu-obras">
 					<div class="obra-content">
 						<div class="left">
 							<h1>Obras</h1>
-							<div class="lines">
-							<span></span>
-							<span></span>
-							<span class="short"></span>
+							<div class="section-desc">
+								Navega por los hitos de uno de los teatros universitarios con más trayectoria de Chile. 
 							</div>
 							<div class="obra-image" style="background-image: url(<?php echo $fields['imagen'][0];?>);"></div>
 						</div>
@@ -42,7 +39,7 @@ get_header();
 										<div class="right">
 											<ul>
 												<li>
-													<a href="<?php echo $baseurl;?>">Ficha técnica</a>
+													<a href="<?php echo $baseurl;?>">Ficha artística</a>
 												</li>
 												<li>
 													<a href="<?php echo $baseurl;?>linea-de-tiempo">Línea de tiempo</a>
@@ -83,7 +80,19 @@ get_header();
 			?>
 
 			<section id="teatro-link" class="container-fluid">
-				<div class="obra-container">
+				
+				<div class="obra-container menu-obras menu-teatrouc" data-action="show" data-toggle="teatro-item-presentation">
+					<div class="obra-content">
+						<div class="left">
+							<h1><?php echo $teatropage->post_title;?></h1>
+							<div class="section-desc">
+								Conoce la trastienda de una obra de teatro. Este es un viaje por el proceso creativo y artístico de nuestros montajes. 
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="obra-container teatro-item-presentation">
 					<div class="obra-content">
 						<h1><a href="<?php echo get_permalink($teatropage->ID);?>"><?php echo $teatropage->post_title;?>
 							<div class="lines">
