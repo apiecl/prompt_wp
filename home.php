@@ -13,7 +13,6 @@ get_header();
 							<div class="section-desc">
 								Navega por los hitos de uno de los teatros universitarios con más trayectoria de Chile. 
 							</div>
-							<div class="obra-image" style="background-image: url(<?php echo $fields['imagen'][0];?>);"></div>
 						</div>
 					</div>
 				</div>
@@ -28,15 +27,15 @@ get_header();
 						foreach($obras as $obra) {
 							$fields = prompt_obra_metadata( $obra->term_id );
 							$baseurl = get_term_link( $obra->term_id, 'obra' );
+							$yearplay = prompt_format_date($fields['estreno'][0], '%Y');
 							?>
 								
 								<div class="obra-container obra-item-presentation">
 									<div class="obra-content">
-										<div class="left">
-											<h1><a href="<?php echo $baseurl;?>"><?php echo $obra->name;?></a></h1>
-											<span class="date"><?php echo $fields['estreno'][0];?></span>
-										</div>
-										<div class="right">
+										<div class="obra-content-wrap">
+											<h3 class="header-obra-title">Obras</h3>
+											<h1><a href="<?php echo $baseurl;?>"><?php echo $obra->name;?> / <?php echo $yearplay;?></a></h1>
+											
 											<ul>
 												<li>
 													<a href="<?php echo $baseurl;?>">Ficha artística</a>

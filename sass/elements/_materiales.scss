@@ -18,20 +18,6 @@
 	}
 }
 
-ul#materialesTabs {
-	li a {
-		text-transform: uppercase;
-		color: #333;
-		font-size: 14px;
-		border-radius: 0;
-		&.active {
-			border: 1px solid #333;
-			background-color: white;
-			color: #333;
-		}
-	}
-}
-
 div.filtertax {
 	margin: 24px 0;
 	display: flex;
@@ -80,6 +66,9 @@ div.filtertax {
 		color: white;
 		font-weight: 700;
 		padding: 6px 12px;
+		&:hover {
+			background-color: $celeste;
+		}
 	}
 }
 
@@ -107,7 +96,7 @@ a.documento-download {
 
 .media-item-wrapper {
 	width: 240px;
-	margin: 12px;
+	margin: 6px;
 	overflow: hidden;
 	transition: all 0.1s linear;
 	
@@ -126,11 +115,10 @@ a.documento-download {
 .media-item {
 	text-align: center;
 	position: relative;
-	
 	cursor: pointer;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-color: $gris;
+	background-color: $gris_claro;
 	height: 150px;
 
 	
@@ -143,22 +131,22 @@ a.documento-download {
 	}
 
 	.media-item-text {
-		background-color: $celeste;
-		padding: 6px 6px 6px 6px;
+		background-color: $celeste_claro;
+		padding: 12px 6px 6px 6px;
 		text-align: right;
-		color: white;
-		font-size: 12px;
+		color: $azul_claro;
+		font-size: 16px;
 		z-index: 2;
-		height: 30px;
+		height: 70px;
 		overflow: hidden;
-		font-weight: bold;
-		font-size: 14px;
+		font-weight: normal;
 		position: absolute;
 		bottom: 0;
 		width: 100%;
 		span {
-			font-weight: normal;
+			font-weight: 700;
 			display: block;
+			text-transform: capitalize;
 		}
 	}
 
@@ -316,4 +304,48 @@ canvas#audio-vis-canvas {
 	margin: 12px auto;
 	padding: 12px;
 	background-color: $gris;
+}
+
+.materialtype-row {
+	a {
+		display: inline-block;
+		padding: 12px 12px 12px 64px;
+		margin-right: 12px;
+		color: $gris;
+		background-repeat: no-repeat;
+		background-position: left center;
+		background-size: contain;
+		position: relative;
+
+		&:before {
+			display: block;
+			content: attr(title);
+			font-weight: bold;
+			height: 0;
+			overflow: hidden;
+			visibility: hidden;
+		}
+
+		&:hover {
+			font-weight: 700;
+			text-decoration: none;
+		}
+
+		&.btn-fotografia {
+			background-image: url('icons/eye_gr.svg');
+			background-position: left top;
+		}
+
+		&.btn-audio {
+			background-image: url('icons/ear_gr.svg');
+		}
+
+		&.btn-video {
+			background-image: url('icons/play_gr.svg');
+		}
+
+		&.btn-documento {
+			background-image: url('icons/news_gr.svg');
+		}
+	}
 }

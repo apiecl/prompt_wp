@@ -52,6 +52,7 @@ body.admin-bar {
 	> .container-fluid {
 		background-color: $celeste;
 		border-radius: 0 15px 0 0;
+		height: 106px;
 	}
 
 	a {
@@ -71,14 +72,14 @@ body.admin-bar {
 
 	.description {
 		color: white;
-		text-align: right;
+		text-align: left;
 		margin:8px 12px 8px 24px;
 		font-weight: 700;
 		font-size: 12px;
 		max-width: 350px;
 		line-height: 1.25em;
 		@include respond-above('md') {
-			font-size: 24px;
+			font-size: 20px;
 		}
 	}
 

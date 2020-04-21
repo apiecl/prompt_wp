@@ -68,6 +68,11 @@ jQuery(document).ready(function($) {
 
 	$('.teatro-item-presentation, .obra-item-presentation').hide();
 
+	$('.menu-obras').on('click', function() {
+		$(this).fadeOut();
+		$('.obra-item-presentation').show();
+	});
+
 
 	$('.menu-toggle').on('click', function() {
 		var nav = $('.main-navigation')
@@ -260,7 +265,8 @@ jQuery(document).ready(function($) {
 
 	$('body').on('click', '.dropdown-filter', function(e) {
 		$('body .btn-term-filter').removeClass('active');
-		//console.log('click filter');
+		e.preventDefault();
+		
 		if($(this).hasClass('active')) {
 			
 			$(this).removeClass('active');

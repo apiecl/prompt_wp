@@ -7,13 +7,17 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), 'obra' );
 $fields = prompt_obra_metadata( $term->term_id );
 $tab = $wp_query->query_vars['tab'];
 $baseurl = get_term_link($term->term_id, 'obra');
+$yearplay = prompt_format_date($fields['estreno'][0], '%Y');
 ?>
 
 <div class="single-obra-container-fluid container-fluid" >
 	<div class="wrapper">
 		
 		<div class="imagen-obra">
-			<h1 class="play-title"><?php single_term_title();?></h1>
+			<div class="text">
+				<h3 class="header-obra-title">Obras</h3>
+				<h1 class="play-title"><?php single_term_title();?> / <?php echo $yearplay;?></h1>
+			</div>
 			<div class="imagen" style="background-image: url(<?php echo $fields['imagen'][0];?>);">
 			</div>
 		</div>

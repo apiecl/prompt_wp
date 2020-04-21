@@ -7,27 +7,37 @@
 	background-color: white;
 	border-radius: 0 15px 0 0;
 	.imagen-obra {
-		background-color: $celeste;
+		background-color: $celeste_claro;
 		position: relative;
-		h1.play-title {
+		div.text {
 			position: absolute;
-			bottom: 24px;
+			top: 24px;
 			left: 12px;
-			color: white;
 			z-index: 1;
+			
+			h3 {
+				color: $celeste_claro;
+				font-weight: 700;
+				margin-bottom: 0;
+			}
+			h1 {
+				color: white;
+				margin: 0;
+			}
+
 		}
 		div.imagen {
 			background-repeat: no-repeat;
 			background-position: top;
 			background-size: contain;
 			mix-blend-mode: multiply;
-			-webkit-filter: grayscale(100%) contrast(200%);
-			filter: grayscale(100%) contrast(200%);
+			-webkit-filter: contrast(50%);
+			filter: contrast(50%);
 			opacity: 1;
 			height: 145px;
 
 			@include respond-above(lg) {
-				height: 310px;
+				height: 145px;
 				background-size: cover;
 			}	
 		}

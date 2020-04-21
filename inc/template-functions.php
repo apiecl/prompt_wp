@@ -36,9 +36,9 @@ function prompt_pingback_header() {
 }
 add_action( 'wp_head', 'prompt_pingback_header' );
 
-function prompt_format_date($datestring) {
+function prompt_format_date($datestring, $format = '%e %B de %Y') {
 	setlocale(LC_TIME, 'es_ES');
-	$newdate = strftime('%e %B de %Y',  strtotime($datestring));
+	$newdate = strftime($format,  strtotime($datestring));
 
 	return $newdate;
 }
