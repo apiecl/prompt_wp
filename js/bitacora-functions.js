@@ -20,8 +20,8 @@ function disableMedia( target ) {
 
 	function loadMediaInModal(mediaid, modal, ispage, type) {
 		
-		nextMedia = jQuery('.activeMedia').next('.media-item-wrapper');
-		prevMedia = jQuery('.activeMedia').prev('.media-item-wrapper');
+		var nextMedia = jQuery('.activeMedia').next('.media-item-wrapper');
+		var prevMedia = jQuery('.activeMedia').prev('.media-item-wrapper');
 
 		jQuery.ajax({
 			type: "post",
@@ -50,7 +50,9 @@ function disableMedia( target ) {
 					var itemInfo = jQuery.parseJSON(mediaitem);
 				}
 			}
-		})
+		});
+
+		return [nextMedia, prevMedia];
 	}
 
 	function enableMedia( mediaids, targetid ) {

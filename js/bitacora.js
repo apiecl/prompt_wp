@@ -199,7 +199,9 @@ jQuery(document).ready(function($) {
 		var modal = $(this).attr('id');
 		var ispage = $(this).attr('data-ispage');
 
-		loadMediaInModal(mediaid, modal, ispage, type);
+		var navMedia = loadMediaInModal(mediaid, modal, ispage, type);
+		nextMedia = navMedia[0];
+		prevMedia = navMedia[1];
 
 	});
 
@@ -214,7 +216,9 @@ jQuery(document).ready(function($) {
 			$('.media-item-wrapper').removeClass('activeMedia');
 			$('.media-item-wrapper[data-mediaid="' + mediaid + '"]').addClass('activeMedia');
 
-			loadMediaInModal(mediaid, modal, ispage, type);
+			var navMedia = loadMediaInModal(mediaid, modal, ispage, type);
+			nextMedia = navMedia[0];
+			prevMedia = navMedia[1];
 		}
 	});
 
@@ -230,7 +234,9 @@ jQuery(document).ready(function($) {
 				$('.media-item-wrapper').removeClass('activeMedia');
 				$('.media-item-wrapper[data-mediaid="' + mediaid + '"]').addClass('activeMedia');
 
-				loadMediaInModal(mediaid, modal, ispage, type);
+				var navMedia = loadMediaInModal(mediaid, modal, ispage, type);
+				nextMedia = navMedia[0];
+				prevMedia = navMedia[1];
 			}
 		}
 	});
