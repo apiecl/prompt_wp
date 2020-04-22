@@ -1,19 +1,19 @@
 function setPersonajes() {
-		var personajes = [];
-		jQuery('.text-item').each(function(idx) {
-			var linePersonajes = jQuery(this).attr('data-personajes').split(',');
-			for(var i = 0; i < linePersonajes.length; i++) {
-				if(linePersonajes[i].length > 0) {
-					var cleanPersonaje = jQuery.trim(linePersonajes[i]);
-					personajes.push(cleanPersonaje);	
-				}
+	var personajes = [];
+	jQuery('.text-item').each(function(idx) {
+		var linePersonajes = jQuery(this).attr('data-personajes').split(',');
+		for(var i = 0; i < linePersonajes.length; i++) {
+			if(linePersonajes[i].length > 0) {
+				var cleanPersonaje = jQuery.trim(linePersonajes[i]);
+				personajes.push(cleanPersonaje);	
 			}
-		});
+		}
+	});
 
-		return unique(personajes);
-	}
+	return unique(personajes);
+}
 
-	function disableMedia( target ) {
+function disableMedia( target ) {
 		//jQuery('#' + target).empty();
 		console.log(target);
 	}
@@ -41,9 +41,9 @@ function setPersonajes() {
 					if(type == 'audio') {
 						console.log('tpyaudio');
 						jQuery('audio').on('play', function(){
-						    console.log('start');
-						    var audio = this;
-						    audioVisStart(this, ['#006CFF', '#006CFF', '#006CFF']);
+							console.log('start');
+							var audio = this;
+							audioVisStart(this, ['#006CFF', '#006CFF', '#006CFF']);
 						});
 
 					}
@@ -88,9 +88,9 @@ function setPersonajes() {
 				console.log(target);
 				jQuery(target).empty().append(response);
 				
-					jQuery('img.media-item-image').on('load', function() {
-						this.style.opacity = 1;
-					});
+				jQuery('img.media-item-image').on('load', function() {
+					this.style.opacity = 1;
+				});
 
 				var images = document.querySelectorAll('.media-item-image');
 				lazyload(images);
@@ -117,9 +117,9 @@ function setPersonajes() {
 				console.log( 'error', response);
 			},
 			success: function( response ) {
-				jQuery(target).empty().append(response);
+				jQuery('#' + target).empty().append(response);
 				$grid = jQuery('.mediaitems-gallery').isotope({
-					itemSelector: '.media-item-wrappr',
+					itemSelector: '.media-item-wrapper',
 					layoutMode: 'fitRows',
 					stagger: 30
 				});

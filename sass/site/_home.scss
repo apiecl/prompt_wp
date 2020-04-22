@@ -5,6 +5,14 @@ body.home {
 	overflow: hidden;
 }
 
+.obras-nav-wrapper.collapsed,
+.teatro-nav-wrapper.collapsed
+ {
+		margin-top: -91vh;
+		//overflow: hidden;
+		//display: none;
+}
+
 .obra-container {
 	background-color: $celeste;
 	height: $height-sm;
@@ -14,7 +22,7 @@ body.home {
 	display: flex;
 	align-items: top;
 	margin-bottom: $grid-gutter-width / 2;
-	transition: all ease-in 0.3s;
+	transition: height ease-in 0.3s;
 	cursor: pointer;
 
 	&:hover {
@@ -105,7 +113,7 @@ body.home {
 	.obra-content {
 		
 		z-index: 20;
-		padding: 0 24px 24px;
+		padding: 48px 24px 24px;
 		color: white;
 		display: flex;
 
@@ -166,15 +174,9 @@ main#main.site-main.home {
 }
 
 
-.obras-nav-wrapper {
+.obras-nav-wrapper, 
+.teatro-nav-wrapper {
 	transition: all ease-in 0.4s;
-	&.obra-0 {
-		margin-top: -77vh;
-	}
-
-	&.obra-1 {
-		margin-top: -82vh;
-	}
 }
 
 .section-desc {

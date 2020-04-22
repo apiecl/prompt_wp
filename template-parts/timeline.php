@@ -1,11 +1,4 @@
 <section id="timeline-main" class="timeline-section">
-	<div class="container">
-		<div class="row">
-			<div class="col-md">
-				<h2 class="section-title standard-title">Línea de tiempo Teatro UC</h2>
-			</div>
-		</div>
-	</div>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">

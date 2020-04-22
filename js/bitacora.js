@@ -66,11 +66,11 @@ jQuery(document).ready(function($) {
 		lastScrollTop = st;
 	}
 
-	$('.teatro-item-presentation, .obra-item-presentation').hide();
+	//$('.teatro-item-presentation, .obra-item-presentation').hide();
 
-	$('.menu-obras').on('click', function() {
-		$(this).fadeOut();
-		$('.obra-item-presentation').show();
+	$('.collapse-menu-home').on('click', function() {
+		$( $(this).attr('data-target') ).addClass('collapsed');
+		//$('.obra-item-presentation').fadeIn();
 	});
 
 
@@ -101,15 +101,32 @@ jQuery(document).ready(function($) {
 		enableAllMedia(playId, target);
 	}
 
-	$('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
-		if($(this).attr('data-function') == 'timeline') {
-			window.timeline = new TL.Timeline('timeline-embed', timeline_events, timeline_options);
-		} else if($(this).attr('data-function') == 'materialesTeatro') {
-			var pageId = $(this).attr('data-page-id');
-			var target = $(this).attr('data-contentTarget');
-			enableMediaPage(pageId, target);
+	if($('#obraTab[data-function="materiales-teatro"]').length) {
+		console.log('mediapageTeatro')
+		var func = $('#obraTab[data-function="materiales-teatro"]');
+		var pageId = func.attr('data-page-id');
+		var target = func.attr('data-target');
+		enableMediaPage(pageId, target);
+	}
+
+	if($('#obraTab[data-function="timeline-teatro"]').length) {
+		var func = $('#obraTab[data-function="timeline-teatro"]');
+		var pageId = func.attr('data-page-id');
+		var target = func.attr('data-target');
+		if(timeline_events) {
+			window.timeline = new TL.Timeline(target, timeline_events, timeline_options);
 		}
-	});
+	}
+
+	// $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
+	// 	if($(this).attr('data-function') == 'timeline') {
+	// 		window.timeline = new TL.Timeline('timeline-embed', timeline_events, timeline_options);
+	// 	} else if($(this).attr('data-function') == 'materialesTeatro') {
+	// 		var pageId = $(this).attr('data-page-id');
+	// 		var target = $(this).attr('data-contentTarget');
+	// 		enableMediaPage(pageId, target);
+	// 	}
+	// });
 
 	$('#enableType').change(function() {
 		var textLegend = $('.textlegend');

@@ -33,6 +33,7 @@ export const watchForChanges = () => {
   watch('sass/**/*.scss', styles);
   watch('**/*.php', styles, reload);
   watch('less/**/*.less', timelineStyles);
+  watch('js/*.js')
 }
 
 const server = browserSync.create();

@@ -6,7 +6,7 @@ get_header();
 			
 			<section id="obras-link" class="container-fluid" data-action="show" data-toggle="obra-item-presentation">
 				<div class="obras-nav-wrapper">
-				<div class="obra-container menu-obras">
+				<div class="obra-container menu-obras collapse-menu-home" data-target=".obras-nav-wrapper">
 					<div class="obra-content">
 						<div class="left">
 							<h1>Obras</h1>
@@ -76,35 +76,46 @@ get_header();
 				$teatropage = current($teatropage);
 				$pageimg = get_post_thumbnail_id($teatropage->ID);
 				$pageimgsrc = wp_get_attachment_image_src( $pageimg, 'large', false );
+
+				$childs = get_children( array(
+					'post_type' => 'page',
+					'post_parent' => $teatropage->ID
+				) );
+
 			?>
 
 			<section id="teatro-link" class="container-fluid">
-				
-				<div class="obra-container menu-obras menu-teatrouc" data-action="show" data-toggle="teatro-item-presentation">
-					<div class="obra-content">
-						<div class="left">
-							<h1><?php echo $teatropage->post_title;?></h1>
-							<div class="section-desc">
-								Conoce la trastienda de una obra de teatro. Este es un viaje por el proceso creativo y artístico de nuestros montajes. 
+				<div class="teatro-nav-wrapper">
+					<div class="obra-container menu-obras menu-teatrouc collapse-menu-home" data-action="show" data-target=".teatro-nav-wrapper">
+						<div class="obra-content">
+							<div class="left">
+								<h1><?php echo $teatropage->post_title;?></h1>
+								<div class="section-desc">
+									Conoce la trastienda de una obra de teatro. Este es un viaje por el proceso creativo y artístico de nuestros montajes. 
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="obra-container teatro-item-presentation">
-					<div class="obra-content">
-						<h1><a href="<?php echo get_permalink($teatropage->ID);?>"><?php echo $teatropage->post_title;?>
-							<div class="lines">
-							<span></span>
-							<span></span>
-							<span class="short"></span>
-							</a>
+					<div class="obra-container teatro-item-presentation">
+						<div class="obra-content">
+							<div class="obra-content-wrap">
+								<h1><a href="<?php echo get_permalink($teatropage->ID);?>"><?php echo $teatropage->post_title;?></a></h1>
+								<ul>
+									<?php 
+										foreach($childs as $child):?>
+										
+											<li><a href="<?php echo get_permalink($child->ID);?>"><?php echo $child->post_title;?></a></li>
+
+										<?php endforeach;
+									?>
+								</ul>	
+							</div>
+							
+							
 						</div>
-
-						</h1>
-
+						<div class="obra-image" style="background-image: url(<?php echo $pageimgsrc[0];?>"></div>
 					</div>
-					<div class="obra-image" style="background-image: url(<?php echo $pageimgsrc[0];?>"></div>
 				</div>
 			</section>
 		<?php 
