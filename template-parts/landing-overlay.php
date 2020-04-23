@@ -7,7 +7,10 @@
 			</h1>
 
 			<div class="description">
-				<?php bloginfo('description');?>
+				<?php 
+					$options = get_option( 'prompt_options', false );
+					echo $options['prompt_maintoptext'];
+				?>
 			</div>
 
 		</div>

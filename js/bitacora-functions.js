@@ -158,6 +158,10 @@ function disableMedia( target ) {
 		}
 	}
 
+	function showCurrentFilterInfo(info) {
+		jQuery('.currentfilterinfo').empty().append(info);
+	}
+
 	function animateCSS(element, animationName, callback) {
 		const node = document.querySelector(element)
 		node.classList.add('animated', animationName)

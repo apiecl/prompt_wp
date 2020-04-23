@@ -155,20 +155,21 @@ function prompt_scripts() {
 
 	wp_enqueue_script('isotope', 'https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js', array('jquery', 'bitacora'), '2.1.1', false);
 
-	$taxonomies = get_taxonomies();
+	$taxonomies = get_taxonomies(array(), 'objects');
 	$taxinfo = [];
+	$taxobjects = [];
 
 	foreach($taxonomies as $taxonomy) {
-		
-		if($taxonomy != 'obra'):
-			$terms = get_terms(array('taxonomy' => $taxonomy, 'hide_empty'=> false));
+		if($taxonomy->name != 'obra'):
+			$terms = get_terms(array('taxonomy' => $taxonomy->name, 'hide_empty'=> false));
 			$termdata = [];
+			$taxobjects[$taxonomy->name] = $taxonomy->label; 
 			
 			foreach($terms as $term) {
 				$termdata[$term->slug] = $term;  
 			}
 
-			$taxinfo[$taxonomy] =  $termdata;
+			$taxinfo[$taxonomy->name] =  $termdata;
 
 		endif;
 
@@ -177,7 +178,8 @@ function prompt_scripts() {
 
 	wp_localize_script( 'bitacora', 'prompt', array(
 												'ajaxurl' => admin_url('admin-ajax.php'),
-												'taxinfo' => $taxinfo
+												'taxinfo' => $taxinfo,
+												'taxlabels'	=> $taxobjects
 												)
 	);		
 

@@ -33,7 +33,19 @@
 				<div class="site-branding">
 					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_stylesheet_directory_uri();?>/img/logo_negro.svg" alt="<?php bloginfo( 'name' ); ?>"></a></h1>
 					<div class="description">
-						<?php bloginfo('description');?>
+						<?php 
+							$desctext = get_bloginfo('description');
+
+							$options = get_option( 'prompt_options', false );
+							if(is_tax('obras')):
+								$desctext = $options['prompt_obrastoptext'];
+							elseif(is_page_template('page-template-teatro.php') || is_page_template('page-template-materiales-teatro.php') || is_page_template('page-template-timeline-teatro.php')):
+								$desctext = $options['prompt_teatrotoptext'];
+							else:
+								$desctext = $options['prompt_maintoptext'];
+							endif;
+						?>
+						<?php echo $desctext;?>
 					</div>
 				</div><!-- .site-branding -->
 			</div>

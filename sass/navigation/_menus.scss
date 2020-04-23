@@ -69,6 +69,11 @@ body.admin-bar .main-navigation {
 
 
 @include respond-above(md) {
+	
+	body.admin-bar .main-navigation.affix {
+		top: 32px;
+	}
+
 	.main-navigation {
 		width: 450px;
 		position: fixed;

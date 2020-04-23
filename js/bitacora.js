@@ -258,6 +258,8 @@ jQuery(document).ready(function($) {
 			$grid.isotope({
 				filter: ""
 			});
+
+			showCurrentFilterInfo('<p>Mostrando todos los materiales</p>');
 			
 			var availableTerms = [];
 
@@ -290,12 +292,16 @@ jQuery(document).ready(function($) {
 		$('body .btn-term-filter').removeClass('active');
 		e.preventDefault();
 		
+		$('body .btn-taxfilter').removeClass('active');
+		$('body .terms-filter-zone').empty();
+
 		if($(this).hasClass('active')) {
 			
 			$(this).removeClass('active');
 			$grid.isotope({
 				filter: ''
 			});	
+			showCurrentFilterInfo('<p>Mostrando todos los materiales</p>');
 
 		} else {
 
@@ -303,11 +309,13 @@ jQuery(document).ready(function($) {
 
 			var curtax = $(this).attr('data-tax');
 			var curterm = $(this).attr('data-term-filter');
-			console.log(curtax, curterm);
+			var curtermitem = prompt.taxinfo[curtax][curterm]
 			$grid.isotope({
 				filter: '[data-' + curtax + '*="' + curterm + '"]'
 			});
 			$(this).addClass('active');
+
+			showCurrentFilterInfo('<p>Mostrando materiales clasificados como <strong>' + curtermitem.name + '</strong> dentro de  <strong>' + prompt.taxlabels[curtax] + '</strong></p>');
 			
 		}
 		
@@ -322,6 +330,7 @@ jQuery(document).ready(function($) {
 			});
 
 			$(this).removeClass('active');
+			showCurrentFilterInfo('<p>Mostrando todos los materiales</p>');
 
 		} else {
 			
@@ -333,6 +342,8 @@ jQuery(document).ready(function($) {
 			});
 			$(this).addClass('active');
 			$('body .btn-materialtype').removeClass('active');
+
+			showCurrentFilterInfo('<p>Mostrando materiales de tipo <strong>' + type + '</strong></p>');
 
 		}
 	});
@@ -346,6 +357,8 @@ jQuery(document).ready(function($) {
 		$grid.isotope({
 				filter: ''
 			});
+
+		showCurrentFilterInfo('<p>Mostrando todos los materiales</p>');
 
 
 		if($(this).prop('checked') == true) {
