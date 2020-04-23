@@ -107,7 +107,7 @@ function disableMedia( target ) {
 	}
 
 	function enableMediaPage( pageid, target) {
-		console.log('calling media page');
+		console.log('calling media page', pageid);
 		jQuery.ajax({
 			type: "post",
 			url: prompt.ajaxurl,
@@ -120,6 +120,14 @@ function disableMedia( target ) {
 			},
 			success: function( response ) {
 				jQuery('#' + target).empty().append(response);
+
+				jQuery('img.media-item-image').on('load', function() {
+					this.style.opacity = 1;
+				});
+
+				var images = document.querySelectorAll('.media-item-image');
+				lazyload(images);
+
 				$grid = jQuery('.mediaitems-gallery').isotope({
 					itemSelector: '.media-item-wrapper',
 					layoutMode: 'fitRows',
