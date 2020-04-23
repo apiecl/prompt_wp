@@ -43,8 +43,9 @@
 					<span class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fas fa-bars"></i></span>
 					<?php
 					wp_nav_menu( array(
-						'theme_location' => 'menu-1',
-						'menu_id'        => 'primary-menu',
+						'theme_location' 	=> 'menu-1',
+						'menu_id'        	=> 'primary-menu',
+						'container-class'	=> 'menu-principal-container'
 					) );
 					?>
 		</nav>
