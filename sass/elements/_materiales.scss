@@ -98,12 +98,16 @@ a.documento-download {
 	width: 240px;
 	margin: 6px;
 	overflow: hidden;
-	transition: all 0.1s linear;
+	//transition: all 0.1s linear;
 	
 	&:hover {
-		transform: scale3d(1.1, 1.1, 1.1);
+		//transform: scale3d(1.1, 1.1, 1.1);
 		z-index: 10;
-		box-shadow: 0 0 6px #555;
+		.media-item-text {
+			background-color: $celeste;
+			color: white;
+			height: 90px;
+		}
 	}
 
 	@include respond-below(sm) {
@@ -143,6 +147,7 @@ a.documento-download {
 		position: absolute;
 		bottom: 0;
 		width: 100%;
+		transition: all ease-in-out .5s;
 		span {
 			font-weight: 700;
 			display: block;
