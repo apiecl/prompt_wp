@@ -107,6 +107,9 @@ a.documento-download {
 	margin: 32px 0;
 	display: flex;
 	flex-wrap: wrap;
+	@include respond-below(md) {
+		margin: 0;
+	}
 
 }
 
@@ -127,7 +130,7 @@ a.documento-download {
 	}
 
 	@include respond-below(sm) {
-		width: 150px;
+		width: 145px;
 		margin: 6px;
 	}
 }
@@ -140,6 +143,10 @@ a.documento-download {
 	background-size: cover;
 	background-color: $gris_claro;
 	height: 150px;
+
+	@include respond-below(md) {
+		height: 130px;
+	}
 
 	
 
@@ -168,6 +175,11 @@ a.documento-download {
 			font-weight: 700;
 			display: block;
 			text-transform: capitalize;
+		}
+
+		@include respond-below(md) {
+			font-size: 12px;
+			height: 53px;
 		}
 	}
 
@@ -371,10 +383,12 @@ canvas#audio-vis-canvas {
 	}
 
 	@include respond-below(md) {
+		margin: 0 0 0 4px;
+
 		a {
 			margin-bottom: 24px;
 			font-size: 12px;
-			padding: 6px 2px 6px 39px;
+			padding: 6px 2px 6px 36px;
 		}
 	}
 }
@@ -382,8 +396,8 @@ canvas#audio-vis-canvas {
 .currentfilterinfo {
 	color: $gris;
 	padding: 24px 0 36px 0;
-
+	
 	@include respond-below(md) {
-		padding: 6px 0 12px 0;
+		padding: 6px 0 12px 6px;
 	}
 }
