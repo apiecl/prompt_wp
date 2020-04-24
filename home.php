@@ -102,6 +102,7 @@ get_header();
 							<div class="obra-content-wrap">
 								<h1><a href="<?php echo get_permalink($teatropage->ID);?>"><?php echo $teatropage->post_title;?></a></h1>
 								<ul>
+										<li><a href="<?php echo get_permalink($teatropage->ID);?>">Resumen histórico</a></li>
 									<?php 
 										foreach($childs as $child):?>
 										
