@@ -144,14 +144,6 @@ section.with-home-section-divider {
 	text-transform: uppercase;
 }
 
-.site-footer {
-	margin: 10px;
-	background-color: $celeste;
-	min-height: 100px;
-	border-radius: 0 0 15px 0;
-	padding: 6px 24px;
-}
-
 .footer-links-right {
 	display: flex;
 	align-items: center;
@@ -164,7 +156,7 @@ a.creditos-link {
 	background-color: white;
 	display: inline-block;
 	padding: 2px 6px;
-	color: $celeste;
+	color: #333;
 	font-weight: bold;
 	font-size: 14px;
 	margin: 0 24px 0 48px;
@@ -178,7 +170,7 @@ a.creditos-link {
 	width: 32px;
 	border-radius: 16px;
 	font-size: 18px;
-	color: $celeste;
+	color: #333;
 	background-color: white;
 	margin: 6px 0;
 }

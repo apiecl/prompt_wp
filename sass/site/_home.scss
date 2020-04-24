@@ -216,9 +216,15 @@ main#main.site-main.home {
 	z-index: 10;
 }
 
+.admin-bar #landing-overlay {
+	.content-top {
+		height: 81vh;
+	}
+}
+
 #landing-overlay {
 	width: 100%;
-	height: 100vh;
+	height: 98vh;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -230,7 +236,7 @@ main#main.site-main.home {
 		border-left: 10px solid black;
 		border-right: 10px solid black;
 		border-radius: 0 15px 0 0;
-		height: 85vh;
+		height: 81vh;
 		background-color: $celeste;
 
 		h1 img {
@@ -239,7 +245,7 @@ main#main.site-main.home {
 
 		.wrapper {
 			margin-left: 120px;
-			margin-top: 120px;
+			margin-top: 70px;
 		}
 
 		.description {
@@ -255,7 +261,7 @@ main#main.site-main.home {
 	.site-footer {
 		margin: 0;
 		width: 100%;
-		background-color: $celeste;
+		background-color: #333;
 		border: 10px solid black;
 		padding: 16px 0;
 	}

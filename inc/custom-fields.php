@@ -51,6 +51,11 @@ function prompt_tax_add_metabox( array $meta_boxes ) {
 				'type' => 'text_small',
 			),
 			array(
+				'name' => __( 'Asistentes temporada', 'prompt' ),
+				'id' => $prefix . 'publico',
+				'type' => 'text_small',
+			),
+			array(
 				'name' => __( 'Número total de funciones', 'prompt' ),
 				'id' => $prefix . 'totalfunciones',
 				'type' => 'text_small',
