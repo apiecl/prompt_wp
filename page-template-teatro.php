@@ -23,7 +23,7 @@ if ( have_posts() ) :
 
 				<div class="single-obra container">
 					<div class="row">
-						<div class="col-md-12">
+						<div class="col-md-4">
 							<div class="tab-content" id="obraTabContent">
 								
 								<div class="tab-pane fade show active" id="el-teatro" role="tabpanel" arial-labelledby="info-tab">
@@ -52,14 +52,19 @@ if ( have_posts() ) :
 
 										</div>
 										
-										<div class="intro-teatro">
-											<?php the_content();?>
-										</div>
+										
 									</div>
 
 								</div>
 
 							</div>		
+						</div>
+						<div class="col-md-8">
+							<p></p>
+							<p></p>
+							<div class="intro-teatro">
+								<?php the_content();?>
+							</div>
 						</div>
 					</div>
 				</div>
