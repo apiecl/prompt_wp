@@ -189,7 +189,7 @@ function cmb2_add_metabox_hitos() {
 		'name'		=> 'Principal',
 		'id'		=> $prefix . 'esprincipal',
 		'type'		=> 'checkbox',
-		'desc'		=> 'Marcar si quieres que este evento esté en la línea de tiempo principal'
+		'desc'		=> 'Marcar si quieres que este evento esté en la línea de tiempo del Teatro'
 	));
 
 
