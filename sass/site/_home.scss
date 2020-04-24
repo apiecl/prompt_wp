@@ -11,6 +11,9 @@ body.home {
 		margin-top: -91vh;
 		//overflow: hidden;
 		//display: none;
+		@include respond-below('md') {
+			margin-top: -41.5vh;
+		}
 }
 
 .obra-container {
@@ -55,6 +58,18 @@ body.home {
 						}
 					}
 
+				}
+			}
+		}
+
+		@include respond-below(md) {
+			top: 12px;
+			left: 12px;
+
+			ul {
+				margin: 12px 0 0 0;
+				li {
+					font-size: 16px;
 				}
 			}
 		}
@@ -164,6 +179,10 @@ main#main.site-main.home {
 		width: 50%;
 		margin-bottom: 0;
 	}
+
+	@include respond-below('md') {
+		height: 40vh;
+	}
 }
 
 
@@ -236,5 +255,57 @@ main#main.site-main.home {
 		background-color: $celeste;
 		border: 10px solid black;
 		padding: 16px 0;
+	}
+}
+
+@include respond-below(md) {
+	#landing-overlay {
+		.content-top {
+
+			.wrapper {
+				margin: 48px 0 0 12px;
+			}
+
+			h1 img {
+				max-width: 260px;
+			}
+
+			.description {
+				font-size: 18px;
+				margin-left: 18px;
+			}
+		}
+
+		.site-footer {
+			
+			.col-8 {
+				img {
+					margin-left: 12px;
+				}
+			}
+
+			.footer-links-right {
+				display: block;
+				text-align: center;
+			}
+
+			a.creditos-link {
+				font-size: 10px;
+				margin: 0 0 2px 0;
+				letter-spacing: 2px;
+				padding: 2px 3px;
+			}
+
+			.redes-links {
+
+			}
+
+			.redes-links a {
+				font-size: 14px;
+				height: 24px;
+				width: 24px;
+				line-height: 24px;
+			}
+		}
 	}
 }

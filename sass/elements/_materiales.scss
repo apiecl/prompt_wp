@@ -47,7 +47,17 @@ div.filtertax {
 		&:focus {
 			box-shadow: none;
 		}
-	}	
+	}
+
+	@include respond-below(md) {
+		flex-wrap: wrap;
+		justify-content: flex-start;
+
+		button.btn {
+			margin: 0 6px 6px 0;
+			flex-grow: 1;
+		}
+	}
 }
 
 .dropdown-filters {
@@ -70,6 +80,11 @@ div.filtertax {
 			background-color: $celeste;
 			color: white;
 		}
+	}
+
+	@include respond-below(md) {
+		max-width: 210px;
+		overflow: hidden;
 	}
 }
 
@@ -354,9 +369,21 @@ canvas#audio-vis-canvas {
 			background-image: url('icons/news_gr.svg');
 		}
 	}
+
+	@include respond-below(md) {
+		a {
+			margin-bottom: 24px;
+			font-size: 12px;
+			padding: 6px 2px 6px 39px;
+		}
+	}
 }
 
 .currentfilterinfo {
 	color: $gris;
 	padding: 24px 0 36px 0;
+
+	@include respond-below(md) {
+		padding: 6px 0 12px 0;
+	}
 }

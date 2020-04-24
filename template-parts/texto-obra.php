@@ -6,7 +6,6 @@ $fields = prompt_obra_metadata( $term->term_id );
 
 <div class="row header-texto-dramatico">
 	<div class="col-md-12">
-		<h1>Texto dramático</h1>
 		<h2><?php echo $term->name;?> / <?php echo prompt_format_date($fields['estreno'][0]);?></h2>
 		<p>Historia y texto de <?php echo prompt_multifields($fields['dramaturgia'][0], ', ');?></p>
 	</div>

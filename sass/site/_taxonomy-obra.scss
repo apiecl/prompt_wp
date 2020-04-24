@@ -29,17 +29,31 @@
 		div.imagen {
 			background-repeat: no-repeat;
 			background-position: top;
-			background-size: contain;
+			background-size: cover;
 			mix-blend-mode: multiply;
 			-webkit-filter: contrast(50%);
 			filter: contrast(50%);
 			opacity: 1;
-			height: 145px;
+			height: 85px;
 
 			@include respond-above(lg) {
 				height: 145px;
 				background-size: cover;
 			}	
+		}
+	}
+
+	@include respond-below(md) {
+		.imagen-obra div.text {
+			top: 12px;
+
+			h1 {
+				font-size: 22px;
+			}
+
+			h3 {
+				font-size: 18px;
+			}
 		}
 	}
 }
@@ -219,6 +233,8 @@ a.toggleTabs {
 .standard-title {
 	font-weight: bold;
 	color: $celeste;
+	font-size: 18px;
+	margin: 12px 0;
 }
 
 a.toggleTabs {
