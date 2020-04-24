@@ -1,5 +1,8 @@
 <?php
 get_header();
+$options = get_option( 'prompt_options', false );
+$descobras = $options['prompt_obrastoptext'];
+$descteatro = $options['prompt_teatrotoptext'];
 ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main home">
@@ -11,7 +14,7 @@ get_header();
 						<div class="left">
 							<h1>Obras</h1>
 							<div class="section-desc">
-								Navega por los hitos de uno de los teatros universitarios con más trayectoria de Chile. 
+								<?php echo $descobras;?>
 							</div>
 						</div>
 					</div>
@@ -82,6 +85,8 @@ get_header();
 					'post_parent' => $teatropage->ID
 				) );
 
+				
+							
 			?>
 
 			<section id="teatro-link" class="container-fluid">
@@ -91,7 +96,7 @@ get_header();
 							<div class="left">
 								<h1>Teatro UC histórico</h1>
 								<div class="section-desc">
-									Conoce la trastienda de una obra de teatro. Este es un viaje por el proceso creativo y artístico de nuestros montajes. 
+									<?php echo $descteatro;?>
 								</div>
 							</div>
 						</div>

@@ -34,10 +34,10 @@
 					$imagesrc = wp_get_attachment_image_src( $imageid, 'full', false );
 					?>
 					<div class="text">
-					<?php if($main[0]->ID != $post->ID):?>
-						<h3 class="header-obra-title"><?php echo $main[0]->post_title;?></h3>
-					<?php endif;?>
+					
+					<h3 class="header-obra-title">Teatro UC histórico</h3>
 					<h1 class="play-title"><?php the_title();?></h1>
+					
 					</div>
 					<div class="imagen" style="background-image: url(<?php echo $imagesrc[0];?>)"></div>
 				</div>
