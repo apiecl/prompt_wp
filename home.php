@@ -100,7 +100,7 @@ get_header();
 					<div class="obra-container teatro-item-presentation">
 						<div class="obra-content">
 							<div class="obra-content-wrap">
-								<h1><a href="<?php echo get_permalink($teatropage->ID);?>"><?php echo $teatropage->post_title;?></a></h1>
+								<h1><a href="<?php echo get_permalink($teatropage->ID);?>">Teatro UC histórico</a></h1>
 								<ul>
 										<li><a href="<?php echo get_permalink($teatropage->ID);?>">Resumen histórico</a></li>
 									<?php 
