@@ -89,7 +89,7 @@ get_header();
 					<div class="obra-container menu-obras menu-teatrouc collapse-menu-home" data-action="show" data-target=".teatro-nav-wrapper">
 						<div class="obra-content">
 							<div class="left">
-								<h1><?php echo $teatropage->post_title;?></h1>
+								<h1>Teatro UC histórico</h1>
 								<div class="section-desc">
 									Conoce la trastienda de una obra de teatro. Este es un viaje por el proceso creativo y artístico de nuestros montajes. 
 								</div>
