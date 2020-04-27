@@ -9,7 +9,7 @@ $descteatro = $options['prompt_teatrotoptext'];
 			
 			<section id="obras-link" class="container-fluid" data-action="show" data-toggle="obra-item-presentation">
 				<div class="obras-nav-wrapper">
-				<div class="obra-container menu-obras collapse-menu-home" data-target=".obras-nav-wrapper">
+				<!-- <div class="obra-container menu-obras collapse-menu-home collapsed" data-target=".obras-nav-wrapper">
 					<div class="obra-content">
 						<div class="left">
 							<h1>Obras</h1>
@@ -18,7 +18,7 @@ $descteatro = $options['prompt_teatrotoptext'];
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 
 				<?php 
 					$obras = get_terms( array(
@@ -91,7 +91,7 @@ $descteatro = $options['prompt_teatrotoptext'];
 
 			<section id="teatro-link" class="container-fluid">
 				<div class="teatro-nav-wrapper">
-					<div class="obra-container menu-obras menu-teatrouc collapse-menu-home" data-action="show" data-target=".teatro-nav-wrapper">
+					<!-- <div class="obra-container menu-obras menu-teatrouc collapse-menu-home" data-action="show" data-target=".teatro-nav-wrapper">
 						<div class="obra-content">
 							<div class="left">
 								<h1>Teatro UC histórico</h1>
@@ -100,12 +100,13 @@ $descteatro = $options['prompt_teatrotoptext'];
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 
 					<div class="obra-container teatro-item-presentation">
 						<div class="obra-content">
 							<div class="obra-content-wrap">
-								<h1><a href="<?php echo get_permalink($teatropage->ID);?>">Teatro UC histórico</a></h1>
+								
+								<h1 class="no-subtitle-top"><a href="<?php echo get_permalink($teatropage->ID);?>">Teatro UC histórico</a></h1>
 								<ul>
 										<li><a href="<?php echo get_permalink($teatropage->ID);?>">Resumen histórico</a></li>
 									<?php 

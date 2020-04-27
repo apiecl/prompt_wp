@@ -89,11 +89,15 @@ function prompt_obra_metadata( $obraid ) {
 	return $field_data;
 }
 
-function prompt_multifields( $fields, $separator ) {
+function prompt_multifields( $fields, $separator, $wrapper = false ) {
 	$fieldstring = '';
 	if($fields && is_array($fields) ):
 		$size = count($fields);
 			foreach($fields as $key=>$field):
+				if($wrapper) {
+					$field = '<span class="field">' . $field . '</span>';
+				}
+
 				if($key == $size - 1):
 					$fieldstring .= $field;
 				else:

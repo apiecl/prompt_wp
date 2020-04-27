@@ -131,7 +131,7 @@ header.ficha-title {
 }
 
 .strong-dd {
-	font-weight: 700;
+	font-weight: 400;
 	font-style: italic;
 	br {
 		content: '';
@@ -139,11 +139,19 @@ header.ficha-title {
 		width: 1px;
 		height: 1px;
 		margin-bottom: 8px;
+		@include respond-below(md) {
+			display: none;
+		}
+	}
+
+	span.field {
+		display: inline-block;
+		padding: 0 12px 6px 0;
 	}
 }
 
 .strong-dd.elenco {
-	font-size: 13px;
+	font-size: 14px;
 	@include respond-above(md) {
 		font-size: 16px;
 	}

@@ -26,7 +26,7 @@ body.home {
 	align-items: top;
 	margin-bottom: $grid-gutter-width / 2;
 	transition: height ease-in 0.3s;
-	cursor: pointer;
+	//cursor: pointer;
 
 	&:hover {
 		background-color: darken($azul_claro, 10%);
@@ -43,7 +43,7 @@ body.home {
 			li {
 				list-style: none;
 				font-size: 32px;
-				font-weight: 700;
+				font-weight: 400;
 
 				a {
 					
@@ -52,6 +52,7 @@ body.home {
 					&:hover {
 						@include titulo-con-gris;
 						font-size: 32px;
+						font-weight: normal;
 
 						&:before {
 							border-color: transparentize($gris, 0.5);
@@ -94,6 +95,9 @@ body.home {
 	 	line-height: 1.1em;
 	 	@include respond-above(md) {
 	 		font-size: 48px;
+	 	}
+	 	&.no-subtitle-top {
+	 		margin-top: 33px;
 	 	}
 	 }
 
@@ -236,7 +240,7 @@ main#main.site-main.home {
 		border-left: 10px solid black;
 		border-right: 10px solid black;
 		border-radius: 0 15px 0 0;
-		height: 81vh;
+		height: 85vh;
 		background-color: $celeste;
 
 		h1 img {
@@ -254,7 +258,32 @@ main#main.site-main.home {
 			color: white;
 			text-align: left;
 			max-width: 320px;
-			margin-left: 40px;
+			margin: 40px 0 0 0;
+		}
+	}
+
+	.comenzar {
+		display: block;
+		color: white;
+		border: 1px solid white;
+		margin: 48px 12px 0 32px;
+		padding: 12px;
+		font-size: 32px;
+		max-width: 350px;
+		cursor: pointer;
+
+		i {
+			margin-left: 36px;
+		}
+
+		@include respond-above(md) {
+			margin-right: 160px;
+		}
+
+		@include respond-below(md) {
+			margin-left: 18px;
+			font-size: 18px;
+			max-width: 200px;
 		}
 	}
 

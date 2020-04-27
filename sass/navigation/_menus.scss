@@ -28,6 +28,9 @@ body.admin-bar .main-navigation {
 
 	ul.sub-menu {
 		margin-left: 36px;
+		li a {
+			font-weight: normal;
+		}
 		ul.sub-menu {
 			margin-left: 72px;
 			li a {
