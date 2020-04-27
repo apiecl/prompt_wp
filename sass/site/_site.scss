@@ -185,3 +185,21 @@ a.creditos-link {
 	max-width: 900px;
 	margin: 0 auto;
 }
+
+.page-creditos {
+	.content {
+		padding: 24px;
+
+		h1 {
+			font-weight: 700;
+			margin-bottom: 24px;
+			color: $celeste;
+		}
+	}
+}
+
+.page-template-page-template-creditos {
+	.site-footer {
+		margin-top: 32px;
+	}
+}

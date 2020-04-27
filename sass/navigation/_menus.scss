@@ -1,5 +1,7 @@
 body.admin-bar .main-navigation {
-	top: 160px;
+	@include respond-above(md) {
+		top: 160px;	
+	}
 }
 
 .main-navigation {

@@ -19,40 +19,24 @@ if ( have_posts() ) :
 		
 		<div class="single-obra-container-fluid container-fluid">
 			<div class="wrapper">
-				<?php get_template_part( 'template-parts/nav-page-teatro' );?>
+				
+				<?php //get_template_part( 'template-parts/nav-page-teatro' );?>
 
-				<div class="single-obra container">
+				<div class="page-creditos container">
 					<div class="row">
 						<div class="col-md-4">
 							<div class="tab-content" id="obraTabContent">
 								
 								<div class="tab-pane fade show active" id="el-teatro" role="tabpanel" arial-labelledby="info-tab">
-									<div class="ficha-obra">
-										<div class="info-ficha-teatro">
-											<?php 
-											$fundacion = get_post_meta($post->ID, '_prompt_fundacion', true);
-											$primera_obra = get_post_meta($post->ID, '_prompt_primera_obra', true);
-											$primer_director = get_post_meta($post->ID, '_prompt_primer_director', true);
-											$locaciones = get_post_meta($post->ID, '_prompt_locaciones', true);
-											?>
+									
+									<div class="content">
 
-											<dl class="ficha-teatro">
-												<dt class="important">Fundación:</dt>
-												<dd class="important"><?php echo $fundacion;?></dd>
+										<h1><?php the_title();?></h1>
 
-												<dt>Primera obra:</dt>
-												<dd><?php echo $primera_obra;?></dd>
-
-												<dt>Primer director:</dt>
-												<dd><?php echo $primer_director;?></dd>
-
-												<dt>Locaciones del teatro:</dt>
-												<dd><?php echo $locaciones;?></dd>
-											</dl>
-
+										<div class="content-page">
+											<?php the_content();?>
 										</div>
-										
-										
+
 									</div>
 
 								</div>
