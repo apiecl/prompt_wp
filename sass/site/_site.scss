@@ -122,13 +122,21 @@ section.with-home-section-divider {
 	margin-top: 24px;
 }
 
-.site-content {
-	position: relative;
-	margin-top: 128px;
+// .site-content {
+// 	position: relative;
+// 	margin-top: 128px;
 
-	@include respond-below(md) {
-		margin-top: 80px;
-	}
+// 	@include respond-below(md) {
+// 		margin-top: 80px;
+// 	}
+// }
+
+.site-content {
+	margin-top: 10px;
+}
+
+.content-header {
+	border-radius: 0 15px 0 0;
 }
 
 .section-title {
@@ -159,13 +167,16 @@ section.with-home-section-divider {
 a.creditos-link {
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	background-color: white;
+	color: white;
 	display: inline-block;
 	padding: 2px 6px;
-	color: #333;
+	//color: #333;
 	font-weight: bold;
 	font-size: 14px;
 	margin: 0 24px 0 48px;
+	&:hover {
+		color: white;
+	}
 }
 
 .redes-links a {
@@ -201,5 +212,28 @@ a.creditos-link {
 .page-template-page-template-creditos {
 	.site-footer {
 		margin-top: 32px;
+	}
+}
+
+.brand-header {
+	display: none;
+
+	@include respond-above(md) {
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		background-color: rgba(0, 0, 0, 0.8);
+		width: 260px;
+		transition: opacity ease-out 0.5s ;
+		z-index: 10;
+		img {
+			max-width: 212px;
+			margin-left: 12px;
+		}
+
+		&.active {
+			opacity: 0;
+		}	
 	}
 }

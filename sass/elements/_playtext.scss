@@ -168,7 +168,10 @@ a.document-download-button {
 }
 
 .textlegend > .col-md-12,
-.textPersonajes > .col-md-12 {
+.textPersonajes > .col-md-12,
+.textParlamentos > .col-md-12,
+.escenas > .col-md-12
+ {
 	display:flex;
 	padding: 24px 10px 0 10px;
 	.typelabel {
@@ -223,14 +226,6 @@ a.document-download-button {
 		}
 	}
 }
-
-.textlegend {
-	display: none;
-}
-
-.textlegend.active {
-		display: block;
-	}
 
 
 @media screen and (max-width: 768px) {
@@ -329,4 +324,23 @@ a.document-download-button {
 
 .hidden {
 	display: none;
+}
+
+.escenalabel {
+	position: fixed;
+	background-color: $celeste_claro;
+	color: #333;
+	bottom: 25%;
+	right: 48px;
+	padding: 6px 12px;
+	transform: rotate(90deg);
+}
+
+.escena-container {
+	border-left: 3px solid $celeste;
+	position: fixed;
+	top: 200px;
+	right: 0;
+	height: 100%;
+	@include borderWithEdges('vertical');
 }

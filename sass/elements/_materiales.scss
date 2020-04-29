@@ -40,7 +40,7 @@ div.filtertax {
 		&:hover, &.active {
 			background-color: black;
 			color: white;
-			font-weight: 700;
+			font-weight: 4	00;
 			border: 1px solid black;
 		}
 
@@ -349,6 +349,10 @@ canvas#audio-vis-canvas {
 		background-position: left center;
 		background-size: contain;
 		position: relative;
+		span.typelabel {
+			padding: 3px;
+			display: inline-block;
+		}
 
 		&:before {
 			display: block;
@@ -360,8 +364,13 @@ canvas#audio-vis-canvas {
 		}
 
 		&:hover {
-			font-weight: 700;
+			font-weight: 400;
 			text-decoration: none;
+			span.typelabel {
+				background-color: $celeste;
+				color: white;	
+			}
+			
 		}
 
 		&.btn-fotografia {

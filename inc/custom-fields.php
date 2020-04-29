@@ -128,6 +128,13 @@ function prompt_tax_add_metabox( array $meta_boxes ) {
 				'id' => $prefix . 'direccion_coreografica',
 				'type' => 'text',
 				'repeatable' => true,
+			),
+			array(
+				'name' => __( 'Escenas', 'prompt' ),
+				'id' => $prefix . 'escenas',
+				'type' => 'text',
+				'desc' => 'Nombre de cada escena según estén en la tabla del texto dramático',
+				'repeatable' => true,
 			) 
 		)
 	);

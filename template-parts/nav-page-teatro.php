@@ -28,18 +28,18 @@
 				?>
 
 
-				<div class="imagen-obra">
+				<div class="cabecera-obra">
 					<?php 
 					$imageid = get_post_thumbnail_id($main[0]->ID);
 					$imagesrc = wp_get_attachment_image_src( $imageid, 'full', false );
 					?>
+					<?php get_template_part('template-parts/brand-header');?>
 					<div class="text">
 					
 					<h3 class="header-obra-title">Teatro UC histórico</h3>
 					<h1 class="play-title"><?php the_title();?></h1>
 					
 					</div>
-					<div class="imagen" style="background-image: url(<?php echo $imagesrc[0];?>)"></div>
 				</div>
 
 

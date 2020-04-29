@@ -1,20 +1,41 @@
 //Taxonomy y pagina de teatro tb
 
+.single-obra.container {
+	margin-left: 0;
+	margin-right: 0;
+
+	@include respond-above(xl) {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
 
 .single-obra-container-fluid div.wrapper,
 .page-template-teatro div.wrapper
 {
 	background-color: white;
 	border-radius: 0 15px 0 0;
-	.imagen-obra {
-		background-color: $celeste_claro;
+	.cabecera-obra {
+		background-color: $celeste;
 		position: relative;
+		height: 85px;
+		border-radius: 0 15px 0 0;
+
+		@include respond-above(lg) {
+			height: 106px;
+			background-size: cover;
+		}
+
 		div.text {
 			position: absolute;
 			top: 24px;
-			left: 12px;
+			left: 284px;
 			z-index: 1;
 			
+			h1, h3 {
+				line-height: 1;
+			}
+
 			h3 {
 				color: $celeste_claro;
 				font-weight: 700;
@@ -26,29 +47,14 @@
 			}
 
 		}
-		div.imagen {
-			background-repeat: no-repeat;
-			background-position: 0 50%;
-			background-size: cover;
-			mix-blend-mode: multiply;
-			-webkit-filter: contrast(50%);
-			filter: contrast(50%);
-			opacity: 1;
-			height: 85px;
-
-			@include respond-above(lg) {
-				height: 145px;
-				background-size: cover;
-			}	
-		}
 	}
 
 	@include respond-below(md) {
-		.imagen-obra div.text {
-			top: 12px;
-
+		.cabecera-obra div.text {
+			top: 20px;
+			left: 12px;
 			h1 {
-				font-size: 22px;
+				font-size: 24px;
 			}
 
 			h3 {
@@ -93,7 +99,6 @@
 
 .intro-obra {
 	text-align: left;
-	font-style: italic;
 	@include respond-above(md) {
 		font-size: 18px;
 	}
@@ -131,8 +136,7 @@ header.ficha-title {
 }
 
 .strong-dd {
-	font-weight: 400;
-	font-style: italic;
+	font-weight: 300;
 	br {
 		content: '';
 		display: block;
@@ -213,7 +217,7 @@ a.toggleTabs {
 
 	a.nav-item:hover,
 	a.nav-item.active {
-		background-color: $celeste_claro;
+		background-color: $naranjo;
 		color: black;
 	}
 
@@ -224,17 +228,17 @@ a.toggleTabs {
 
 @include respond-below(sm) {
 	#obraTab {
-			a.nav-item,
-			a.nav-item:visited,
-			a.nav-item:focus {
-				font-size: 13px;
-				padding: 8px 2px 8px 6px;
-				line-height: 1.2em;
-				text-align: left;
-				display: flex;
-				align-items: center;
-				justify-content: flex-start;
-			}
+		a.nav-item,
+		a.nav-item:visited,
+		a.nav-item:focus {
+			font-size: 13px;
+			padding: 8px 2px 8px 6px;
+			line-height: 1.2em;
+			text-align: left;
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+		}
 	}
 }
 

@@ -28,31 +28,37 @@
 	<div id="page" class="site hasmenu">
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'prompt' ); ?></a>
 
-		<header id="masthead" class="site-header nav-down">
-			<div class="container-fluid">
-				<div class="site-branding">
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_stylesheet_directory_uri();?>/img/logo_negro.svg" alt="<?php bloginfo( 'name' ); ?>"></a></h1>
-					<div class="description">
-						<?php 
-							$desctext = get_bloginfo('description');
+		<?php if(is_page_template('page-template-creditos.php')):?>
+			<header id="masthead" class="site-header nav-down">
+				<div class="container-fluid">
+					<div class="site-branding">
+						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_stylesheet_directory_uri();?>/img/logo_negro.svg" alt="<?php bloginfo( 'name' ); ?>"></a></h1>
+						<div class="description">
+							<?php 
+								$desctext = get_bloginfo('description');
 
-							$options = get_option( 'prompt_options', false );
-							if(is_tax('obras')):
-								$desctext = $options['prompt_obrastoptext'];
-							elseif(is_page_template('page-template-teatro.php') || is_page_template('page-template-materiales-teatro.php') || is_page_template('page-template-timeline-teatro.php')):
-								$desctext = $options['prompt_teatrotoptext'];
-							else:
-								$desctext = $options['prompt_maintoptext'];
-							endif;
-						?>
-						<?php echo $desctext;?>
-					</div>
-				</div><!-- .site-branding -->
-			</div>
-		</header><!-- #masthead -->
+								$options = get_option( 'prompt_options', false );
+								if(is_tax('obras')):
+									$desctext = $options['prompt_obrastoptext'];
+								elseif(is_page_template('page-template-teatro.php') || is_page_template('page-template-materiales-teatro.php') || is_page_template('page-template-timeline-teatro.php')):
+									$desctext = $options['prompt_teatrotoptext'];
+								else:
+									$desctext = $options['prompt_maintoptext'];
+								endif;
+							?>
+							<?php echo $desctext;?>
+						</div>
+					</div><!-- .site-branding -->
+				</div>
+			</header><!-- #masthead -->
+		<?php endif;?>
 
 		<nav id="site-navigation" class="main-navigation">
+					<img class="logo-menu-mobile" src="<?php echo get_stylesheet_directory_uri();?>/img/logo_celeste.svg" alt="<?php bloginfo( 'name' ); ?>">
 					<span class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fas fa-bars"></i></span>
+					
+					<h1 class="site-title d-none d-md-block"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_stylesheet_directory_uri();?>/img/logo_celeste.svg" alt="<?php bloginfo( 'name' ); ?>"></a></h1>
+
 					<?php
 					wp_nav_menu( array(
 						'theme_location' 	=> 'menu-1',
@@ -60,6 +66,8 @@
 						'container_class'	=> 'menu-principal-container'
 					) );
 					?>
+
+
 		</nav>
 
 		<div id="content" class="site-content">

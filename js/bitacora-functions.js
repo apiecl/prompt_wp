@@ -1,7 +1,7 @@
-function setPersonajes() {
+function setPersonajes(dataAttr) {
 	var personajes = [];
 	jQuery('.text-item').each(function(idx) {
-		var linePersonajes = jQuery(this).attr('data-personajes').split(',');
+		var linePersonajes = jQuery(this).attr(dataAttr).split(',');
 		for(var i = 0; i < linePersonajes.length; i++) {
 			if(linePersonajes[i].length > 0) {
 				var cleanPersonaje = jQuery.trim(linePersonajes[i]);
@@ -181,4 +181,3 @@ function unique(array){
 		return index == arr.indexOf(el);
 	});
 }
-

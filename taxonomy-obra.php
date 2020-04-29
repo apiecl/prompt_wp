@@ -10,15 +10,14 @@ $baseurl = get_term_link($term->term_id, 'obra');
 $yearplay = prompt_format_date($fields['estreno'][0], '%Y');
 ?>
 
-<div class="single-obra-container-fluid container-fluid" >
+<div class="single-obra-container-fluid container-fluid content-header" >
 	<div class="wrapper">
 		
-		<div class="imagen-obra">
+		<div class="cabecera-obra">
+			<?php get_template_part('template-parts/brand-header');?>
 			<div class="text">
-				<h3 class="header-obra-title">Obras</h3>
+				<h3 class="header-obra-title">Obra</h3>
 				<h1 class="play-title"><?php single_term_title();?> / <?php echo $yearplay;?></h1>
-			</div>
-			<div class="imagen" style="background-image: url(<?php echo $fields['imagen'][0];?>);">
 			</div>
 		</div>
 
@@ -52,6 +51,7 @@ $yearplay = prompt_format_date($fields['estreno'][0], '%Y');
 									break;
 									case('texto-dramatico'):
 									get_template_part( 'template-parts/texto-obra' );
+									break;
 									default:
 									get_template_part( 'template-parts/ficha-obra' );
 									break;

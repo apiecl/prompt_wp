@@ -11,6 +11,7 @@ jQuery(document).ready(function($) {
 	var lastScrollTop = 0;
 	var delta = 5;
 	var navBarHeight = $('.site-header').outerHeight();
+	var curscene;
 	
 
 	$('.trigger-media').on('click', function(event) {
@@ -36,6 +37,39 @@ jQuery(document).ready(function($) {
 	$('#landing-overlay .content-top').on('click', function() {
 		$('#landing-overlay').fadeOut();
 	});
+
+	if($('.texto-dramatico').length) {
+		var escenaLabel = $('.escenalabel');
+		$(function(){
+			$(window).scroll(function(){    	
+				var scrollTop = $(document).scrollTop() + ($(window).height() / 2);
+				var positions = [];
+
+				$('.playtext-row').each(function(){
+	        	  //console.log($(this).position().top);
+	        	  //$(this).removeClass("active");
+	        	  positions.push({position:$(this).position().top, element: $(this)});
+	        	});
+
+				var getClosest = closest(positions,scrollTop);
+				escenaLabel.empty().append(getClosest.attr('data-escena'));
+				//console.log(getClosest.attr('data-escena'));
+				//getClosest.addClass("active");
+			});
+
+			function closest(array, number) {
+				var num = 0;
+				for (var i = array.length - 1; i >= 0; i--) {
+					if(Math.abs(number - array[i].position) < Math.abs(number - array[num].position)){
+						num = i;
+					}
+				}
+				return array[num].element;
+			}
+
+		});
+
+	}
 
 	$(window).scroll(function(event) {
 		didScroll = true;
@@ -77,6 +111,7 @@ jQuery(document).ready(function($) {
 	$('.menu-toggle').on('click', function() {
 		var nav = $('.main-navigation')
 		nav.toggleClass('active');
+		$('.brand-header').toggleClass('active');
 		if(nav.hasClass('active')) {
 			$(this).empty().html('<i class="fas fa-times"></i>');
 		} else {
@@ -150,28 +185,34 @@ jQuery(document).ready(function($) {
 	});
 
 	$('#filterPersonajes').change(function() {
-		
-		if(personajes == null) {
-			personajes = setPersonajes();
-			console.log(personajes);
-			
-			for(var i = 0; i < personajes.length; i++) {
-				$('.textPersonajes .col-md-12').append('<span class="typelabel personajelabel" data-filterpersonaje="' + personajes[i] + '">' + personajes[i] + '</span>');
-			}
-		}
-		
 
-		if(this.checked == true) {
-			$('.maintext-col').removeClass('col-md-12').addClass('col-md-10');
-			$('.col-personajes').removeClass('hidden');
-			$('.row.textPersonajes').show();
-		} else {
-			$('.maintext-col').removeClass('col-md-10').addClass('col-md-12');
-			$('.col-personajes').addClass('hidden');
-			$('.playtext-row:hidden').show();
-			$('.row.textPersonajes').hide();
-		}
+		// if(this.checked == true) {
+		// 	$('.maintext-col').removeClass('col-md-12').addClass('col-md-10');
+		// 	$('.col-personajes').removeClass('hidden');
+		// 	$('.row.textPersonajes').show();
+		// } else {
+		// 	$('.maintext-col').removeClass('col-md-10').addClass('col-md-12');
+		// 	$('.col-personajes').addClass('hidden');
+		// 	$('.playtext-row:hidden').show();
+		// 	$('.row.textPersonajes').hide();
+		// }
 	});
+
+	if($('.texto-dramatico').length) {
+		var parlamentos = setPersonajes('data-parlamento');
+		console.log(parlamentos);
+		personajes = setPersonajes('data-personajes');
+		//console.log(personajes);
+
+		for(var i = 0; i < personajes.length; i++) {
+			$('.textPersonajes .col-md-12').append('<span class="typelabel personajelabel" data-filterpersonaje="' + personajes[i] + '">' + personajes[i] + '</span>');
+		}
+
+		for(var i = 0; i < parlamentos.length; i++) {
+			$('.textParlamentos .col-md-12').append('<span class="typelabel parlamentolabel" data-filterparlamento="' + parlamentos[i] + '">' + parlamentos[i] + '</span>')
+		}
+	}
+	
 
 	$('body').on('click', '.typelabel.personajelabel', function(e) {
 		
@@ -355,8 +396,8 @@ jQuery(document).ready(function($) {
 		var othertarget = $('.' + other.attr('data-target'));
 
 		$grid.isotope({
-				filter: ''
-			});
+			filter: ''
+		});
 
 		showCurrentFilterInfo('<p>Mostrando todos los materiales</p>');
 
@@ -370,6 +411,6 @@ jQuery(document).ready(function($) {
 		}
 		
 
-		});
-
 	});
+
+});

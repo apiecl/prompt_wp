@@ -22,7 +22,7 @@ $fields = prompt_obra_metadata( $term->term_id );
 			<dd><?php echo $fields['funciones'][0];?></dd>
 
 			<dt>Asistentes temporada</dt>
-			<dd><?php echo $fields['publico'][0];?> minutos</dd>
+			<dd><?php echo $fields['publico'][0];?></dd>
 
 			<dt>Duración de la obra</dt>
 			<dd><?php echo $fields['duracion'][0];?> minutos</dd>
