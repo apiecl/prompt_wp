@@ -91,23 +91,7 @@ $fields = prompt_obra_metadata( $term->term_id );
 
 						<div class="row">
 							<div class="col-md-12 maintext-col">
-								<div class="text-item  <?php echo ($tipo != null ? 'tipo-' . $tipo : '');?> <?php echo ($media != null ? ' hasmedia' : '');?> " <?php echo bit_dataline($playline);?> ><?php echo $playline->texto;?></div>	
-							</div>
-							<div class="col-md-2 col-personajes hidden">
-								<?php 
-								if($playline->personajes) {
-									$personajesline = explode(',', $playline->personajes);
-									?>
-									<div class="personajes">
-										<?php 
-										foreach($personajesline as $personaje) {
-											echo '<p>' . $personaje . '</p>';
-										}
-										?>	
-									</div>
-									<?php 
-								}
-								?>
+								<div class="text-item  <?php echo ($tipo != null ? 'tipo-' . $tipo : '');?> <?php echo ($media != null ? ' hasmedia' : '');?> " <?php echo bit_dataline($playline);?> ><?php echo($playline->parlamento ? '<span class="acot">' . $playline->parlamento . ': </span>': '');?><?php echo $playline->texto;?></div>	
 							</div>
 						</div>
 					</div>

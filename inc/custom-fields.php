@@ -440,3 +440,43 @@ function prompt_register_theme_options_metabox() {
 	
 
 }
+
+add_filter( 'manage_hitos_posts_columns', 'prompt_filter_posts_columns' );
+
+function prompt_filter_posts_columns( $columns ) {
+
+  $columns = array(
+  	'cb'		=> $columns['cb'],
+  	'title'		=> __('Title'),
+  	'principal' => __( 'Teatro UC' ),
+  	'inicio'	=> __( 'Fecha inicio'),
+  	'fin'		=> __('Fecha fin')
+  );
+  
+  return $columns;
+ }
+
+add_action( 'manage_hitos_posts_custom_column', 'prompt_hitos_column', 10, 2);
+
+function prompt_hitos_column( $column, $post_id ) {
+  // Image column
+  if ( 'principal' === $column ) {
+    echo (get_post_meta($post_id, '_prompt_esprincipal', true) ? '<span class="dashicons dashicons-yes"></span>' : '');
+  }
+  if( 'inicio' === $column) {
+  	$start_date_field 	= get_post_meta( $post_id, '_prompt_inicio', true );
+	echo $start_date_field;
+  }
+  if('fin' === $column) {
+  	$end_date_field 	= get_post_meta( $post_id, '_prompt_fin', true );
+  	echo $end_date_field;
+  }
+}
+
+
+// add_filter( 'manage_edit-prompt_sortable_columns', 'prompt_sortable_columns');
+
+// function prompt_sortable_columns( $columns ) {
+//   $columns['inicio'] = 'inicio';
+//   return $columns;
+// }
