@@ -25,7 +25,7 @@ $yearplay = prompt_format_date($fields['estreno'][0], '%Y');
 			<a id="info-tab" href="<?php echo $baseurl;?>" class="nav-item nav-link <?php echo ( is_null($tab) ? 'active' : '');?>">Ficha artística</a>
 			<a id="timeline-tab" href="<?php echo $baseurl . 'linea-de-tiempo';?>" class="nav-item nav-link <?php echo ($tab == 'linea-de-tiempo' ? 'active' : '');?>">Línea de Tiempo</a>
 			<a id="texto-tab" href="<?php echo $baseurl . 'texto-dramatico';?>" class="nav-item nav-link <?php echo ($tab == 'texto-dramatico' ? 'active' : '');?>">Texto dramático</a>
-			<a id="materiales-tab" href="<?php echo $baseurl . 'materiales';?>" class="nav-item nav-link last <?php echo ($tab == 'materiales' ? 'active' : '');?>">Galería</a>
+			<a id="materiales-tab" href="<?php echo $baseurl . 'galeria';?>" class="nav-item nav-link last <?php echo ($tab == 'galeria' ? 'active' : '');?>">Galería</a>
 		</nav>
 
 		
@@ -46,7 +46,7 @@ $yearplay = prompt_format_date($fields['estreno'][0], '%Y');
 									case('linea-de-tiempo'):
 									get_template_part( 'template-parts/timeline-obra' );
 									break;
-									case('materiales'):
+									case('galeria'):
 									get_template_part( 'template-parts/materiales-obra' );
 									break;
 									case('texto-dramatico'):

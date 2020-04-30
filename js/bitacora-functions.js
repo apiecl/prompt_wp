@@ -39,7 +39,6 @@ function disableMedia( target ) {
 				jQuery( '#' + modal + ' .modal-body').empty().append(response);
 				if(mediaitem !== null) {
 					if(type == 'audio') {
-						console.log('tpyaudio');
 						jQuery('audio').on('play', function(){
 							console.log('start');
 							var audio = this;
