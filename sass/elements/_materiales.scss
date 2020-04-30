@@ -37,7 +37,9 @@ div.filtertax {
 			visibility: hidden;
 		}
 	
-		&:hover, &.active {
+		&:hover,
+		&.active,
+		&.selected {
 			background-color: black;
 			color: white;
 			font-weight: 4	00;
@@ -342,15 +344,16 @@ canvas#audio-vis-canvas {
 .materialtype-row {
 	a {
 		display: inline-block;
-		padding: 12px 12px 12px 64px;
+		padding: 12px 12px 12px 68px;
 		margin-right: 12px;
 		color: $gris;
 		background-repeat: no-repeat;
 		background-position: left center;
 		background-size: contain;
 		position: relative;
+		font-weight: 400;
 		span.typelabel {
-			padding: 3px;
+			padding: 3px 6px;
 			display: inline-block;
 		}
 
@@ -363,7 +366,7 @@ canvas#audio-vis-canvas {
 			visibility: hidden;
 		}
 
-		&:hover {
+		&:hover, &.active {
 			font-weight: 400;
 			text-decoration: none;
 			span.typelabel {
@@ -403,10 +406,16 @@ canvas#audio-vis-canvas {
 }
 
 .currentfilterinfo {
-	color: $gris;
-	padding: 24px 0 36px 0;
-	
+	color: $celeste;
+	margin: 24px 0 36px 0;
+	padding: 12px;
+	background-color: $celeste_claro;
+	display: inline-block;
+	p {
+		margin-bottom: 0;
+	}
+
 	@include respond-below(md) {
-		padding: 6px 0 12px 6px;
+		margin: 6px 0 12px 6px;
 	}
 }

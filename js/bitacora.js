@@ -12,6 +12,11 @@ jQuery(document).ready(function($) {
 	var delta = 5;
 	var navBarHeight = $('.site-header').outerHeight();
 	var curscene;
+	var curtax;
+	var curterm;
+	var curtype;
+	var taxfilter ='';
+	var typefilter = '';
 	
 
 	$('.trigger-media').on('click', function(event) {
@@ -40,6 +45,10 @@ jQuery(document).ready(function($) {
 
 	if($('.texto-dramatico').length) {
 		var escenaLabel = $('.escenalabel');
+		var firstLine = $('.playtext-row').first().attr('data-escena');
+		
+		escenaLabel.empty().append(firstLine);
+		
 		$(function(){
 			$(window).scroll(function(){    	
 				var scrollTop = $(document).scrollTop() + ($(window).height() / 2);
@@ -52,7 +61,10 @@ jQuery(document).ready(function($) {
 	        	});
 
 				var getClosest = closest(positions,scrollTop);
-				escenaLabel.empty().append(getClosest.attr('data-escena'));
+				var dataEscena = getClosest.attr('data-escena');
+				if(dataEscena.length) {
+					escenaLabel.empty().append(dataEscena);	
+				}
 				//console.log(getClosest.attr('data-escena'));
 				//getClosest.addClass("active");
 			});
@@ -290,17 +302,26 @@ jQuery(document).ready(function($) {
 		
 		$('body .terms-filter-zone').empty();
 
-		var curtax = $(this).attr('data-tax');
-		var target = $('body .terms-filter-zone[data-for=' + curtax + ']');
-
 		if(!$(this).hasClass('active')) {
+			//Si no está activo resetea el filtro y construye el dropdown
+			curtax = $(this).attr('data-tax');
+
+			$('.btn-taxfilter').removeClass('selected');
+
+			$('.btn-taxfilter[data-tax="' + curtax +'"]').addClass('selected');
+
+			var target = $('body .terms-filter-zone[data-for=' + curtax + ']');
+
 			$('.btn-taxfilter').removeClass('active');
 			$(this).addClass('active');
+			
+			curfilter = '';
+
 			$grid.isotope({
-				filter: ""
+				filter: curfilter
 			});
 
-			showCurrentFilterInfo('<p>Mostrando todos los materiales</p>');
+			showCurrentFilterInfo(curtax, curterm, curtype, iso.filteredItems.length);
 			
 			var availableTerms = [];
 
@@ -317,7 +338,7 @@ jQuery(document).ready(function($) {
 			
 
 			for(var i=0; i < availableTerms.length; i++) {
-				var curterm = availableTerms[i];
+				curterm = availableTerms[i];
 				var curtermitem = prompt.taxinfo[curtax][curterm];
 
 				target.append('<a href="#" class="dropdown-item dropdown-filter" data-tax="' + curtax + '" data-term-filter="' + curtermitem.slug + '">' + curtermitem.name + '</a>');
@@ -338,53 +359,70 @@ jQuery(document).ready(function($) {
 
 		if($(this).hasClass('active')) {
 			
+			curfilter = ''
+
 			$(this).removeClass('active');
 			$grid.isotope({
-				filter: ''
-			});	
-			showCurrentFilterInfo('<p>Mostrando todos los materiales</p>');
+				filter: curfilter
+			});
+
+
+			showCurrentFilterInfo(curtax, curterm, curtype, iso.filteredItems.length);
 
 		} else {
 
 			$('body .dropdown-filter').removeClass('active');
 
-			var curtax = $(this).attr('data-tax');
-			var curterm = $(this).attr('data-term-filter');
+			curtax = $(this).attr('data-tax');
+			curterm = $(this).attr('data-term-filter');
 			var curtermitem = prompt.taxinfo[curtax][curterm]
+			taxfilter = '[data-' + curtax + '*="' + curterm + '"]';
+
 			$grid.isotope({
-				filter: '[data-' + curtax + '*="' + curterm + '"]'
+				filter: taxfilter + typefilter
 			});
 			$(this).addClass('active');
 
-			showCurrentFilterInfo('<p>Mostrando materiales clasificados como <strong>' + curtermitem.name + '</strong> dentro de  <strong>' + prompt.taxlabels[curtax] + '</strong></p>');
-			
+			showCurrentFilterInfo(curtax, curterm, curtype, iso.filteredItems.length);
 		}
 		
 	});
 
 	$('body').on('click', '.btn-materialtype', function(e) {
-		console.log('im clicking');
+		
 		if($(this).hasClass('active')) {
 
+			curfilter = '';
+			curtype = '';
+
 			$grid.isotope({
-				filter: ''
+				filter: curfilter
 			});
 
+
 			$(this).removeClass('active');
-			showCurrentFilterInfo('<p>Mostrando todos los materiales</p>');
+
+			showCurrentFilterInfo(curtax, curterm, curtype, iso.filteredItems.length);
+
 
 		} else {
 			
-			console.log($grid);
 
-			var type = $(this).attr('data-type');
+			curtype = $(this).attr('data-type');
+			typefilter = '[data-type="' + curtype + '"]';
+
+
 			$grid.isotope({
-				filter: '[data-type="' + type + '"]'
+				filter: taxfilter + typefilter
 			});
-			$(this).addClass('active');
-			$('body .btn-materialtype').removeClass('active');
 
-			showCurrentFilterInfo('<p>Mostrando materiales de tipo <strong>' + type + '</strong></p>');
+			$('body .btn-materialtype').removeClass('active');
+			$(this).addClass('active');
+			
+			
+			
+			showCurrentFilterInfo(curtax, curterm, curtype, iso.filteredItems.length);
+			
 
 		}
 	});
@@ -399,7 +437,7 @@ jQuery(document).ready(function($) {
 			filter: ''
 		});
 
-		showCurrentFilterInfo('<p>Mostrando todos los materiales</p>');
+		showCurrentFilterInfo(curtax, curterm, curtype, iso.filteredItems.length);
 
 
 		if($(this).prop('checked') == true) {

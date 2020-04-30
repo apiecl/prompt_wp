@@ -19,6 +19,10 @@ $letracolor: #A1DB00;
 	&.hasmedia {
 		border-left: 1px solid #333;
 	}
+
+	@include respond-below(md) {
+		font-size: 13px;
+	}
 }
 
 .info-texto {
@@ -327,20 +331,53 @@ a.document-download-button {
 }
 
 .escenalabel {
-	position: fixed;
 	background-color: $celeste_claro;
 	color: #333;
-	bottom: 25%;
-	right: 48px;
-	padding: 6px 12px;
-	transform: rotate(90deg);
+	width: 450px;
+	display: inline-block;
+	padding: 2px 12px 1px 12px;
+	
+	@include respond-below(md) {
+		width: 240px;
+		font-size: 12px
+	}
+}
+
+.escena-wrapper {
+	margin-top: -15px;
 }
 
 .escena-container {
-	border-left: 3px solid $celeste;
+	//border-left: 3px solid $celeste;
 	position: fixed;
-	top: 200px;
-	right: 0;
-	height: 100%;
-	@include borderWithEdges('vertical');
+	top: 580px;
+	right: -150px;
+	width: 72vh;
+	transform: rotate(90deg);
+	text-align: center;
+	border-top: 3px solid $celeste;
+
+	@include borderWithEdges('horizontal');
+
+	@include respond-below(md) {
+		top: 400px;
+		right: -210px;
+	}
+	
+}
+
+.scene-row {
+	margin: 12px 0;
+	h3 {
+		color: $celeste;
+		font-family: $font__serif;
+		font-size: 22px;
+	}
+
+	@include respond-below(md) {
+		margin: 4px 0;
+		h3 {
+			font-size: 16px;
+		}
+	}
 }

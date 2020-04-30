@@ -102,6 +102,10 @@ function disableMedia( target ) {
 					layoutMode: 'fitRows',
 					stagger: 30
 				});
+
+				iso = $grid.data('isotope');
+
+				showCurrentFilterInfo(undefined, undefined, undefined, iso.filteredItems.length);
 			}
 		});
 	}
@@ -158,8 +162,34 @@ function disableMedia( target ) {
 		}
 	}
 
-	function showCurrentFilterInfo(info) {
-		jQuery('.currentfilterinfo').empty().append(info);
+	function showCurrentFilterInfo(tax, term, type, itemNumber) {
+		console.log(tax, term, type);
+		var filterInfo = jQuery('.currentfilterinfo');
+		if(tax !== undefined && term !== undefined) {
+			var taxlabel = prompt.taxlabels[tax];
+			var termlabel = prompt.taxinfo[tax][term];
+
+			if(termlabel !== undefined) {
+				if(type !== undefined) {
+					filterInfo.empty().append('<p><strong>' + itemNumber + ' items.</strong> En ' + taxlabel + ' <i class="fas fa-caret-right"></i> ' + termlabel.name + '. Tipo: ' + type + '</p>');		
+				} else {
+					filterInfo.empty().append('<p><strong>' + itemNumber + 'items.</strong> En ' + taxlabel + ' ' + termlabel.name + '</p>');	
+				}
+				
+			}
+			
+		} else if( type !== undefined) {
+
+			filterInfo.empty().append('<p><strong>' + itemNumber + ' items.</strong>  Tipo: ' + type +'</p>');
+
+		} else {
+			
+			filterInfo.empty().append('<p><strong>' + itemNumber + '</strong> items.</p>');
+
+		}
+		// var taxlabel = prompt.taxlabels[curtax];
+		// var termlabel = prompt.taxinfo[curtax][curterm][name];
+		
 	}
 
 	function animateCSS(element, animationName, callback) {

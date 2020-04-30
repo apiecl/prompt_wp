@@ -73,14 +73,24 @@
 
 .header-texto-dramatico {
 	h2 {
-		font-weight: bold;
-		font-size: 18px;
+		font-weight: 700;
+		font-size: 32px;
 		color: $celeste;
 		margin-bottom: 0
 	}
 
 	p {
-		font-size: 14px;
+		font-size: 18px;
+	}
+
+	@include respond-below(md) {
+		margin: 24px 0 0 0;
+		h2 {
+			font-size: 18px
+		}
+		p {
+			font-size: 14px;
+		}
 	}
 }
 

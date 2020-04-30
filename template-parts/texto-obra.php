@@ -63,6 +63,8 @@ $fields = prompt_obra_metadata( $term->term_id );
 	<div class="row">
 		<div class="col-md-11">
 			<?php
+			$escena = '';
+
 			foreach( $playtext as $playline ) {
 		//var_dump($playline);
 				$tipo = sanitize_title( $playline->tipo);
@@ -71,7 +73,11 @@ $fields = prompt_obra_metadata( $term->term_id );
 				$mediazoneid = uniqid();
 		//echo $media;
 
+				if($playline->escena != $escena):
+					$escena = $playline->escena;
+					echo '<div class="row scene-row scene-marker" id="' . sanitize_title( $escena ) . '"><div class="col-1"></div><div class="col-11"><h3>' . $escena . '</h3></div></div>';
 
+				endif;
 				?>
 				<div class="row playtext-row" data-type="<?php echo $tipo;?>" data-hasmedia="<?php echo ($media != null ? 'true' : 'false');?>" <?php echo bit_dataline($playline);?> >
 					<div class="col-1">
@@ -118,10 +124,12 @@ $fields = prompt_obra_metadata( $term->term_id );
 			}
 			?>
 		</div>
-		<div class="col-md-1 escena-container">
-			<span class="escenalabel">
-				<!-- Aca se carga la escena en scroll -->
-			</span>
+		<div class="escena-container">
+			<div class="escena-wrapper">
+				<span class="escenalabel">
+					<!-- Aca se carga la escena en scroll -->
+				</span>
+			</div>
 		</div>
 	</div>
 
