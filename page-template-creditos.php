@@ -20,7 +20,16 @@ if ( have_posts() ) :
 		<div class="single-obra-container-fluid container-fluid">
 			<div class="wrapper">
 				
-				<?php //get_template_part( 'template-parts/nav-page-teatro' );?>
+				<div class="cabecera-obra">
+					
+					<?php get_template_part('template-parts/brand-header');?>
+					<div class="text">
+					
+					
+					<h1 class="play-title"><?php the_title();?></h1>
+					
+					</div>
+				</div>
 
 				<div class="page-creditos container-fluid">
 					<div class="row">
@@ -30,8 +39,6 @@ if ( have_posts() ) :
 								<div class="tab-pane fade show active" id="el-teatro" role="tabpanel" arial-labelledby="info-tab">
 									
 									<div class="content">
-
-										<h1><?php the_title();?></h1>
 
 										<div class="content-page">
 											<?php the_content();?>
