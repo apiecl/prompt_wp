@@ -76,6 +76,7 @@ function prompt_obra_metadata( $obraid ) {
 				'elenco',
 				'musicos',
 				'asistente',
+				'publico',
 				'direccion_musical',
 				'direccion_coreografica'
 			];

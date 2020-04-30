@@ -46,6 +46,11 @@ div.filtertax {
 			border: 1px solid black;
 		}
 
+		&#taxfilterbtn-identidad_educacion {
+			color: $naranjo;
+			border-color: $naranjo;
+		}
+
 		&:focus {
 			box-shadow: none;
 		}
