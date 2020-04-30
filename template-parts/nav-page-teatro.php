@@ -47,9 +47,13 @@
 					
 					<a aria-selected="true" id="elteatro-tab" href="<?php echo get_permalink($main[0]->ID);?>" class="nav-item nav-link <?php echo ($main[0]->ID == $post->ID ? 'active' : '');?>"><?php echo $main[0]->post_title;?></a>
 
-					<?php foreach($childs as $page):?>
+					<?php 
+					$i = 0;
+					foreach($childs as $page):
+						$i++;
+						?>
 						
-						<a aria-selected="false" id="timeline-tab"href="<?php echo get_permalink($page->ID);?>" class="nav-item nav-link <?php echo ($page->ID == $post->ID ? 'active' : '');?>"><?php echo $page->post_title;?></a>
+						<a aria-selected="false" id="timeline-tab"href="<?php echo get_permalink($page->ID);?>" class="nav-item nav-link <?php echo ($i == count($childs)? 'last' : '' );?> <?php echo ($page->ID == $post->ID ? 'active' : '');?>"><?php echo $page->post_title;?></a>
 						
 					<?php endforeach;?>
 				</nav>

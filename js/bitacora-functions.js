@@ -137,6 +137,9 @@ function disableMedia( target ) {
 					layoutMode: 'fitRows',
 					stagger: 30
 				});
+
+				iso = $grid.data('isotope');
+				showCurrentFilterInfo(undefined, undefined, undefined, iso.filteredItems.length);
 			}
 		});
 	}

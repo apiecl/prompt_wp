@@ -1,8 +1,11 @@
 //Taxonomy y pagina de teatro tb
 
-.single-obra.container {
+.single-obra.container,
+.single-obra.container-fluid
+ {
 	margin-left: 0;
 	margin-right: 0;
+	background-color: white;
 
 	@include respond-above(xl) {
 		margin-left: auto;
@@ -13,7 +16,7 @@
 .single-obra-container-fluid div.wrapper,
 .page-template-teatro div.wrapper
 {
-	background-color: white;
+	//background-color: white;
 	border-radius: 0 15px 0 0;
 	.cabecera-obra {
 		background-color: $celeste;
@@ -202,7 +205,8 @@ a.toggleTabs {
 }
 
 #obraTab {
-	background-color: $gris;
+	background-color: #000;
+	padding-top: 10px;
 	margin: 0;
 	display: flex;
 	a.nav-item,
@@ -221,6 +225,10 @@ a.toggleTabs {
 		padding: 12px 6px;
 		font-size: 16px;
 		transition: all linear 0.2s;
+	}
+
+	a.nav-item.last {
+		border-radius: 0 15px 0 0;
 	}
 
 

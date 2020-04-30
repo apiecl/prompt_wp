@@ -21,7 +21,7 @@ if ( have_posts() ) :
 			<div class="wrapper">
 				<?php get_template_part( 'template-parts/nav-page-teatro' );?>
 
-				<div class="single-obra container">
+				<div class="single-obra container-fluid">
 					<div class="row">
 						<div class="col-md-4">
 							<div class="tab-content" id="obraTabContent">
