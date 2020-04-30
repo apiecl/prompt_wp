@@ -22,7 +22,7 @@
 
 <body <?php body_class(); ?>>
 
-	<?php if(is_home()):
+	<?php if(is_home() && !$_GET['h'] == '0'):
 		get_template_part( 'template-parts/landing-overlay' );
 	endif;?>
 	<div id="page" class="site hasmenu">
@@ -32,7 +32,7 @@
 			<header id="masthead" class="site-header nav-down">
 				<div class="container-fluid">
 					<div class="site-branding">
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_stylesheet_directory_uri();?>/img/logo_negro.svg" alt="<?php bloginfo( 'name' ); ?>"></a></h1>
+						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>?h=0" rel="home"><img src="<?php echo get_stylesheet_directory_uri();?>/img/logo_negro.svg" alt="<?php bloginfo( 'name' ); ?>"></a></h1>
 						<div class="description">
 							<?php 
 								$desctext = get_bloginfo('description');
@@ -57,7 +57,7 @@
 					<img class="logo-menu-mobile" src="<?php echo get_stylesheet_directory_uri();?>/img/logo_celeste.svg" alt="<?php bloginfo( 'name' ); ?>">
 					<span class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fas fa-bars"></i></span>
 					
-					<h1 class="site-title d-none d-md-block"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_stylesheet_directory_uri();?>/img/logo_celeste.svg" alt="<?php bloginfo( 'name' ); ?>"></a></h1>
+					<h1 class="site-title d-none d-md-block"><a href="<?php echo esc_url( home_url( '/' ) ); ?>?h=0" rel="home"><img src="<?php echo get_stylesheet_directory_uri();?>/img/logo_celeste.svg" alt="<?php bloginfo( 'name' ); ?>"></a></h1>
 
 					<?php
 					wp_nav_menu( array(
