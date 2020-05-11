@@ -42,8 +42,8 @@ if ( have_posts() ) :
 
 											<div class="row">
 												<div class="col-md-3"><?php echo get_post_meta($post->ID, '_prompt_creditos_columna_1', true);?></div>
-												<div class="col-md-3"><?php echo get_post_meta($post->ID, '_prompt_creditos_columna_2', true);?></div>
-												<div class="col-md-3"><?php echo get_post_meta($post->ID, '_prompt_creditos_columna_3', true);?></div>
+												<div class="col-md-4"><?php echo get_post_meta($post->ID, '_prompt_creditos_columna_2', true);?></div>
+												<div class="col-md-4"><?php echo get_post_meta($post->ID, '_prompt_creditos_columna_3', true);?></div>
 											</div>
 										</div>
 

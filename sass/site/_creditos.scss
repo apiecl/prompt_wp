@@ -4,6 +4,11 @@
 	background-color: $celeste;
 		.content-page {
 			color: white;
+			font-weight: 500;
+			strong {
+				font-weight: 700;
+				font-size: 22px;
+			}
 			.creditos-title {
 				display: inline-block;
 				text-transform: uppercase;
