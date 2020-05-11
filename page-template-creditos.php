@@ -23,17 +23,12 @@ if ( have_posts() ) :
 				<div class="cabecera-obra">
 					
 					<?php get_template_part('template-parts/brand-header');?>
-					<div class="text">
-					
-					
-					<h1 class="play-title"><?php the_title();?></h1>
-					
-					</div>
+
 				</div>
 
 				<div class="page-creditos container-fluid">
 					<div class="row">
-						<div class="col-md-4">
+						<div class="col-md-12">
 							<div class="tab-content" id="obraTabContent">
 								
 								<div class="tab-pane fade show active" id="el-teatro" role="tabpanel" arial-labelledby="info-tab">
@@ -41,7 +36,15 @@ if ( have_posts() ) :
 									<div class="content">
 
 										<div class="content-page">
+											<h1 class="creditos-title"><?php the_title();?></h1>
+											
 											<?php the_content();?>
+
+											<div class="row">
+												<div class="col-md-3"><?php echo get_post_meta($post->ID, '_prompt_creditos_columna_1', true);?></div>
+												<div class="col-md-3"><?php echo get_post_meta($post->ID, '_prompt_creditos_columna_2', true);?></div>
+												<div class="col-md-3"><?php echo get_post_meta($post->ID, '_prompt_creditos_columna_3', true);?></div>
+											</div>
 										</div>
 
 									</div>
@@ -50,16 +53,11 @@ if ( have_posts() ) :
 
 							</div>		
 						</div>
-						<div class="col-md-8">
-							<p></p>
-							<p></p>
-							<div class="intro-teatro">
-								<?php the_content();?>
-							</div>
-						</div>
 					</div>
+					
 				</div>
 			</div>
+			<?php get_template_part('template-parts/site-footer');?>
 		</div>
 
 
@@ -69,7 +67,7 @@ if ( have_posts() ) :
 endif;
 ?>
 
-<?php get_template_part('template-parts/site-footer');?>
+
 
 <?php
 get_footer();

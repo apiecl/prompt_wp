@@ -1,0 +1,18 @@
+
+.page-template-page-template-creditos {
+	.page-creditos {
+	background-color: $celeste;
+		.content-page {
+			color: white;
+			.creditos-title {
+				display: inline-block;
+				text-transform: uppercase;
+				color: $celeste;
+				background-color: white;
+				padding: 2px;
+				letter-spacing: 2px;
+				font-size: 16px;
+			}
+		}
+	}
+}

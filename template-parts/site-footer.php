@@ -5,7 +5,7 @@
 					<img src="<?php bloginfo('template_url');?>/img/logos_footer.svg" alt="">
 				</div>
 				<div class="col-4 footer-links-right">
-					<a href="" class="creditos-link">Créditos</a>
+					<a href="<?php bloginfo('url');?>/creditos" class="creditos-link">Créditos</a>
 
 					<div class="redes-links">
 						<a href=""><i class="fab fa-facebook-f"></i></a>

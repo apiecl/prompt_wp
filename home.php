@@ -9,16 +9,6 @@ $descteatro = $options['prompt_teatrotoptext'];
 
 		<section id="obras-link" class="container-fluid" data-action="show" data-toggle="obra-item-presentation">
 			<div class="obras-nav-wrapper">
-				<!-- <div class="obra-container menu-obras collapse-menu-home collapsed" data-target=".obras-nav-wrapper">
-					<div class="obra-content">
-						<div class="left">
-							<h1>Obras</h1>
-							<div class="section-desc">
-								<?php echo $descobras;?>
-							</div>
-						</div>
-					</div>
-				</div> -->
 
 				<?php get_template_part('template-parts/brand-header');?>
 
@@ -100,17 +90,6 @@ $descteatro = $options['prompt_teatrotoptext'];
 
 		<section id="teatro-link" class="container-fluid">
 			<div class="teatro-nav-wrapper">
-					<!-- <div class="obra-container menu-obras menu-teatrouc collapse-menu-home" data-action="show" data-target=".teatro-nav-wrapper">
-						<div class="obra-content">
-							<div class="left">
-								<h1>Teatro UC histórico</h1>
-								<div class="section-desc">
-									<?php echo $descteatro;?>
-								</div>
-							</div>
-						</div>
-					</div> -->
-
 					<div class="obra-container teatro-item-presentation">
 						<div class="obra-content">
 							<div class="obra-content-wrap">
@@ -139,14 +118,7 @@ $descteatro = $options['prompt_teatrotoptext'];
 					</div>
 				</div>
 			</section>
-			<?php 
-			//get_template_part( 'template-parts/obras' );
-			//get_template_part( 'template-parts/timeline' );
-			?>
-
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
 	<?php
-//get_sidebar();
 	get_footer();

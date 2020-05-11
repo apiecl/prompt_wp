@@ -264,7 +264,7 @@ function prompt_teatrouc_add_metabox() {
 		'id'           => $prefix . 'teatrouc',
 		'title'        => __( 'Datos', 'prompt' ),
 		'object_types' => array( 'page' ),
-		'show_on'	   => array('key' => 'page_template', 'value' => 'page-template-teatro.php'),
+		'show_on'	   => array('key' => 'page-template', 'value' => 'page-template-teatro.php'),
 		'context'      => 'normal',
 		'priority'     => 'high',
 	) );
@@ -291,6 +291,43 @@ function prompt_teatrouc_add_metabox() {
 		'name' => __( 'Locaciones del Teatro', 'prompt' ),
 		'id' => $prefix . 'locaciones',
 		'type' => 'text',
+	) );
+
+}
+
+add_action( 'cmb2_init', 'prompt_creditos_add_metabox' );
+
+function prompt_creditos_add_metabox() {
+
+	$prefix = '_prompt_';
+
+	$cmb = new_cmb2_box( array(
+		'id'           => $prefix . 'creditos',
+		'title'        => __( 'Creditos', 'prompt' ),
+		'object_types' => array( 'page' ),
+		'show_on'	   => array('key' => 'page-template', 'value' => 'page-template-creditos.php'),
+		'context'      => 'normal',
+		'priority'     => 'high',
+	) );
+
+	$cmb->add_field( array(
+		'name' => __( 'Columna 1', 'prompt' ),
+		'id' => $prefix . 'creditos_columna_1',
+		'type' => 'wysiwyg',
+	) );
+
+
+	$cmb->add_field( array(
+		'name' => __( 'Columna 2', 'prompt' ),
+		'id' => $prefix . 'creditos_columna_2',
+		'type' => 'wysiwyg',
+	) );
+
+
+	$cmb->add_field( array(
+		'name' => __( 'Columna 3', 'prompt' ),
+		'id' => $prefix . 'creditos_columna_3',
+		'type' => 'wysiwyg',
 	) );
 
 }
