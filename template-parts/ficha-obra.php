@@ -1,6 +1,9 @@
 <?php 
 $term = get_term_by( 'slug', get_query_var( 'term' ), 'obra' );
 $fields = prompt_obra_metadata( $term->term_id );
+$ficha_col_1 = get_term_meta( $term->term_id, '_prompt_ficha_col_1', false );
+$ficha_col_2 = get_term_meta( $term->term_id, '_prompt_ficha_col_2', false );
+$ficha_col_3 = get_term_meta( $term->term_id, '_prompt_ficha_col_3', false );
 ?>
 
 <h1>Ficha artística</h1>
@@ -9,60 +12,17 @@ $fields = prompt_obra_metadata( $term->term_id );
 	<dl class="col-md-3 col-7">
 
 		<div class="mini-time">
-			<dt class="important">Fecha de estreno</dt>
-			<dd class="important"><?php echo prompt_format_date($fields['estreno'][0]);?></dd>
-
-			<dt>Inicio de la temporada</dt>
-			<dd><?php echo prompt_format_date($fields['temporada_inicio'][0]);?></dd>
-
-			<dt>Sala de presentación</dt> 
-			<dd><?php echo $fields['sala'][0];?></dd>
-
-			<dt>N° de funciones</dt>
-			<dd><?php echo $fields['funciones'][0];?></dd>
-
-			<dt>Asistentes temporada</dt>
-			<dd><?php echo $fields['publico'][0];?></dd>
-
-			<dt>Duración de la obra</dt>
-			<dd><?php echo $fields['duracion'][0];?> minutos</dd>
-
-			<dt class="important">Fin de la temporada</dt>
-			<dd class="important"><?php echo prompt_format_date($fields['temporada_fin'][0]);?></dd>
+			<?php echo apply_filters('the_content', $ficha_col_1[0]);?>
 		</div>
 
 	</dl>
 
 	<dl class="col-md-3 col-5">
-
-		<dt>Dirección</dt> 
-		<dd><?php echo prompt_multifields($fields['direccion'][0], ', ');?></dd>
-
-		<dt>Dramaturgia</dt> 
-		<dd><?php echo prompt_multifields($fields['dramaturgia'][0], ', ');?></dd>
-
-		<dt>Asistente de Dirección</dt> 
-		<dd><?php echo prompt_multifields($fields['asistente'][0], ', ');?></dd>
-
-		<dt>Dirección musical</dt> 
-		<dd><?php echo prompt_multifields($fields['direccion_musical'][0], ', ');?></dd>
-
-		<dt>Dirección coreográfica</dt> 
-		<dd><?php echo prompt_multifields($fields['direccion_coreografica'][0], ', ');?></dd>
-
-		<dt>Escenografía e Iluminación</dt> 
-		<dd><?php echo prompt_multifields($fields['escenografia_iluminacion'][0], ', ');?></dd>
-
-		<dt>Vestuario</dt> 
-		<dd><?php echo prompt_multifields($fields['vestuario'][0], ', ');?></dd>
-
+		<?php echo apply_filters('the_content', $ficha_col_2[0]);?>
 	</dl>
 
 	<dl class="col-md-3 col-12 offset-md-3">
-		<header class="ficha-title">
-			<h2>Elenco</h2>
-		</header> 
-		<dd class="strong-dd elenco"><?php echo prompt_multifields($fields['elenco'][0], ' <br> ', true);?></dd>
+		<?php echo apply_filters('the_content', $ficha_col_3[0]);?>
 	</dl>
 
 </div>
