@@ -74,7 +74,7 @@ function get_main_timeline_events($obra = null) {
 }
 
 function parse_field_date_for_json( $datestring, $yearonly = false ) {
-	$date_processed = new DateTime($datestring);
+	$date_processed = new DateTime(sanitize_text_field( $datestring ));
 	
 	if($yearonly == true):
 		$date_sorted 	= array(
