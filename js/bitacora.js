@@ -83,6 +83,13 @@ jQuery(document).ready(function($) {
 
 	}
 
+	$('body').on('change','#selectScene', function(e) {
+		var selected = $('option:selected', this).attr('value');
+		document.querySelector(selected).scrollIntoView({
+			behavior: 'smooth'
+		});
+	});
+
 	$(window).scroll(function(event) {
 		didScroll = true;
 	});
@@ -103,10 +110,12 @@ jQuery(document).ready(function($) {
 		if(st > lastScrollTop && st > navBarHeight) {
 			$('.site-header').removeClass('nav-down').addClass('nav-up');
 			$('.main-navigation').addClass('affix');
+			$('.escena-nav').addClass('scrolled');
 		} else {
 			if(st + $(window).height() < $(document).height()) {
 				$('.site-header').removeClass('nav-up').addClass('nav-down');
 				$('.main-navigation').removeClass('affix');
+				$('.escena-nav').removeClass('scrolled');
 			}
 		}
 		lastScrollTop = st;

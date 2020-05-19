@@ -389,3 +389,34 @@ a.document-download-button {
 	margin-right: 5px;
 	padding: 6px;
 }
+
+.escena-nav {
+	max-height: 70vh;
+	position: fixed;
+	top: 200px;
+	right: 20px;
+	padding: 12px;
+	background-color: $celeste_claro;
+	transition: top 0.3s linear;
+
+	h5 {
+		color: #333;
+		font-size: 16px;
+		font-weight: 300;
+	}
+
+	&.scrolled {
+		top: 24px;
+	}
+}
+
+.escena-nav-select {
+	background-color: white;
+	font-weight: 300;
+	border: 0;
+}
+
+.escena-nav-item {
+	display: block;
+	padding: 2px;
+}

@@ -64,7 +64,7 @@ $fields = prompt_obra_metadata( $term->term_id );
 		<div class="col-md-11">
 			<?php
 			$escena = '';
-
+			$escenas = [];
 			foreach( $playtext as $playline ) {
 		//var_dump($playline);
 				$tipo = sanitize_title( $playline->tipo);
@@ -75,6 +75,7 @@ $fields = prompt_obra_metadata( $term->term_id );
 
 				if($playline->escena != $escena):
 					$escena = $playline->escena;
+					$escenas[] = $escena;
 					echo '<div class="row scene-row scene-marker" id="' . sanitize_title( $escena ) . '"><div class="col-1"></div><div class="col-11"><h3>' . $escena . '</h3></div></div>';
 
 				endif;
@@ -115,6 +116,14 @@ $fields = prompt_obra_metadata( $term->term_id );
 				</span>
 			</div>
 		</div>
+		<div class="escena-nav">
+				<h5>Ir a escena</h5>
+				<select name="selectScene" id="selectScene" class="escena-nav-select">
+				<?php foreach($escenas as $escena):?>
+					<option value="#<?php echo sanitize_title( $escena);?>"><?php echo $escena;?></a>
+				<?php endforeach;?>
+				</select>
+			</div>
 	</div>
 
 	<div class="modal fade modal-media-text" tabindex="-1" role="dialog" id="modal-media-text-materiales" aria-hidden="true">
