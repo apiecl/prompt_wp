@@ -38,7 +38,9 @@ function get_main_timeline_events($obra = null) {
 			$end_date_field 	= get_post_meta( $hito->ID, '_prompt_fin', true );
 			$media_field		= get_the_post_thumbnail_url( $hito->ID, 'medium' );
 
-			$start_date 		= parse_field_date_for_json( $start_date_field, $yearonly );
+			if($start_date_field):
+				$start_date 		= parse_field_date_for_json( $start_date_field, $yearonly );
+			endif;
 			
 			if($end_date_field):
 				$end_date 			= parse_field_date_for_json( $end_date_field, $yearonly );
