@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"start_date",
+				"start_date_field"
+			],
+			[
+				"sanitize",
+				"sanitize_option\tWP Function"
+			],
+			[
 				"rotat",
 				"rotate3d()\ttransform"
 			],
@@ -249,7 +257,51 @@
 			"file": "js/bitacora.js",
 			"settings":
 			{
-				"buffer_size": 12192,
+				"buffer_size": 12478,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "inc/ajax-functions.php",
+			"settings":
+			{
+				"buffer_size": 2148,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "template-parts/texto-obra.php",
+			"settings":
+			{
+				"buffer_size": 4829,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sass/elements/_playtext.scss",
+			"settings":
+			{
+				"buffer_size": 6156,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "package.json",
+			"settings":
+			{
+				"buffer_size": 711,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sass/site/_site.scss",
+			"settings":
+			{
+				"buffer_size": 3690,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -258,7 +310,7 @@
 			"file": "functions.php",
 			"settings":
 			{
-				"buffer_size": 8592,
+				"buffer_size": 8594,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -460,6 +512,7 @@
 	],
 	"file_history":
 	[
+		"/home/pabloselin/Documents/WebDev/projects/PluralismoTV_MM_RGB /html/index.html",
 		"/home/pabloselin/Documents/GameDev/cryojelly_2020/code/cryojelly_test_01/scenes/Main.gd",
 		"/home/pabloselin/Documents/GameDev/cryojelly_2020/code/cryojelly_test_01/scenes/Stage.gd",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/page-template-teatro.php",
@@ -481,7 +534,6 @@
 		"/home/pabloselin/Documents/WebDev/projects/luciaegana/reunion",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/template-parts/ficha-obra.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/inc/custom-fields.php",
-		"/home/pabloselin/Documents/WebDev/projects/PluralismoTV_MM_RGB /html/index.html",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/home.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/inc/custom-content.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/elements/_materiales.scss",
@@ -758,7 +810,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 8,
 			"sheets":
 			[
 				{
@@ -787,7 +839,7 @@
 						"translation.y": 5708.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
@@ -813,10 +865,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 153.0,
+						"translation.y": 51.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -825,15 +877,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 12192,
+						"buffer_size": 12478,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1361,
-								1428
+								3126,
+								3126
 							]
 						],
 						"settings":
@@ -842,27 +894,173 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 663.0,
+						"translation.y": 1326.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "functions.php",
+					"file": "inc/ajax-functions.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8592,
+						"buffer_size": 2148,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								192,
-								192
+								981,
+								981
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 357.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "template-parts/texto-obra.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4829,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3994,
+								3994
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1428.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "sass/elements/_playtext.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6156,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5829,
+								5829
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/SCSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 6297.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 711,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								175,
+								175
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "sass/site/_site.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3690,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								847,
+								847
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/SCSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "functions.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8594,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								329,
+								329
 							]
 						],
 						"settings":
@@ -874,11 +1072,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 9,
 					"file": "sass/variables-site/_typography.scss",
 					"semi_transient": false,
 					"settings":
@@ -902,11 +1100,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 10,
 					"file": "sass/navigation/_menus.scss",
 					"semi_transient": false,
 					"settings":
@@ -931,11 +1129,11 @@
 						"translation.y": 1646.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 11,
 					"file": "sass/site/_creditos.scss",
 					"semi_transient": false,
 					"settings":
@@ -960,11 +1158,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 12,
 					"file": "inc/custom-fields.php",
 					"semi_transient": false,
 					"settings":
@@ -989,7 +1187,7 @@
 						"translation.y": 5027.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 11,
 					"type": "text"
 				}
 			]
@@ -1044,16 +1242,32 @@
 		"selected_items":
 		[
 			[
+				"func",
+				"prompt/functions.php"
+			],
+			[
+				"packa",
+				"prompt/package.json"
+			],
+			[
+				"playt",
+				"prompt/sass/elements/_playtext.scss"
+			],
+			[
+				"texto",
+				"prompt/template-parts/texto-obra.php"
+			],
+			[
+				"ajax",
+				"prompt/inc/ajax-functions.php"
+			],
+			[
 				"bitac",
 				"prompt/js/bitacora.js"
 			],
 			[
 				"typo",
 				"prompt/sass/variables-site/_typography.scss"
-			],
-			[
-				"func",
-				"prompt/functions.php"
 			],
 			[
 				"cred",
@@ -1184,10 +1398,6 @@
 				"prompt/template-parts/nav-page-teatro.php"
 			],
 			[
-				"ajax",
-				"prompt/inc/ajax-functions.php"
-			],
-			[
 				"admin",
 				"bit_extensions/admin-interface.php"
 			],
@@ -1212,10 +1422,6 @@
 				"prompt/template-parts/texto-obra.php"
 			],
 			[
-				"playt",
-				"prompt/sass/elements/_playtext.scss"
-			],
-			[
 				"bitacor",
 				"prompt/js/bitacora.js"
 			],
@@ -1233,10 +1439,6 @@
 			],
 			[
 				"tex",
-				"prompt/template-parts/texto-obra.php"
-			],
-			[
-				"texto",
 				"prompt/template-parts/texto-obra.php"
 			],
 			[
@@ -1306,10 +1508,6 @@
 			[
 				"pack",
 				"prompt/package-lock.json"
-			],
-			[
-				"packa",
-				"prompt/package.json"
 			],
 			[
 				"inde",
@@ -1561,15 +1759,15 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "c8",
+		"last_filter": "c80",
 		"selected_items":
 		[
 			[
-				"c8",
+				"c80",
 				"~/Documents/WebDev/local_sites/c80/app/public/wp-content/themes/c80-template/c80.sublime-project"
 			],
 			[
-				"c80",
+				"c8",
 				"~/Documents/WebDev/local_sites/c80/app/public/wp-content/themes/c80-template/c80.sublime-project"
 			],
 			[
