@@ -30,7 +30,7 @@ $descteatro = $options['prompt_teatrotoptext'];
 								<div class="obra-content-wrap">
 									
 									<div class="obra-preheader">
-										<h1>Obras</h1>
+										<h1>Obras <span class="moresoon">pronto <i class="fas fa-plus"></i> obras</span></h1>
 										<div class="section-desc">
 											<?php echo $descobras;?>
 										</div>

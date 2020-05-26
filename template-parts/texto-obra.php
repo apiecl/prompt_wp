@@ -115,8 +115,7 @@ $fields = prompt_obra_metadata( $term->term_id );
 					<!-- Aca se carga la escena en scroll -->
 				</span>
 			</div>
-		</div>
-		<div class="escena-nav">
+			<div class="escena-nav">
 				<h5>Ir a escena</h5>
 				<select name="selectScene" id="selectScene" class="escena-nav-select">
 				<?php foreach($escenas as $escena):?>
@@ -124,6 +123,8 @@ $fields = prompt_obra_metadata( $term->term_id );
 				<?php endforeach;?>
 				</select>
 			</div>
+		</div>
+		
 	</div>
 
 	<div class="modal fade modal-media-text" tabindex="-1" role="dialog" id="modal-media-text-materiales" aria-hidden="true">

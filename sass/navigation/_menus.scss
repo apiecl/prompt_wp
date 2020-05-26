@@ -142,6 +142,7 @@ body.admin-bar .main-navigation {
 		height: 50px;
 		text-align: right;
 		padding: 0;
+		z-index: 50;
 
 		.logo-menu-mobile {
 			display: block;
@@ -155,7 +156,7 @@ body.admin-bar .main-navigation {
 
 		.menu-toggle {
 			font-size: 32px;
-			padding: 4px 12px 0 12px;
+			padding: 4px 18px 0 12px;
 			margin-top: 6px;
 		}
 

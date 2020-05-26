@@ -1,6 +1,9 @@
 #timeline-embed {
 	min-height: 620px;
 	font-family: 'Nunito Sans', sans-serif;
+	@include respond-below(md) {
+		min-height: 420px;
+	}
 }
 
 #timeline-obra {
@@ -12,7 +15,6 @@
 }
 
 #timeline-obra #timeline-embed {
-	min-height: 620px;
 	.tl-timenav,
 	.tl-slider-container-mask {
 		//background-color: #333;
@@ -25,6 +27,9 @@
 
 .timeline-section {
 	padding: 24px 0;
+	@include respond-below(md) {
+		padding: 0;
+	}
 }
 
 #timeline-embed {

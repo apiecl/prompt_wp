@@ -16,6 +16,7 @@ $letracolor: #A1DB00;
 	margin-bottom: 12px;
 	padding-left: 12px;
 	font-family: $font__serif;
+	font-size: 1.2rem;
 	&.hasmedia {
 		border-left: 1px solid #333;
 	}
@@ -333,9 +334,10 @@ a.document-download-button {
 .escenalabel {
 	background-color: $celeste_claro;
 	color: #333;
-	width: 450px;
+	width: 250px;
 	display: inline-block;
 	padding: 2px 12px 1px 12px;
+	cursor: pointer;
 	
 	@include respond-below(md) {
 		width: 240px;
@@ -350,8 +352,8 @@ a.document-download-button {
 .escena-container {
 	//border-left: 3px solid $celeste;
 	position: fixed;
-	top: 580px;
-	right: -150px;
+	top: 420px;
+	right: -190px;
 	width: 72vh;
 	transform: rotate(90deg);
 	text-align: center;
@@ -392,23 +394,30 @@ a.document-download-button {
 
 .escena-nav {
 	max-height: 70vh;
-	position: fixed;
-	top: 200px;
-	right: 20px;
+	top: -100px;
+	right: 180px;
+	position: absolute;
+	border-right: 1px solid darken($celeste_claro, 10%);
 	padding: 12px;
 	background-color: $celeste_claro;
-	transition: top 0.3s linear;
+	transition: all 0.3s linear;
+	transform: rotate(-90deg);
+	opacity: 0;
+	display: none;
 
 	h5 {
 		color: #333;
 		font-size: 16px;
 		font-weight: 300;
 	}
-
-	&.scrolled {
-		top: 24px;
-	}
 }
+
+.escena-nav.active {
+	display: block;
+	opacity: 1;
+	top: 37px;
+}
+
 
 .escena-nav-select {
 	background-color: white;

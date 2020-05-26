@@ -29,7 +29,7 @@
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'prompt' ); ?></a>
 
 		<nav id="site-navigation" class="main-navigation">
-					<img class="logo-menu-mobile" src="<?php echo get_stylesheet_directory_uri();?>/img/logo_celeste.svg" alt="<?php bloginfo( 'name' ); ?>">
+					<a href="<?php bloginfo('home');?>"><img class="logo-menu-mobile" src="<?php echo get_stylesheet_directory_uri();?>/img/logo_celeste.svg" alt="<?php bloginfo( 'name' ); ?>"></a>
 					<span class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fas fa-bars"></i></span>
 					
 					<h1 class="site-title d-none d-md-block"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_stylesheet_directory_uri();?>/img/logo_celeste.svg" alt="<?php bloginfo( 'name' ); ?>"></a></h1>

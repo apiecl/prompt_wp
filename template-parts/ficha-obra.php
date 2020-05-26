@@ -9,7 +9,7 @@ $ficha_col_3 = get_term_meta( $term->term_id, '_prompt_ficha_col_3', false );
 <h1>Ficha artística</h1>
 
 <div class="row">
-	<dl class="col-md-3 col-7">
+	<dl class="col-md-3 col-12">
 
 		<div class="mini-time">
 			<?php echo apply_filters('the_content', $ficha_col_1[0]);?>
@@ -17,7 +17,7 @@ $ficha_col_3 = get_term_meta( $term->term_id, '_prompt_ficha_col_3', false );
 
 	</dl>
 
-	<dl class="col-md-3 col-5">
+	<dl class="col-md-3 col-12">
 		<?php echo apply_filters('the_content', $ficha_col_2[0]);?>
 	</dl>
 

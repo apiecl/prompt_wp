@@ -145,7 +145,7 @@ function prompt_scripts() {
 
 	wp_enqueue_script( 'popper', 'https://unpkg.com/@popperjs/core@2' , array(), false, false );
 
-	wp_enqueue_script( 'timelinejs', 'https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js', array(), '3.6.5', false );
+	wp_enqueue_script( 'timelinejs', get_template_directory_uri() . '/js/timeline.js', array(), '3.6.5', false );
 
 	wp_enqueue_script('masonry', get_template_directory_uri() . '/js/masonry.pkgd.min.js', array('jquery', 'imagesLoaded'), '4.2.2', false);
 

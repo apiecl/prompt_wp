@@ -69,6 +69,14 @@ function disableMedia( target ) {
 			success:function(response) {
 				console.log(targetid);
 				jQuery('#' + targetid).empty().append(response);
+
+				jQuery('img.media-item-image').on('load', function() {
+					this.style.opacity = 1;
+				});
+				
+				var images = document.querySelectorAll('.media-item-image');
+				lazyload(images);
+
 			}
 		});
 	}

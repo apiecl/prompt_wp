@@ -88,6 +88,7 @@ jQuery(document).ready(function($) {
 		document.querySelector(selected).scrollIntoView({
 			behavior: 'smooth'
 		});
+		$('.escena-nav').removeClass('active');
 	});
 
 	$(window).scroll(function(event) {
@@ -110,16 +111,21 @@ jQuery(document).ready(function($) {
 		if(st > lastScrollTop && st > navBarHeight) {
 			$('.site-header').removeClass('nav-down').addClass('nav-up');
 			$('.main-navigation').addClass('affix');
-			$('.escena-nav').addClass('scrolled');
+			$('.escena-container').addClass('scrolled');
 		} else {
 			if(st + $(window).height() < $(document).height()) {
 				$('.site-header').removeClass('nav-up').addClass('nav-down');
 				$('.main-navigation').removeClass('affix');
-				$('.escena-nav').removeClass('scrolled');
+				$('.escena-container').removeClass('scrolled');
 			}
 		}
 		lastScrollTop = st;
 	}
+
+	$('.escenalabel').on('click', function(event) {
+		console.log('escenalabel click');
+		$('.escena-nav').toggleClass('active');
+	});
 
 	//$('.teatro-item-presentation, .obra-item-presentation').hide();
 

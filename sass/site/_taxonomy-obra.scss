@@ -226,6 +226,7 @@ a.toggleTabs {
 		padding: 12px 6px;
 		font-size: 16px;
 		transition: all linear 0.2s;
+		border-right: 1px solid darken($gris, 10%);
 	}
 
 	a.nav-item.last {
@@ -238,6 +239,7 @@ a.toggleTabs {
 	a.nav-item.active {
 		background-color: $naranjo;
 		color: black;
+		border-right: 1px solid $naranjo;
 	}
 
 	.tab-pane {

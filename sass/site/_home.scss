@@ -54,6 +54,18 @@ body.home {
 			@include respond-below(md) {
 				margin-bottom: 12px;
 			}
+
+			span {
+				display: inline-block;
+				padding: 3px;
+				font-weight: 400;
+				border: 1px solid white;
+				margin-left: 5px;
+				margin-top: -10px;
+				font-size: 12px;
+				line-height: 14px;
+				vertical-align: middle;
+			}
 		}
 
 		ul {
@@ -245,12 +257,13 @@ main#main.site-main.home {
 
 .section-desc {
 	font-size: 18px;
-	font-weight: 500;
+	font-weight: 300;
 	line-height: 1.25em;
 	color: white;
 	max-width: 380px;
 	@include respond-below('sm') {
-		font-size: 18px;
+		font-size: 13px;
+		font-weight: 300;
 	}
 }
 
