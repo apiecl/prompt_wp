@@ -59,9 +59,11 @@ $fields = prompt_obra_metadata( $term->term_id );
 	</div>
 </div>
 
+
+
 <div class="texto-dramatico">
 	<div class="row">
-		<div class="col-md-11">
+		<div class="col-md-11 col-11 bordered-blue">
 			<?php
 			$escena = '';
 			$escenas = [];
@@ -109,21 +111,7 @@ $fields = prompt_obra_metadata( $term->term_id );
 			}
 			?>
 		</div>
-		<div class="escena-container">
-			<div class="escena-wrapper">
-				<span class="escenalabel">
-					<!-- Aca se carga la escena en scroll -->
-				</span>
-			</div>
-			<div class="escena-nav">
-				<h5>Ir a escena</h5>
-				<select name="selectScene" id="selectScene" class="escena-nav-select">
-				<?php foreach($escenas as $escena):?>
-					<option value="#<?php echo sanitize_title( $escena);?>"><?php echo $escena;?></a>
-				<?php endforeach;?>
-				</select>
-			</div>
-		</div>
+		
 		
 	</div>
 
@@ -145,3 +133,21 @@ $fields = prompt_obra_metadata( $term->term_id );
 	</div>
 
 </div>
+
+<div class="escena-container">
+			<div class="escena-rotation">
+				<div class="escena-wrapper">
+					<span class="escenalabel">
+						<!-- Aca se carga la escena en scroll -->
+					</span>
+				</div>
+				<div class="escena-nav">
+					<h5>Ir a escena</h5>
+					<select name="selectScene" id="selectScene" class="escena-nav-select">
+					<?php foreach($escenas as $escena):?>
+						<option value="#<?php echo sanitize_title( $escena);?>"><?php echo $escena;?></a>
+					<?php endforeach;?>
+					</select>
+				</div>
+			</div>
+		</div>

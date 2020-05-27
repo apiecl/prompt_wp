@@ -34,6 +34,9 @@
 		} @else if $variant == 'vertical' {
 			top: 0;
 			left: -8.5px;
+		} @else if $variant == 'verticalright' {
+			right: -7.5px;
+			top: 0;
 		}
 		position: absolute;
 	}
@@ -51,6 +54,11 @@
 			left: -8.5px;
 			width: 14px;
 			height: 3px;		
+		} @else if $variant == 'verticalright' {
+			bottom: 0;
+			right: -7.5px;
+			width: 14px;
+			height: 3px;
 		}
 		position: absolute;
 	}

@@ -9,6 +9,10 @@ $monologocolor: #DBA800;
 $letracolor: #A1DB00;
 
 .texto-dramatico {
+	.bordered-blue {
+		border-right: 2px solid $celeste;
+		@include borderWithEdges('verticalright');
+	}
 }
 
 .text-item {
@@ -331,42 +335,8 @@ a.document-download-button {
 	display: none;
 }
 
-.escenalabel {
-	background-color: $celeste_claro;
-	color: #333;
-	width: 250px;
-	display: inline-block;
-	padding: 2px 12px 1px 12px;
-	cursor: pointer;
-	
-	@include respond-below(md) {
-		width: 240px;
-		font-size: 12px
-	}
-}
 
-.escena-wrapper {
-	margin-top: -15px;
-}
 
-.escena-container {
-	//border-left: 3px solid $celeste;
-	position: fixed;
-	top: 420px;
-	right: -190px;
-	width: 72vh;
-	transform: rotate(90deg);
-	text-align: center;
-	border-top: 3px solid $celeste;
-
-	@include borderWithEdges('horizontal');
-
-	@include respond-below(md) {
-		top: 400px;
-		right: -210px;
-	}
-	
-}
 
 .scene-row {
 	margin: 12px 0;
@@ -392,17 +362,60 @@ a.document-download-button {
 	padding: 6px;
 }
 
+.escenalabel {
+	background-color: $celeste_claro;
+	color: #333;
+	width: 250px;
+	display: inline-block;
+	padding: 2px 12px 1px 12px;
+	cursor: pointer;
+
+	&:hover {
+		background-color: darken($celeste_claro, 10%);
+	}
+	
+	//@include borderWithEdges('horizontal');
+
+	@include respond-below(md) {
+		width: 240px;
+		font-size: 12px
+	}
+}
+
+.escena-wrapper {
+	
+}
+
+.escena-rotation {
+	position: relative;
+	transform: rotate(90deg);
+	width: 100%;
+}
+
+.escena-container {
+	text-align: center;
+	max-width: 800px;
+	position: fixed;
+	right: 13px;
+	top: 300px;
+	@include respond-below(md) {
+		right: -82px;
+	}
+	
+}
+
+
+
 .escena-nav {
-	max-height: 70vh;
-	top: -100px;
-	right: 180px;
+	right: 55px;
+	top: 53px;
 	position: absolute;
 	border-right: 1px solid darken($celeste_claro, 10%);
 	padding: 12px;
 	background-color: $celeste_claro;
 	transition: all 0.3s linear;
-	transform: rotate(-90deg);
 	opacity: 0;
+	transform: rotate(-90deg);
 	display: none;
 
 	h5 {
@@ -415,7 +428,6 @@ a.document-download-button {
 .escena-nav.active {
 	display: block;
 	opacity: 1;
-	top: 37px;
 }
 
 
