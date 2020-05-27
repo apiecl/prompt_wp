@@ -8,7 +8,7 @@ $ficha_col_3 = get_term_meta( $term->term_id, '_prompt_ficha_col_3', false );
 
 <h1>Ficha artística</h1>
 
-<div class="row">
+<div class="row datos-obra">
 	<dl class="col-md-3 col-12">
 
 		<div class="mini-time">
@@ -27,7 +27,7 @@ $ficha_col_3 = get_term_meta( $term->term_id, '_prompt_ficha_col_3', false );
 
 </div>
 
-<div class="row">
+<div class="row datos-obra">
 	<div class="intro-obra col-md-8 col-12">
 		<header class="ficha-title">
 			<h2>Reseña</h2>
