@@ -1,6 +1,11 @@
 #timeline-embed {
-	min-height: 620px;
+	min-height: 430px;
 	font-family: 'Nunito Sans', sans-serif;
+	
+	@include respond-above(xl) {
+		min-height: 620px;
+	}
+
 	@include respond-below(md) {
 		min-height: 420px;
 	}
