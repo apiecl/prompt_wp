@@ -8,13 +8,6 @@ $dialogocolor: #DB00A1;
 $monologocolor: #DBA800;
 $letracolor: #A1DB00;
 
-.texto-dramatico {
-	.bordered-blue {
-		border-right: 2px solid $celeste;
-		@include borderWithEdges('verticalright');
-	}
-}
-
 .text-item {
 	text-align: left;
 	margin-bottom: 12px;
@@ -445,3 +438,18 @@ a.document-download-button {
 	display: block;
 	padding: 2px;
 }
+
+span.bordered-blue {
+		border-right: 2px solid $celeste;
+		@include borderWithEdges('verticalright');
+		display: block;
+		position: absolute;
+		right: 127px;
+		top: 100px;
+		width: 20px;
+		height: 99.6%;
+
+		@include respond-below(md) {
+			right: 28px;
+		}
+	}

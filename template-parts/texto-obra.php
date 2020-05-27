@@ -63,7 +63,7 @@ $fields = prompt_obra_metadata( $term->term_id );
 
 <div class="texto-dramatico">
 	<div class="row">
-		<div class="col-md-11 col-11 bordered-blue">
+		<div class="col-md-11 col-11">
 			<?php
 			$escena = '';
 			$escenas = [];
@@ -133,6 +133,8 @@ $fields = prompt_obra_metadata( $term->term_id );
 	</div>
 
 </div>
+
+<span class="bordered-blue"></span>
 
 <div class="escena-container">
 			<div class="escena-rotation">
