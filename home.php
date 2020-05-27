@@ -49,7 +49,7 @@ $descteatro = $options['prompt_teatrotoptext'];
 											<a href="<?php echo $baseurl;?>texto-dramatico">Texto dramático</a>
 										</li>
 										<li>
-											<a href="<?php echo $baseurl;?>materiales">Materiales</a>
+											<a href="<?php echo $baseurl;?>galeria">Galería</a>
 										</li>
 									</ul>
 								</div>

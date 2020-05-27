@@ -48,11 +48,14 @@ $letracolor: #A1DB00;
 }
 
 a.trigger-media {
-	color: #333;
+	color: #666;
 	padding: 3px;
 	text-decoration: none;
+	font-family: $font__main;
+	font-size: 16px;
+	vertical-align: middle;
 	&:hover, &.active {
-		color: red;
+		color: $celeste;
 	}
 }
 
@@ -336,7 +339,8 @@ a.document-download-button {
 	h3 {
 		color: $celeste;
 		font-family: $font__serif;
-		font-size: 22px;
+		font-size: 26px;
+		font-weight: bold;
 	}
 
 	@include respond-below(md) {

@@ -78,23 +78,23 @@ $fields = prompt_obra_metadata( $term->term_id );
 				if($playline->escena != $escena):
 					$escena = $playline->escena;
 					$escenas[] = $escena;
-					echo '<div class="row scene-row scene-marker" id="' . sanitize_title( $escena ) . '"><div class="col-1"></div><div class="col-11"><h3>' . $escena . '</h3></div></div>';
+					echo '<div class="row scene-row scene-marker" id="' . sanitize_title( $escena ) . '"><div class="col-11"><h3>' . $escena . '</h3></div></div>';
 
 				endif;
 				?>
 				<div class="row playtext-row" data-type="<?php echo $tipo;?>" data-hasmedia="<?php echo ($media != null ? 'true' : 'false');?>" <?php echo bit_dataline($playline);?> >
-					<div class="col-1">
-						<?php if($media):?>
-							<a href="#" class="btn btn-light trigger-media" data-plain-id="<?php echo $mediazoneid;?>" data-expand="#<?php echo $mediazoneid;?>" data-assoc="<?php echo $media;?>" title="Ver el material asociado a esta sección del texto.">
-								<i class="fas fa-images"></i> <span class="badge badge-light"><?php echo $mediacount;?></span>
-							</a>
-						<?php endif;?>
-					</div>
-					<div class="col-10">
+					
+					<div class="col-11">
 
 						<div class="row">
 							<div class="col-md-12 maintext-col">
-								<div class="text-item  <?php echo ($tipo != null ? 'tipo-' . $tipo : '');?> <?php echo ($media != null ? ' hasmedia' : '');?> " <?php echo bit_dataline($playline);?> ><?php echo($playline->parlamento ? '<span class="acot">' . $playline->parlamento . ': </span>': '');?><?php echo $playline->texto;?></div>	
+								<div class="text-item  <?php echo ($tipo != null ? 'tipo-' . $tipo : '');?> <?php echo ($media != null ? ' hasmedia' : '');?> " <?php echo bit_dataline($playline);?> ><?php echo($playline->parlamento ? '<span class="acot">' . $playline->parlamento . ': </span>': '');?><?php echo $playline->texto;?>
+								<?php if($media):?>
+									<a href="#" class="trigger-media" data-plain-id="<?php echo $mediazoneid;?>" data-expand="#<?php echo $mediazoneid;?>" data-assoc="<?php echo $media;?>" title="Ver el material asociado a esta sección del texto.">
+										<i class="fas fa-images"></i> <span class="badge badge-light"><?php echo $mediacount;?></span>
+									</a>
+								<?php endif;?>
+								</div>
 							</div>
 						</div>
 					</div>
