@@ -52,7 +52,7 @@ body.home {
 		.obra-preheader {
 			margin-bottom: 48px;
 			@include respond-below(md) {
-				margin-bottom: 12px;
+				margin-bottom: 0;
 			}
 
 			span {
@@ -65,6 +65,10 @@ body.home {
 				font-size: 12px;
 				line-height: 14px;
 				vertical-align: middle;
+			}
+
+			h1 {
+				margin-bottom: 0;
 			}
 		}
 
@@ -98,6 +102,11 @@ body.home {
 						&:before {
 							border-color: transparentize($gris, 0.5);
 						}
+					}
+
+					@include respond-below(md) {
+						padding: 6px 12px;
+						margin-bottom: 8px;
 					}
 
 				}

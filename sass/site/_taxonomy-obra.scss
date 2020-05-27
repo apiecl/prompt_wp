@@ -118,7 +118,8 @@
 	}
 }
 
-header.ficha-title {
+header.ficha-title, 
+.ficha-obra {
 	h2 {
 		@include titulo-con-gris;
 	}
@@ -283,6 +284,6 @@ a.toggleTabs {
 	padding-left: 16px;
 	border-left: 3px solid $celeste;
 	position: relative;
-	
+
 	@include borderWithEdges('vertical');
 }
