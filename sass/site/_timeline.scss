@@ -7,7 +7,8 @@
 	}
 
 	@include respond-below(md) {
-		min-height: 420px;
+		min-height: 460px;
+		margin-top: 2px;
 	}
 }
 
@@ -47,7 +48,8 @@
 			line-height: 1.2em;
 			color: #00213D;
 			@include respond-below(sm) {
-				font-size: 22px;
+				font-size: 18px;
+				font-weight: 600;
 			}
 		}	
 	}
@@ -55,6 +57,16 @@
 	.tl-text-content,
 	.tl-text-content p {
 		color: #00213D;
+	}
+	@include respond-below(md) {
+		.tl-text {
+			margin-top: 0;
+		}
+
+		.tl-media {
+			padding-top: 0;
+			border-top: 0;
+		}
 	}	
 }
 

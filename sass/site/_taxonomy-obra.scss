@@ -22,7 +22,7 @@
 	.cabecera-obra {
 		background-color: $celeste;
 		position: relative;
-		height: 85px;
+		height: 44px;
 		border-radius: 0 15px 0 0;
 
 		@include respond-above(lg) {
@@ -55,14 +55,14 @@
 
 	@include respond-below(md) {
 		.cabecera-obra div.text {
-			top: 20px;
+			top: 4px;
 			left: 12px;
 			h1 {
-				font-size: 24px;
+				font-size: 20px;
 			}
 
 			h3 {
-				font-size: 18px;
+				font-size: 14px;
 			}
 		}
 	}
@@ -250,6 +250,12 @@ a.toggleTabs {
 
 @include respond-below(sm) {
 	#obraTab {
+		padding-top: 0;
+
+		a.nav-item.last {
+			border-radius: 0;
+		}
+
 		a.nav-item,
 		a.nav-item:visited,
 		a.nav-item:focus {

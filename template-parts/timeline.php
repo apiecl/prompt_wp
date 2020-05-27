@@ -10,7 +10,9 @@
 <script>
 	var timeline_options = {
 		language: "es",
-		initial_zoom: 5
+		initial_zoom: 5,
+		timenav_height_min: 60,
+		timenav_mobile_height_percentage: 35
 	}
 	var timeline_events = JSON.parse(prompt_hitos);
 	window.timeline = new TL.Timeline('timeline-embed', timeline_events, timeline_options);	

@@ -266,13 +266,13 @@ main#main.site-main.home {
 
 .section-desc {
 	font-size: 18px;
-	font-weight: 300;
+	font-weight: 400;
+	color: $celeste_claro;
 	line-height: 1.25em;
-	color: white;
 	max-width: 380px;
 	@include respond-below('sm') {
-		font-size: 13px;
-		font-weight: 300;
+		font-size: 12px;
+		font-weight: 400;
 	}
 }
 
