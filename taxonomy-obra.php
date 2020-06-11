@@ -41,7 +41,7 @@ $yearplay = prompt_format_date($fields['estreno'][0], '%Y');
 					<div class="tab-content" id="obraTabContent">
 						<div class="tab-pane fade show active" id="mainTab" role="tabpanel" aria-labelledby="info-tab">
 
-							<div class="ficha-obra">
+							<div class="ficha-obra <?php echo $tab;?>">
 								<?php switch($tab) {
 									case('linea-de-tiempo'):
 									get_template_part( 'template-parts/timeline-obra' );

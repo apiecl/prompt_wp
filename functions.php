@@ -133,7 +133,7 @@ function prompt_scripts() {
 
 	wp_enqueue_script('bitacora-functions', get_template_directory_uri() . '/js/bitacora-functions.js', array('jquery'), PROMPT_VERSION, false);
 	
-	wp_enqueue_script('bitacora', get_template_directory_uri() . '/js/bitacora.js', array('jquery', 'visible', 'tinysliderjs', 'bootstrap', 'wavesurfer', 'masonry', 'lazyload', 'audiovis'), PROMPT_VERSION, false);
+	wp_enqueue_script('bitacora', get_template_directory_uri() . '/js/bitacora.js', array('jquery', 'visible', 'tinysliderjs', 'bootstrap', 'wavesurfer', 'masonry', 'lazyload', 'audiovis', 'syncscroll', 'dragscroll'), PROMPT_VERSION, false);
 
 	wp_enqueue_script( 'prompt-navigation', get_template_directory_uri() . '/js/navigation.js', array(), PROMPT_VERSION, true );
 
@@ -156,6 +156,10 @@ function prompt_scripts() {
 	wp_enqueue_script('lazyload', 'https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js', array('jquery'), '1.9.1', false);
 
 	wp_enqueue_script('isotope', 'https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js', array('jquery', 'bitacora'), '2.1.1', false);
+
+	wp_enqueue_script('syncscroll', get_template_directory_uri() . '/js/syncscroll.js', array(), '0.0.3', false);
+
+	wp_enqueue_script('dragscroll', get_template_directory_uri() . '/js/dragscroll.js', array(), '0.0.3', false);
 
 	$taxonomies = get_taxonomies(array(), 'objects');
 	$taxinfo = [];

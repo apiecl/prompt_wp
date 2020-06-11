@@ -2,68 +2,72 @@
 $term = get_term_by( 'slug', get_query_var( 'term' ), 'obra' );
 $playtext = bit_get_play($term->term_id);
 $fields = prompt_obra_metadata( $term->term_id );
+$escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
 ?>
 
-<div class="row header-texto-dramatico">
-	<div class="col-md-12">
-		<h2><?php echo $term->name;?> / <?php echo prompt_format_date($fields['estreno'][0]);?></h2>
-		<p>Historia y texto de <?php echo prompt_multifields($fields['dramaturgia'][0], ', ');?></p>
-	</div>
-</div>
-
-<div class="utils hidden">
-	
-	<div class="row">
-		<div class="col-md-12"> 
-			<div class="info-texto">
-				<p>Aquí puedes leer todo el texto de la obra. Los párrafos con el ícono <i class="fas fa-images"></i> tienen fotos, videos, musica o documentos asociados.</p>
-			</div>
-		</div>
-	</div>
-	
-
-	<div class="row escenas">
-		<div class="col-md-12">
-			<?php 
-			$escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
-			foreach($escenas as $escena) {
-				?>
-				<span class="typelabel label-escena" data-escena="<?php echo $escena;?>"><?php echo $escena;?></span>
-				<?php
-			}
-			?>
-		</div>
-	</div>
-	
-	<div class="row textlegend">
-		<div class="col-md-12">
-			<span class="typelabel acotacion"><i class="fas fa-quote-left"></i> Acotación</span>
-			<span class="typelabel descripcion"><i class="fas fa-scroll"></i> Descripción</span>
-			<span class="typelabel cancion"><i class="fas fa-music"></i> Canción</span>
-			<span class="typelabel dialogo"><i class="fas fa-comments"></i> Diálogo</span>
-			<span class="typelabel monologo"><i class="fas fa-comment-dots"></i> Monólogo</span>
-			<span class="typelabel letra"><i class="fas fa-font"></i> Letra</span>
-		</div>
-	</div>
-
-	
-	<div class="row textPersonajes">
-		<div class="col-md-12">
-			<!-- Ajax acá van los personajes -->
-		</div>
-	</div>
-	<div class="row textParlamentos">
-		<div class="col-md-12">
-			<!-- Ajax con los parlamentos -->
-		</div>
-	</div>
-</div>
 
 
 
 <div class="texto-dramatico">
 	<div class="row">
-		<div class="col-md-11 col-11">
+		<div class="col-md-4 col-4">
+			<div class="left-texto">
+			<h4 class="minisection-title">Personajes</h4>
+			<div class="personajes">
+				<?php 
+					$personajes = get_term_meta( $term->term_id, '_prompt_personajes', true);
+					//var_dump($personajes);
+					foreach($personajes as $personaje) {
+						echo '<div class="personaje" data-personaje="' . $personaje['_prompt_nombrepersonaje'] . '">' . $personaje['_prompt_nombrepersonaje']. '</div>';
+					}
+				?>
+			</div>
+			<div class="texto-mini syncscroll dragscroll" name="textodramatico">
+			<?php 
+				foreach($playtext as $playlinesmall) {
+					
+					$subplaylines = explode("\n", $playlinesmall->texto);
+
+					if($playlinesmall->escena != $escena):
+						$escena = $playlinesmall->escena;
+						//$escenas[] = $escena;
+						echo '<span class="scene-marker" data-escena="' . $escena . '"></span>';
+					endif;
+
+					echo '<div class="textunit" ' . bit_dataline($playlinesmall) .'>';
+
+					foreach($subplaylines as $subline) {
+						$linewidth = strlen($subline) * 1.2;
+						echo '<span data-size="' . $linewidth . '" style="width: ' . $linewidth . 'px;" class="line"></span>';
+					}
+
+					echo '</div>';
+				}
+			?>
+			</div>
+			</div>
+		</div>
+		<div class="col-md-8 col-8">
+			<div class="text-zone">
+			<div class="header-controls-right header-texto-dramatico">
+				<h2><?php echo $term->name;?> / <?php echo prompt_format_date($fields['estreno'][0]);?></h2>
+				<p>Historia y texto de <?php echo prompt_multifields($fields['dramaturgia'][0], ', ');?></p>
+				
+				<div class="escena-container">
+				<div class="escena-rotation">
+					<div class="escena-nav active">
+						<select name="selectScene" id="selectScene" class="escena-nav-select">
+						<?php foreach($escenas as $escena):?>
+							<option value="#<?php echo sanitize_title( $escena);?>"><?php echo $escena;?></a>
+						<?php endforeach;?>
+						</select>
+					</div>
+				</div>
+
+			</div>
+			
+		</div>
+		<div class="texto-full syncscroll" name="textodramatico" id="texto-full">
 			<?php
 			$escena = '';
 			$escenas = [];
@@ -82,13 +86,13 @@ $fields = prompt_obra_metadata( $term->term_id );
 
 				endif;
 				?>
-				<div class="row playtext-row" data-type="<?php echo $tipo;?>" data-hasmedia="<?php echo ($media != null ? 'true' : 'false');?>" <?php echo bit_dataline($playline);?> >
+				<div class="row playtext-row" data-type="<?php echo $tipo;?>" data-hasmedia="<?php echo ($media != null ? 'true' : 'false');?>" data-escenaslug="<?php echo sanitize_title($playline->escena);?>" <?php echo bit_dataline($playline);?> >
 					
 					<div class="col-11">
 
 						<div class="row">
 							<div class="col-md-12 maintext-col">
-								<div class="text-item  <?php echo ($tipo != null ? 'tipo-' . $tipo : '');?> <?php echo ($media != null ? ' hasmedia' : '');?> " <?php echo bit_dataline($playline);?> ><?php echo($playline->parlamento ? '<span class="acot">' . $playline->parlamento . ': </span>': '');?><?php echo $playline->texto;?>
+								<div class="text-item  <?php echo ($tipo != null ? 'tipo-' . $tipo : '');?> <?php echo ($media != null ? ' hasmedia' : '');?> " <?php echo bit_dataline($playline);?> ><?php echo($playline->parlamento ? '<span class="acot">' . $playline->parlamento . ': </span>': '');?><?php echo apply_filters('the_content', $playline->texto);?>
 								<?php if($media):?>
 									<a href="#" class="trigger-media" data-plain-id="<?php echo $mediazoneid;?>" data-expand="#<?php echo $mediazoneid;?>" data-assoc="<?php echo $media;?>" title="Ver el material asociado a esta sección del texto.">
 										<i class="fas fa-images"></i> <span class="badge badge-light"><?php echo $mediacount;?></span>
@@ -111,8 +115,8 @@ $fields = prompt_obra_metadata( $term->term_id );
 			}
 			?>
 		</div>
-		
-		
+		</div>
+		</div>
 	</div>
 
 	<div class="modal fade modal-media-text" tabindex="-1" role="dialog" id="modal-media-text-materiales" aria-hidden="true">
@@ -134,22 +138,3 @@ $fields = prompt_obra_metadata( $term->term_id );
 
 </div>
 
-<span class="bordered-blue"></span>
-
-<div class="escena-container">
-			<div class="escena-rotation">
-				<div class="escena-wrapper">
-					<span class="escenalabel">
-						<!-- Aca se carga la escena en scroll -->
-					</span>
-				</div>
-				<div class="escena-nav">
-					<h5>Ir a escena</h5>
-					<select name="selectScene" id="selectScene" class="escena-nav-select">
-					<?php foreach($escenas as $escena):?>
-						<option value="#<?php echo sanitize_title( $escena);?>"><?php echo $escena;?></a>
-					<?php endforeach;?>
-					</select>
-				</div>
-			</div>
-		</div>

@@ -75,29 +75,6 @@
 	margin: 12px 0;
 }
 
-.header-texto-dramatico {
-	h2 {
-		font-weight: 700;
-		font-size: 32px;
-		color: $celeste;
-		margin-bottom: 0
-	}
-
-	p {
-		font-size: 18px;
-	}
-
-	@include respond-below(md) {
-		margin: 24px 0 0 0;
-		h2 {
-			font-size: 18px
-		}
-		p {
-			font-size: 14px;
-		}
-	}
-}
-
 
 .single-obra {
 	//background-color: #333;

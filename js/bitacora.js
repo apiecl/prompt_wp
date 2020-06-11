@@ -45,26 +45,40 @@ jQuery(document).ready(function($) {
 
 	if($('.texto-dramatico').length) {
 		var escenaLabel = $('.escenalabel');
-		var firstLine = $('.playtext-row').first().attr('data-escena');
-		
-		escenaLabel.empty().append(firstLine);
-		
+		var playtextRow = $('.playtext-row');
+
 		$(function(){
-			$(window).scroll(function(){    	
+			$('#texto-full').scroll(function(){    	
+				console.log('scrolltest');
 				var scrollTop = $(document).scrollTop() + ($(window).height() / 2);
 				var positions = [];
+				playtextRow.removeClass('selected');
 
-				$('.playtext-row').each(function(){
+				playtextRow.each(function(){
 	        	  //console.log($(this).position().top);
 	        	  //$(this).removeClass("active");
 	        	  positions.push({position:$(this).position().top, element: $(this)});
 	        	});
 
 				var getClosest = closest(positions,scrollTop);
+				getClosest.addClass('selected');
 				var dataEscena = getClosest.attr('data-escena');
+				var dataEscenaSlug = getClosest.attr('data-escenaslug');
+				var dataPersonaje = getClosest.attr('data-personajes');
+				var dataParlamento = getClosest.attr('data-parlamento');
+
 				if(dataEscena.length) {
-					escenaLabel.empty().append(dataEscena);	
+					//escenaLabel.empty().append(dataEscena);
+					$('#selectScene').val('#' + dataEscenaSlug);	
+
 				}
+
+				if(dataParlamento.length) {
+					$('.personajes .personaje').removeClass('active');
+					$('.personajes .personaje[data-personaje="' + dataParlamento + '"]').addClass('active');
+
+				}
+
 				//console.log(getClosest.attr('data-escena'));
 				//getClosest.addClass("active");
 			});
@@ -85,14 +99,38 @@ jQuery(document).ready(function($) {
 
 	$('body').on('change','#selectScene', function(e) {
 		var selected = $('option:selected', this).attr('value');
-		document.querySelector(selected).scrollIntoView({
-			behavior: 'smooth'
-		});
+		var element = document.querySelector(selected);
+		var top = element.offsetTop;
+
+		document.getElementById('texto-full').scrollTop = top - 160;
+		
+		//$('.texto-full').addClass('smooth');
+
 		$('.escena-nav').removeClass('active');
 	});
 
 	$(window).scroll(function(event) {
 		didScroll = true;
+	});
+
+	$('.playtext-row, .textunit').on('hover', function() {
+		var curId = $(this).attr('data-id');
+		var dataParlamento = $(this).attr('data-parlamento');
+
+		$('.personajes .personaje').removeClass('active');
+		$('.personajes .personaje[data-personaje="' + dataParlamento + '"]').addClass('active');
+
+		$('.playtext-row, .textunit').removeClass('selected');
+		$('.textunit[data-id="' + curId + '"], .playtext-row[data-id="' + curId + '"]').addClass('selected');
+
+	});
+
+	$('.textunit').on('click', function() {
+		var curId = $(this).attr('data-id');
+		var selected = $('.playtext-row[data-id="' + curId + '"]');
+		var top = selected.offsetTop;
+		console.log(top);
+		document.getElementById('texto-full').scrollTop = top - 60;
 	});
 
 	setInterval(function() {

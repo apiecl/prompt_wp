@@ -66,7 +66,103 @@ function prompt_tax_add_metabox( array $meta_boxes ) {
 
 }
 
+
+add_filter('cmb2-taxonomy_meta_boxes', 'prompt_tax_add_metabox_personajes');
+
+function prompt_tax_add_metabox_personajes( array $meta_boxes ) {
+
+	$prefix = '_prompt_';
+
+	$meta_boxes['personajesobra'] = array(
+		'id'           => $prefix . 'personajesobra',
+		'title'        => __( 'Personajes de la Obra', 'prompt' ),
+		'object_types' => array( 'obra' ),
+		'context'      => 'normal',
+		'priority'     => 'default',
+		'fields'	   => array(
+			
+			array(
+				'name' => __( 'Personajes', 'prompt' ),
+				'id' => $prefix . 'personajes',
+				'type' => 'group',
+				'fields'			=> array(
+					array(
+						'name' => __( 'Nombre', 'prompt' ),
+						'id' => $prefix . 'nombrepersonaje',
+						'type' => 'text',
+					),
+					array(
+						'name' => __( 'Imagen', 'prompt' ),
+						'id' => $prefix . 'imagenpersonaje',
+						'type' => 'file',
+					),
+				),
+				'options'     => array(
+				'group_title'       => __( 'Personaje {#}', 'cmb2' ), // since version 1.1.4, {#} gets replaced by row number
+				'add_button'        => __( 'Agregar otro personaje', 'cmb2' ),
+				'remove_button'     => __( 'Quitar personaje', 'cmb2' ),
+				'sortable'          => true,
+				// 'closed'         => true, // true to have the groups closed by default
+				// 'remove_confirm' => esc_html__( 'Are you sure you want to remove?', 'cmb2' ), // Performs confirmation before removing group.
+			)
+			)
+		)
+	);
+
+
+
+	// $cmb = new_cmb2_box( array(
+	// 	'id'           => $prefix . 'personajes',
+	// 	'title'        => __( 'Personajes de la obra', 'promptbook' ),
+	// 	'object_types' => array( 'obra' ),
+	// 	'context'      => 'normal',
+	// 	'priority'     => 'default',
+	// ) );
+
+	// $personajesobra = $cmb->add_field( array(
+	// 	'id'          => 'personajes_obra',
+	// 	'type'        => 'group',
+
+	// 	'description' => __( 'Personajes', 'cmb2' ),
+	// 	// 'repeatable'  => false, // use false if you want non-repeatable group
+	// 	'options'     => array(
+	// 		'group_title'       => __( 'Personake {#}', 'cmb2' ), // since version 1.1.4, {#} gets replaced by row number
+	// 		'add_button'        => __( 'Agregar otro personaje', 'cmb2' ),
+	// 		'remove_button'     => __( 'Quitar personaje', 'cmb2' ),
+	// 		'sortable'          => true,
+	// 		// 'closed'         => true, // true to have the groups closed by default
+	// 		// 'remove_confirm' => esc_html__( 'Are you sure you want to remove?', 'cmb2' ), // Performs confirmation before removing group.
+	// 	),
+	// ) );
+
+	// $cmb->add_group_field( $personajesobra, array(
+	// 	'name' => 'Nombre',
+	// 	'id'   => 'nombre',
+	// 	'type' => 'text',
+	// 	// 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+	// ) );
+
+
+	// $cmb->add_group_field( $personajesobra, array(
+	// 	'name' => 'Foto',
+	// 	'id'   => 'foto',
+	// 	'type' => 'file',
+	// 	// 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+	// ) );
+
+
+	//$meta_boxes[] = $cmb;
+
+	return $meta_boxes;
+
+}
+
+
+
+
 add_action( 'cmb2_init', 'cmb2_add_metabox_hitos' );
+
+
 
 function cmb2_add_metabox_hitos() {
 
@@ -85,10 +181,10 @@ function cmb2_add_metabox_hitos() {
 		'id' => $prefix . 'inicio',
 		'type' => 'text_date',
 		'attributes' => array(
-						'data-datepicker' => json_encode(array(
-												'yearRange' => '-100:+0'
-											))
-						)
+			'data-datepicker' => json_encode(array(
+				'yearRange' => '-100:+0'
+			))
+		)
 	) );
 
 	$cmb->add_field( array(
@@ -96,10 +192,10 @@ function cmb2_add_metabox_hitos() {
 		'id' => $prefix . 'fin',
 		'type' => 'text_date',
 		'attributes' => array(
-						'data-datepicker' => json_encode(array(
-												'yearRange' => '-100:+0'
-											))
-						),
+			'data-datepicker' => json_encode(array(
+				'yearRange' => '-100:+0'
+			))
+		),
 		'desc' => __( 'opcional si es que se pone una fecha de fin el evento queda marcado como un período', 'promptbook' ),
 	) );
 
@@ -241,9 +337,9 @@ function prompt_roles_fields( array $meta_boxes ) {
 				'id'	=> $prefix . 'internoexterno',
 				'show_option_none' => true,
 				'options'	=> array(
-								'interno' => 'Interno',
-								'externo' => 'Externo'
-								)
+					'interno' => 'Interno',
+					'externo' => 'Externo'
+				)
 			)
 		)
 	);
@@ -405,32 +501,32 @@ add_filter( 'manage_hitos_posts_columns', 'prompt_filter_posts_columns' );
 
 function prompt_filter_posts_columns( $columns ) {
 
-  $columns = array(
-  	'cb'		=> $columns['cb'],
-  	'title'		=> __('Title'),
-  	'principal' => __( 'Teatro UC' ),
-  	'inicio'	=> __( 'Fecha inicio'),
-  	'fin'		=> __('Fecha fin')
-  );
-  
-  return $columns;
- }
+	$columns = array(
+		'cb'		=> $columns['cb'],
+		'title'		=> __('Title'),
+		'principal' => __( 'Teatro UC' ),
+		'inicio'	=> __( 'Fecha inicio'),
+		'fin'		=> __('Fecha fin')
+	);
+
+	return $columns;
+}
 
 add_action( 'manage_hitos_posts_custom_column', 'prompt_hitos_column', 10, 2);
 
 function prompt_hitos_column( $column, $post_id ) {
   // Image column
-  if ( 'principal' === $column ) {
-    echo (get_post_meta($post_id, '_prompt_esprincipal', true) ? '<span class="dashicons dashicons-yes"></span>' : '');
-  }
-  if( 'inicio' === $column) {
-  	$start_date_field 	= get_post_meta( $post_id, '_prompt_inicio', true );
-	echo $start_date_field;
-  }
-  if('fin' === $column) {
-  	$end_date_field 	= get_post_meta( $post_id, '_prompt_fin', true );
-  	echo $end_date_field;
-  }
+	if ( 'principal' === $column ) {
+		echo (get_post_meta($post_id, '_prompt_esprincipal', true) ? '<span class="dashicons dashicons-yes"></span>' : '');
+	}
+	if( 'inicio' === $column) {
+		$start_date_field 	= get_post_meta( $post_id, '_prompt_inicio', true );
+		echo $start_date_field;
+	}
+	if('fin' === $column) {
+		$end_date_field 	= get_post_meta( $post_id, '_prompt_fin', true );
+		echo $end_date_field;
+	}
 }
 
 
