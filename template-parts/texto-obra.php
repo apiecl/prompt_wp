@@ -18,7 +18,10 @@ $escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
 					$personajes = get_term_meta( $term->term_id, '_prompt_personajes', true);
 					//var_dump($personajes);
 					foreach($personajes as $personaje) {
-						echo '<div class="personaje" data-personaje="' . $personaje['_prompt_nombrepersonaje'] . '">' . $personaje['_prompt_nombrepersonaje']. '</div>';
+						$imgpersonaje = $personaje['_prompt_imagenpersonaje'];
+						echo '<a style="background-image:url(' . $imgpersonaje . ');?>" title="' . $personaje['_prompt_nombrepersonaje']. '" class="personaje" data-personaje="' . $personaje['_prompt_nombrepersonaje'] . '">
+						<span class="nombrepersonaje">' . $personaje['_prompt_nombrepersonaje'] . '</span>
+						</a>';
 					}
 				?>
 			</div>

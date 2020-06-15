@@ -582,10 +582,16 @@ span.bordered-blue {
 	}
 }
 
-.textunit:hover, .textunit.selected {
+.textunit.selected {
 	//background-color: $celeste_claro;
 	span.line {
 		background-color: $celeste;
+	}
+}
+
+.textunit:hover {
+	span.line {
+		background-color: darken($celeste_claro, 15%);
 	}
 }
 
@@ -650,6 +656,20 @@ a.trigger-media.active {
 	border-radius: 30px;
 	border: 1px solid #333;
 	margin: 3px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	transition: border 0.1s linear;
+	position: relative;
+
+	span.nombrepersonaje {
+		position: absolute;
+		bottom: 2%;
+		font-size: 9px;
+		color: white;
+		background-color: #000;
+		padding: 0 1px;
+		display: inline-block;
+	}
 
 	@media screen and (max-width: 768px) {
 		width: 36px;
@@ -661,6 +681,11 @@ a.trigger-media.active {
 .personaje.active {
 	font-weight: bold;
 	background-color: #f0f0f0;
+	border: 6px solid $celeste;
+	box-shadow: 0 0 3px #ccc;
+	span.nombrepersonaje {
+		background-color: $celeste;
+	}
 }
 
 .texto-dramatico .fullrow .col-md-4,

@@ -134,17 +134,24 @@ jQuery(document).ready(function($) {
 		$('.escena-nav').removeClass('active');
 	});
 
+	$('.textunit').on('click', function(e) {
+		var id = $(this).attr('data-id');
+		var selected = $('#texto-full .playtext-row[data-id="' + id + '"]');
+		selected.addClass('selected');
+		instanceFull.scroll(selected, 500, 'linear');
+	});
 
 
-	$('.playtext-row, .textunit').on('hover', function() {
+
+	$('.playtext-row').on('hover', function() {
 		var curId = $(this).attr('data-id');
 		var dataParlamento = $(this).attr('data-parlamento');
 
 		$('.personajes .personaje').removeClass('active');
 		$('.personajes .personaje[data-personaje="' + dataParlamento + '"]').addClass('active');
 
-		$('.playtext-row, .textunit').removeClass('selected');
-		$('.textunit[data-id="' + curId + '"]').addClass('selected');
+		$('.playtext-row').removeClass('selected');
+		//$('.textunit[data-id="' + curId + '"]').addClass('selected');
 
 	});
 
