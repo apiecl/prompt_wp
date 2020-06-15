@@ -131,6 +131,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 @import "extras/animate";
 
+/*--------------------------------------------------------------
+# Scrollbars
+--------------------------------------------------------------*/
+
+@import "extras/OverlayScrollbars";
+@import "extras/prompt-scrollbar";
 
 /*--------------------------------------------------------------
 # Home

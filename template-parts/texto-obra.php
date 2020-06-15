@@ -9,7 +9,7 @@ $escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
 
 
 <div class="texto-dramatico">
-	<div class="row">
+	<div class="row fullrow">
 		<div class="col-md-4 col-4">
 			<div class="left-texto">
 			<h4 class="minisection-title">Personajes</h4>
@@ -22,7 +22,7 @@ $escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
 					}
 				?>
 			</div>
-			<div class="texto-mini syncscroll dragscroll" name="textodramatico">
+			<div id="texto-mini" class="texto-mini dragscroll transparent" data-sync="texto-full" name="textodramatico">
 			<?php 
 				foreach($playtext as $playlinesmall) {
 					
@@ -67,7 +67,7 @@ $escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
 			</div>
 			
 		</div>
-		<div class="texto-full syncscroll" name="textodramatico" id="texto-full">
+		<div class="texto-full transparent" name="textodramatico" id="texto-full" data-sync="texto-mini">
 			<?php
 			$escena = '';
 			$escenas = [];
@@ -82,29 +82,32 @@ $escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
 				if($playline->escena != $escena):
 					$escena = $playline->escena;
 					$escenas[] = $escena;
-					echo '<div class="row scene-row scene-marker" id="' . sanitize_title( $escena ) . '"><div class="col-11"><h3>' . $escena . '</h3></div></div>';
+					echo '<div class="scene-row scene-marker" id="' . sanitize_title( $escena ) . '"><h3>' . $escena . '</h3></div>';
 
 				endif;
 				?>
-				<div class="row playtext-row" data-type="<?php echo $tipo;?>" data-hasmedia="<?php echo ($media != null ? 'true' : 'false');?>" data-escenaslug="<?php echo sanitize_title($playline->escena);?>" <?php echo bit_dataline($playline);?> >
-					
-					<div class="col-11">
-
-						<div class="row">
-							<div class="col-md-12 maintext-col">
-								<div class="text-item  <?php echo ($tipo != null ? 'tipo-' . $tipo : '');?> <?php echo ($media != null ? ' hasmedia' : '');?> " <?php echo bit_dataline($playline);?> ><?php echo($playline->parlamento ? '<span class="acot">' . $playline->parlamento . ': </span>': '');?><?php echo apply_filters('the_content', $playline->texto);?>
-								<?php if($media):?>
+						<?php if($media):?>
 									<a href="#" class="trigger-media" data-plain-id="<?php echo $mediazoneid;?>" data-expand="#<?php echo $mediazoneid;?>" data-assoc="<?php echo $media;?>" title="Ver el material asociado a esta sección del texto.">
-										<i class="fas fa-images"></i> <span class="badge badge-light"><?php echo $mediacount;?></span>
-									</a>
-								<?php endif;?>
+						<?php endif;?>
+				<div class="playtext-row row" data-type="<?php echo $tipo;?>" data-hasmedia="<?php echo ($media != null ? 'true' : 'false');?>" data-escenaslug="<?php echo sanitize_title($playline->escena);?>" <?php echo bit_dataline($playline);?> >
+					
+								<div class="parlamento col-md-2">
+									<?php echo($playline->parlamento ? '<span class="acot">' . $playline->parlamento . ': </span>': '');?>
+								</div>					
+
+								<div class="text-item  col-md-10 <?php echo ($tipo != null ? 'tipo-' . $tipo : '');?> <?php echo ($media != null ? ' hasmedia' : '');?> " <?php echo bit_dataline($playline);?> > <?php echo apply_filters('the_content', $playline->texto);?>
+								
 								</div>
-							</div>
-						</div>
-					</div>
+						
+								<?php if($media):?>
+									<span class="mediashow"><i class="fas fa-plus"></i> <!-- <span class="badge badge-light"><?php echo $mediacount;?></span> --></span>
+								<?php endif;?>
 
 				</div>
-				<div class="row full-row media-zone" id="<?php echo $mediazoneid;?>">
+				<?php if($media):?>
+							</a>
+						<?php endif;?>
+				<div class="row media-zone" id="<?php echo $mediazoneid;?>">
 					<!-- ajax loaded content-->
 					<?php get_template_part('template-parts/loading');?>
 				</div>	

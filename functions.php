@@ -122,18 +122,20 @@ add_action( 'widgets_init', 'prompt_widgets_init' );
  * Enqueue scripts and styles.
  */
 function prompt_scripts() {
+	global $wp_query;
+
 	wp_enqueue_style( 'prompt-style', get_stylesheet_uri(), array(), PROMPT_VERSION );
+	//wp_enqueue_style( 'simplebar', 'https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css', array(), '5.0.0');
 
+	//wp_enqueue_style( 'tinyslider', 'https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css');
 
-	wp_enqueue_style( 'tinyslider', 'https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css');
-
-	wp_enqueue_script('tinysliderjs', 'https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js', array(), '0.1', false);
+	//wp_enqueue_script('tinysliderjs', 'https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js', array(), '0.1', false);
 
 	wp_enqueue_script('wavesurfer', 'https://unpkg.com/wavesurfer.js', array(), '0.1', false);
 
 	wp_enqueue_script('bitacora-functions', get_template_directory_uri() . '/js/bitacora-functions.js', array('jquery'), PROMPT_VERSION, false);
 	
-	wp_enqueue_script('bitacora', get_template_directory_uri() . '/js/bitacora.js', array('jquery', 'visible', 'tinysliderjs', 'bootstrap', 'wavesurfer', 'masonry', 'lazyload', 'audiovis', 'syncscroll', 'dragscroll'), PROMPT_VERSION, false);
+	wp_enqueue_script('bitacora', get_template_directory_uri() . '/js/bitacora.js', array('jquery', 'visible', 'bootstrap', 'wavesurfer', 'masonry', 'lazyload', 'audiovis'), PROMPT_VERSION, false);
 
 	wp_enqueue_script( 'prompt-navigation', get_template_directory_uri() . '/js/navigation.js', array(), PROMPT_VERSION, true );
 
@@ -145,8 +147,6 @@ function prompt_scripts() {
 
 	wp_enqueue_script( 'popper', 'https://unpkg.com/@popperjs/core@2' , array(), false, false );
 
-	wp_enqueue_script( 'timelinejs', get_template_directory_uri() . '/js/timeline.js', array(), '3.6.5', false );
-
 	wp_enqueue_script('masonry', get_template_directory_uri() . '/js/masonry.pkgd.min.js', array('jquery', 'imagesLoaded'), '4.2.2', false);
 
 	wp_enqueue_script('audiovis', get_template_directory_uri() . '/js/audio_vis.js', array('jquery'), '1.2.2', false);
@@ -157,9 +157,12 @@ function prompt_scripts() {
 
 	wp_enqueue_script('isotope', 'https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js', array('jquery', 'bitacora'), '2.1.1', false);
 
-	wp_enqueue_script('syncscroll', get_template_directory_uri() . '/js/syncscroll.js', array(), '0.0.3', false);
+	//wp_enqueue_script('syncscroll', get_template_directory_uri() . '/js/syncscroll.js', array(), '0.0.3', false);
 
-	wp_enqueue_script('dragscroll', get_template_directory_uri() . '/js/dragscroll.js', array(), '0.0.3', false);
+	//wp_enqueue_script('dragscroll', get_template_directory_uri() . '/js/dragscroll.js', array(), '0.0.3', false);
+
+	//wp_enqueue_script('simplebar', 'https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js', array(), '5.0.0', false);
+	
 
 	$taxonomies = get_taxonomies(array(), 'objects');
 	$taxinfo = [];
@@ -183,11 +186,11 @@ function prompt_scripts() {
 
 
 	wp_localize_script( 'bitacora', 'prompt', array(
-												'ajaxurl' => admin_url('admin-ajax.php'),
-												'taxinfo' => $taxinfo,
-												'taxlabels'	=> $taxobjects
-												)
-	);		
+		'ajaxurl' => admin_url('admin-ajax.php'),
+		'taxinfo' => $taxinfo,
+		'taxlabels'	=> $taxobjects
+	)
+);		
 
 
 
@@ -195,36 +198,58 @@ function prompt_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	wp_enqueue_style( 'timeline', get_template_directory_uri() . '/TL.Timeline.css', array(), '3.6.5', 'screen' );
+	$tab = $wp_query->query_vars['tab']; 
 
-	wp_localize_script( 'timelinejs', 'prompt_hitos', get_main_timeline_events() );
+	if($tab) {
+		switch($tab) {
+			case('texto-dramatico'):
+				wp_enqueue_script('scrollbars', get_template_directory_uri() . '/js/jquery.overlayScrollbars.min.js', array(), '0.0.3', false);
+				wp_enqueue_script('bitacora-texto', get_template_directory_uri() . '/js/bitacora-texto-dramatico.js', array('jquery', 'visible', 'bootstrap', 'wavesurfer', 'masonry', 'lazyload', 'audiovis', 'scrollbars', 'inview'), PROMPT_VERSION, false);
+				wp_enqueue_script('inview', get_template_directory_uri() . '/js/in-view.min.js', array(), '0.6.1', false);
+			break;
+			case('linea-de-tiempo'):
+				wp_enqueue_script( 'timelinejs', get_template_directory_uri() . '/js/timeline.js', array(), '3.6.5', false );
+				wp_enqueue_style( 'timeline', get_template_directory_uri() . '/TL.Timeline.css', array(), '3.6.5', 'screen' );
 
-	//Localiza la info de una obra en Json
-	if(is_tax( 'obra' )):
-		$args = array(
-			'taxonomy' => 'obra',
-			'hide_empty' => false,
-		);
-		$obras = get_terms( $args );
-		if($obras):
-			foreach($obras as $obra):
-				$obraslugjs = prompt_obraslugjs($obra->slug);
-				wp_localize_script( 'timelinejs', 'prompt_hitos_' . $obraslugjs , get_main_timeline_events($obra->slug) );
-			endforeach;
-		endif;
-	endif;
+				wp_localize_script( 'timelinejs', 'prompt_hitos', get_main_timeline_events() );
+
+				//Localiza la info de una obra en Json
+				if(is_tax( 'obra' )):
+					$args = array(
+						'taxonomy' => 'obra',
+						'hide_empty' => false,
+					);
+					$obras = get_terms( $args );
+					if($obras):
+						foreach($obras as $obra):
+							$obraslugjs = prompt_obraslugjs($obra->slug);
+							wp_localize_script( 'timelinejs', 'prompt_hitos_' . $obraslugjs , get_main_timeline_events($obra->slug) );
+						endforeach;
+					endif;
+				endif;
+				break;
+			}
+		}
 }
+
 add_action( 'wp_enqueue_scripts', 'prompt_scripts' );
 
 
 
 function prompt_head() {
 	?>
-	 <script src="https://kit.fontawesome.com/14643ca681.js" crossorigin="anonymous"></script>
-	 <?php
+	<script src="https://kit.fontawesome.com/14643ca681.js" crossorigin="anonymous"></script>
+	<?php
 }
 
 add_action( 'wp_head', 'prompt_head', 10, 0 );
+
+// REMOVE WP EMOJI
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('wp_print_styles', 'print_emoji_styles');
+
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 /**
  * Implement the Custom Header feature.

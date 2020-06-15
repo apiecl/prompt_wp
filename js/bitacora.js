@@ -25,14 +25,14 @@ jQuery(document).ready(function($) {
 		var target = el.attr('data-expand');
 		var targetel = $(target);
 		if(targetel.hasClass('active')) {
-			targetel.slideUp();
+			//targetel.slideUp();
 			$(this).removeClass('active');
 			targetel.removeClass('active').empty();
 			disableMedia(targetel);
 		} else {
-			$('.media-zone.active').removeClass('active').hide();
+			$('.media-zone.active').removeClass('active');
 			$('.trigger-media').removeClass('active');
-			targetel.slideDown();
+			//targetel.slideDown();
 			targetel.addClass('active');
 			$(this).addClass('active');
 			enableMedia($(this).attr('data-assoc'), $(this).attr('data-plain-id'));
@@ -42,128 +42,39 @@ jQuery(document).ready(function($) {
 	$('#landing-overlay .content-top').on('click', function() {
 		$('#landing-overlay').fadeOut();
 	});
+	
 
-	if($('.texto-dramatico').length) {
-		var escenaLabel = $('.escenalabel');
-		var playtextRow = $('.playtext-row');
+	// setInterval(function() {
+	// 	if(didScroll) {
+	// 		//hasScrolled();
+	// 		didScroll = false;
+	// 	}
+	// });
 
-		$(function(){
-			$('#texto-full').scroll(function(){    	
-				console.log('scrolltest');
-				var scrollTop = $(document).scrollTop() + ($(window).height() / 2);
-				var positions = [];
-				playtextRow.removeClass('selected');
+	// function hasScrolled() {
+	// 	var st = $(this).scrollTop();
 
-				playtextRow.each(function(){
-	        	  //console.log($(this).position().top);
-	        	  //$(this).removeClass("active");
-	        	  positions.push({position:$(this).position().top, element: $(this)});
-	        	});
+	// 	if(Math.abs(lastScrollTop-st) <= delta)
+	// 		return;
 
-				var getClosest = closest(positions,scrollTop);
-				getClosest.addClass('selected');
-				var dataEscena = getClosest.attr('data-escena');
-				var dataEscenaSlug = getClosest.attr('data-escenaslug');
-				var dataPersonaje = getClosest.attr('data-personajes');
-				var dataParlamento = getClosest.attr('data-parlamento');
+	// 	if(st > lastScrollTop && st > navBarHeight) {
+	// 		$('.site-header').removeClass('nav-down').addClass('nav-up');
+	// 		$('.main-navigation').addClass('affix');
+	// 		$('.escena-container').addClass('scrolled');
+	// 	} else {
+	// 		if(st + $(window).height() < $(document).height()) {
+	// 			$('.site-header').removeClass('nav-up').addClass('nav-down');
+	// 			$('.main-navigation').removeClass('affix');
+	// 			$('.escena-container').removeClass('scrolled');
+	// 		}
+	// 	}
+	// 	lastScrollTop = st;
+	// }
 
-				if(dataEscena.length) {
-					//escenaLabel.empty().append(dataEscena);
-					$('#selectScene').val('#' + dataEscenaSlug);	
-
-				}
-
-				if(dataParlamento.length) {
-					$('.personajes .personaje').removeClass('active');
-					$('.personajes .personaje[data-personaje="' + dataParlamento + '"]').addClass('active');
-
-				}
-
-				//console.log(getClosest.attr('data-escena'));
-				//getClosest.addClass("active");
-			});
-
-			function closest(array, number) {
-				var num = 0;
-				for (var i = array.length - 1; i >= 0; i--) {
-					if(Math.abs(number - array[i].position) < Math.abs(number - array[num].position)){
-						num = i;
-					}
-				}
-				return array[num].element;
-			}
-
-		});
-
-	}
-
-	$('body').on('change','#selectScene', function(e) {
-		var selected = $('option:selected', this).attr('value');
-		var element = document.querySelector(selected);
-		var top = element.offsetTop;
-
-		document.getElementById('texto-full').scrollTop = top - 160;
-		
-		//$('.texto-full').addClass('smooth');
-
-		$('.escena-nav').removeClass('active');
-	});
-
-	$(window).scroll(function(event) {
-		didScroll = true;
-	});
-
-	$('.playtext-row, .textunit').on('hover', function() {
-		var curId = $(this).attr('data-id');
-		var dataParlamento = $(this).attr('data-parlamento');
-
-		$('.personajes .personaje').removeClass('active');
-		$('.personajes .personaje[data-personaje="' + dataParlamento + '"]').addClass('active');
-
-		$('.playtext-row, .textunit').removeClass('selected');
-		$('.textunit[data-id="' + curId + '"], .playtext-row[data-id="' + curId + '"]').addClass('selected');
-
-	});
-
-	$('.textunit').on('click', function() {
-		var curId = $(this).attr('data-id');
-		var selected = $('.playtext-row[data-id="' + curId + '"]');
-		var top = selected.offsetTop;
-		console.log(top);
-		document.getElementById('texto-full').scrollTop = top - 60;
-	});
-
-	setInterval(function() {
-		if(didScroll) {
-			hasScrolled();
-			didScroll = false;
-		}
-	});
-
-	function hasScrolled() {
-		var st = $(this).scrollTop();
-
-		if(Math.abs(lastScrollTop-st) <= delta)
-			return;
-
-		if(st > lastScrollTop && st > navBarHeight) {
-			$('.site-header').removeClass('nav-down').addClass('nav-up');
-			$('.main-navigation').addClass('affix');
-			$('.escena-container').addClass('scrolled');
-		} else {
-			if(st + $(window).height() < $(document).height()) {
-				$('.site-header').removeClass('nav-up').addClass('nav-down');
-				$('.main-navigation').removeClass('affix');
-				$('.escena-container').removeClass('scrolled');
-			}
-		}
-		lastScrollTop = st;
-	}
-
-	$('.escenalabel').on('click', function(event) {
-		console.log('escenalabel click');
-		$('.escena-nav').toggleClass('active');
-	});
+	// $('.escenalabel').on('click', function(event) {
+	// 	console.log('escenalabel click');
+	// 	$('.escena-nav').toggleClass('active');
+	// });
 
 	//$('.teatro-item-presentation, .obra-item-presentation').hide();
 
@@ -183,11 +94,6 @@ jQuery(document).ready(function($) {
 			$(this).empty().html('<i class="fas fa-bars"></i>');	
 		}
 		
-	});
-
-	$('a.toggleTabs').on('click', function(e) {
-		e.preventDefault();
-		$('#obraTab').slideToggle();
 	});
 
 	if ($('[data-function="timeline"]').length) {
@@ -218,16 +124,6 @@ jQuery(document).ready(function($) {
 		}
 	}
 
-	// $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
-	// 	if($(this).attr('data-function') == 'timeline') {
-	// 		window.timeline = new TL.Timeline('timeline-embed', timeline_events, timeline_options);
-	// 	} else if($(this).attr('data-function') == 'materialesTeatro') {
-	// 		var pageId = $(this).attr('data-page-id');
-	// 		var target = $(this).attr('data-contentTarget');
-	// 		enableMediaPage(pageId, target);
-	// 	}
-	// });
-
 	$('#enableType').change(function() {
 		var textLegend = $('.textlegend');
 		animateCSS('.textlegend', 'fadeIn');
@@ -249,49 +145,6 @@ jQuery(document).ready(function($) {
 		}
 	});
 
-	$('#filterPersonajes').change(function() {
-
-		// if(this.checked == true) {
-		// 	$('.maintext-col').removeClass('col-md-12').addClass('col-md-10');
-		// 	$('.col-personajes').removeClass('hidden');
-		// 	$('.row.textPersonajes').show();
-		// } else {
-		// 	$('.maintext-col').removeClass('col-md-10').addClass('col-md-12');
-		// 	$('.col-personajes').addClass('hidden');
-		// 	$('.playtext-row:hidden').show();
-		// 	$('.row.textPersonajes').hide();
-		// }
-	});
-
-	if($('.texto-dramatico').length) {
-		var parlamentos = setPersonajes('data-parlamento');
-		console.log(parlamentos);
-		personajes = setPersonajes('data-personajes');
-		//console.log(personajes);
-
-		for(var i = 0; i < personajes.length; i++) {
-			$('.textPersonajes .col-md-12').append('<span class="typelabel personajelabel" data-filterpersonaje="' + personajes[i] + '">' + personajes[i] + '</span>');
-		}
-
-		for(var i = 0; i < parlamentos.length; i++) {
-			$('.textParlamentos .col-md-12').append('<span class="typelabel parlamentolabel" data-filterparlamento="' + parlamentos[i] + '">' + parlamentos[i] + '</span>')
-		}
-	}
-	
-
-	$('body').on('click', '.typelabel.personajelabel', function(e) {
-		
-		$('.playtext-row:hidden').show();
-
-		if($(this).hasClass('active')) {
-			$(this).removeClass('active');
-		} else {
-			var curpersonaje = $(this).attr('data-filterpersonaje');
-			$('body .typelabel.personajelabel').removeClass('active');
-			$(this).addClass('active');
-			$('.playtext-row').not('[data-personajes~="' + curpersonaje + '"]').hide();
-		}
-	});
 
 	$('body').on('click', '.media-item-wrapper', function(e) {
 		mediaid = $(this).attr('data-mediaid');
