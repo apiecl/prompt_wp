@@ -25,6 +25,11 @@ $escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
 					}
 				?>
 			</div>
+			
+			<a class="materiales-left" data-toggle="modal" data-target="#modal-media-text-lista-materiales">
+					
+			</a>
+
 			<div id="texto-mini" class="texto-mini dragscroll transparent" data-sync="texto-full" name="textodramatico">
 			<?php 
 				foreach($playtext as $playlinesmall) {
@@ -53,8 +58,8 @@ $escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
 		<div class="col-md-8 col-8">
 			<div class="text-zone">
 			<div class="header-controls-right header-texto-dramatico">
-				<h2><?php echo $term->name;?> / <?php echo prompt_format_date($fields['estreno'][0]);?></h2>
-				<p>Historia y texto de <?php echo prompt_multifields($fields['dramaturgia'][0], ', ');?></p>
+				<h2><?php echo $term->name;?></h2>
+				<p><span>Estreno: <?php echo prompt_format_date($fields['estreno'][0]);?></span> / Historia y texto de <?php echo prompt_multifields($fields['dramaturgia'][0], ', ');?></p>
 				
 				<div class="escena-container">
 				<div class="escena-rotation">
@@ -74,6 +79,7 @@ $escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
 			<?php
 			$escena = '';
 			$escenas = [];
+			$parlamento = '';
 			foreach( $playtext as $playline ) {
 		//var_dump($playline);
 				$tipo = sanitize_title( $playline->tipo);
@@ -89,27 +95,34 @@ $escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
 
 				endif;
 				?>
-						<?php if($media):?>
-									<a href="#" class="trigger-media" data-plain-id="<?php echo $mediazoneid;?>" data-expand="#<?php echo $mediazoneid;?>" data-assoc="<?php echo $media;?>" title="Ver el material asociado a esta sección del texto.">
-						<?php endif;?>
-				<div class="playtext-row row" data-type="<?php echo $tipo;?>" data-hasmedia="<?php echo ($media != null ? 'true' : 'false');?>" data-escenaslug="<?php echo sanitize_title($playline->escena);?>" <?php echo bit_dataline($playline);?> >
+						
+				<div class="playtext-row row tipo-<?php echo sanitize_title($playline->parlamento);?>" 
+							data-type="<?php echo $tipo;?>" 
+							data-hasmedia="<?php echo ($media != null ? 'true' : 'false');?>" 
+							data-escenaslug="<?php echo sanitize_title($playline->escena);?>" 
+							<?php echo bit_dataline($playline);?>  
+							
+							<?php if($media):?> 
+								data-plain-id="<?php echo $mediazoneid;?>" 
+								data-expand="#<?php echo $mediazoneid;?>" 
+								data-assoc="<?php echo $media;?>" 
+							<?php endif;?>>
 					
 								<div class="parlamento col-md-2">
-									<?php echo($playline->parlamento ? '<span class="acot">' . $playline->parlamento . ': </span>': '');?>
+									<?php if($parlamento != $playline->parlamento):?>
+									<?php echo($playline->parlamento ? '<span class="acot">' . $playline->parlamento . ': </span>': '');
+											$parlamento = $playline->parlamento;
+									endif;?>
+									<!--[id: <?php echo $playline->id;?>]-->
 								</div>					
 
 								<div class="text-item  col-md-10 <?php echo ($tipo != null ? 'tipo-' . $tipo : '');?> <?php echo ($media != null ? ' hasmedia' : '');?> " <?php echo bit_dataline($playline);?> > <?php echo apply_filters('the_content', $playline->texto);?>
-								
 								</div>
 						
-								<?php if($media):?>
-									<span class="mediashow"><i class="fas fa-plus"></i> <!-- <span class="badge badge-light"><?php echo $mediacount;?></span> --></span>
-								<?php endif;?>
+								
 
 				</div>
-				<?php if($media):?>
-							</a>
-						<?php endif;?>
+			
 				<div class="row media-zone" id="<?php echo $mediazoneid;?>">
 					<!-- ajax loaded content-->
 					<?php get_template_part('template-parts/loading');?>
@@ -122,6 +135,30 @@ $escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
 			?>
 		</div>
 		</div>
+		</div>
+	</div>
+
+	<div class="modal fade modal-media-list-text" tabindex="-1" role="dialog" id="modal-media-text-lista-materiales" aria-hidden="true">
+		<div class="modal-dialog modal-xl" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div class="navMateriales">
+						<span class="prevMediaItem" data-modal="modal-media-text-materiales"><i class="fas fa-chevron-left"></i></span> 
+						<div class="list-materials"><?php get_template_part('template-parts/loading');?></div>
+						<span class="nextMediaItem" data-modal="modal-media-text-materiales"><i class="fas fa-chevron-right"></i></span>
+					</div>
+					<div class="curText"></div>
+					<span type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<i class="fas fa-times"></i>
+					</span>
+				</div>
+				<div class="modal-body">
+					<!-- Content here -->
+					
+					<div class="content-current-material" id="content-current-material"></div>
+					
+				</div>
+			</div>
 		</div>
 	</div>
 

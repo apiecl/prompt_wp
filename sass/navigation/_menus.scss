@@ -27,7 +27,7 @@ body.admin-bar .main-navigation {
 
 	&.active {
 		transition: all ease-out 0.5s;
-		z-index: 50;
+		z-index: 5000;
 	}
 
 	ul {

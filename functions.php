@@ -122,7 +122,7 @@ add_action( 'widgets_init', 'prompt_widgets_init' );
  * Enqueue scripts and styles.
  */
 function prompt_scripts() {
-	global $wp_query;
+	global $wp_query, $post;
 
 	wp_enqueue_style( 'prompt-style', get_stylesheet_uri(), array(), PROMPT_VERSION );
 	//wp_enqueue_style( 'simplebar', 'https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css', array(), '5.0.0');
@@ -200,14 +200,16 @@ function prompt_scripts() {
 
 	$tab = $wp_query->query_vars['tab']; 
 
-	if($tab) {
-		switch($tab) {
-			case('texto-dramatico'):
+	
+		
+			if( $tab == 'texto-dramatico'):
 				wp_enqueue_script('scrollbars', get_template_directory_uri() . '/js/jquery.overlayScrollbars.min.js', array(), '0.0.3', false);
 				wp_enqueue_script('bitacora-texto', get_template_directory_uri() . '/js/bitacora-texto-dramatico.js', array('jquery', 'visible', 'bootstrap', 'wavesurfer', 'masonry', 'lazyload', 'audiovis', 'scrollbars', 'inview'), PROMPT_VERSION, false);
 				wp_enqueue_script('inview', get_template_directory_uri() . '/js/in-view.min.js', array(), '0.6.1', false);
-			break;
-			case('linea-de-tiempo'):
+				//wp_enqueue_script('waypoints', get_template_directory_uri() . '/js/jquery.waypoints.min.js', array(), '1.1.0', false);
+			
+			elseif($tab == 'linea-de-tiempo' || is_page_template('page-template-timeline-teatro.php')):
+
 				wp_enqueue_script( 'timelinejs', get_template_directory_uri() . '/js/timeline.js', array(), '3.6.5', false );
 				wp_enqueue_style( 'timeline', get_template_directory_uri() . '/TL.Timeline.css', array(), '3.6.5', 'screen' );
 
@@ -227,9 +229,8 @@ function prompt_scripts() {
 						endforeach;
 					endif;
 				endif;
-				break;
-			}
-		}
+			endif;
+			
 }
 
 add_action( 'wp_enqueue_scripts', 'prompt_scripts' );

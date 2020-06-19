@@ -19,64 +19,17 @@ jQuery(document).ready(function($) {
 	var typefilter = '';
 	
 
-	$('.trigger-media').on('click', function(event) {
-		event.preventDefault();
-		var el = $(this);
-		var target = el.attr('data-expand');
-		var targetel = $(target);
-		if(targetel.hasClass('active')) {
-			//targetel.slideUp();
-			$(this).removeClass('active');
-			targetel.removeClass('active').empty();
-			disableMedia(targetel);
-		} else {
-			$('.media-zone.active').removeClass('active');
-			$('.trigger-media').removeClass('active');
-			//targetel.slideDown();
-			targetel.addClass('active');
-			$(this).addClass('active');
-			enableMedia($(this).attr('data-assoc'), $(this).attr('data-plain-id'));
-		}
-	});
-
 	$('#landing-overlay .content-top').on('click', function() {
 		$('#landing-overlay').fadeOut();
 	});
-	
 
-	// setInterval(function() {
-	// 	if(didScroll) {
-	// 		//hasScrolled();
-	// 		didScroll = false;
-	// 	}
-	// });
-
-	// function hasScrolled() {
-	// 	var st = $(this).scrollTop();
-
-	// 	if(Math.abs(lastScrollTop-st) <= delta)
-	// 		return;
-
-	// 	if(st > lastScrollTop && st > navBarHeight) {
-	// 		$('.site-header').removeClass('nav-down').addClass('nav-up');
-	// 		$('.main-navigation').addClass('affix');
-	// 		$('.escena-container').addClass('scrolled');
-	// 	} else {
-	// 		if(st + $(window).height() < $(document).height()) {
-	// 			$('.site-header').removeClass('nav-up').addClass('nav-down');
-	// 			$('.main-navigation').removeClass('affix');
-	// 			$('.escena-container').removeClass('scrolled');
-	// 		}
-	// 	}
-	// 	lastScrollTop = st;
-	// }
-
-	// $('.escenalabel').on('click', function(event) {
-	// 	console.log('escenalabel click');
-	// 	$('.escena-nav').toggleClass('active');
-	// });
-
-	//$('.teatro-item-presentation, .obra-item-presentation').hide();
+	var totalHeight = $('body').innerHeight();
+	var navBarHeight = $('#site-navigation').innerHeight();
+	var footerHeight = $('.site-footer').innerHeight();
+	var mobileTotalHeight = totalHeight - navBarHeight - footerHeight;
+	console.log(navBarHeight, totalHeight);
+	$('#landing-overlay').css({height: mobileTotalHeight});
+	$('#landing-overlay .content-top').css({height: mobileTotalHeight});
 
 	$('.collapse-menu-home').on('click', function() {
 		$( $(this).attr('data-target') ).addClass('collapsed');
@@ -149,6 +102,12 @@ jQuery(document).ready(function($) {
 	$('body').on('click', '.media-item-wrapper', function(e) {
 		mediaid = $(this).attr('data-mediaid');
 		type = $(this).attr('data-type');
+		
+		if($('body').hasClass('texto-dramatico')) {
+			$('.media-item-wrapper').removeClass('activeMedia');
+			loadMediaInContainer($(this).attr('data-mediaid'), 'content-current-material', type, false);
+		}
+
 		$(this).addClass('activeMedia');
 	})
 

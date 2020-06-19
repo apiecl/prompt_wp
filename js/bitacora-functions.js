@@ -54,21 +54,69 @@ function disableMedia( target ) {
 		return [nextMedia, prevMedia];
 	}
 
+	function loadMediaInContainer(mediaid, container, type, ispage) {
+		
+		var nextMedia = jQuery('.activeMedia').next('.media-item-wrapper');
+		var prevMedia = jQuery('.activeMedia').prev('.media-item-wrapper');
+		
+		console.log(ispage);
+
+		jQuery.ajax({
+			type: "post",
+			url: prompt.ajaxurl,
+			data: {
+				action: "bit_ajax_get_media_in_text",
+				mediaid: mediaid,
+				type: type,
+				ispage: ispage
+			},
+			error: function( response ) {
+				console.log(response);
+			},
+			success: function( response ) {
+				console.log(response);
+				//var mediaitem = null;
+				jQuery( '#' + container).empty().append(response);
+				if(mediaitem !== null) {
+					if(type == 'audio') {
+						jQuery('audio').on('play', function(){
+							console.log('start');
+							var audio = this;
+							audioVisStart(this, ['#006CFF', '#006CFF', '#006CFF']);
+						});
+
+					}
+					var itemInfo = jQuery.parseJSON(mediaitem);
+				}
+			}
+		});
+
+		return [nextMedia, prevMedia];
+	}
+
 	function enableMedia( mediaids, targetid ) {
+		
+		var format = 'default';
+
+		if(targetid == 'modal-media-text-lista-materiales') {
+			format = 'intext';
+		}
+
 		jQuery.ajax({
 			type: "post",
 			url: prompt.ajaxurl,
 			data: {
 				action: "bit_get_mediazone",
 				params: mediaids,
-				id: targetid
+				id: targetid,
+				format: format
 			},
 			error: function( response ) {
 				console.log(response);
 			},
 			success:function(response) {
 				console.log(targetid);
-				jQuery('#' + targetid).empty().append(response);
+				jQuery('#' + targetid + ' .list-materials').empty().append(response);
 
 				jQuery('img.media-item-image').on('load', function() {
 					this.style.opacity = 1;
@@ -76,6 +124,7 @@ function disableMedia( target ) {
 				
 				var images = document.querySelectorAll('.media-item-image');
 				lazyload(images);
+				jQuery('body .media-item-wrapper:first').click();
 
 			}
 		});

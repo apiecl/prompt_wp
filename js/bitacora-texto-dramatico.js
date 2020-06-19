@@ -4,26 +4,50 @@ jQuery(document).ready(function($) {
 	var instanceFull;
 	var instanceMini;
 	var visibleIds = [];
+	var prevScroll = 0;
+	var activeId;
+	var activeMaterials;
+	var activeText;
+	var activeParlamento;
+
+	//inView.offset({top: 200});
 
 	$('.texto-mini, .texto-full').addClass('transparent');
+	$('#texto-full .playtext-row:first').addClass('active');
+
 
 	var customScroll = $('.texto-mini, .texto-full').overlayScrollbars({
 		autoUpdate: true,
 		callbacks: {
 			onInitialized: function() {
 				$('.texto-mini, .texto-full').removeClass('transparent');
+				wrapper = document.querySelector('.os-viewport'), 
+				wrapperBox = wrapper.getBoundingClientRect();
+
 				if($(this.getElements().target).attr('id') == 'texto-full') {
 					instanceFull = this;
-					} else {
+				} else {
 					instanceMini = this;
-					}
 				}
 			}
-		});
+		}
+	});
 
 	function scrollOtherInstance(thisInstance, otherInstance) {
 		var scrollY = thisInstance.scroll().ratio.y * 100;
 		otherInstance.scroll({x:0, y: scrollY + '%'});
+		thisInstance.scroll({x:0, y: scrollY + '%'});
+	}
+
+	function updateMaterialZone(materialesIds) {
+		var matZone = $('.materiales-left');
+		if(materialesIds.length) {
+			activeMaterials = materialesIds;	
+			matZone.empty().show().append('<p>Materiales disponibles</p>');
+		} else {
+			matZone.empty().hide();
+		}
+		
 	}
 
 	instanceFull.options({
@@ -31,12 +55,73 @@ jQuery(document).ready(function($) {
 		callbacks: {
 			onScrollStart: function() {
 				$('#texto-mini .textunit').removeClass('onfield');
+				//$('.playtext-row').removeClass('active');
+			},
+			onScroll: function() {
+				//instanceMini.sleep();
+				//instanceMini.update();
 			},
 			onScrollStop: function() {
 				scrollOtherInstance(this, instanceMini);
-				for(var i = 0; i < visibleIds.length; i++) {
-					$('#texto-mini .textunit[data-id="' + visibleIds[i] + '"]').addClass('onfield');	
-				}
+				//instanceMini.update();
+				//var top = $('#texto-full .playtext-row[data-id="' + visibleIds.splice(-1)[0] + '"]');
+
+				//top.addClass('active');
+				//console.log(visibleIds[0]);
+
+				var curScroll = this.scroll().position.y;
+				
+				//console.log(curScroll);
+				//var topset = false;
+				var offsets = [];
+
+				if(curScroll > prevScroll) {
+						scrollDirection = 'down';
+						//$('.playtext-row.active').removeClass('active').next().addClass('active');
+					} else {
+						scrollDirection = 'up';
+						//visibleIds.reverse();
+						//$('.playtext-row.active').removeClass('active').prev().addClass('active');
+					}
+
+				// for(var i = 0; i < visibleIds.length; i++) {
+				// 	$('#texto-mini .textunit[data-id="' + visibleIds[i] + '"]').addClass('onfield');	
+				// 	var offset = $('.playtext-row[data-id="' + visibleIds[i] + '"]').offset();
+				// 	//console.log(offset);
+				// 	var curScroll = this.scroll().position.y;
+				
+				// 	prevScroll = curScroll;
+					
+					
+					
+				// 	//console.log(offset.top);
+				// 	//$('.playtext-row[data-id="' + visibleIds[i] + '"] div.parlamento').empty().append(offset.top);
+
+					
+				// 	offsets.push(offset.top);
+
+				// 	//instanceMini.update();
+				// }
+
+				// $('.playtext-row').each(function() {
+				// 	var curOffset = $(this).offset();
+				// 	console.log(curOffset.top, curScroll);
+				// });
+
+				var min = Math.min.apply(Math, offsets);
+				let minFunc = (element) => element >= 316 && element < 500;
+				console.log(offsets);
+				var activeKey = offsets.findIndex(minFunc);
+				console.log(activeKey);
+
+				var current = $('.playtext-row[data-id="' + visibleIds[activeKey] + '"]');
+				current.addClass('active');
+				//topset = true;
+				activeId = visibleIds[activeKey];
+				//console.log(activeId);
+				//$('.materiales-left').empty().append();
+
+				//updateMaterialZone(current.attr('data-ids_asoc'));				
 			}
 		}
 	});
@@ -45,8 +130,16 @@ jQuery(document).ready(function($) {
 	instanceMini.options({
 		className: 'os-theme-prompt',
 		callbacks: {
+			onScrollStart: function() {
+				instanceFull.update();
+			},
 			onScroll: function() {
+				instanceFull.sleep();
 				scrollOtherInstance(this, instanceFull);
+				instanceFull.update();
+			},
+			onScrollStop: function() {
+				instanceFull.update();
 			}
 		}
 	});
@@ -56,71 +149,19 @@ jQuery(document).ready(function($) {
 		$('#selectScene').val('#' + activeScene);
 	});
 
-	
+	// inView('.playtext-row').on('enter', function(el) {	
+	// 	visibleIds.push($(el).attr('data-id'));
+	// });
 
-	inView('.playtext-row').on('enter', function(el) {	
-		visibleIds.push($(el).attr('data-id'));
-	});
-
-	inView('.playtext-row').on('exit', function(el) {
-		var index = visibleIds.indexOf($(el).attr('data-id'));
-		if(index > -1) {
-			visibleIds.splice(index, 1);
-		}
-	});
+	// inView('.playtext-row').on('exit', function(el) {
+	// 	var index = visibleIds.indexOf($(el).attr('data-id'));
+	// 	if(index > -1) {
+	// 		visibleIds.splice(index, 1);
+	// 	}
+	// });
 
 	
 	//console.log(instanceFull);
-
-
-
-	// $(function(){
-	// 	$('#texto-full').scroll(function(){    	
-	// 		console.log('scrolltest');
-	// 		var scrollTop = $(document).scrollTop() + ($(window).height() / 2);
-	// 		var positions = [];
-	// 		playtextRow.removeClass('selected');
-
-	// 		playtextRow.each(function(){
-	//         	  //console.log($(this).position().top);
-	//         	  //$(this).removeClass("active");
-	//         	  positions.push({position:$(this).position().top, element: $(this)});
-	//         	});
-
-	// 		var getClosest = closest(positions,scrollTop);
-	// 		getClosest.addClass('selected');
-	// 		var dataEscena = getClosest.attr('data-escena');
-	// 		var dataEscenaSlug = getClosest.attr('data-escenaslug');
-	// 		var dataPersonaje = getClosest.attr('data-personajes');
-	// 		var dataParlamento = getClosest.attr('data-parlamento');
-
-	// 		if(dataEscena.length) {
-	// 				//escenaLabel.empty().append(dataEscena);
-	// 				$('#selectScene').val('#' + dataEscenaSlug);	
-
-	// 			}
-
-	// 			if(dataParlamento.length) {
-	// 				$('.personajes .personaje').removeClass('active');
-	// 				$('.personajes .personaje[data-personaje="' + dataParlamento + '"]').addClass('active');
-
-	// 			}
-
-	// 			//console.log(getClosest.attr('data-escena'));
-	// 			//getClosest.addClass("active");
-	// 		});
-
-	// 	function closest(array, number) {
-	// 		var num = 0;
-	// 		for (var i = array.length - 1; i >= 0; i--) {
-	// 			if(Math.abs(number - array[i].position) < Math.abs(number - array[num].position)){
-	// 				num = i;
-	// 			}
-	// 		}
-	// 		return array[num].element;
-	// 	}
-
-	// });
 
 	$('body').on('change','#selectScene', function(e) {
 		var selected = $('option:selected', this).attr('value');
@@ -143,61 +184,71 @@ jQuery(document).ready(function($) {
 
 
 
-	$('.playtext-row').on('hover', function() {
-		var curId = $(this).attr('data-id');
-		var dataParlamento = $(this).attr('data-parlamento');
-
-		$('.personajes .personaje').removeClass('active');
-		$('.personajes .personaje[data-personaje="' + dataParlamento + '"]').addClass('active');
-
-		$('.playtext-row').removeClass('selected');
-		//$('.textunit[data-id="' + curId + '"]').addClass('selected');
-
-	});
-
-	// $('.textunit').on('click', function() {
+	// $('.playtext-row').on('hover', function() {
 	// 	var curId = $(this).attr('data-id');
-	// 	var selected = $('.playtext-row[data-id="' + curId + '"]');
-	// 	var top = selected.offsetTop;
-	// 	console.log(top);
-	// 	document.getElementById('texto-full').scrollTop = top - 60;
+	// 	var dataParlamento = $(this).attr('data-parlamento');
+
+	// 	$('.personajes .personaje').removeClass('active');
+	// 	$('.personajes .personaje[data-personaje="' + dataParlamento + '"]').addClass('active');
+
+	// 	$('.playtext-row').removeClass('selected');
+	// 	//$('.textunit[data-id="' + curId + '"]').addClass('selected');
+
 	// });
 
-	//var parlamentos = setPersonajes('data-parlamento');
-	//personajes = setPersonajes('data-personajes');
-
-
-
-	
-
-		//console.log(personajes);
-
-		// for(var i = 0; i < customScroll.length; i++) {
-		// 	console.log(customScroll[i].getElements());
-		// }
-
-		// for(var i = 0; i < personajes.length; i++) {
-		// 	$('.textPersonajes .col-md-12').append('<span class="typelabel personajelabel" data-filterpersonaje="' + personajes[i] + '">' + personajes[i] + '</span>');
-		// }
-
-		// for(var i = 0; i < parlamentos.length; i++) {
-		// 	$('.textParlamentos .col-md-12').append('<span class="typelabel parlamentolabel" data-filterparlamento="' + parlamentos[i] + '">' + parlamentos[i] + '</span>')
-		// }
-
-
-
-		// $('body').on('click', '.typelabel.personajelabel', function(e) {
-
-		// 	$('.playtext-row:hidden').show();
-
-		// 	if($(this).hasClass('active')) {
-		// 		$(this).removeClass('active');
-		// 	} else {
-		// 		var curpersonaje = $(this).attr('data-filterpersonaje');
-		// 		$('body .typelabel.personajelabel').removeClass('active');
-		// 		$(this).addClass('active');
-		// 		$('.playtext-row').not('[data-personajes~="' + curpersonaje + '"]').hide();
-		// 	}
-		// });	
+	$('.playtext-row').on('click', function() {
+		instanceFull.scroll({ 
+							el: $(this),
+							margin: [10, 0, 0, 0]
+							},
+							250, 
+							'linear'
+							);
+		$('.playtext-row.active').removeClass('active');
+		$(this).addClass('active');
+		updateMaterialZone($(this).attr('data-ids_asoc'));
+		activeText = $('.text-item', this).text();
+		activeParlamento = $(this).attr('data-parlamento');
 	});
 
+	$('.trigger-media').on('click', function(event) {
+		event.preventDefault();
+		var el = $(this);
+		var target = el.attr('data-expand');
+		var targetel = $(target);
+		if(targetel.hasClass('active')) {
+			//targetel.slideUp();
+			$(this).removeClass('active');
+			targetel.removeClass('active').empty();
+			disableMedia(targetel);
+		} else {
+			$('.media-zone.active').removeClass('active');
+			$('.trigger-media').removeClass('active');
+			//targetel.slideDown();
+			targetel.addClass('active');
+			$(this).addClass('active');
+			enableMedia($(this).attr('data-assoc'), $(this).attr('data-plain-id'));
+		}
+	});
+
+	$('.materiales-left').on('click', function(event) {
+		event.preventDefault();
+		console.log('materiales-left');
+	});
+
+	$('.modal-media-list-text').on('shown.bs.modal', function(e) {
+		console.log(activeMaterials);
+		$('#content-current-material').empty();
+		$('.curText').empty().append('<span class="acot">' + activeParlamento + ':</span> ' + activeText);
+		enableMedia(activeMaterials, 'modal-media-text-lista-materiales');
+
+		// var modal = $(this).attr('id');
+		// var ispage = $(this).attr('data-ispage');
+
+		// var navMedia = loadMediaInModal(mediaid, modal, ispage, type);
+		// nextMedia = navMedia[0];
+		// prevMedia = navMedia[1];
+
+	});
+
+	});
