@@ -50,29 +50,34 @@ jQuery(document).ready(function($) {
 		
 	}
 
+	function updatePersonaje(activeParlamento) {
+		$('.personajes .personaje').removeClass('active');
+		$('.personajes .personaje[data-personaje="' + activeParlamento + '"]').addClass('active');
+	}
+
 	instanceFull.options({
 		className: 'os-theme-none',
 		callbacks: {
 			onScrollStart: function() {
 				$('#texto-mini .textunit').removeClass('onfield');
-				//$('.playtext-row').removeClass('active');
+				$('.playtext-row').removeClass('active');
 			},
 			onScroll: function() {
 				//instanceMini.sleep();
 				//instanceMini.update();
 			},
 			onScrollStop: function() {
-				scrollOtherInstance(this, instanceMini);
+				//scrollOtherInstance(this, instanceMini);
 				//instanceMini.update();
-				//var top = $('#texto-full .playtext-row[data-id="' + visibleIds.splice(-1)[0] + '"]');
+				// var top = $('#texto-full .playtext-row[data-id="' + visibleIds.splice(-1)[0] + '"]');
 
-				//top.addClass('active');
-				//console.log(visibleIds[0]);
+				// top.addClass('active');
+				// //console.log(visibleIds[0]);
 
 				var curScroll = this.scroll().position.y;
 				
 				//console.log(curScroll);
-				//var topset = false;
+				var topset = false;
 				var offsets = [];
 
 				if(curScroll > prevScroll) {
@@ -84,39 +89,45 @@ jQuery(document).ready(function($) {
 						//$('.playtext-row.active').removeClass('active').prev().addClass('active');
 					}
 
-				// for(var i = 0; i < visibleIds.length; i++) {
-				// 	$('#texto-mini .textunit[data-id="' + visibleIds[i] + '"]').addClass('onfield');	
-				// 	var offset = $('.playtext-row[data-id="' + visibleIds[i] + '"]').offset();
-				// 	//console.log(offset);
-				// 	var curScroll = this.scroll().position.y;
+				for(var i = 0; i < visibleIds.length; i++) {
+					$('#texto-mini .textunit[data-id="' + visibleIds[i] + '"]').addClass('onfield');	
+					var offset = $('.playtext-row[data-id="' + visibleIds[i] + '"]').offset();
+					//console.log(offset);
+					var curScroll = this.scroll().position.y;
 				
-				// 	prevScroll = curScroll;
+					prevScroll = curScroll;
 					
 					
 					
-				// 	//console.log(offset.top);
-				// 	//$('.playtext-row[data-id="' + visibleIds[i] + '"] div.parlamento').empty().append(offset.top);
+					//console.log(offset.top);
+					//$('.playtext-row[data-id="' + visibleIds[i] + '"] div.parlamento').empty().append(offset.top);
 
 					
-				// 	offsets.push(offset.top);
+					offsets.push(offset.top);
 
-				// 	//instanceMini.update();
-				// }
+					//instanceMini.update();
+				}
 
-				// $('.playtext-row').each(function() {
-				// 	var curOffset = $(this).offset();
-				// 	console.log(curOffset.top, curScroll);
-				// });
+				$('.playtext-row').each(function() {
+					var curOffset = $(this).offset();
+					console.log(curOffset.top, curScroll);
+				});
 
 				var min = Math.min.apply(Math, offsets);
 				let minFunc = (element) => element >= 316 && element < 500;
+
 				console.log(offsets);
 				var activeKey = offsets.findIndex(minFunc);
 				console.log(activeKey);
 
+				$('.playtext-row').removeClass('active');
 				var current = $('.playtext-row[data-id="' + visibleIds[activeKey] + '"]');
 				current.addClass('active');
-				//topset = true;
+				updateMaterialZone(current.attr('data-ids_asoc'));
+				updatePersonaje(current.attr('data-parlamento'));
+
+				
+				topset = true;
 				activeId = visibleIds[activeKey];
 				//console.log(activeId);
 				//$('.materiales-left').empty().append();
@@ -149,16 +160,16 @@ jQuery(document).ready(function($) {
 		$('#selectScene').val('#' + activeScene);
 	});
 
-	// inView('.playtext-row').on('enter', function(el) {	
-	// 	visibleIds.push($(el).attr('data-id'));
-	// });
+	inView('.playtext-row').on('enter', function(el) {	
+		visibleIds.push($(el).attr('data-id'));
+	});
 
-	// inView('.playtext-row').on('exit', function(el) {
-	// 	var index = visibleIds.indexOf($(el).attr('data-id'));
-	// 	if(index > -1) {
-	// 		visibleIds.splice(index, 1);
-	// 	}
-	// });
+	inView('.playtext-row').on('exit', function(el) {
+		var index = visibleIds.indexOf($(el).attr('data-id'));
+		if(index > -1) {
+			visibleIds.splice(index, 1);
+		}
+	});
 
 	
 	//console.log(instanceFull);
@@ -208,10 +219,11 @@ jQuery(document).ready(function($) {
 		$(this).addClass('active');
 		updateMaterialZone($(this).attr('data-ids_asoc'));
 		activeText = $('.text-item', this).text();
+		
 		activeParlamento = $(this).attr('data-parlamento');
 
-		$('.personajes .personaje').removeClass('active');
-		$('.personajes .personaje[data-personaje="' + activeParlamento + '"]').addClass('active');
+		
+		updatePersonaje(activeParlamento);
 
 		if($(this).attr('data-hasmedia') == true) {
 			$('.modal-media-list-text').modal('show');

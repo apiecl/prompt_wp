@@ -17,14 +17,14 @@ $letracolor: #A1DB00;
 	font-size: 16px;
 	color: #333;
 	&.hasmedia {
-		&:after {
+		&:before {
 			content: '\f07b';
 			font-family: 'Font Awesome 5 Free';
 			font-size: 16px;
 			color: #555;
 			position: absolute;
-			right: 12px;
-			top: 6px;
+			left: 0;
+			top: 0;
 			font-style: normal;
 		}
 	}
@@ -40,7 +40,7 @@ $letracolor: #A1DB00;
 }
 
 .playtext-row.active {
-	.text-item.hasmedia:after {
+	.text-item.hasmedia:before {
 		content: '\f07c';
 		color: $celeste;
 	}
@@ -737,6 +737,8 @@ a.trigger-media.active {
 		background-color: #000;
 		padding: 0 1px;
 		display: inline-block;
+		text-align: center;
+		font-weight: bold;
 	}
 
 	@media screen and (max-width: 768px) {
@@ -848,6 +850,6 @@ a.trigger-media.active {
 .playtext-row.tipo-acotacion {
 	font-style: italic;
 	.acot {
-		//display: none;
+		display: none;
 	}
 }
