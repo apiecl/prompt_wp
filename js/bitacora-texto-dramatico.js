@@ -178,7 +178,7 @@ jQuery(document).ready(function($) {
 	$('.textunit').on('click', function(e) {
 		var id = $(this).attr('data-id');
 		var selected = $('#texto-full .playtext-row[data-id="' + id + '"]');
-		selected.addClass('selected');
+		selected.addClass('selected active');
 		instanceFull.scroll(selected, 500, 'linear');
 	});
 
@@ -209,6 +209,9 @@ jQuery(document).ready(function($) {
 		updateMaterialZone($(this).attr('data-ids_asoc'));
 		activeText = $('.text-item', this).text();
 		activeParlamento = $(this).attr('data-parlamento');
+
+		$('.personajes .personaje').removeClass('active');
+		$('.personajes .personaje[data-personaje="' + activeParlamento + '"]').addClass('active');
 
 		if($(this).attr('data-hasmedia') == true) {
 			$('.modal-media-list-text').modal('show');
