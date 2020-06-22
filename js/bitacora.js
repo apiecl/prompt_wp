@@ -23,13 +23,13 @@ jQuery(document).ready(function($) {
 		$('#landing-overlay').fadeOut();
 	});
 
-	var totalHeight = $('body').innerHeight();
-	var navBarHeight = $('#site-navigation').innerHeight();
-	var footerHeight = $('.site-footer').innerHeight();
-	var mobileTotalHeight = totalHeight - navBarHeight - footerHeight;
-	console.log(navBarHeight, totalHeight);
-	$('#landing-overlay').css({height: mobileTotalHeight});
-	$('#landing-overlay .content-top').css({height: mobileTotalHeight});
+	// var totalHeight = $('body').innerHeight();
+	// var navBarHeight = $('#site-navigation').innerHeight();
+	// var footerHeight = $('.site-footer').innerHeight();
+	// var mobileTotalHeight = totalHeight - navBarHeight - footerHeight;
+	// console.log(navBarHeight, totalHeight);
+	// $('#landing-overlay').css({height: mobileTotalHeight});
+	// $('#landing-overlay .content-top').css({height: mobileTotalHeight});
 
 	$('.collapse-menu-home').on('click', function() {
 		$( $(this).attr('data-target') ).addClass('collapsed');
