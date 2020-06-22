@@ -603,6 +603,11 @@ a.materiales-left {
 	&.withMat {
 		opacity: 1;
 	}
+
+	@include respond-below(sm) {
+		margin: 12px 0 8px 0;
+		font-size: 14px;
+	}
 }
 
 
@@ -770,13 +775,26 @@ a.trigger-media.active {
 
 	.curText {
 		font-family: $font__serif;
-		padding: 12px;
+		padding: 6px 0 0 0;
+		span.acot {
+			margin: 0;
+		}
+		@include respond-below(sm) {
+			font-size: 12px;
+			span.acot {
+				font-size: 12px;
+			}
+		}
 	}
 
 	.mediaitems-gallery {
 		background-color: transparent;
 		margin: 0;
 		min-width: 200px;
+
+		@include respond-below(sm) {
+			min-width: 100px;
+		}
 
 		.media-item-wrapper {
 			width: 36px;

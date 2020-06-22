@@ -14,19 +14,24 @@ $yearplay = prompt_format_date($fields['estreno'][0], '%Y');
 	<div class="wrapper">
 		
 		<div class="cabecera-obra">
-			<?php get_template_part('template-parts/brand-header');?>
-			<div class="text">
-				<h3 class="header-obra-title">Obra</h3>
-				<h1 class="play-title"><?php single_term_title();?> / <?php echo $yearplay;?></h1>
+			<div class="left">
+				<?php get_template_part('template-parts/brand-header');?>
+				
+				<div class="text">
+					<h3 class="header-obra-title">Obra</h3>
+					<h1 class="play-title"><?php single_term_title();?> / <?php echo $yearplay;?></h1>
+				</div>
 			</div>
+
+			<nav class="nav nav-pills nav-justified" id="obraTab" role="tablist">
+				<a id="info-tab" href="<?php echo $baseurl;?>" class="nav-item nav-link <?php echo ( is_null($tab) ? 'active' : '');?>">Ficha artística</a>
+				<a id="timeline-tab" href="<?php echo $baseurl . 'linea-de-tiempo';?>" class="nav-item nav-link <?php echo ($tab == 'linea-de-tiempo' ? 'active' : '');?>">Línea de Tiempo</a>
+				<a id="texto-tab" href="<?php echo $baseurl . 'texto-dramatico';?>" class="nav-item nav-link <?php echo ($tab == 'texto-dramatico' ? 'active' : '');?>">Texto dramático</a>
+				<a id="materiales-tab" href="<?php echo $baseurl . 'galeria';?>" class="nav-item nav-link last <?php echo ($tab == 'galeria' ? 'active' : '');?>">Galería</a>
+			</nav>
 		</div>
 
-		<nav class="nav nav-pills nav-justified" id="obraTab" role="tablist">
-			<a id="info-tab" href="<?php echo $baseurl;?>" class="nav-item nav-link <?php echo ( is_null($tab) ? 'active' : '');?>">Ficha artística</a>
-			<a id="timeline-tab" href="<?php echo $baseurl . 'linea-de-tiempo';?>" class="nav-item nav-link <?php echo ($tab == 'linea-de-tiempo' ? 'active' : '');?>">Línea de Tiempo</a>
-			<a id="texto-tab" href="<?php echo $baseurl . 'texto-dramatico';?>" class="nav-item nav-link <?php echo ($tab == 'texto-dramatico' ? 'active' : '');?>">Texto dramático</a>
-			<a id="materiales-tab" href="<?php echo $baseurl . 'galeria';?>" class="nav-item nav-link last <?php echo ($tab == 'galeria' ? 'active' : '');?>">Galería</a>
-		</nav>
+		
 
 		
 		

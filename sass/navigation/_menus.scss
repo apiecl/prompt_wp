@@ -54,6 +54,7 @@ body.admin-bar .main-navigation {
 
 	li > ul.sub-menu {
 			margin-left: 46px;
+
 			> li ul.sub-menu {
 				margin-left: 0;
 			}
@@ -63,11 +64,13 @@ body.admin-bar .main-navigation {
 		//font-weight: 700;
 	}
 
+
+
 	ul > li.menu-item-has-children,
 	ul > li.current-menu-item-has-children
 	 {
 		> a {
-			font-weight: 700;
+			//font-weight: 700;
 		}
 	}
 
@@ -75,7 +78,7 @@ body.admin-bar .main-navigation {
 		text-decoration: none;
 		color: white;
 		font-size: 24px;
-		font-weight: 700;
+		//font-weight: 700;
 		&:hover {
 			color: white;
 		}
@@ -89,7 +92,7 @@ body.admin-bar .main-navigation {
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
-		font-weight: 700;
+		//font-weight: 700;
 	}
 }
 

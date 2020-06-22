@@ -24,6 +24,7 @@
 		position: relative;
 		height: 44px;
 		border-radius: 0 15px 0 0;
+		margin-bottom: 12px;
 
 		@include respond-above(lg) {
 			height: 106px;
@@ -58,7 +59,7 @@
 			top: 4px;
 			left: 12px;
 			h1 {
-				font-size: 20px;
+				font-size: 16px;
 			}
 
 			h3 {
@@ -70,9 +71,10 @@
 
 .ficha-obra h1 {
 	font-weight: 700;
-	font-size: 24px;
+	font-size: 20px;
+	line-height: 1.2em;
 	color: $celeste;
-	margin: 12px 0;
+	margin: 12px 0 0 0;
 }
 
 
@@ -184,40 +186,41 @@ a.toggleTabs {
 }
 
 #obraTab {
-	background-color: #000;
+	background-color: transparent;
 	padding-top: 10px;
 	margin: 0;
 	display: flex;
+	position: absolute;
+	right: 16px;
+	bottom: 20px;
 	a.nav-item,
 	a.nav-item:visited,
 	a.nav-item:focus {
 		text-decoration: none;
 		color: #333;
+		width: 140px;
 		outline: none;
-		background-color: $gris;
-		color: white;
+		background-color: $naranjo;
 		border: 0;
 		border-radius: 0;
-		margin: 0 0 -1px 0;
+		margin: 0 0 0 6px;
 		font-weight: 700;
 		text-align: center;
-		padding: 12px 6px;
+		padding: 3px 6px;
 		font-size: 16px;
 		transition: all linear 0.2s;
-		border-right: 1px solid darken($gris, 10%);
 	}
 
 	a.nav-item.last {
-		border-radius: 0 15px 0 0;
+		border-radius: 0;
 	}
 
 
 
 	a.nav-item:hover,
 	a.nav-item.active {
-		background-color: $naranjo;
+		background-color: white;
 		color: black;
-		border-right: 1px solid $naranjo;
 	}
 
 	.tab-pane {
@@ -227,22 +230,20 @@ a.toggleTabs {
 
 @include respond-below(sm) {
 	#obraTab {
-		padding-top: 0;
 
-		a.nav-item.last {
-			border-radius: 0;
-		}
+		max-width: 160px;
+		top: 2px;
 
 		a.nav-item,
 		a.nav-item:visited,
 		a.nav-item:focus {
+			display: none;
 			font-size: 13px;
-			padding: 8px 2px 8px 6px;
-			line-height: 1.2em;
-			text-align: left;
-			display: flex;
-			align-items: center;
-			justify-content: flex-start;
+			width: 120px;
+		}
+
+		a.nav-item.active {
+			display: block;
 		}
 	}
 }
