@@ -20,7 +20,7 @@ $letracolor: #A1DB00;
 		&:after {
 			content: '\f07b';
 			font-family: 'Font Awesome 5 Free';
-			font-size: 15px;
+			font-size: 16px;
 			color: #555;
 			position: absolute;
 			right: 12px;
@@ -42,6 +42,7 @@ $letracolor: #A1DB00;
 .playtext-row.active {
 	.text-item.hasmedia:after {
 		content: '\f07c';
+		color: $celeste;
 	}
 }
 
@@ -584,16 +585,23 @@ span.bordered-blue {
 a.materiales-left {
 	//height: 30px;
 	margin: 36px 22px 8px 0;
-	background-color: $celeste;
+	background-color: transparent;
+	border: 2px dashed $celeste;
 	display:block;
 	text-align: center;
-	color: white;
+	color: $celeste;
 	padding: 12px 12px;
 	cursor: pointer;
-	font-size: 12px;
+	font-size: 18px;
+	opacity: 0;
+	transition: opacity 0.2s linear;
 	p {
-		color: white;
+		color: $celeste;
 		margin: 0;
+	}
+
+	&.withMat {
+		opacity: 1;
 	}
 }
 
@@ -642,6 +650,8 @@ a.materiales-left {
 	padding-right: 0;
 	position: relative;
 	cursor: pointer;
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid transparent;
 	.col-md-2, .col-md-8 {
 		padding: 0;
 	}
@@ -656,6 +666,19 @@ a.materiales-left {
 
 .playtext-row.active {
 	background-color: white;
+	border-top: 2px solid white;
+	border-bottom: 2px solid white;
+	&[data-hasmedia="true"] {
+		border-top: 2px dashed $celeste;
+		border-bottom: 2px dashed $celeste;
+
+	}
+	.acot {
+		color: $celeste;
+		background-color: white;
+		font-weight: bold;
+		font-size: 15px;
+	}
 }
 
 a:hover .playtext-row,
@@ -752,12 +775,15 @@ a.trigger-media.active {
 
 	.mediaitems-gallery {
 		background-color: transparent;
-		margin: 0 12px;
+		margin: 0;
+		min-width: 200px;
+
 		.media-item-wrapper {
 			width: 36px;
 			height: 36px;
-			border-radius: 100%;
-			margin: 0 12px;
+			border-radius: 1px;
+			margin: 2px 2px;
+			position: relative;
 			.media-item-text, img {
 				display: none;
 			}
@@ -768,6 +794,34 @@ a.trigger-media.active {
 				.media-item {
 					background-color: $celeste;
 				}
+			}
+			&:after {
+				content: '\f03e';
+				font-family: 'Font Awesome 5 Free';
+				color: $celeste;
+				font-size: 18px;
+				position: absolute;
+				text-align: center;
+				left: 0;
+				top: 0;
+				width: 100%;
+				line-height: 36px;
+				vertical-align: middle;
+				font-weight: 900;
+			}
+
+			&.activeMedia:after {
+				color: white;
+			}
+
+			&.type-fotografia:after {
+				content: '\f03e';
+			}
+			&.type-audio:after {
+				content: '\f025';
+			}
+			&.type-video:after {
+				content: '\f008';
 			}
 		}
 	}

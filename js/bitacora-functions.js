@@ -270,3 +270,7 @@ function unique(array){
 		return index == arr.indexOf(el);
 	});
 }
+
+function trunc(text, max) {
+	return text.substr(0, max -1) + (text.length > max ? '&hellip;' : '');
+}

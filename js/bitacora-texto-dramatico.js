@@ -43,9 +43,9 @@ jQuery(document).ready(function($) {
 		var matZone = $('.materiales-left');
 		if(materialesIds.length) {
 			activeMaterials = materialesIds;	
-			matZone.empty().show().append('<p>Materiales disponibles</p>');
+			matZone.empty().addClass('withMat').append('<p><span class="multimedia"><i class="fas fa-photo-video"></i> <i class="fas fa-headphones"></i></span> Materiales disponibles</p>');
 		} else {
-			matZone.empty().hide();
+			matZone.empty().removeClass('withMat');
 		}
 		
 	}
@@ -209,6 +209,11 @@ jQuery(document).ready(function($) {
 		updateMaterialZone($(this).attr('data-ids_asoc'));
 		activeText = $('.text-item', this).text();
 		activeParlamento = $(this).attr('data-parlamento');
+
+		if($(this).attr('data-hasmedia') == true) {
+			$('.modal-media-list-text').modal('show');
+			console.log('log');
+		}
 	});
 
 	$('.trigger-media').on('click', function(event) {
@@ -239,7 +244,8 @@ jQuery(document).ready(function($) {
 	$('.modal-media-list-text').on('shown.bs.modal', function(e) {
 		console.log(activeMaterials);
 		$('#content-current-material').empty();
-		$('.curText').empty().append('<span class="acot">' + activeParlamento + ':</span> ' + activeText);
+		var shortText = trunc(activeText, 90);
+		$('.curText').empty().append('<span class="acot">' + activeParlamento + ':</span> ' + shortText);
 		enableMedia(activeMaterials, 'modal-media-text-lista-materiales');
 
 		// var modal = $(this).attr('id');

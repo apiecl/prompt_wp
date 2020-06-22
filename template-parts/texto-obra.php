@@ -143,9 +143,9 @@ $escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
 			<div class="modal-content">
 				<div class="modal-header">
 					<div class="navMateriales">
-						<span class="prevMediaItem" data-modal="modal-media-text-materiales"><i class="fas fa-chevron-left"></i></span> 
+						
 						<div class="list-materials"><?php get_template_part('template-parts/loading');?></div>
-						<span class="nextMediaItem" data-modal="modal-media-text-materiales"><i class="fas fa-chevron-right"></i></span>
+						
 					</div>
 					<div class="curText"></div>
 					<span type="button" class="close" data-dismiss="modal" aria-label="Close">

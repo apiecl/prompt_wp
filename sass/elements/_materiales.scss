@@ -356,6 +356,10 @@ span.termlabel {
   border-bottom: 3px solid #fff;
 }
 
+.prompt-audio-player {
+	text-align: center;
+}
+
 canvas#audio-vis-canvas {
 	display: block;
 	width: 60%;
@@ -364,7 +368,7 @@ canvas#audio-vis-canvas {
 	height: 250px;
 	margin: 12px auto;
 	padding: 12px;
-	background-color: $gris;
+	background-color: transparent;
 }
 
 .materialtype-row {
