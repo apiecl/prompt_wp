@@ -208,13 +208,13 @@ jQuery(document).ready(function($) {
 	// });
 
 	$('.playtext-row').on('click', function() {
-		instanceFull.scroll({ 
-							el: $(this),
-							margin: [10, 0, 0, 0]
-							},
-							250, 
-							'linear'
-							);
+		// instanceFull.scroll({ 
+		// 					el: $(this),
+		// 					margin: [5, 0, 0, 0]
+		// 					},
+		// 					250, 
+		// 					'linear'
+		// 					);
 		$('.playtext-row.active').removeClass('active');
 		$(this).addClass('active');
 		updateMaterialZone($(this).attr('data-ids_asoc'));
