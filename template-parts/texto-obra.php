@@ -10,7 +10,7 @@ $escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
 
 <div class="texto-dramatico">
 	<div class="row fullrow">
-		<div class="col-md-4 col-4">
+		<div class="col-md-4 col-4 greybg">
 			<div class="left-texto">
 			<h4 class="minisection-title">Personajes</h4>
 			<div class="personajes">
@@ -26,9 +26,7 @@ $escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
 				?>
 			</div>
 			
-			<a class="materiales-left" data-toggle="modal" data-target="#modal-media-text-lista-materiales">
-					
-			</a>
+			
 
 			<div id="texto-mini" class="texto-mini dragscroll transparent" data-sync="texto-full" name="textodramatico">
 			<?php 

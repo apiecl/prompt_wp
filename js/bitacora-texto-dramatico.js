@@ -50,6 +50,10 @@ jQuery(document).ready(function($) {
 		
 	}
 
+	function positionButtonMateriales(x, y) {
+		$('.materiales-left').css({left: x, top: y});
+	}
+
 	function updatePersonaje(activeParlamento) {
 		$('.personajes .personaje').removeClass('active');
 		$('.personajes .personaje[data-personaje="' + activeParlamento + '"]').addClass('active');
@@ -75,8 +79,10 @@ jQuery(document).ready(function($) {
 				current.addClass('active');
 				var topset = false;
 				var offsets = [];
+				var viewportOffset = current[0].getBoundingClientRect();
 				updateMaterialZone(current.attr('data-ids_asoc'));
-				updatePersonaje(current.attr('data-parlamento'));				
+				updatePersonaje(current.attr('data-parlamento'));
+				positionButtonMateriales(viewportOffset.left, viewportOffset.top);
 				activeId = current.attr('data-id');
 			}
 		}
@@ -153,13 +159,7 @@ jQuery(document).ready(function($) {
 	// });
 
 	$('.playtext-row').on('click', function() {
-		// instanceFull.scroll({ 
-		// 					el: $(this),
-		// 					margin: [5, 0, 0, 0]
-		// 					},
-		// 					250, 
-		// 					'linear'
-		// 					);
+		
 		$('.playtext-row.active').removeClass('active');
 		$(this).addClass('active');
 		updateMaterialZone($(this).attr('data-ids_asoc'));
@@ -170,35 +170,39 @@ jQuery(document).ready(function($) {
 		
 		updatePersonaje(activeParlamento);
 
-		if($(this).attr('data-hasmedia') == true) {
-			$('.modal-media-list-text').modal('show');
-			console.log('log');
+		if($(this).attr('data-hasmedia') == "true") {
+			
+			var viewportOffset = this.getBoundingClientRect();
+			positionButtonMateriales(viewportOffset.left, viewportOffset.top);
+			console.log(viewportOffset);
+
+			
 		}
 	});
 
-	$('.trigger-media').on('click', function(event) {
-		event.preventDefault();
-		var el = $(this);
-		var target = el.attr('data-expand');
-		var targetel = $(target);
-		if(targetel.hasClass('active')) {
-			//targetel.slideUp();
-			$(this).removeClass('active');
-			targetel.removeClass('active').empty();
-			disableMedia(targetel);
-		} else {
-			$('.media-zone.active').removeClass('active');
-			$('.trigger-media').removeClass('active');
-			//targetel.slideDown();
-			targetel.addClass('active');
-			$(this).addClass('active');
-			enableMedia($(this).attr('data-assoc'), $(this).attr('data-plain-id'));
-		}
-	});
+	// $('.trigger-media').on('click', function(event) {
+	// 	event.preventDefault();
+	// 	var el = $(this);
+	// 	var target = el.attr('data-expand');
+	// 	var targetel = $(target);
+	// 	if(targetel.hasClass('active')) {
+	// 		//targetel.slideUp();
+	// 		$(this).removeClass('active');
+	// 		targetel.removeClass('active').empty();
+	// 		disableMedia(targetel);
+	// 	} else {
+	// 		$('.media-zone.active').removeClass('active');
+	// 		$('.trigger-media').removeClass('active');
+	// 		//targetel.slideDown();
+	// 		targetel.addClass('active');
+	// 		$(this).addClass('active');
+	// 		enableMedia($(this).attr('data-assoc'), $(this).attr('data-plain-id'));
+	// 	}
+	// });
 
 	$('.materiales-left').on('click', function(event) {
 		event.preventDefault();
-		console.log('materiales-left');
+		//console.log('materiales-left');
 	});
 
 	$('.modal-media-list-text').on('shown.bs.modal', function(e) {

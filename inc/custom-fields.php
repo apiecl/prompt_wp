@@ -279,8 +279,14 @@ function prompt_media_fields( ) {
 	$cmb->add_field( array(
 		'name'		=> 'Tipo de material',
 		'id'		=> $prefix . 'tipomaterial',
-		'type'		=> 'text',
-		'desc'		=> 'Id para relacionarlo con el texto dramático'
+		'type'		=> 'select',
+		'default'	=> 'imagen',
+		'options'	=> array( 
+						'imagen' 	=> 'Imagen',
+						'video'	 	=> 'Video',
+						'documento'	=> 'Documento'
+						),
+		'desc'		=> 'Tipo de material'
 	));
 
 
@@ -306,10 +312,16 @@ function prompt_media_fields( ) {
 	));
 
 	$cmb->add_field( array(
-		'name'		=> 'Obra asociada',
+		'name'		=> 'Fecha',
 		'id'		=> $prefix . 'fechatext',
 		'type'		=> 'text',
 		'desc'		=> 'Fecha'
+	));
+
+	$cmb->add_field( array(
+		'name'		=> 'Debug',
+		'id'		=> '_kgflashmediaplayer-poster-id',
+		'type'		=> 'text'
 	));
 }
 

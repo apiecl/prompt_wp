@@ -71,7 +71,7 @@ $yearplay = prompt_format_date($fields['estreno'][0], '%Y');
 	</div>
 </div>
 
-
+<a class="materiales-left" data-toggle="modal" data-target="#modal-media-text-lista-materiales"></a>
 <?php
 get_footer();
 ?>
