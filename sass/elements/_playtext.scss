@@ -8,9 +8,25 @@ $dialogocolor: #DB00A1;
 $monologocolor: #DBA800;
 $letracolor: #A1DB00;
 
+
+.parlamento,
+.text-item {
+	float: left;
+	position: relative;
+}
+
+.parlamento {
+	width: 11%;
+}
+
+.text-item {
+	//margin-left: 130px;
+	width: 89%;
+}
+
 .text-item {
 	text-align: left;
-	margin-bottom: 12px;
+	//margin-bottom: 12px;
 	padding-left: 24px;
 	padding-right: 36px;
 	font-family: $font__serif;
@@ -23,7 +39,7 @@ $letracolor: #A1DB00;
 			font-size: 16px;
 			color: #555;
 			position: absolute;
-			left: 0;
+			left: 3px;
 			top: 0;
 			font-style: normal;
 		}
@@ -193,65 +209,7 @@ a.document-download-button {
 	margin: 24px 0;
 }
 
-.textlegend > .col-md-12,
-.textPersonajes > .col-md-12,
-.textParlamentos > .col-md-12,
-.escenas > .col-md-12
- {
-	display:flex;
-	padding: 24px 10px 0 10px;
-	.typelabel {
-		display: inline-block;
-		padding: 6px;
-		flex-grow: 1;
-		color: #000;
-		text-align: center;
-		text-transform: uppercase;
-		font-size: 14px;
-		text-shadow: 0 1px 1px white;
-		margin: 0 5px;
-		border-style: solid;
-		border-width: 2px;
-		cursor: pointer;
-		
-		&.acotacion {
-			color: $acotacioncolor;
-			border-color: $acotacioncolor;
-		}
 
-		&.descripcion {
-			color: $descripcioncolor;
-			border-color: $descripcioncolor;
-		}
-
-		&.cancion {
-			color: $cancioncolor;
-			border-color: $cancioncolor;
-		}
-
-		&.dialogo {
-			color: $dialogocolor;
-			border-color: $dialogocolor;
-		}
-
-		&.monologo {
-			color: $monologocolor;
-			border-color: $monologocolor;
-		}
-
-		&.letra {
-			color: $letracolor;
-			border-color: $letracolor;
-		}
-
-		&.personajelabel {
-			border-color: #ccc;
-			&:hover, &.active {
-				background-color: #f0f0f0;
-			}
-		}
-	}
-}
 
 
 @media screen and (max-width: 768px) {
@@ -376,11 +334,23 @@ a.document-download-button {
 .acot {
 	display: inline-block;
 	color: #333;
-	background-color: #ccc;
-	padding: 1px 6px 3px 6px;
+	background-color: transparent;
+	padding: 1px 2px 3px 8px;
+	width: 100%;
 	font-size: 14px;
 	line-height: 1.4em;
-	margin-left: 12px;
+	margin-left: 0;
+	&.cancion,
+	&.letra {
+		&:before {
+			content: '\f001';
+			font-family: 'Font Awesome 5 Free';
+			color: #333;
+			display: inline-block;
+			font-weight: 900;
+			margin-right: 3px;
+		}
+	}
 }
 
 .escenalabel {
@@ -681,8 +651,11 @@ a.materiales-left {
 	.acot {
 		color: $celeste;
 		background-color: white;
-		font-weight: bold;
-		font-size: 15px;
+		//font-weight: bold;
+		//font-size: 15px;
+		&:before {
+			color: $celeste;
+		}
 	}
 }
 
@@ -851,5 +824,38 @@ a.trigger-media.active {
 	font-style: italic;
 	.acot {
 		display: none;
+	}
+}
+
+.text-item.tipo-acotacion {
+	font-style: italic;
+}
+
+.acot.acotacion {
+	font-style: italic;
+}
+
+.playtext-row[data-type="cancion"],
+.playtext-row[data-type="letra"]  {
+	&:before {
+		content: '\f001';
+		font-family: 'Font Awesome 5 Free';
+		color: #ccc;
+		font-size: 16px;
+		position: absolute;
+		text-align: center;
+		left: 8px;
+		top: -2px;
+		//width: 100%;
+		//line-height: 36px;
+		vertical-align: middle;
+		font-weight: 900;
+		font-style: normal;
+	}
+}
+
+.playtext-row.haslabelparlamento {
+	&:before {
+		content: '';
 	}
 }

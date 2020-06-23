@@ -228,6 +228,15 @@ a.toggleTabs {
 	}
 }
 
+.page-template-page-template-teatro,
+.page-template-page-template-timeline-teatro,
+.page-template-page-template-materiales-teatro {
+	#obraTab a.nav-item {
+		width: 150px;
+	}
+}
+
+
 @include respond-below(sm) {
 	#obraTab {
 

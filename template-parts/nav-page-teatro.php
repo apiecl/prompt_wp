@@ -40,8 +40,7 @@
 					<h1 class="play-title"><?php the_title();?></h1>
 					
 					</div>
-				</div>
-
+			
 
 				<nav class="nav nav-pills nav-justified" id="obraTab" role="tablist" data-page-id="<?php echo $main[0]->ID;?>" data-function="<?php echo $function;?>" data-target="<?php echo $target;?>">
 					
@@ -57,3 +56,5 @@
 						
 					<?php endforeach;?>
 				</nav>
+
+				</div>

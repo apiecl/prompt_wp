@@ -80,6 +80,8 @@ $escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
 			$escena = '';
 			$escenas = [];
 			$parlamento = '';
+			$icon = '';
+			$haslabelparlamento = false;
 			foreach( $playtext as $playline ) {
 		//var_dump($playline);
 				$tipo = sanitize_title( $playline->tipo);
@@ -96,7 +98,7 @@ $escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
 				endif;
 				?>
 						
-				<div class="playtext-row row tipo-<?php echo sanitize_title($playline->parlamento);?>" 
+				<div class="playtext-row row parlamento-<?php echo sanitize_title($playline->parlamento) . ' ' . ($parlamento != $playline->parlamento ? 'haslabelparlamento' : '');?>" 
 							data-type="<?php echo $tipo;?>" 
 							data-hasmedia="<?php echo ($media != null ? 'true' : 'false');?>" 
 							data-escenaslug="<?php echo sanitize_title($playline->escena);?>" 
@@ -108,15 +110,19 @@ $escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
 								data-assoc="<?php echo $media;?>" 
 							<?php endif;?>>
 					
-								<div class="parlamento col-md-2">
-									<?php if($parlamento != $playline->parlamento):?>
-									<?php echo($playline->parlamento ? '<span class="acot">' . $playline->parlamento . ': </span>': '');
+								<div class="parlamento">
+									<?php if($parlamento != $playline->parlamento):
+											$haslabelparlamento = true;
+											
+
+										?>
+									<?php echo($playline->parlamento ? '<span class="acot ' . $tipo . '">' . $playline->parlamento . '</span>': '');
 											$parlamento = $playline->parlamento;
 									endif;?>
 									<!--[id: <?php echo $playline->id;?>]-->
 								</div>					
 
-								<div class="text-item  col-md-10 <?php echo ($tipo != null ? 'tipo-' . $tipo : '');?> <?php echo ($media != null ? ' hasmedia' : '');?> " <?php echo bit_dataline($playline);?> > <?php echo apply_filters('the_content', $playline->texto);?>
+								<div class="text-item <?php echo ($tipo != null ? 'tipo-' . $tipo : '');?> <?php echo ($media != null ? ' hasmedia' : '');?> <?php echo ($haslabelparlamento ? 'parlamentolabel' : '');?>" <?php echo bit_dataline($playline);?> > <?php echo apply_filters('the_content', $playline->texto);?>
 								</div>
 						
 								
