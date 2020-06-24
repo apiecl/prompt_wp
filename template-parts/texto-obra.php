@@ -12,18 +12,20 @@ $escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
 	<div class="row fullrow">
 		<div class="col-md-4 col-4 greybg">
 			<div class="left-texto">
-			<h4 class="minisection-title">Personajes</h4>
-			<div class="personajes">
-				<?php 
-					$personajes = get_term_meta( $term->term_id, '_prompt_personajes', true);
-					//var_dump($personajes);
-					foreach($personajes as $personaje) {
-						$imgpersonaje = $personaje['_prompt_imagenpersonaje'];
-						echo '<a style="background-image:url(' . $imgpersonaje . ');?>" title="' . $personaje['_prompt_nombrepersonaje']. '" class="personaje" data-personaje="' . $personaje['_prompt_nombrepersonaje'] . '">
-						<span class="nombrepersonaje">' . $personaje['_prompt_nombrepersonaje'] . '</span>
-						</a>';
-					}
-				?>
+			<div class="personajes-section">
+				<h4 class="minisection-title">Personajes</h4>
+				<div class="personajes">
+					<?php 
+						$personajes = get_term_meta( $term->term_id, '_prompt_personajes', true);
+						//var_dump($personajes);
+						foreach($personajes as $personaje) {
+							$imgpersonaje = $personaje['_prompt_imagenpersonaje'];
+							echo '<a style="background-image:url(' . $imgpersonaje . ');?>" title="' . $personaje['_prompt_nombrepersonaje']. '" class="personaje" data-personaje="' . $personaje['_prompt_nombrepersonaje'] . '">
+							<span class="nombrepersonaje">' . $personaje['_prompt_nombrepersonaje'] . '</span>
+							</a>';
+						}
+					?>
+				</div>
 			</div>
 			
 			
@@ -80,7 +82,9 @@ $escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
 			$parlamento = '';
 			$icon = '';
 			$haslabelparlamento = false;
-			foreach( $playtext as $playline ) {
+			$size = count($playtext);
+
+			foreach( $playtext as $key=>$playline ) {
 		//var_dump($playline);
 				$tipo = sanitize_title( $playline->tipo);
 				$media = $playline->ids_asoc;
@@ -96,7 +100,7 @@ $escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
 				endif;
 				?>
 						
-				<div class="playtext-row row parlamento-<?php echo sanitize_title($playline->parlamento) . ' ' . ($parlamento != $playline->parlamento ? 'haslabelparlamento' : '');?>" 
+				<div class="playtext-row row parlamento-<?php echo sanitize_title($playline->parlamento) . ' ' . ($parlamento != $playline->parlamento ? 'haslabelparlamento' : '') . ' '. ($key + 1 == $size ? 'last' : 'linea-' . $key );?>" 
 							data-type="<?php echo $tipo;?>" 
 							data-hasmedia="<?php echo ($media != null ? 'true' : 'false');?>" 
 							data-escenaslug="<?php echo sanitize_title($playline->escena);?>" 

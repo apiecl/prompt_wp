@@ -15,6 +15,25 @@ jQuery(document).ready(function($) {
 	$('.texto-mini, .texto-full').addClass('transparent');
 	$('#texto-full .playtext-row:first').addClass('active');
 
+	const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+	const headerTxt = $('.header-texto-dramatico').outerHeight();
+	const personajesHeight = $('.personajes-section').outerHeight();
+
+	const ua = $.ua.device;
+	console.log(ua.type);
+
+	if(ua.type == 'mobile') {
+		var headerHeight = 68;
+	} else {
+		var headerHeight = 128;
+	}
+
+	const usableSpace = vh - headerHeight;
+	const spaceLeft = usableSpace - personajesHeight;
+	const spaceRight = usableSpace - headerTxt;
+	
+	$('.ficha-obra.texto-dramatico .texto-full').css({ height: spaceRight + 'px'});
+	$('.texto-mini').css({height: spaceLeft + 'px'});
 
 	var customScroll = $('.texto-mini, .texto-full').overlayScrollbars({
 		autoUpdate: true,
@@ -71,19 +90,33 @@ jQuery(document).ready(function($) {
 				//instanceMini.update();
 			},
 			onScrollStop: function() {
-				$('.playtext-row').removeClass('active');
-				inView.offset(300);
-				//inView.threshold(0.5);
-				var visibleRows = inView('.playtext-row').check();
-				var current = $(visibleRows.current[0]);
-				current.addClass('active');
-				var topset = false;
-				var offsets = [];
-				var viewportOffset = current[0].getBoundingClientRect();
-				updateMaterialZone(current.attr('data-ids_asoc'));
-				updatePersonaje(current.attr('data-parlamento'));
-				positionButtonMateriales(viewportOffset.left, viewportOffset.top);
-				activeId = current.attr('data-id');
+				var ratio = instanceFull.scroll().ratio.y;
+
+				if(ratio < 1) {
+
+					$('.playtext-row').removeClass('active');
+					inView.offset(vh - spaceRight + 32);
+					//console.log();
+					//inView.threshold(0.2);
+					var visibleRows = inView('.playtext-row').check();
+					console.log(visibleRows);
+					var current = $(visibleRows.current[0]);
+					current.addClass('active');
+					var topset = false;
+					var offsets = [];
+					var viewportOffset = current[0].getBoundingClientRect();
+					updateMaterialZone(current.attr('data-ids_asoc'));
+					updatePersonaje(current.attr('data-parlamento'));
+					positionButtonMateriales(viewportOffset.left, viewportOffset.top);
+					activeId = current.attr('data-id');
+					
+					if(viewportOffset.y < vh - spaceRight) {
+						instanceFull.scroll(current, 300);
+						console.log(current[0].getBoundingClientRect(), vh-spaceRight);
+					}
+
+				}
+				
 			}
 		}
 	});
@@ -174,8 +207,6 @@ jQuery(document).ready(function($) {
 			
 			var viewportOffset = this.getBoundingClientRect();
 			positionButtonMateriales(viewportOffset.left, viewportOffset.top);
-			console.log(viewportOffset);
-
 			
 		}
 	});

@@ -7,7 +7,7 @@
  * @package promptbook
  */
 
-define( 'PROMPT_VERSION', '0.9.95');
+define( 'PROMPT_VERSION', '0.9.96');
 
 if ( ! function_exists( 'prompt_setup' ) ) :
 	/**
@@ -157,6 +157,8 @@ function prompt_scripts() {
 
 	wp_enqueue_script('isotope', 'https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js', array('jquery', 'bitacora'), '2.1.1', false);
 
+	wp_enqueue_script('uaparser', 'https://cdn.jsdelivr.net/npm/ua-parser-js@0/dist/ua-parser.min.js', array('jquery'), '0.7.2.1', false);
+
 	//wp_enqueue_script('syncscroll', get_template_directory_uri() . '/js/syncscroll.js', array(), '0.0.3', false);
 
 	//wp_enqueue_script('dragscroll', get_template_directory_uri() . '/js/dragscroll.js', array(), '0.0.3', false);
@@ -204,7 +206,7 @@ function prompt_scripts() {
 		
 			if( $tab == 'texto-dramatico'):
 				wp_enqueue_script('scrollbars', get_template_directory_uri() . '/js/jquery.overlayScrollbars.min.js', array(), '0.0.3', false);
-				wp_enqueue_script('bitacora-texto', get_template_directory_uri() . '/js/bitacora-texto-dramatico.js', array('jquery', 'visible', 'bootstrap', 'wavesurfer', 'masonry', 'lazyload', 'audiovis', 'scrollbars', 'inview'), PROMPT_VERSION, false);
+				wp_enqueue_script('bitacora-texto', get_template_directory_uri() . '/js/bitacora-texto-dramatico.js', array('jquery', 'visible', 'bootstrap', 'wavesurfer', 'masonry', 'lazyload', 'audiovis', 'scrollbars', 'inview', 'uaparser'), PROMPT_VERSION, false);
 				wp_enqueue_script('inview', get_template_directory_uri() . '/js/in-view.min.js', array(), '0.6.1', false);
 				//wp_enqueue_script('waypoints', get_template_directory_uri() . '/js/jquery.waypoints.min.js', array(), '1.1.0', false);
 			
