@@ -163,6 +163,16 @@ jQuery(document).ready(function($) {
 		$('.media-item-wrapper').removeClass('activeMedia');
 	});
 
+	$('body').on('click', '.btn.clearfilters', function(e) {
+		console.log('cleaning');
+		$grid.isotope({
+			filter: ''
+		});
+		$('.btn-taxfilter').removeClass('selected');
+		showCurrentFilterInfo(undefined, undefined, undefined, iso.filteredItems.length);
+
+	});
+
 	$('body').on('click', '.btn-taxfilter', function(e) {
 		
 		$('body .terms-filter-zone').empty();

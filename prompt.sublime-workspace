@@ -307,25 +307,7 @@
 			"file": "js/bitacora-texto-dramatico.js",
 			"settings":
 			{
-				"buffer_size": 6457,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "taxonomy-obra.php",
-			"settings":
-			{
-				"buffer_size": 2461,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "template-parts/texto-obra.php",
-			"settings":
-			{
-				"buffer_size": 6126,
+				"buffer_size": 7549,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -334,16 +316,38 @@
 			"file": "js/bitacora.js",
 			"settings":
 			{
-				"buffer_size": 8302,
+				"buffer_size": 8312,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "js/bitacora-functions.js",
+			"contents": "<?php\n/**\n * promptbook functions and definitions\n *\n * @link https://developer.wordpress.org/themes/basics/theme-functions/\n *\n * @package promptbook\n */\n\ndefine( 'PROMPT_VERSION', '0.9.97 ');\n\nif ( ! function_exists( 'prompt_setup' ) ) :\n\t/**\n\t * Sets up theme defaults and registers support for various WordPress features.\n\t *\n\t * Note that this function is hooked into the after_setup_theme hook, which\n\t * runs before the init hook. The init hook is too late for some features, such\n\t * as indicating support for post thumbnails.\n\t */\n\tfunction prompt_setup() {\n\t\t/*\n\t\t * Make theme available for translation.\n\t\t * Translations can be filed in the /languages/ directory.\n\t\t * If you're building a theme based on promptbook, use a find and replaceotr\n\t\t * to change 'prompt' to the name of your theme in all the template files.\n\t\t */\n\t\tload_theme_textdomain( 'prompt', get_template_directory() . '/languages' );\n\n\t\t// Add default posts and comments RSS feed links to head.\n\t\tadd_theme_support( 'automatic-feed-links' );\n\n\t\t/*\n\t\t * Let WordPress manage the document title.\n\t\t * By adding theme support, we declare that this theme does not use a\n\t\t * hard-coded <title> tag in the document head, and expect WordPress to\n\t\t * provide it for us.\n\t\t */\n\t\tadd_theme_support( 'title-tag' );\n\n\t\t/*\n\t\t * Enable support for Post Thumbnails on posts and pages.\n\t\t *\n\t\t * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/\n\t\t */\n\t\tadd_theme_support( 'post-thumbnails' );\n\n\t\t// This theme uses wp_nav_menu() in one location.\n\t\tregister_nav_menus( array(\n\t\t\t'menu-1' => esc_html__( 'Primary', 'prompt' ),\n\t\t) );\n\n\t\t/*\n\t\t * Switch default core markup for search form, comment form, and comments\n\t\t * to output valid HTML5.\n\t\t */\n\t\tadd_theme_support( 'html5', array(\n\t\t\t'search-form',\n\t\t\t'comment-form',\n\t\t\t'comment-list',\n\t\t\t'gallery',\n\t\t\t'caption',\n\t\t) );\n\n\t\t// Set up the WordPress core custom background feature.\n\t\tadd_theme_support( 'custom-background', apply_filters( 'prompt_custom_background_args', array(\n\t\t\t'default-color' => 'ffffff',\n\t\t\t'default-image' => '',\n\t\t) ) );\n\n\t\t// Add theme support for selective refresh for widgets.\n\t\tadd_theme_support( 'customize-selective-refresh-widgets' );\n\n\t\t/**\n\t\t * Add support for core custom logo.\n\t\t *\n\t\t * @link https://codex.wordpress.org/Theme_Logo\n\t\t */\n\t\tadd_theme_support( 'custom-logo', array(\n\t\t\t'height'      => 250,\n\t\t\t'width'       => 250,\n\t\t\t'flex-width'  => true,\n\t\t\t'flex-height' => true,\n\t\t) );\n\t}\nendif;\nadd_action( 'after_setup_theme', 'prompt_setup' );\n\n/**\n * Set the content width in pixels, based on the theme's design and stylesheet.\n *\n * Priority 0 to make it available to lower priority callbacks.\n *\n * @global int $content_width\n */\nfunction prompt_content_width() {\n\t// This variable is intended to be overruled from themes.\n\t// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.\n\t// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound\n\t$GLOBALS['content_width'] = apply_filters( 'prompt_content_width', 640 );\n}\nadd_action( 'after_setup_theme', 'prompt_content_width', 0 );\n\n/**\n * Register widget area.\n *\n * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar\n */\nfunction prompt_widgets_init() {\n\tregister_sidebar( array(\n\t\t'name'          => esc_html__( 'Sidebar', 'prompt' ),\n\t\t'id'            => 'sidebar-1',\n\t\t'description'   => esc_html__( 'Add widgets here.', 'prompt' ),\n\t\t'before_widget' => '<section id=\"%1$s\" class=\"widget %2$s\">',\n\t\t'after_widget'  => '</section>',\n\t\t'before_title'  => '<h2 class=\"widget-title\">',\n\t\t'after_title'   => '</h2>',\n\t) );\n}\nadd_action( 'widgets_init', 'prompt_widgets_init' );\n\n/**\n * Enqueue scripts and styles.\n */\nfunction prompt_scripts() {\n\tglobal $wp_query, $post;\n\n\twp_enqueue_style( 'prompt-style', get_stylesheet_uri(), array(), PROMPT_VERSION );\n\t//wp_enqueue_style( 'simplebar', 'https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css', array(), '5.0.0');\n\n\t//wp_enqueue_style( 'tinyslider', 'https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css');\n\n\t//wp_enqueue_script('tinysliderjs', 'https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js', array(), '0.1', false);\n\n\twp_enqueue_script('wavesurfer', 'https://unpkg.com/wavesurfer.js', array(), '0.1', false);\n\n\twp_enqueue_script('bitacora-functions', get_template_directory_uri() . '/js/bitacora-functions.js', array('jquery'), PROMPT_VERSION, false);\n\t\n\twp_enqueue_script('bitacora', get_template_directory_uri() . '/js/bitacora.js', array('jquery', 'visible', 'bootstrap', 'wavesurfer', 'masonry', 'lazyload', 'audiovis'), PROMPT_VERSION, false);\n\n\twp_enqueue_script( 'prompt-navigation', get_template_directory_uri() . '/js/navigation.js', array(), PROMPT_VERSION, true );\n\n\twp_enqueue_script( 'visible', get_template_directory_uri() . '/js/jquery.visible.min.js', array('jquery'), PROMPT_VERSION, true );\n\n\twp_enqueue_script( 'prompt-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );\n\n\twp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery', 'popper'), '4.0', false );\n\n\twp_enqueue_script( 'popper', 'https://unpkg.com/@popperjs/core@2' , array(), false, false );\n\n\twp_enqueue_script('masonry', get_template_directory_uri() . '/js/masonry.pkgd.min.js', array('jquery', 'imagesLoaded'), '4.2.2', false);\n\n\twp_enqueue_script('audiovis', get_template_directory_uri() . '/js/audio_vis.js', array('jquery'), '1.2.2', false);\n\n\twp_enqueue_script('imagesLoaded', 'https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js', array(), 'last', false);\n\n\twp_enqueue_script('lazyload', 'https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js', array('jquery'), '1.9.1', false);\n\n\twp_enqueue_script('isotope', 'https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js', array('jquery', 'bitacora'), '2.1.1', false);\n\n\twp_enqueue_script('uaparser', 'https://cdn.jsdelivr.net/npm/ua-parser-js@0/dist/ua-parser.min.js', array('jquery'), '0.7.2.1', false);\n\n\t//wp_enqueue_script('syncscroll', get_template_directory_uri() . '/js/syncscroll.js', array(), '0.0.3', false);\n\n\t//wp_enqueue_script('dragscroll', get_template_directory_uri() . '/js/dragscroll.js', array(), '0.0.3', false);\n\n\t//wp_enqueue_script('simplebar', 'https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js', array(), '5.0.0', false);\n\t\n\n\t$taxonomies = get_taxonomies(array(), 'objects');\n\t$taxinfo = [];\n\t$taxobjects = [];\n\n\tforeach($taxonomies as $taxonomy) {\n\t\tif($taxonomy->name != 'obra'):\n\t\t\t$terms = get_terms(array('taxonomy' => $taxonomy->name, 'hide_empty'=> false));\n\t\t\t$termdata = [];\n\t\t\t$taxobjects[$taxonomy->name] = $taxonomy->label; \n\t\t\t\n\t\t\tforeach($terms as $term) {\n\t\t\t\t$termdata[$term->slug] = $term;  \n\t\t\t}\n\n\t\t\t$taxinfo[$taxonomy->name] =  $termdata;\n\n\t\tendif;\n\n\t}\n\n\n\twp_localize_script( 'bitacora', 'prompt', array(\n\t\t'ajaxurl' => admin_url('admin-ajax.php'),\n\t\t'taxinfo' => $taxinfo,\n\t\t'taxlabels'\t=> $taxobjects\n\t)\n);\t\t\n\n\n\n\tif ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {\n\t\twp_enqueue_script( 'comment-reply' );\n\t}\n\n\t$tab = $wp_query->query_vars['tab']; \n\n\t\n\t\t\n\t\t\tif( $tab == 'texto-dramatico'):\n\t\t\t\twp_enqueue_script('scrollbars', get_template_directory_uri() . '/js/jquery.overlayScrollbars.min.js', array(), '0.0.3', false);\n\t\t\t\twp_enqueue_script('bitacora-texto', get_template_directory_uri() . '/js/bitacora-texto-dramatico.js', array('jquery', 'visible', 'bootstrap', 'wavesurfer', 'masonry', 'lazyload', 'audiovis', 'scrollbars', 'inview', 'uaparser'), PROMPT_VERSION, false);\n\t\t\t\twp_enqueue_script('inview', get_template_directory_uri() . '/js/in-view.min.js', array(), '0.6.1', false);\n\t\t\t\t//wp_enqueue_script('waypoints', get_template_directory_uri() . '/js/jquery.waypoints.min.js', array(), '1.1.0', false);\n\t\t\t\n\t\t\telseif($tab == 'linea-de-tiempo' || is_page_template('page-template-timeline-teatro.php')):\n\n\t\t\t\twp_enqueue_script( 'timelinejs', get_template_directory_uri() . '/js/timeline.js', array(), '3.6.5', false );\n\t\t\t\twp_enqueue_style( 'timeline', get_template_directory_uri() . '/TL.Timeline.css', array(), '3.6.5', 'screen' );\n\n\t\t\t\twp_localize_script( 'timelinejs', 'prompt_hitos', get_main_timeline_events() );\n\n\t\t\t\t//Localiza la info de una obra en Json\n\t\t\t\tif(is_tax( 'obra' )):\n\t\t\t\t\t$args = array(\n\t\t\t\t\t\t'taxonomy' => 'obra',\n\t\t\t\t\t\t'hide_empty' => false,\n\t\t\t\t\t);\n\t\t\t\t\t$obras = get_terms( $args );\n\t\t\t\t\tif($obras):\n\t\t\t\t\t\tforeach($obras as $obra):\n\t\t\t\t\t\t\t$obraslugjs = prompt_obraslugjs($obra->slug);\n\t\t\t\t\t\t\twp_localize_script( 'timelinejs', 'prompt_hitos_' . $obraslugjs , get_main_timeline_events($obra->slug) );\n\t\t\t\t\t\tendforeach;\n\t\t\t\t\tendif;\n\t\t\t\tendif;\n\t\t\tendif;\n\t\t\t\n}\n\nadd_action( 'wp_enqueue_scripts', 'prompt_scripts' );\n\n\n\nfunction prompt_head() {\n\t?>\n\t<script src=\"https://kit.fontawesome.com/14643ca681.js\" crossorigin=\"anonymous\"></script>\n\t<?php\n}\n\nadd_action( 'wp_head', 'prompt_head', 10, 0 );\n\n// REMOVE WP EMOJI\nremove_action('wp_head', 'print_emoji_detection_script', 7);\nremove_action('wp_print_styles', 'print_emoji_styles');\n\nremove_action( 'admin_print_scripts', 'print_emoji_detection_script' );\nremove_action( 'admin_print_styles', 'print_emoji_styles' );\n\n/**\n * Implement the Custom Header feature.\n */\nrequire get_template_directory() . '/inc/custom-header.php';\n\n/**\n * Custom template tags for this theme.\n */\nrequire get_template_directory() . '/inc/template-tags.php';\n\n/**\n * Functions which enhance the theme by hooking into WordPress.\n */\nrequire get_template_directory() . '/inc/template-functions.php';\n\n/**\n * Customizer additions.\n */\nrequire get_template_directory() . '/inc/customizer.php';\n\n/**\n * Load Jetpack compatibility file.\n */\nif ( defined( 'JETPACK__VERSION' ) ) {\n\trequire get_template_directory() . '/inc/jetpack.php';\n}\n\n/**\n * Load Custom Fields\n */\nrequire get_template_directory() . '/inc/custom-fields.php';\n\n/**\n * Load Custom Content\n */\n\nrequire get_template_directory() . '/inc/custom-content.php';\n\n/**\n * Load Custom Taxonomies\n */\n\nrequire get_template_directory() . '/inc/custom-taxonomies.php';\n\n\n/**\n * Ajax Functions\n */\n\nrequire get_template_directory() . '/inc/ajax-functions.php';\n",
+			"file": "functions.php",
+			"file_size": 10307,
+			"file_write_time": 132375744538634468,
 			"settings":
 			{
-				"buffer_size": 6967,
+				"buffer_size": 10311,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sass/elements/_playtext.scss",
+			"settings":
+			{
+				"buffer_size": 13032,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "template-parts/texto-obra.php",
+			"settings":
+			{
+				"buffer_size": 6105,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
@@ -357,23 +361,6 @@
 			}
 		},
 		{
-			"file": "inc/custom-fields.php",
-			"settings":
-			{
-				"buffer_size": 14826,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_utils.php",
-			"settings":
-			{
-				"buffer_size": 3065,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_wp_functions.php",
 			"settings":
 			{
@@ -383,27 +370,20 @@
 			}
 		},
 		{
-			"file": "sass/elements/_playtext.scss",
+			"contents": "Searching 48 files for \"bit_get_play\"\n\n/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/template-parts/materiales-obra.php:\n    2  <?php \n    3  $term = get_term_by( 'slug', get_query_var( 'term' ), 'obra' );\n    4: $playtext = bit_get_play($term->term_id);\n    5  ?>\n    6  \n\n/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/template-parts/materiales-teatro.php:\n    1  <?php \n    2  $term = get_term_by( 'slug', get_query_var( 'term' ), 'obra' );\n    3: $playtext = bit_get_play($term->term_id);\n    4  ?>\n    5  \n\n/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/template-parts/texto-obra.php:\n    1  <?php \n    2  $term = get_term_by( 'slug', get_query_var( 'term' ), 'obra' );\n    3: $playtext = bit_get_play($term->term_id);\n    4  $fields = prompt_obra_metadata( $term->term_id );\n    5  $escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );\n\n/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_db_functions.php:\n   84  \n   85  \n   86: function bit_get_play( $playid ) {\n   87  \t//get intro for play\n   88  \tglobal $wpdb;\n\n4 matches across 4 files\n",
 			"settings":
 			{
-				"buffer_size": 13587,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"buffer_size": 1248,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
 			}
 		},
 		{
-			"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/admin-interface.php",
+			"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_db_functions.php",
 			"settings":
 			{
-				"buffer_size": 4282,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "functions.php",
-			"settings":
-			{
-				"buffer_size": 10158,
+				"buffer_size": 3796,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -570,28 +550,30 @@
 	],
 	"file_history":
 	[
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/template-parts/landing-overlay.php",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/home.php",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/functions.php",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/admin-interface.php",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/js/bitacora-texto-dramatico.js",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/taxonomy-obra.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/template-parts/texto-obra.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/js/bitacora.js",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/js/bitacora-texto-dramatico.js",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/js/bitacora-functions.js",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_extensions.php",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/inc/custom-fields.php",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_utils.php",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/elements/_playtext.scss",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/template-parts/landing-overlay.php",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/home.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/site/_taxonomy-obra.scss",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/page-template-teatro.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/template-parts/nav-page-teatro.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/page-template-materiales-teatro.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/page-template-timeline-teatro.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/header.php",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/functions.php",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/elements/_playtext.scss",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/navigation/_menus.scss",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/taxonomy-obra.php",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_extensions.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/package.json",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/elements/_materiales.scss",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/template-parts/materiales-obra.php",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/js/bitacora-functions.js",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/debug.log",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/inc/custom-fields.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/inc/ajax-functions.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/index.php",
 		"/home/pabloselin/Documents/GameDev/quiensoy/src/ContadorPiedras.gd",
@@ -627,7 +609,6 @@
 		"/home/pabloselin/Documents/WebDev/projects/luciaegana/reunion",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/inc/custom-content.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/inc/template-functions.php",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/admin-interface.php",
 		"/home/pabloselin/Desktop/datos_cuarentena.txt",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/variables-site/_colors.scss",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/mixins/_media-queries.scss",
@@ -637,7 +618,6 @@
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/variables-site/_reboot.scss",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/js/jquery.visible.min.js",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/template-parts/materiales-teatro.php",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_utils.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/template-parts/timeline-obra.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/index.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/inc/custom-taxonomies.php",
@@ -708,6 +688,8 @@
 		"height": 104.0,
 		"where_history":
 		[
+			"*.php",
+			"*.js",
 			"*.scss",
 			"*.php",
 			"*.scss",
@@ -727,6 +709,22 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			".acot",
+			"transition",
+			"playtext-row",
+			"material",
+			"bit_get_play",
+			"console.log",
+			".acot",
+			"playtext-row",
+			"hasmedia",
+			"positionbutto",
+			".texto-mini",
+			"texto-mini",
+			"height",
+			"mobile",
+			"ismobile",
+			"888",
 			"personajes",
 			"get_media_from_w",
 			"wrapper",
@@ -838,23 +836,7 @@
 			"typelabel",
 			"legend",
 			"textlegend",
-			"textcontainer",
-			"texto-dramatico",
-			"text",
-			"timeline_events",
-			"prompt_hitos",
-			"obra-container",
-			"bit_item",
-			"mediazone",
-			"landing-overlay",
-			"footer",
-			"info",
-			"media-item-wrapper",
-			"media-item",
-			"dropdown",
-			"con formato",
-			"wysiwyg",
-			"itrend"
+			"textcontainer"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -873,7 +855,7 @@
 	"groups":
 	[
 		{
-			"selected": 8,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -882,15 +864,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6457,
+						"buffer_size": 7549,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2105,
-								2105
+								1007,
+								1007
 							]
 						],
 						"settings":
@@ -899,230 +881,56 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 765.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "taxonomy-obra.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2461,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2434,
-								2434
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 438.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "template-parts/texto-obra.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6126,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								331,
-								331
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "js/bitacora.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8302,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2953,
-								2953
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1280.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "js/bitacora-functions.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6967,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1429,
-								1429
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 495.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_extensions.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 17726,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								9369,
-								9369
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 5911.0,
+						"translation.y": 204.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "inc/custom-fields.php",
+					"buffer": 1,
+					"file": "js/bitacora.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 14826,
+						"buffer_size": 8312,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6959,
-								6959
+								913,
+								913
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 4143.0,
+						"translation.y": 1734.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_utils.php",
+					"buffer": 2,
+					"file": "functions.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3065,
+						"buffer_size": 10311,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1446,
-								1446
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 609.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_wp_functions.php",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 6569,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								901,
-								901
+								1023,
+								1023
 							]
 						],
 						"settings":
@@ -1138,20 +946,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 3,
 					"file": "sass/elements/_playtext.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13587,
+						"buffer_size": 13032,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8810,
-								8810
+								8734,
+								8734
 							]
 						],
 						"settings":
@@ -1163,24 +971,53 @@
 						"translation.y": 9763.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
-					"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/admin-interface.php",
+					"buffer": 4,
+					"file": "template-parts/texto-obra.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4282,
+						"buffer_size": 6105,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								461,
-								461
+								4741,
+								4741
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1581.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_extensions.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17726,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1192,24 +1029,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
-					"file": "functions.php",
+					"buffer": 6,
+					"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_wp_functions.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10158,
+						"buffer_size": 6569,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2566,
-								2566
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1218,10 +1055,97 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1051.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1248,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										270,
+										282
+									],
+									[
+										552,
+										564
+									],
+									[
+										827,
+										839
+									],
+									[
+										1145,
+										1157
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ \t].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_db_functions.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3796,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2526,
+								2526
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 981.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
@@ -1276,20 +1200,60 @@
 		"selected_items":
 		[
 			[
-				"bitex",
-				"bit_extensions/bit_extensions.php"
-			],
-			[
 				"func",
 				"prompt/functions.php"
 			],
 			[
-				"tax",
-				"prompt/taxonomy-obra.php"
+				"dbfun",
+				"bit_extensions/bit_db_functions.php"
+			],
+			[
+				"wp",
+				"bit_extensions/bit_wp_functions.php"
+			],
+			[
+				"bitex",
+				"bit_extensions/bit_extensions.php"
+			],
+			[
+				"bitac",
+				"prompt/js/bitacora.js"
+			],
+			[
+				"texto",
+				"prompt/template-parts/texto-obra.php"
+			],
+			[
+				"play",
+				"prompt/sass/elements/_playtext.scss"
+			],
+			[
+				"bit",
+				"prompt/js/bitacora-texto-dramatico.js"
+			],
+			[
+				"pla",
+				"prompt/sass/elements/_playtext.scss"
 			],
 			[
 				"tex",
 				"prompt/template-parts/texto-obra.php"
+			],
+			[
+				"playte",
+				"prompt/sass/elements/_playtext.scss"
+			],
+			[
+				"text",
+				"prompt/js/bitacora-texto-dramatico.js"
+			],
+			[
+				"bitfun",
+				"prompt/js/bitacora-functions.js"
+			],
+			[
+				"tax",
+				"prompt/taxonomy-obra.php"
 			],
 			[
 				"adm",
@@ -1312,16 +1276,8 @@
 				"prompt/sass/elements/_playtext.scss"
 			],
 			[
-				"bitac",
-				"prompt/js/bitacora-functions.js"
-			],
-			[
 				"bt",
 				"prompt/js/bitacora-texto-dramatico.js"
-			],
-			[
-				"playte",
-				"prompt/sass/elements/_playtext.scss"
 			],
 			[
 				"bitacor",
@@ -1342,10 +1298,6 @@
 			[
 				"taxo",
 				"prompt/sass/site/_taxonomy-obra.scss"
-			],
-			[
-				"texto",
-				"prompt/template-parts/texto-obra.php"
 			],
 			[
 				"playtex",
@@ -1376,10 +1328,6 @@
 				"prompt/sass/elements/_materiales.scss"
 			],
 			[
-				"play",
-				"prompt/sass/elements/_playtext.scss"
-			],
-			[
 				"taxono",
 				"prompt/sass/site/_taxonomy-obra.scss"
 			],
@@ -1394,14 +1342,6 @@
 			[
 				"bitacora.js",
 				"prompt/js/bitacora.js"
-			],
-			[
-				"text",
-				"prompt/template-parts/texto-obra.php"
-			],
-			[
-				"bit",
-				"prompt/js/bitacora-texto-dramatico.js"
 			],
 			[
 				"bitaco",
@@ -1770,22 +1710,6 @@
 			[
 				"wpf",
 				"bit_extensions/bit_wp_functions.php"
-			],
-			[
-				"wp",
-				"bit_extensions/bit_wp_functions.php"
-			],
-			[
-				"matr",
-				"prompt/template-parts/materiales-obra.php"
-			],
-			[
-				"plyt",
-				"prompt/sass/elements/_playtext.scss"
-			],
-			[
-				"sty",
-				"prompt/sass/style.scss"
 			]
 		],
 		"width": 0.0
@@ -1793,9 +1717,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "autom",
+		"last_filter": "luci",
 		"selected_items":
 		[
+			[
+				"luci",
+				"~/Documents/WebDev/local_sites/luciaegana/app/public/wp-content/themes/ler/luciaegana.sublime-project"
+			],
 			[
 				"autom",
 				"~/Documents/WebDev/local_sites/automark/app/public/wp-content/themes/automark/automark.sublime-project"

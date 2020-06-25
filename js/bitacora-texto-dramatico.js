@@ -247,10 +247,11 @@ jQuery(document).ready(function($) {
 	$('.modal-media-list-text').on('shown.bs.modal', function(e) {
 		//console.log(activeMaterials);
 		$('#content-current-material').empty();
-		var shortText = trunc(activeText, 90);
-		$('.curText').empty().append('<span class="acot">' + activeParlamento + ':</span> ' + shortText);
-		enableMedia(activeMaterials, 'modal-media-text-lista-materiales');
-
+			if(activeText.lenght > 1) {
+			var shortText = trunc(activeText, 90);
+			$('.curText').empty().append('<span class="acot">' + activeParlamento + ':</span> ' + shortText);
+			enableMedia(activeMaterials, 'modal-media-text-lista-materiales');
+		}
 		// var modal = $(this).attr('id');
 		// var ispage = $(this).attr('data-ispage');
 

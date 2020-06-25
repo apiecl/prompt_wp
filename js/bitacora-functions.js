@@ -156,7 +156,11 @@ function disableMedia( target ) {
 				$grid = jQuery('.mediaitems-gallery').isotope({
 					itemSelector: '.media-item-wrapper',
 					layoutMode: 'fitRows',
-					stagger: 30
+					transitionDuration: 100
+				});
+
+				$grid.on('arrangeComplete', function( event, filteredItems) {
+					console.log('arrangecomplete');
 				});
 
 				iso = $grid.data('isotope');
@@ -224,6 +228,7 @@ function disableMedia( target ) {
 	function showCurrentFilterInfo(tax, term, type, itemNumber) {
 		console.log(tax, term, type);
 		var filterInfo = jQuery('.currentfilterinfo');
+		jQuery('.btn.clearfilters').hide();
 		if(tax !== undefined && term !== undefined) {
 			var taxlabel = prompt.taxlabels[tax];
 			var termlabel = prompt.taxinfo[tax][term];
@@ -236,10 +241,12 @@ function disableMedia( target ) {
 				}
 				
 			}
+			jQuery('.btn.clearfilters').show();
 			
 		} else if( type !== undefined) {
 
 			filterInfo.empty().append('<p><strong>' + itemNumber + ' items.</strong>  Tipo: ' + type +'</p>');
+			jQuery('.btn.clearfilters').show();
 
 		} else {
 			
