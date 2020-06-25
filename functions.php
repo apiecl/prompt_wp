@@ -7,7 +7,7 @@
  * @package promptbook
  */
 
-define( 'PROMPT_VERSION', '0.9.98');
+define( 'PROMPT_VERSION', '0.9.99');
 
 if ( ! function_exists( 'prompt_setup' ) ) :
 	/**

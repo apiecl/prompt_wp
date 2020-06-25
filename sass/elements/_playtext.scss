@@ -9,6 +9,10 @@ $monologocolor: #DBA800;
 $letracolor: #A1DB00;
 
 
+.texto-dramatico .single-obra.container-fluid {
+	background-color: #E8E9EC;
+}
+
 .parlamento {
 	width: 11%;
 }
@@ -645,8 +649,8 @@ a.materiales-left {
 }
 
 .playtext-row.last {
-	border-bottom: 3px solid $celeste;
-	padding-bottom: 72px;
+	border-bottom: 36px solid #333;
+	padding-bottom: 36px;
 }
 
 a:hover .playtext-row,
