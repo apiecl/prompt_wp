@@ -446,7 +446,7 @@ span.bordered-blue {
 	}
 
 	@include respond-below(md) {
-		padding:6px;
+		padding:6px 0;
 	}
 }
 

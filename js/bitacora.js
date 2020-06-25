@@ -42,6 +42,8 @@ jQuery(document).ready(function($) {
 		$('#landing-overlay').fadeOut();
 	});
 
+
+
 	// var totalHeight = $('body').innerHeight();
 	// var navBarHeight = $('#site-navigation').innerHeight();
 	// var footerHeight = $('.site-footer').innerHeight();
@@ -54,6 +56,35 @@ jQuery(document).ready(function($) {
 		$( $(this).attr('data-target') ).addClass('collapsed');
 		//$('.obra-item-presentation').fadeIn();
 	});
+
+	if(ua.type == 'mobile') {
+		$('#obraTab a.nav-item.active').addClass('current');
+	
+			$('.nextTopMenu').on('click', function() {
+				var current = $('#obraTab a.nav-item.current');
+				var next = current.next('a');
+
+				if(next.length > 0) {
+					console.log(next);
+					current.removeClass('current');
+					next.addClass('current');
+				}
+			});
+
+			$('.prevTopMenu').on('click', function() {
+				var current = $('#obraTab a.nav-item.current');
+				var prev = current.prev('a');
+
+				if(prev.length > 0) {
+					console.log(prev);
+					current.removeClass('current');
+					prev.addClass('current');
+				}
+			});
+
+	}
+
+
 
 
 	$('.menu-toggle').on('click', function() {

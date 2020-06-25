@@ -236,6 +236,13 @@ a.toggleTabs {
 	}
 }
 
+#obraTab {
+	.prevTopMenu,
+	.nextTopMenu {
+		display: none;
+	}
+}
+
 
 @include respond-below(sm) {
 	#obraTab {
@@ -243,16 +250,37 @@ a.toggleTabs {
 		max-width: 160px;
 		top: 2px;
 
+		.prevTopMenu,
+		.nextTopMenu {
+			display: inline-block;
+			color: white;
+			font-size: 18px;
+		}
+
+		.nextTopMenu {
+			margin: 0 0 0 6px;
+		}
+
+		.prevTopMenu {
+			margin: 0 6px 0 0;
+		}
+
 		a.nav-item,
 		a.nav-item:visited,
 		a.nav-item:focus {
 			display: none;
 			font-size: 13px;
-			width: 120px;
+			width: 150px;
+			margin: 0;
 		}
 
-		a.nav-item.active {
+		a.nav-item.current {
 			display: block;
+			background-color: $naranjo;
+		}
+
+		a.nav-item.current.active {
+			background-color: white;
 		}
 	}
 }

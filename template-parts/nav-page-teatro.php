@@ -43,7 +43,7 @@
 			
 
 				<nav class="nav nav-pills nav-justified" id="obraTab" role="tablist" data-page-id="<?php echo $main[0]->ID;?>" data-function="<?php echo $function;?>" data-target="<?php echo $target;?>">
-					
+					<span class="prevTopMenu"><i class="fas fa-angle-left"></i></span>
 					<a aria-selected="true" id="elteatro-tab" href="<?php echo get_permalink($main[0]->ID);?>" class="nav-item nav-link <?php echo ($main[0]->ID == $post->ID ? 'active' : '');?>"><?php echo $main[0]->post_title;?></a>
 
 					<?php 
@@ -55,6 +55,7 @@
 						<a aria-selected="false" id="timeline-tab"href="<?php echo get_permalink($page->ID);?>" class="nav-item nav-link <?php echo ($i == count($childs)? 'last' : '' );?> <?php echo ($page->ID == $post->ID ? 'active' : '');?>"><?php echo $page->post_title;?></a>
 						
 					<?php endforeach;?>
+					<span class="nextTopMenu"><i class="fas fa-angle-right"></i></span>
 				</nav>
 
 				</div>
