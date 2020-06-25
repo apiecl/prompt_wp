@@ -30,6 +30,14 @@ body.admin-bar .main-navigation {
 		z-index: 5000;
 	}
 
+	.menu-principal-container > ul > li > a {
+		font-weight: 500;
+	}
+
+	.menu-principal-container > ul > li > ul.sub-menu > li.menu-item-has-children > a {
+		font-weight: 500;
+	}
+
 	ul {
 		list-style: none;
 		margin: 0;

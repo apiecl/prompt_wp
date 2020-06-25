@@ -1,6 +1,7 @@
 <?php 
 $term = get_term_by( 'slug', get_query_var( 'term' ), 'obra' );
 $playtext = bit_get_play($term->term_id);
+$size = count($playtext);
 $fields = prompt_obra_metadata( $term->term_id );
 $escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
 ?>
@@ -32,7 +33,7 @@ $escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
 
 			<div id="texto-mini" class="texto-mini dragscroll transparent" data-sync="texto-full" name="textodramatico">
 			<?php 
-				foreach($playtext as $playlinesmall) {
+				foreach($playtext as $key=>$playlinesmall) {
 					
 					$subplaylines = explode("\n", $playlinesmall->texto);
 
@@ -42,7 +43,7 @@ $escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
 						echo '<span class="scene-marker" data-escena="' . $escena . '"></span>';
 					endif;
 
-					echo '<div class="textunit" ' . bit_dataline($playlinesmall) .'>';
+					echo '<div class="textunit ' . ($key + 1 == $size ? 'last' : 'linea-' . $key ) . '" ' . bit_dataline($playlinesmall) .'>';
 
 					foreach($subplaylines as $subline) {
 						$linewidth = strlen($subline) * 1.2;
@@ -82,7 +83,7 @@ $escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
 			$parlamento = '';
 			$icon = '';
 			$haslabelparlamento = false;
-			$size = count($playtext);
+			
 
 			foreach( $playtext as $key=>$playline ) {
 		//var_dump($playline);

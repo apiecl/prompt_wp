@@ -576,6 +576,12 @@ a.materiales-left {
 		max-width: 80%;
 		//transition: background 0.3s linear;
 	}
+
+	&.last {
+		padding-bottom: 64px;
+		border-bottom: 12px;
+
+	}
 }
 
 .textunit.selected {
@@ -649,8 +655,8 @@ a.materiales-left {
 }
 
 .playtext-row.last {
-	border-bottom: 36px solid #333;
-	padding-bottom: 36px;
+	border-bottom: 12px solid #333;
+	padding-bottom: 72px;
 }
 
 a:hover .playtext-row,
