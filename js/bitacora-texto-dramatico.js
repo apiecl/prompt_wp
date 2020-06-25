@@ -16,6 +16,7 @@ jQuery(document).ready(function($) {
 	$('#texto-full .playtext-row:first').addClass('active');
 
 	const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+	const navh = $('#site-navigation').outerHeight();
 	const headerTxt = $('.header-texto-dramatico').outerHeight();
 	const personajesHeight = $('.personajes-section').outerHeight();
 
@@ -23,7 +24,7 @@ jQuery(document).ready(function($) {
 	//console.log(ua.type);
 
 	if(ua.type == 'mobile') {
-		var headerHeight = 68;
+		var headerHeight = 68 + navh;
 		var scrollSpeed = 0;
 	} else {
 		var headerHeight = 128;

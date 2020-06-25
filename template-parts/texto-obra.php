@@ -11,7 +11,7 @@ $escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
 
 <div class="texto-dramatico">
 	<div class="row fullrow">
-		<div class="col-md-4 col-4 greybg">
+		<div class="col-md-4 col-minitext greybg">
 			<div class="left-texto">
 			<div class="personajes-section">
 				<h4 class="minisection-title">Personajes</h4>
@@ -56,7 +56,7 @@ $escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
 			</div>
 			</div>
 		</div>
-		<div class="col-md-8 col-8">
+		<div class="col-md-8 col-fulltext">
 			<div class="text-zone">
 			<div class="header-controls-right header-texto-dramatico">
 				<h2><?php echo $term->name;?></h2>

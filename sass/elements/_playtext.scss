@@ -89,6 +89,15 @@ $letracolor: #A1DB00;
 	background-color: #8594A1;
 }
 
+@include respond-below(md) {
+	.col-minitext {
+		max-width: 30% !important;
+	}
+	.col-fulltext {
+		max-width: 70% !important;
+	}
+}
+
 .info-texto {
 	color: #555;
 	margin: 0 0 24px 0;
@@ -557,8 +566,10 @@ a.materiales-left {
 	}
 
 	@include respond-below(sm) {
-		margin: 0 0 0 -150px;
+		margin: 0 0 0 -100px;
+		width: 100px;
 		font-size: 14px;
+		line-height: 1.2em;
 	}
 }
 
@@ -862,6 +873,10 @@ a.trigger-media.active {
 		vertical-align: middle;
 		font-weight: 900;
 		font-style: normal;
+		@include respond-below(md) {
+			font-size: 14px;
+			left: 2px;
+		}
 	}
 }
 
