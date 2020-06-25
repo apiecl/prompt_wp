@@ -131,13 +131,6 @@ $escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
 
 				</div>
 			
-				<div class="row media-zone" id="<?php echo $mediazoneid;?>">
-					<!-- ajax loaded content-->
-					<?php get_template_part('template-parts/loading');?>
-				</div>	
-
-
-
 				<?php
 			}
 			?>

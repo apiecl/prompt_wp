@@ -294,7 +294,7 @@ a.document-download-button {
 	display: inline-block;
 	color: #333;
 	background-color: transparent;
-	padding: 1px 2px 3px 8px;
+	padding: 1px 2px 3px 12px;
 	width: 100%;
 	font-size: 14px;
 	line-height: 1.4em;
@@ -309,6 +309,10 @@ a.document-download-button {
 			font-weight: 900;
 			margin-right: 3px;
 		}
+	}
+
+	@include respond-below(md) {
+		padding: 0;
 	}
 }
 
@@ -435,8 +439,8 @@ span.bordered-blue {
 
 .texto-full {
 	//max-height: 70vh;
-	//height: 100%;
-	//overflow-y: hidden;
+	height: 10px;
+	overflow-y: hidden;
 	overflow-x: hidden;
 	//scroll-behavior: smooth;
 }
@@ -460,6 +464,9 @@ span.bordered-blue {
 
 	@include respond-below(md) {
 		padding: 6px;
+		h2 {
+			display: none;
+		}
 	}
 
 	h2 {
@@ -529,7 +536,11 @@ a.materiales-left {
 	cursor: pointer;
 	font-size: 18px;
 	opacity: 0;
-	transition: all 0.2s linear;
+	
+	@include respond-above(md) {
+		transition: all 0.2s linear;
+	}
+
 	p {
 		color: $celeste;
 		margin: 0;
@@ -578,16 +589,17 @@ a.materiales-left {
 
 .textunit.onfield {
 	background-color: #f0f0f0;
-	transition: background 0.1s linear;
+	//transition: background 0.1s linear;
 	span.line {
 		background-color: $celeste;
 		border-bottom: 1px solid #f0f0f0;
-		transition: background 0.2s linear;
+		
+		//transition: background 0.2s linear;
 	}
 }
 
 .playtext-row {
-	transition: background 0.1s linear;
+	
 	margin:0 0 0 1px;
 	padding-right: 0;
 	position: relative;
@@ -598,7 +610,13 @@ a.materiales-left {
 		padding: 0;
 	}
 	@include respond-below(md) {
-		padding-left: 6px;
+		//padding-left: 6px;
+		margin: 0;
+		padding: 0 6px;
+	}
+
+	@include respond-above(md) {
+		transition: background 0.1s linear;
 	}
 }
 
@@ -678,8 +696,11 @@ a.trigger-media.active {
 	margin: 3px;
 	background-size: cover;
 	background-repeat: no-repeat;
-	transition: border 0.1s linear;
 	position: relative;
+
+	@include respond-above(md) {
+		transition: border 0.1s linear;
+	}
 
 	span.nombrepersonaje {
 		position: absolute;

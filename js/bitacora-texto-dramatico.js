@@ -20,12 +20,14 @@ jQuery(document).ready(function($) {
 	const personajesHeight = $('.personajes-section').outerHeight();
 
 	const ua = $.ua.device;
-	console.log(ua.type);
+	//console.log(ua.type);
 
 	if(ua.type == 'mobile') {
 		var headerHeight = 68;
+		var scrollSpeed = 0;
 	} else {
 		var headerHeight = 128;
+		var scrollSpeed = 300;
 	}
 
 	const usableSpace = vh - headerHeight;
@@ -37,8 +39,13 @@ jQuery(document).ready(function($) {
 
 	var customScroll = $('.texto-mini, .texto-full').overlayScrollbars({
 		autoUpdate: true,
+		overflowBehavior: {
+			x: 'hidden',
+			y: 'scroll'
+		},
 		callbacks: {
 			onInitialized: function() {
+				this.sleep();
 				$('.texto-mini, .texto-full').removeClass('transparent');
 				wrapper = document.querySelector('.os-viewport'), 
 				wrapperBox = wrapper.getBoundingClientRect();
@@ -48,6 +55,7 @@ jQuery(document).ready(function($) {
 				} else {
 					instanceMini = this;
 				}
+				this.update();
 			}
 		}
 	});
@@ -99,7 +107,7 @@ jQuery(document).ready(function($) {
 					//console.log();
 					//inView.threshold(0.2);
 					var visibleRows = inView('.playtext-row').check();
-					console.log(visibleRows);
+					//console.log(visibleRows);
 					var current = $(visibleRows.current[0]);
 					current.addClass('active');
 					var topset = false;
@@ -111,8 +119,8 @@ jQuery(document).ready(function($) {
 					activeId = current.attr('data-id');
 					
 					if(viewportOffset.y < vh - spaceRight) {
-						instanceFull.scroll(current, 300);
-						console.log(current[0].getBoundingClientRect(), vh-spaceRight);
+						instanceFull.scroll(current, scrollSpeed);
+						//console.log(current[0].getBoundingClientRect(), vh-spaceRight);
 					}
 
 				}
@@ -237,7 +245,7 @@ jQuery(document).ready(function($) {
 	});
 
 	$('.modal-media-list-text').on('shown.bs.modal', function(e) {
-		console.log(activeMaterials);
+		//console.log(activeMaterials);
 		$('#content-current-material').empty();
 		var shortText = trunc(activeText, 90);
 		$('.curText').empty().append('<span class="acot">' + activeParlamento + ':</span> ' + shortText);

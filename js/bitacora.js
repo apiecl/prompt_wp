@@ -54,14 +54,14 @@ jQuery(document).ready(function($) {
 	}
 
 	if($('[data-function="materiales-obra"]').length) {
-		console.log('materiales');
+		//console.log('materiales');
 		var playId = $(this).attr('data-play-id');
 		var target = '#todos';
 		enableAllMedia(playId, target);
 	}
 
 	if($('#obraTab[data-function="materiales-teatro"]').length) {
-		console.log('mediapageTeatro')
+		//console.log('mediapageTeatro')
 		var func = $('#obraTab[data-function="materiales-teatro"]');
 		var pageId = func.attr('data-page-id');
 		var target = func.attr('data-target');
@@ -112,7 +112,7 @@ jQuery(document).ready(function($) {
 	})
 
 	$('.modal-media-text').on('shown.bs.modal', function(e) {
-		console.log(mediaid);
+		//console.log(mediaid);
 
 		var modal = $(this).attr('id');
 		var ispage = $(this).attr('data-ispage');
@@ -125,7 +125,7 @@ jQuery(document).ready(function($) {
 
 	$('.prevMediaItem').on('click', function() {
 		if(prevMedia.length) {
-			console.log(prevMedia);
+			//console.log(prevMedia);
 			mediaid = prevMedia.attr('data-mediaid');
 			modal = $(this).attr('data-modal');
 			ispage = $('#' + modal).attr('data-ispage');
@@ -143,7 +143,7 @@ jQuery(document).ready(function($) {
 	$('.nextMediaItem').on('click', function() {
 		if(nextMedia.length) {
 			if(nextMedia.length) {
-				console.log(nextMedia);
+				//console.log(nextMedia);
 				mediaid = nextMedia.attr('data-mediaid');
 				modal = $(this).attr('data-modal');
 				ispage = $('#' + modal).attr('data-ispage');
