@@ -6,8 +6,6 @@ $ficha_col_2 = get_term_meta( $term->term_id, '_prompt_ficha_col_2', false );
 $ficha_col_3 = get_term_meta( $term->term_id, '_prompt_ficha_col_3', false );
 ?>
 
-<h1>Ficha artística</h1>
-
 <div class="row datos-obra">
 	<dl class="col-md-3 col-12">
 
@@ -17,21 +15,23 @@ $ficha_col_3 = get_term_meta( $term->term_id, '_prompt_ficha_col_3', false );
 
 	</dl>
 
-	<dl class="col-md-3 col-12">
+	<dl class="col-md-2 col-12">
 		<?php echo apply_filters('the_content', $ficha_col_2[0]);?>
 	</dl>
 
-	<dl class="col-md-3 col-12 offset-md-3">
+	<dl class="col-md-4 col-12">
 		<?php echo apply_filters('the_content', $ficha_col_3[0]);?>
+	</dl>
+
+	<dl class="intro-obra col-md-3 col-12">
+		<header class="ficha-title">
+			<h2>Reseña</h2>
+		</header>
+		<?php echo $fields['review'][0];?>
 	</dl>
 
 </div>
 
 <div class="row datos-obra">
-	<div class="intro-obra col-md-8 col-12">
-		<header class="ficha-title">
-			<h2>Reseña</h2>
-		</header>
-		<?php echo $fields['review'][0];?>
-	</div>
+	
 </div>

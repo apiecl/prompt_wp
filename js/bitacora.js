@@ -23,20 +23,26 @@ jQuery(document).ready(function($) {
 	const navh = $('#site-navigation').outerHeight();
 	const ua = $.ua.device;
 	//console.log(ua.type);
+	
+	var footerHeight = $('.site-footer').outerHeight();
 
 	if(ua.type == 'mobile') {
 		var headerHeight = 68 + navh;
 		var scrollSpeed = 0;
+		var homeHeight = vh - navh + 20;
 	} else {
 		var headerHeight = 128;
 		var scrollSpeed = 300;
+		var homeHeight = vh - 30;
 	}
 
-
 	var avHeight = vh - headerHeight;
+	
 
 	$('#timeline-embed').css({ height: avHeight + 'px'});
 
+	$('#landing-overlay').css({ height: homeHeight + 'px' });
+	$('#landing-overlay .content-top').css({ height: (homeHeight - footerHeight) + 'px' });
 
 	$('#landing-overlay .content-top').on('click', function() {
 		$('#landing-overlay').fadeOut();

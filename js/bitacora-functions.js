@@ -20,8 +20,8 @@ function disableMedia( target ) {
 
 	function loadMediaInModal(mediaid, modal, ispage, type) {
 		
-		var nextMedia = jQuery('.activeMedia').next('.media-item-wrapper');
-		var prevMedia = jQuery('.activeMedia').prev('.media-item-wrapper');
+		var nextMedia = jQuery('.activeMedia').next('.media-item-wrapper.filtered');
+		var prevMedia = jQuery('.activeMedia').prev('.media-item-wrapper.filtered');
 
 		jQuery.ajax({
 			type: "post",
@@ -161,6 +161,10 @@ function disableMedia( target ) {
 
 				$grid.on('arrangeComplete', function( event, filteredItems) {
 					console.log('arrangecomplete');
+					jQuery('.filtered').removeClass('filtered');
+					var items = $grid.isotope('getFilteredItemElements');
+					console.log(items.length);
+					jQuery(items).addClass('filtered');
 				});
 
 				iso = $grid.data('isotope');

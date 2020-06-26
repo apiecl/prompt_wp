@@ -159,6 +159,10 @@ header.ficha-title,
 	.ficha-obra {
 		padding: 0;
 	}
+
+	.datos-obra {
+		padding-top: 24px;
+	}
 }
 
 .tax-thumbnail {
@@ -193,12 +197,17 @@ a.toggleTabs {
 	position: absolute;
 	right: 16px;
 	bottom: 20px;
+
+	@include respond-above(md) {
+		display: block;
+	}
+
 	a.nav-item,
 	a.nav-item:visited,
 	a.nav-item:focus {
 		text-decoration: none;
 		color: #333;
-		width: 140px;
+		//width: 140px;
 		outline: none;
 		background-color: $naranjo;
 		border: 0;
@@ -209,6 +218,9 @@ a.toggleTabs {
 		padding: 3px 6px;
 		font-size: 16px;
 		transition: all linear 0.2s;
+		display: block;
+		float: left;
+		min-width: 100px;
 	}
 
 	a.nav-item.last {
@@ -232,7 +244,7 @@ a.toggleTabs {
 .page-template-page-template-timeline-teatro,
 .page-template-page-template-materiales-teatro {
 	#obraTab a.nav-item {
-		width: 150px;
+		//width: 150px;
 	}
 }
 

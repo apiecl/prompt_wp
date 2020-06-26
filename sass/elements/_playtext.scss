@@ -547,8 +547,12 @@ a.materiales-left {
 	color: $celeste;
 	padding: 6px;
 	cursor: pointer;
-	font-size: 18px;
+	font-size: 16px;
 	opacity: 0;
+
+	span.multimedia {
+		display: block;
+	}
 	
 	@include respond-above(md) {
 		transition: all 0.2s linear;
@@ -557,6 +561,7 @@ a.materiales-left {
 	p {
 		color: $celeste;
 		margin: 0;
+		line-height: 1.2em;
 	}
 
 	&.withMat {
