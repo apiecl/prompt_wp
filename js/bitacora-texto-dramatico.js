@@ -245,12 +245,21 @@ jQuery(document).ready(function($) {
 		//console.log('materiales-left');
 	});
 
+	$('.modal-media-list-text').on('hide.bs.modal', function(e) {
+		$('#content-current-material').empty();
+		$('.list-materials').empty();
+		$('.curText').empty();
+	});
+
 	$('.modal-media-list-text').on('shown.bs.modal', function(e) {
 		//console.log(activeMaterials);
-		$('#content-current-material').empty();
+		
+		var curtext = $('.curText');
+		curtext.empty();
+
 			if(activeText.length > 1) {
 				var shortText = trunc(activeText, 90);
-				$('.curText').empty().append('<span class="acot">' + activeParlamento + ':</span> ' + shortText);
+				curtext.append('<span class="acot">' + activeParlamento + ':</span> ' + shortText);
 			}
 		enableMedia(activeMaterials, 'modal-media-text-lista-materiales');
 		// var modal = $(this).attr('id');
