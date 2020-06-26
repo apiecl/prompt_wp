@@ -172,11 +172,15 @@ jQuery(document).ready(function($) {
 
 		var modal = $(this).attr('id');
 		var ispage = $(this).attr('data-ispage');
-
+		$('.modal-body', this).empty();
 		var navMedia = loadMediaInModal(mediaid, modal, ispage, type);
 		nextMedia = navMedia[0];
 		prevMedia = navMedia[1];
 
+	});
+
+	$('.modal-media-text').on('hide.bs.modal', function(e) {
+		$('.modal-body', this).empty();
 	});
 
 	$('.prevMediaItem').on('click', function() {

@@ -22,6 +22,9 @@ function disableMedia( target ) {
 		
 		var nextMedia = jQuery('.activeMedia').next('.media-item-wrapper.filtered');
 		var prevMedia = jQuery('.activeMedia').prev('.media-item-wrapper.filtered');
+		var modalBody = jQuery( '#' + modal + ' .modal-body');
+
+		modalBody.append('<div class="loadingZone"><i class="fas fa-spin fa-slash fa-2x"></i> Cargando</div>');
 
 		jQuery.ajax({
 			type: "post",
@@ -36,7 +39,7 @@ function disableMedia( target ) {
 				console.log(response);
 			},
 			success: function( response ) {
-				jQuery( '#' + modal + ' .modal-body').empty().append(response);
+				modalBody.empty().append(response);
 				if(mediaitem !== null) {
 					if(type == 'audio') {
 						jQuery('audio').on('play', function(){
