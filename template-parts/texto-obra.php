@@ -20,8 +20,9 @@ $escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
 						$personajes = get_term_meta( $term->term_id, '_prompt_personajes', true);
 						//var_dump($personajes);
 						foreach($personajes as $personaje) {
-							$imgpersonaje = $personaje['_prompt_imagenpersonaje'];
-							echo '<a style="background-image:url(' . $imgpersonaje . ');?>" title="' . $personaje['_prompt_nombrepersonaje']. '" class="personaje" data-personaje="' . $personaje['_prompt_nombrepersonaje'] . '">
+							$idpersonaje = $personaje['_prompt_imagenpersonaje_id'];
+							$srcpersonaje = wp_get_attachment_image_src( $idpersonaje, 'thumbnail', false );
+							echo '<a style="background-image:url(' . $srcpersonaje[0] . ');" title="' . $personaje['_prompt_nombrepersonaje']. '" class="personaje" data-personaje="' . $personaje['_prompt_nombrepersonaje'] . '">
 							<span class="nombrepersonaje">' . $personaje['_prompt_nombrepersonaje'] . '</span>
 							</a>';
 						}
