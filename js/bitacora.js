@@ -161,6 +161,7 @@ jQuery(document).ready(function($) {
 		
 		if($('body').hasClass('texto-dramatico')) {
 			$('.media-item-wrapper').removeClass('activeMedia');
+			$('#content-current-material').empty();
 			loadMediaInContainer($(this).attr('data-mediaid'), 'content-current-material', type, false);
 		}
 

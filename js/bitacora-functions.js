@@ -61,8 +61,9 @@ function disableMedia( target ) {
 		
 		var nextMedia = jQuery('.activeMedia').next('.media-item-wrapper');
 		var prevMedia = jQuery('.activeMedia').prev('.media-item-wrapper');
-		
-		console.log(ispage);
+		var container = jQuery( '#' + container);
+
+		container.empty().append('<div class="loadingZone"><i class="fas fa-spin fa-slash fa-2x"></i> Cargando</div>');
 
 		jQuery.ajax({
 			type: "post",
@@ -79,7 +80,7 @@ function disableMedia( target ) {
 			success: function( response ) {
 				console.log(response);
 				//var mediaitem = null;
-				jQuery( '#' + container).empty().append(response);
+				container.empty().append(response);
 				if(mediaitem !== null) {
 					if(type == 'audio') {
 						jQuery('audio').on('play', function(){
