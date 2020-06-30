@@ -97,7 +97,7 @@ function disableMedia( target ) {
 			html += '<img src="' + data.mediaurl + '" alt="' + data.title + '" />';
 		}
 		else if(data.type == 'video') {
-			html += '<div class="wp-video"><video class="wp-video-shortcode" src="' + data.mediaurl + '"></video></div>';
+			html += '<div class="wp-video"><video class="wp-video-shortcode" data-src="' + data.mediaurl + '"></video></div>';
 		}
 		else if(data.type == 'pdf') {
 			html += '<a class="documento-download" href="' + data.mediaurl + '"><i class="fas fa-download"></i> Descargar documento (.pdf)</a>';
