@@ -68,6 +68,7 @@ function disableMedia( target ) {
 		jQuery.ajax({
 			type: "post",
 			url: prompt.ajaxurl,
+			dataType: 'json',
 			data: {
 				action: "bit_ajax_get_media_in_text",
 				mediaid: mediaid,
@@ -77,25 +78,79 @@ function disableMedia( target ) {
 			error: function( response ) {
 				console.log(response);
 			},
-			success: function( response ) {
-				console.log(response);
-				//var mediaitem = null;
-				container.empty().append(response);
-				if(mediaitem !== null) {
-					if(type == 'audio') {
-						jQuery('audio').on('play', function(){
-							console.log('start');
-							var audio = this;
-							audioVisStart(this, ['#006CFF', '#006CFF', '#006CFF']);
-						});
-
-					}
-					var itemInfo = jQuery.parseJSON(mediaitem);
-				}
+			success: function( data ) {
+				console.log(data);
+				renderMediaResponse(data, container);
 			}
 		});
 
 		return [nextMedia, prevMedia];
+	}
+
+	function renderMediaResponse(data, container) {
+		var html = '';
+
+		html += '<div class="row">';
+		html += '<div class="col-md-8 media-container-left">';
+
+		if(data.type == 'image') {
+			html += '<img src="' + data.mediaurl + '" alt="' + data.title + '" />';
+		}
+		else if(data.type == 'video') {
+			html += '<div class="wp-video"><video class="wp-video-shortcode" src="' + data.mediaurl + '"></video></div>';
+		}
+		else if(data.type == 'pdf') {
+			html += '<a class="documento-download" href="' + data.mediaurl + '"><i class="fas fa-download"></i> Descargar documento (.pdf)</a>';
+		}
+		else if(data.type == 'audio') {
+			html += '<audio src="' + data.mediaurl +'"></audio>';
+		}
+
+		html += '</div><!-- media-container-left -->';
+		html += '<div class="col-md-4 info-container-right">';
+		html += '<h1 class="modal-title">' + data.title + '</h1>';
+		html += '<div class="mediainfotable">';
+
+		if(data.fecha.length > 0) {
+			html += '<div class="mediainforow fecha">' + data.fecha + '</div>';
+		}
+
+		if(data.content.length > 0) {
+			html += '<div class="mediainforow content">' + data.content + '</div>';
+		}
+
+		if(data.fuente.length > 0) {
+			html += '<div class="mediainforow fuente"><span class="label">Fuente: </span> ' + data.fuente + '</div>';
+		}
+
+
+		if(data.taxinfo !== undefined) {
+			html += '<div class="item-taxinfo">';
+
+			for(tax in data.taxinfo) {
+				console.log(tax);
+				html += '<div class="terminfo">';
+				html += '<span class="taxlabel">' + data.taxinfo[tax].label + ':</span>';
+
+				for(var j = 0; j < data.taxinfo[tax].terms.length; j++) {
+
+					html += '<span class="termlabel">' + data.taxinfo[tax].terms[j].name + '</span>';
+				}
+
+				html += '</div>';
+
+			}
+
+			html += '</div> <!-- item-taxinfo -->';
+		}
+
+
+		html += '</div><!-- mediainfotable -->';
+		html += '</div><!-- info-container-right -->';
+		html += '</div><!-- row -->';
+
+		container.empty().append(html);
+
 	}
 
 	function enableMedia( mediaids, targetid ) {
