@@ -117,13 +117,15 @@ function disableMedia( target ) {
 			html += '<img src="' + data.mediaurl + '" alt="' + data.title + '" />';
 		}
 		else if(data.type == 'video') {
-			html += '<div class="wp-video"><video class="wp-video-shortcode" data-src="' + data.mediaurl + '"></video></div>';
+			//html += '<div class="wp-video"><video class="wp-video-shortcode" data-src="' + data.mediaurl + '"></video></div>';
+			html += data.embedcode;
 		}
 		else if(data.type == 'pdf') {
 			html += '<a class="documento-download" href="' + data.mediaurl + '"><i class="fas fa-download"></i> Descargar documento (.pdf)</a>';
 		}
 		else if(data.type == 'audio') {
-			html += '<audio src="' + data.mediaurl +'"></audio>';
+			//html += '<audio data-src="' + data.mediaurl +'"></audio>';
+			html += data.embedcode;
 		}
 
 		html += '</div><!-- media-container-left -->';
@@ -148,7 +150,6 @@ function disableMedia( target ) {
 			html += '<div class="item-taxinfo">';
 
 			for(tax in data.taxinfo) {
-				console.log(tax);
 				html += '<div class="terminfo">';
 				html += '<span class="taxlabel">' + data.taxinfo[tax].label + ':</span>';
 
