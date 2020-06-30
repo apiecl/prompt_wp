@@ -190,7 +190,9 @@ function prompt_scripts() {
 	wp_localize_script( 'bitacora', 'prompt', array(
 		'ajaxurl' => admin_url('admin-ajax.php'),
 		'taxinfo' => $taxinfo,
-		'taxlabels'	=> $taxobjects
+		'taxlabels'	=> $taxobjects,
+		'resturl'	=> get_bloginfo('url') . '/wp-json/textodramatico/v1/mediaitem/',
+		'nonce'	  		=> wp_create_nonce( 'wp_rest' )
 	)
 );		
 

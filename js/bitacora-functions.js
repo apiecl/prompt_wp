@@ -65,24 +65,44 @@ function disableMedia( target ) {
 
 		container.empty().append('<div class="loadingZone"><i class="fas fa-spin fa-slash fa-2x"></i> Cargando</div>');
 
-		jQuery.ajax({
-			type: "post",
-			url: prompt.ajaxurl,
-			dataType: 'json',
-			data: {
-				action: "bit_ajax_get_media_in_text",
-				wpid: wpid,
-				type: type,
-				ispage: ispage
-			},
-			error: function( response ) {
-				console.log(response);
-			},
-			success: function( data ) {
-				console.log(data);
-				renderMediaResponse(data, container);
-			}
+		const headers = new Headers({
+			'Content-Type': 'application/json',
+            'X-WP-Nonce': prompt.nonce
 		});
+
+		var restUrl = prompt.resturl + wpid;
+
+		fetch(restUrl, {
+			method: 'get',
+			headers: headers,
+			credentials: 'same-origin'
+		})
+		.then(function( response ) {
+			return response.json();
+		})
+		.then(function( json ) {
+			console.log(json);
+			renderMediaResponse(json, container);
+		});
+
+		// jQuery.ajax({
+		// 	type: "post",
+		// 	url: prompt.ajaxurl,
+		// 	dataType: 'json',
+		// 	data: {
+		// 		action: "bit_ajax_get_media_in_text",
+		// 		wpid: wpid,
+		// 		type: type,
+		// 		ispage: ispage
+		// 	},
+		// 	error: function( response ) {
+		// 		console.log(response);
+		// 	},
+		// 	success: function( data ) {
+		// 		console.log(data);
+		// 		renderMediaResponse(data, container);
+		// 	}
+		// });
 
 		return [nextMedia, prevMedia];
 	}
@@ -321,7 +341,7 @@ function disableMedia( target ) {
 		
 	}
 
-	function animateCSS(element, animationName, callback) {
+function animateCSS(element, animationName, callback) {
 		const node = document.querySelector(element)
 		node.classList.add('animated', animationName)
 
