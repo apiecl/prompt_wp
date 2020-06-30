@@ -3,6 +3,7 @@ jQuery(document).ready(function($) {
 
 	var textContainer = $('.texto-dramatico');
 	var mediaid;
+	var wpid;
 	var type;
 	var personajes;
 	var nextMedia;
@@ -157,12 +158,13 @@ jQuery(document).ready(function($) {
 
 	$('body').on('click', '.media-item-wrapper', function(e) {
 		mediaid = $(this).attr('data-mediaid');
+		wpid =	$(this).attr('data-wpid');
 		type = $(this).attr('data-type');
 		
 		if($('body').hasClass('texto-dramatico')) {
 			$('.media-item-wrapper').removeClass('activeMedia');
 			$('#content-current-material').empty();
-			loadMediaInContainer($(this).attr('data-mediaid'), 'content-current-material', type, false);
+			loadMediaInContainer(wpid, 'content-current-material', type, false);
 		}
 
 		$(this).addClass('activeMedia');
@@ -187,15 +189,15 @@ jQuery(document).ready(function($) {
 	$('.prevMediaItem').on('click', function() {
 		if(prevMedia.length) {
 			//console.log(prevMedia);
-			mediaid = prevMedia.attr('data-mediaid');
+			mediaid = prevMedia.attr('data-wpid');
 			modal = $(this).attr('data-modal');
 			ispage = $('#' + modal).attr('data-ispage');
 			type = prevMedia.attr('data-type');
 
 			$('.media-item-wrapper').removeClass('activeMedia');
-			$('.media-item-wrapper[data-mediaid="' + mediaid + '"]').addClass('activeMedia');
+			$('.media-item-wrapper[data-wpid="' + wpid + '"]').addClass('activeMedia');
 
-			var navMedia = loadMediaInModal(mediaid, modal, ispage, type);
+			var navMedia = loadMediaInModal(wpid, modal, ispage, type);
 			nextMedia = navMedia[0];
 			prevMedia = navMedia[1];
 		}
@@ -205,15 +207,15 @@ jQuery(document).ready(function($) {
 		if(nextMedia.length) {
 			if(nextMedia.length) {
 				//console.log(nextMedia);
-				mediaid = nextMedia.attr('data-mediaid');
+				wpid = nextMedia.attr('data-wpid');
 				modal = $(this).attr('data-modal');
 				ispage = $('#' + modal).attr('data-ispage');
 				type = nextMedia.attr('data-type');
 
 				$('.media-item-wrapper').removeClass('activeMedia');
-				$('.media-item-wrapper[data-mediaid="' + mediaid + '"]').addClass('activeMedia');
+				$('.media-item-wrapper[data-wpid="' + wpid + '"]').addClass('activeMedia');
 
-				var navMedia = loadMediaInModal(mediaid, modal, ispage, type);
+				var navMedia = loadMediaInModal(wpid, modal, ispage, type);
 				nextMedia = navMedia[0];
 				prevMedia = navMedia[1];
 			}

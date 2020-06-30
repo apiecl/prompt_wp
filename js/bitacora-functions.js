@@ -18,7 +18,7 @@ function disableMedia( target ) {
 		console.log(target);
 	}
 
-	function loadMediaInModal(mediaid, modal, ispage, type) {
+	function loadMediaInModal(wpid, modal, ispage, type) {
 		
 		var nextMedia = jQuery('.activeMedia').next('.media-item-wrapper.filtered');
 		var prevMedia = jQuery('.activeMedia').prev('.media-item-wrapper.filtered');
@@ -31,7 +31,7 @@ function disableMedia( target ) {
 			url: prompt.ajaxurl,
 			data: {
 				action: "bit_ajax_get_media",
-				mediaid: mediaid,
+				wpid: wpid,
 				type: type,
 				ispage: ispage
 			},
@@ -57,7 +57,7 @@ function disableMedia( target ) {
 		return [nextMedia, prevMedia];
 	}
 
-	function loadMediaInContainer(mediaid, container, type, ispage) {
+	function loadMediaInContainer(wpid, container, type, ispage) {
 		
 		var nextMedia = jQuery('.activeMedia').next('.media-item-wrapper');
 		var prevMedia = jQuery('.activeMedia').prev('.media-item-wrapper');
@@ -71,7 +71,7 @@ function disableMedia( target ) {
 			dataType: 'json',
 			data: {
 				action: "bit_ajax_get_media_in_text",
-				mediaid: mediaid,
+				wpid: wpid,
 				type: type,
 				ispage: ispage
 			},
@@ -154,7 +154,7 @@ function disableMedia( target ) {
 	}
 
 	function enableMedia( mediaids, targetid ) {
-		
+		console.log('BIT Function: enableMedia');
 		var format = 'default';
 
 		if(targetid == 'modal-media-text-lista-materiales') {

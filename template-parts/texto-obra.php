@@ -123,10 +123,10 @@ $escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
 									<?php echo($playline->parlamento ? '<span class="acot ' . $tipo . '">' . $playline->parlamento . '</span>': '');
 											$parlamento = $playline->parlamento;
 									endif;?>
-									<!--[id: <?php echo $playline->id;?>]-->
+									
 								</div>					
 
-								<div class="text-item <?php echo ($tipo != null ? 'tipo-' . $tipo : '');?> <?php echo ($media != null ? ' hasmedia' : '');?> <?php echo ($haslabelparlamento ? 'parlamentolabel' : '');?>" <?php echo bit_dataline($playline);?> > <?php echo apply_filters('the_content', $playline->texto);?>
+								<div class="text-item" > <?php echo apply_filters('the_content', $playline->texto);?>
 								</div>
 						
 								
