@@ -561,6 +561,7 @@ jQuery(document).ready(function($) {
 					//console.log(visibleRows);
 					var current = $(visibleRows.current[0]);
 					current.addClass('active');
+					activeText = $('.text-item', current).text();
 					var topset = false;
 					var offsets = [];
 					var viewportOffset = current[0].getBoundingClientRect();
