@@ -10,5 +10,10 @@
 		{
 			"path": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions"
 		}
-	]
+	],
+	"settings": {
+		"xdebug": {
+			"url": "http://bitacora.local"
+		}
+	}
 }

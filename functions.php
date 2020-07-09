@@ -125,39 +125,32 @@ function prompt_scripts() {
 	global $wp_query, $post;
 
 	wp_enqueue_style( 'prompt-style', get_stylesheet_uri(), array(), PROMPT_VERSION );
-	//wp_enqueue_style( 'simplebar', 'https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css', array(), '5.0.0');
-
-	//wp_enqueue_style( 'tinyslider', 'https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css');
-
-	//wp_enqueue_script('tinysliderjs', 'https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js', array(), '0.1', false);
-
-	wp_enqueue_script('wavesurfer', 'https://unpkg.com/wavesurfer.js', array(), '0.1', false);
-
-	wp_enqueue_script('bitacora-functions', get_template_directory_uri() . '/js/bitacora-functions.js', array('jquery'), PROMPT_VERSION, false);
 	
-	wp_enqueue_script('bitacora', get_template_directory_uri() . '/js/bitacora.js', array('jquery', 'visible', 'bootstrap', 'wavesurfer', 'masonry', 'lazyload', 'audiovis'), PROMPT_VERSION, false);
+	// wp_enqueue_script('bitacora-functions', get_template_directory_uri() . '/js/bitacora-functions.js', array('jquery'), PROMPT_VERSION, false);
+	
+	// wp_enqueue_script('bitacora', get_template_directory_uri() . '/js/bitacora.js', array('jquery', 'bootstrap', 'masonry', 'lazyload', 'audiovis'), PROMPT_VERSION, false);
 
-	wp_enqueue_script( 'prompt-navigation', get_template_directory_uri() . '/js/navigation.js', array(), PROMPT_VERSION, true );
+	// wp_enqueue_script( 'prompt-navigation', get_template_directory_uri() . '/js/navigation.js', array(), PROMPT_VERSION, true );
 
-	wp_enqueue_script( 'visible', get_template_directory_uri() . '/js/jquery.visible.min.js', array('jquery'), PROMPT_VERSION, true );
+	// //wp_enqueue_script( 'visible', get_template_directory_uri() . '/js/jquery.visible.min.js', array('jquery'), PROMPT_VERSION, true );
 
-	wp_enqueue_script( 'prompt-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	// wp_enqueue_script( 'prompt-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery', 'popper'), '4.0', false );
+	// wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery', 'popper'), '4.0', false );
 
-	wp_enqueue_script( 'popper', 'https://unpkg.com/@popperjs/core@2' , array(), false, false );
+	// wp_enqueue_script( 'popper', get_template_directory_uri() . '/js/popper.min.js' , array(), false, false );
 
-	wp_enqueue_script('masonry', get_template_directory_uri() . '/js/masonry.pkgd.min.js', array('jquery', 'imagesLoaded'), '4.2.2', false);
+	// wp_enqueue_script('masonry', get_template_directory_uri() . '/js/masonry.pkgd.min.js', array('jquery', 'imagesLoaded'), '4.2.2', false);
 
-	wp_enqueue_script('audiovis', get_template_directory_uri() . '/js/audio_vis.js', array('jquery'), '1.2.2', false);
+	// wp_enqueue_script('audiovis', get_template_directory_uri() . '/js/audio_vis.js', array('jquery'), '1.2.2', false);
 
-	wp_enqueue_script('imagesLoaded', 'https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js', array(), 'last', false);
+	// wp_enqueue_script('imagesLoaded',  get_template_directory_uri() . '/js/imagesloaded.pkgd.min.js', array(), 'last', false);
 
-	wp_enqueue_script('lazyload', 'https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js', array('jquery'), '1.9.1', false);
+	// wp_enqueue_script('lazyload', get_template_directory_uri() . '/js/lazyload.js', array('jquery'), '1.9.1', false);
 
-	wp_enqueue_script('isotope', 'https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js', array('jquery', 'bitacora'), '2.1.1', false);
+	// wp_enqueue_script('isotope', get_template_directory_uri() . '/js/isotope.pkgd.min.js', array('jquery', 'bitacora'), '2.1.1', false);
 
-	wp_enqueue_script('uaparser', 'https://cdn.jsdelivr.net/npm/ua-parser-js@0/dist/ua-parser.min.js', array('jquery'), '0.7.2.1', false);
+	// wp_enqueue_script('uaparser', get_template_directory_uri() . '/js/ua-parser.min.js', array('jquery'), '0.7.2.1', false);
 
 	//wp_enqueue_script('syncscroll', get_template_directory_uri() . '/js/syncscroll.js', array(), '0.0.3', false);
 
@@ -165,6 +158,8 @@ function prompt_scripts() {
 
 	//wp_enqueue_script('simplebar', 'https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js', array(), '5.0.0', false);
 	
+	wp_enqueue_script('bitacora', get_template_directory_uri() . '/dist/bitacora.js', array('jquery'), PROMPT_VERSION, false);
+
 
 	$taxonomies = get_taxonomies(array(), 'objects');
 	$taxinfo = [];
@@ -197,27 +192,22 @@ function prompt_scripts() {
 );		
 
 
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-
-	$tab = $wp_query->query_vars['tab']; 
+	$tab = isset($wp_query->query_vars['tab']) ? $wp_query->query_vars['tab'] : null; 
 
 	
 		
 			if( $tab == 'texto-dramatico'):
-				wp_enqueue_script('scrollbars', get_template_directory_uri() . '/js/jquery.overlayScrollbars.min.js', array(), '0.0.3', false);
-				wp_enqueue_script('bitacora-texto', get_template_directory_uri() . '/js/bitacora-texto-dramatico.js', array('jquery', 'visible', 'bootstrap', 'wavesurfer', 'masonry', 'lazyload', 'audiovis', 'scrollbars', 'inview', 'uaparser'), PROMPT_VERSION, false);
-				wp_enqueue_script('inview', get_template_directory_uri() . '/js/in-view.min.js', array(), '0.6.1', false);
+				//wp_enqueue_script('scrollbars', get_template_directory_uri() . '/js/jquery.overlayScrollbars.min.js', array(), '0.0.3', false);
+				//wp_enqueue_script('bitacora-texto', get_template_directory_uri() . '/js/bitacora-texto-dramatico.js', array('jquery', 'bootstrap', 'masonry', 'lazyload', 'audiovis', 'scrollbars', 'inview', 'uaparser'), PROMPT_VERSION, false);
+				//wp_enqueue_script('inview', get_template_directory_uri() . '/js/in-view.min.js', array(), '0.6.1', false);
 				//wp_enqueue_script('waypoints', get_template_directory_uri() . '/js/jquery.waypoints.min.js', array(), '1.1.0', false);
 			
 			elseif($tab == 'linea-de-tiempo' || is_page_template('page-template-timeline-teatro.php')):
 
-				wp_enqueue_script( 'timelinejs', get_template_directory_uri() . '/js/timeline.js', array(), '3.6.5', false );
+				//wp_enqueue_script( 'timelinejs', get_template_directory_uri() . '/js/timeline.js', array(), '3.6.5', false );
 				wp_enqueue_style( 'timeline', get_template_directory_uri() . '/TL.Timeline.css', array(), '3.6.5', 'screen' );
 
-				wp_localize_script( 'timelinejs', 'prompt_hitos', get_main_timeline_events() );
+				wp_localize_script( 'bitacora', 'prompt_hitos', get_main_timeline_events() );
 
 				//Localiza la info de una obra en Json
 				if(is_tax( 'obra' )):
@@ -229,7 +219,7 @@ function prompt_scripts() {
 					if($obras):
 						foreach($obras as $obra):
 							$obraslugjs = prompt_obraslugjs($obra->slug);
-							wp_localize_script( 'timelinejs', 'prompt_hitos_' . $obraslugjs , get_main_timeline_events($obra->slug) );
+							wp_localize_script( 'bitacora', 'prompt_hitos_' . $obraslugjs , get_main_timeline_events($obra->slug) );
 						endforeach;
 					endif;
 				endif;

@@ -1,4 +1,6 @@
 jQuery(document).ready(function($) {
+	if($('body').hasClass('texto-dramatico')) {
+
 	//var escenaLabel = $('.escenalabel');
 	var playtextRow = $('.playtext-row');
 	var instanceFull;
@@ -271,4 +273,7 @@ jQuery(document).ready(function($) {
 
 	});
 
+}//End check texto dramatico
+
 	});
+

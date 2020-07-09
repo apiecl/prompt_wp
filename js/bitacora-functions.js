@@ -211,6 +211,7 @@ function disableMedia( target ) {
 	}
 
 	function enableAllMedia( playid, target ) {
+		console.log(playid);
 		jQuery.ajax({
 			type: "post",
 			url: prompt.ajaxurl,

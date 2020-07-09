@@ -1,8 +1,11 @@
-<div id="materiales-obra-container" data-function="materiales-obra" data-play-id="<?php echo $term->term_id;?>">
 <?php 
 $term = get_term_by( 'slug', get_query_var( 'term' ), 'obra' );
+//var_dump($term->term_id);
 $playtext = bit_get_play($term->term_id);
 ?>
+
+
+<div id="materiales-obra-container" data-function="materiales-obra" data-play-id="<?php echo $term->term_id;?>">
 
 <!-- <ul class="nav nav-pills materiales-obra" id="materialesTabs" role="tablist" data-play-id="<?php echo $term->term_id;?>">
 	<li class="nav-item">

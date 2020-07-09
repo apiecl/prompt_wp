@@ -33,7 +33,8 @@ $escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
 			
 
 			<div id="texto-mini" class="texto-mini dragscroll transparent" data-sync="texto-full" name="textodramatico">
-			<?php 
+			<?php
+				$escena = ''; 
 				foreach($playtext as $key=>$playlinesmall) {
 					
 					$subplaylines = explode("\n", $playlinesmall->texto);

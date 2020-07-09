@@ -8,6 +8,8 @@ import postcss from 'gulp-postcss';
 import sourcemaps from 'gulp-sourcemaps';
 import autoprefixer from 'autoprefixer';
 import browserSync from 'browser-sync';
+import concat from 'gulp-concat';
+import uglify from 'gulp-uglify';
 
 const PRODUCTION = yargs.argv.prod;
 
@@ -36,6 +38,13 @@ export const watchForChanges = () => {
   watch('js/*.js')
 }
 
+export const bundleJS = () => {
+  return src(['js/*.js'])
+          .pipe(concat('bitacora.js'))
+          //.pipe(uglify())
+          .pipe(dest('dist'))
+}
+
 const server = browserSync.create();
 
 export const serve = done => {
@@ -51,5 +60,5 @@ export const reload = done => {
 }
 
 export const dev = series( styles, timelineStyles, serve, watchForChanges )
-export const build = series( styles, timelineStyles )
+export const build = series( styles, timelineStyles, bundleJS )
 export default dev;

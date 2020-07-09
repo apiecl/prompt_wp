@@ -20,7 +20,7 @@ jQuery(document).ready(function($) {
 	var typefilter = '';
 	
 
-	const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+	const vh = window.innerHeight; //Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
 	const navh = $('#site-navigation').outerHeight();
 	const ua = $.ua.device;
 	//console.log(ua.type);
@@ -34,7 +34,7 @@ jQuery(document).ready(function($) {
 	} else {
 		var headerHeight = 128;
 		var scrollSpeed = 300;
-		var homeHeight = vh - 30;
+		var homeHeight = vh;
 	}
 
 	var avHeight = vh - headerHeight;
@@ -110,9 +110,9 @@ jQuery(document).ready(function($) {
 		window.timeline = new TL.Timeline('timeline-embed', timeline_events, timeline_options);
 	}
 
-	if($('[data-function="materiales-obra"]').length) {
+	if($('div[data-function="materiales-obra"]').length) {
 		//console.log('materiales');
-		var playId = $(this).attr('data-play-id');
+		var playId = $('div[data-function="materiales-obra"]').attr('data-play-id');
 		var target = '#todos';
 		enableAllMedia(playId, target);
 	}

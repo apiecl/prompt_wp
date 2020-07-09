@@ -5,7 +5,7 @@ global $wp_query;
 
 $term = get_term_by( 'slug', get_query_var( 'term' ), 'obra' );
 $fields = prompt_obra_metadata( $term->term_id );
-$tab = $wp_query->query_vars['tab'];
+$tab = isset($wp_query->query_vars['tab']) ? $wp_query->query_vars['tab'] : null;
 $baseurl = get_term_link($term->term_id, 'obra');
 $yearplay = prompt_format_date($fields['estreno'][0], '%Y');
 ?>

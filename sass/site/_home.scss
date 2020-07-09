@@ -357,6 +357,11 @@ main#main.site-main.home {
 		background-color: #333;
 		border: 10px solid black;
 		padding: 16px 0;
+		height: 150px;
+		
+		@include respond-below(md) {
+			height: 110px;
+		}
 	}
 }
 
