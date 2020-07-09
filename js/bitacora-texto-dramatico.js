@@ -9,7 +9,7 @@ jQuery(document).ready(function($) {
 	var prevScroll = 0;
 	var activeId;
 	var activeMaterials;
-	var activeText;
+	var activeText = '';
 	var activeParlamento;
 
 	//inView.offset({top: 200});
