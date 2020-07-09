@@ -156,6 +156,13 @@ function disableMedia( target ) {
 		.then(function( json ) {
 			console.log(json);
 			renderMediaResponse(json, container);
+			if(type == 'audio') {
+				jQuery('audio').on('play', function(){
+							console.log('start');
+							var audio = this;
+							audioVisStart(this, ['#006CFF', '#006CFF', '#006CFF']);
+						});
+			}
 		});
 
 		// jQuery.ajax({
