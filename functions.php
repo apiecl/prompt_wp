@@ -7,7 +7,7 @@
  * @package promptbook
  */
 
-define( 'PROMPT_VERSION', '1.0.8');
+define( 'PROMPT_VERSION', '1.0.9');
 
 if ( ! function_exists( 'prompt_setup' ) ) :
 	/**
@@ -118,11 +118,35 @@ function prompt_widgets_init() {
 }
 add_action( 'widgets_init', 'prompt_widgets_init' );
 
+//Remove JQuery migrate
+	function remove_jquery_migrate($scripts)
+	{
+    if (!is_admin() && isset($scripts->registered['jquery'])) {
+        $script = $scripts->registered['jquery'];
+        
+        if ($script->deps) { // Check whether the script has any dependencies
+            $script->deps = array_diff($script->deps, array(
+                'jquery-migrate'
+       	     ));
+       		 }
+    	}
+	}
+
+	add_action('wp_default_scripts', 'remove_jquery_migrate');
+
 /**
  * Enqueue scripts and styles.
  */
 function prompt_scripts() {
 	global $wp_query, $post;
+
+	wp_dequeue_style( 'wp-block-library' );
+ 	wp_dequeue_style( 'wp-block-library-theme' );
+ 	wp_dequeue_style( 'wc-block-style' ); // Remove WooCommerce block CSS
+ 	
+ 	if(!is_admin()):
+ 		wp_deregister_script( 'jquery' );
+ 	endif;
 
 	wp_enqueue_style( 'prompt-style', get_stylesheet_uri(), array(), PROMPT_VERSION );
 	
@@ -158,7 +182,7 @@ function prompt_scripts() {
 
 	//wp_enqueue_script('simplebar', 'https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js', array(), '5.0.0', false);
 	
-	wp_enqueue_script('bitacora', get_template_directory_uri() . '/dist/bitacora.js', array('jquery'), PROMPT_VERSION, false);
+	wp_enqueue_script('bitacora', get_template_directory_uri() . '/dist/bitacoraBundle.js', array(), PROMPT_VERSION, false);
 
 
 	$taxonomies = get_taxonomies(array(), 'objects');

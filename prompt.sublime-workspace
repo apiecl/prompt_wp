@@ -311,58 +311,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "sass/mixins/_bitacora.scss",
-			"settings":
-			{
-				"buffer_size": 1267,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "sass/mixins/_media-queries.scss",
-			"settings":
-			{
-				"buffer_size": 2367,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "functions.php",
-			"settings":
-			{
-				"buffer_size": 10431,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_db_functions.php",
-			"settings":
-			{
-				"buffer_size": 3883,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "sass/navigation/_menus.scss",
-			"settings":
-			{
-				"buffer_size": 2340,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "template-parts/materiales-teatro.php",
-			"settings":
-			{
-				"buffer_size": 1032,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -378,6 +326,30 @@
 			[
 				"comm",
 				"Toggle Comment"
+			],
+			[
+				"xdebugre",
+				"Xdebug: Restore Layout"
+			],
+			[
+				"xdebst",
+				"Xdebug: Stop Debugging"
+			],
+			[
+				"xdebugst",
+				"Xdebug: Start Debugging (Launch Browser)"
+			],
+			[
+				"xdeb",
+				"Preferences: Xdebug Settings – User"
+			],
+			[
+				"xdebug",
+				"Preferences: Xdebug Settings – User"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
 			],
 			[
 				"rein",
@@ -476,10 +448,6 @@
 				"Indentation: Reindent Lines"
 			],
 			[
-				"instal",
-				"Package Control: Install Package"
-			],
-			[
 				"wr",
 				"Emmet: Wrap With Abbreviation"
 			],
@@ -521,35 +489,48 @@
 	"expanded_folders":
 	[
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/mixins",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/dist",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions"
 	],
 	"file_history":
 	[
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/functions.php",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/elements/_playtext.scss",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/template-parts/texto-obra.php",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_extensions.php",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/js/bitacora-texto-dramatico.js",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/js/bitacora.js",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/js/bitacora-functions.js",
-		"/tmp/fz3temp-2/wp-config.php",
-		"/tmp/fz3temp-2/wp-config 2.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/header.php",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/template-parts/nav-404.php",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/template-parts/nav-page-teatro.php",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/404.php",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/page-template-creditos.php",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/page.php",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/js/bitacora.js",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/gulpfile.babel.js",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/js/bitacora-texto-dramatico.js",
+		"/tmp/fz3temp-2/wp-config.php",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/template-parts/texto-obra.php",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/taxonomy-obra.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/template-parts/materiales-obra.php",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_db_functions.php",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_wp_functions.php",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_extensions.php",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/functions.php",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/dist/locale/es.json",
+		"/home/pabloselin/.config/sublime-text-3/Packages/User/Xdebug.sublime-settings",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/package.json",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/site/_home.scss",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/template-parts/materiales-teatro.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/navigation/_menus.scss",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_db_functions.php",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/mixins/_bitacora.scss",
+		"/home/pabloselin/.config/sublime-text-3/Packages/Xdebug Client/Xdebug.sublime-settings",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/prompt.sublime-project",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/conf/php/php.ini.hbs",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/elements/_playtext.scss",
+		"/tmp/fz3temp-2/wp-config 2.php",
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_wp_functions.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/elements/_materiales.scss",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/template-parts/loading.php",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/taxonomy-obra.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/site/_taxonomy-obra.scss",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/site/_creditos.scss",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/phploy.ini",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/phploy.ini",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-config.php",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/site/_home.scss",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/template-parts/timeline-obra.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/site/_timeline.scss",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/template-parts/landing-overlay.php",
@@ -557,7 +538,6 @@
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/style.scss",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/extras/wpvideo.scss",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/debug.log",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/template-parts/nav-page-teatro.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/page-template-teatro.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/less/TL.Timeline.less",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/admin-interface.php",
@@ -566,7 +546,6 @@
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/home.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/page-template-materiales-teatro.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/page-template-timeline-teatro.php",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/package.json",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/inc/ajax-functions.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/index.php",
 		"/home/pabloselin/Documents/GameDev/quiensoy/src/ContadorPiedras.gd",
@@ -578,15 +557,12 @@
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/extras/prompt-scrollbar.scss",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/js/syncscroll.js",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/js/dragscroll.js",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/gulpfile.babel.js",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/template-parts/timeline.php",
 		"/home/pabloselin/Documents/WebDev/projects/pluralismotv/html/index.html",
 		"/media/pabloselin/ELA/backup/Documents/code/php/pueblonuevo/public/wp-content/plugins/pueblonuevoplayer/js/src/initplayer.js",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/mixins/_bitacora.scss",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/variables-site/_typography.scss",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/js/locale/es.json",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/site/_site.scss",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/page-template-creditos.php",
 		"/home/pabloselin/Documents/WebDev/projects/PluralismoTV_MM_RGB /html/index.html",
 		"/home/pabloselin/Documents/GameDev/cryojelly_2020/code/cryojelly_test_01/scenes/Main.gd",
 		"/home/pabloselin/Documents/GameDev/cryojelly_2020/code/cryojelly_test_01/scenes/Stage.gd",
@@ -603,7 +579,6 @@
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/variables-site/_custom-bootstrap-variables.scss",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/variables-site/_reboot.scss",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/js/jquery.visible.min.js",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/template-parts/materiales-teatro.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/index.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/inc/custom-taxonomies.php",
 		"/tmp/fz3temp-2/.htaccess",
@@ -646,15 +621,7 @@
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/tmp/materiales-layout-old.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/single.php",
 		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bitacora_texto/.gitignore",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/.idea/.gitignore",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/node_modules/bootstrap/scss/_list-group.scss",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/site/secondary/_items.scss",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-admin/includes/media.php",
-		"/home/pabloselin/Documents/WebDev/projects/bitacorateatrouc/notas_reunion_bitacora_3001.txt",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/template-parts/content.php",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/less/Variables.less",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/sass/navigation/_navigation.scss",
-		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/js/audio_spectrum.js"
+		"/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/themes/prompt/.idea/.gitignore"
 	],
 	"find":
 	{
@@ -686,6 +653,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"activetext",
+			"active",
+			"activetext",
+			"audio",
+			"popper",
+			"enableall",
+			"bit_get_play(",
 			"load",
 			"restUrl",
 			"bit_mediaitem_single_json_rest",
@@ -806,14 +780,7 @@
 			"escena",
 			"lazy",
 			"timeline_options",
-			"options",
-			"timeline",
-			"timeline-embed",
-			"tab",
-			"section-desc",
-			"descripti",
-			"fonts",
-			"description"
+			"options"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -832,184 +799,8 @@
 	"groups":
 	[
 		{
-			"selected": 5,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "sass/mixins/_bitacora.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1267,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Sass/Syntaxes/SCSS.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 285.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "sass/mixins/_media-queries.scss",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 2367,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								2367
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Sass/Syntaxes/SCSS.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "functions.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 10431,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								564,
-								564
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions/bit_db_functions.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3883,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2556,
-								2556
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1357.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "sass/navigation/_menus.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2340,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Sass/Syntaxes/SCSS.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "template-parts/materiales-teatro.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1032,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1048,6 +839,10 @@
 	{
 		"height": 0.0
 	},
+	"output.xdebug":
+	{
+		"height": 0.0
+	},
 	"pinned_build_system": "",
 	"project": "prompt.sublime-project",
 	"replace":
@@ -1062,6 +857,98 @@
 		"selected_items":
 		[
 			[
+				"fun",
+				"prompt/functions.php"
+			],
+			[
+				"textodr",
+				"prompt/js/bitacora-texto-dramatico.js"
+			],
+			[
+				"text",
+				"prompt/template-parts/texto-obra.php"
+			],
+			[
+				"func",
+				"prompt/js/bitacora-functions.js"
+			],
+			[
+				"bitacorafun",
+				"prompt/js/bitacora-functions.js"
+			],
+			[
+				"navp",
+				"prompt/template-parts/nav-page-teatro.php"
+			],
+			[
+				"he",
+				"prompt/header.php"
+			],
+			[
+				"head",
+				"prompt/header.php"
+			],
+			[
+				"cre",
+				"prompt/page-template-creditos.php"
+			],
+			[
+				"pag",
+				"prompt/page.php"
+			],
+			[
+				"gul",
+				"prompt/gulpfile.babel.js"
+			],
+			[
+				"bitac",
+				"prompt/js/bitacora-texto-dramatico.js"
+			],
+			[
+				"bitacora.j",
+				"prompt/js/bitacora.js"
+			],
+			[
+				"bitex",
+				"bit_extensions/bit_extensions.php"
+			],
+			[
+				"materiales",
+				"prompt/template-parts/materiales-obra.php"
+			],
+			[
+				"taxono",
+				"prompt/taxonomy-obra.php"
+			],
+			[
+				"textoo",
+				"prompt/template-parts/texto-obra.php"
+			],
+			[
+				"dbfu",
+				"bit_extensions/bit_db_functions.php"
+			],
+			[
+				"tex",
+				"prompt/template-parts/texto-obra.php"
+			],
+			[
+				"db",
+				"bit_extensions/bit_db_functions.php"
+			],
+			[
+				"bitext",
+				"bit_extensions/bit_extensions.php"
+			],
+			[
+				"home",
+				"prompt/sass/site/_home.scss"
+			],
+			[
+				"packa",
+				"prompt/package.json"
+			],
+			[
 				"menu",
 				"prompt/sass/navigation/_menus.scss"
 			],
@@ -1070,24 +957,8 @@
 				"prompt/template-parts/materiales-teatro.php"
 			],
 			[
-				"db",
-				"bit_extensions/bit_db_functions.php"
-			],
-			[
-				"func",
-				"prompt/functions.php"
-			],
-			[
 				"mix",
 				"prompt/sass/mixins/_bitacora.scss"
-			],
-			[
-				"bitex",
-				"bit_extensions/bit_extensions.php"
-			],
-			[
-				"bitacora.j",
-				"prompt/js/bitacora.js"
 			],
 			[
 				"playtex",
@@ -1114,23 +985,7 @@
 				"prompt/js/bitacora.js"
 			],
 			[
-				"tex",
-				"prompt/js/bitacora-texto-dramatico.js"
-			],
-			[
-				"fun",
-				"prompt/functions.php"
-			],
-			[
 				"bitacoratex",
-				"prompt/js/bitacora-texto-dramatico.js"
-			],
-			[
-				"text",
-				"prompt/template-parts/texto-obra.php"
-			],
-			[
-				"bitac",
 				"prompt/js/bitacora-texto-dramatico.js"
 			],
 			[
@@ -1178,16 +1033,8 @@
 				"prompt/template-parts/ficha-obra.php"
 			],
 			[
-				"head",
-				"prompt/header.php"
-			],
-			[
 				"hom",
 				"prompt/sass/site/_home.scss"
-			],
-			[
-				"taxono",
-				"prompt/sass/site/_taxonomy-obra.scss"
 			],
 			[
 				"ficha",
@@ -1219,10 +1066,6 @@
 			],
 			[
 				"texto-ob",
-				"prompt/template-parts/texto-obra.php"
-			],
-			[
-				"textoo",
 				"prompt/template-parts/texto-obra.php"
 			],
 			[
@@ -1322,10 +1165,6 @@
 				"prompt/js/bitacora.js"
 			],
 			[
-				"packa",
-				"prompt/package.json"
-			],
-			[
 				"mate",
 				"prompt/template-parts/materiales-obra.php"
 			],
@@ -1362,16 +1201,8 @@
 				"prompt/js/bitacora-functions.js"
 			],
 			[
-				"gul",
-				"prompt/gulpfile.babel.js"
-			],
-			[
 				"ajax",
 				"prompt/inc/ajax-functions.php"
-			],
-			[
-				"materiales",
-				"prompt/sass/elements/_materiales.scss"
 			],
 			[
 				"taxoo",
@@ -1384,10 +1215,6 @@
 			[
 				"fich",
 				"prompt/template-parts/ficha-obra.php"
-			],
-			[
-				"home",
-				"prompt/sass/site/_home.scss"
 			],
 			[
 				"typo",
@@ -1416,10 +1243,6 @@
 			[
 				"brand",
 				"prompt/template-parts/brand-header.php"
-			],
-			[
-				"navp",
-				"prompt/template-parts/nav-page-teatro.php"
 			],
 			[
 				"brand-h",
@@ -1490,10 +1313,6 @@
 				"prompt/sass/site/_site.scss"
 			],
 			[
-				"he",
-				"prompt/template-parts/brand-header.php"
-			],
-			[
 				"navpage",
 				"prompt/template-parts/nav-page-teatro.php"
 			],
@@ -1548,30 +1367,6 @@
 			[
 				"page-templ",
 				"prompt/page-template-materiales-teatro.php"
-			],
-			[
-				"ma",
-				"prompt/template-parts/materiales-teatro.php"
-			],
-			[
-				"teatro",
-				"prompt/page-template-teatro.php"
-			],
-			[
-				"teatr",
-				"prompt/template-parts/materiales-teatro.php"
-			],
-			[
-				"gulp",
-				"prompt/gulpfile.babel.js"
-			],
-			[
-				"taxoon",
-				"prompt/sass/site/_taxonomy-obra.scss"
-			],
-			[
-				"col",
-				"prompt/sass/variables-site/_colors.scss"
 			]
 		],
 		"width": 0.0
@@ -1685,6 +1480,90 @@
 	"selected_group": 0,
 	"settings":
 	{
+		"xdebug":
+		{
+			"hide_conflict": false,
+			"restore_index":
+			{
+				"181":
+				{
+					"group": 0,
+					"index": 0
+				},
+				"182":
+				{
+					"group": 0,
+					"index": 1
+				},
+				"183":
+				{
+					"group": 0,
+					"index": 2
+				},
+				"184":
+				{
+					"group": 0,
+					"index": 3
+				},
+				"185":
+				{
+					"group": 0,
+					"index": 4
+				},
+				"186":
+				{
+					"group": 0,
+					"index": 5
+				},
+				"191":
+				{
+					"group": 0,
+					"index": 6
+				},
+				"194":
+				{
+					"group": 0,
+					"index": 9
+				},
+				"199":
+				{
+					"group": 0,
+					"index": 7
+				},
+				"201":
+				{
+					"group": 0,
+					"index": 8
+				},
+				"213":
+				{
+					"group": 0,
+					"index": 10
+				}
+			},
+			"restore_layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			}
+		}
 	},
 	"show_minimap": true,
 	"show_open_files": false,

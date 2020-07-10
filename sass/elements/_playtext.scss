@@ -653,6 +653,11 @@ a.materiales-left {
 	background-color: white;
 	border-top: 2px solid white;
 	border-bottom: 2px solid white;
+	
+	@include respond-above(md) {
+		margin-right: 11px;
+	}
+
 	&[data-hasmedia="true"] {
 		border-top: 2px dashed $celeste;
 		border-bottom: 2px dashed $celeste;

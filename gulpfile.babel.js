@@ -9,16 +9,16 @@ import sourcemaps from 'gulp-sourcemaps';
 import autoprefixer from 'autoprefixer';
 import browserSync from 'browser-sync';
 import concat from 'gulp-concat';
-import uglify from 'gulp-uglify';
+import terser from 'gulp-terser';
 
 const PRODUCTION = yargs.argv.prod;
 
 export const styles = () => {
   return src('sass/style.scss')
    .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
     .pipe(gulpif(PRODUCTION, postcss([ autoprefixer ])))
-    .pipe(gulpif(PRODUCTION, cleanCss({compatibility:'ie8'})))
+    .pipe(gulpif(PRODUCTION, cleanCss({compatibility:'*'})))
     .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
     .pipe(dest('.'))
     .pipe(server.stream());
@@ -39,9 +39,27 @@ export const watchForChanges = () => {
 }
 
 export const bundleJS = () => {
-  return src(['js/*.js'])
-          .pipe(concat('bitacora.js'))
-          //.pipe(uglify())
+  return src(['js/jquery-3.5.1.min.js', 
+              'js/audio_vis.js', 
+              'js/popper.min.js', 
+              'js/bootstrap.min.js', 
+              'js/dragscroll.js', 
+              'js/imagesloaded.pkgd.min.js', 
+              'js/in-view.min.js',
+              'js/isotope.pkgd.min.js',
+              'js/jquery.overlayScrollbars.min.js',
+              'js/lazyload.js',
+              'js/masonry.pkgd.min.js',
+              'js/navigation.js',
+              'js/skip-link-focus-fix.js',
+              'js/ua-parser.min.js',
+              'js/timeline.js',
+              'js/bitacora-functions.js',
+              'js/bitacora-texto-dramatico.js',
+              'js/bitacora.js'
+               ])
+          .pipe(concat('bitacoraBundle.js'))
+          .pipe(terser())
           .pipe(dest('dist'))
 }
 

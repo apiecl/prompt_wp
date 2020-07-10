@@ -45,7 +45,7 @@ $escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
 						echo '<span class="scene-marker" data-escena="' . $escena . '"></span>';
 					endif;
 
-					echo '<div class="textunit ' . ($key + 1 == $size ? 'last' : 'linea-' . $key ) . '" ' . bit_dataline($playlinesmall) .'>';
+					echo '<div class="textunit ' . ($key + 1 == $size ? 'last' : 'linea-' . $key ) . '" ' . bit_dataline($playlinesmall, true) .'>';
 
 					foreach($subplaylines as $subline) {
 						$linewidth = strlen($subline) * 1.2;
@@ -88,12 +88,12 @@ $escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
 			
 
 			foreach( $playtext as $key=>$playline ) {
-		//var_dump($playline);
+		
 				$tipo = sanitize_title( $playline->tipo);
 				$media = $playline->ids_asoc;
 				$mediacount = count(explode(', ', $media));
 				$mediazoneid = uniqid();
-		//echo $media;
+		
 
 				if($playline->escena != $escena):
 					$escena = $playline->escena;

@@ -202,16 +202,22 @@ function disableMedia( target ) {
 				console.log(response);
 			},
 			success:function(response) {
-				console.log(targetid);
 				jQuery('#' + targetid + ' .list-materials').empty().append(response);
 
 				jQuery('img.media-item-image').on('load', function() {
 					this.style.opacity = 1;
 				});
 				
-				var images = document.querySelectorAll('.media-item-image');
-				lazyload(images);
+				if(format != 'intext') {
+
+					var images = document.querySelectorAll('.media-item-image');
+					lazyload(images);
+	
+						
+				}
+
 				jQuery('body .media-item-wrapper:first').click();
+				
 
 			}
 		});

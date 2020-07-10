@@ -90,7 +90,7 @@ jQuery(document).ready(function($) {
 	}
 
 	instanceFull.options({
-		className: 'os-theme-none',
+		className: 'os-theme-prompt',
 		callbacks: {
 			onScrollStart: function() {
 				$('#texto-mini .textunit').removeClass('onfield');
@@ -135,7 +135,7 @@ jQuery(document).ready(function($) {
 
 
 	instanceMini.options({
-		className: 'os-theme-prompt',
+		className: 'os-theme-none',
 		callbacks: {
 			onScrollStart: function() {
 				instanceFull.update();
@@ -223,31 +223,6 @@ jQuery(document).ready(function($) {
 		}
 	});
 
-	// $('.trigger-media').on('click', function(event) {
-	// 	event.preventDefault();
-	// 	var el = $(this);
-	// 	var target = el.attr('data-expand');
-	// 	var targetel = $(target);
-	// 	if(targetel.hasClass('active')) {
-	// 		//targetel.slideUp();
-	// 		$(this).removeClass('active');
-	// 		targetel.removeClass('active').empty();
-	// 		disableMedia(targetel);
-	// 	} else {
-	// 		$('.media-zone.active').removeClass('active');
-	// 		$('.trigger-media').removeClass('active');
-	// 		//targetel.slideDown();
-	// 		targetel.addClass('active');
-	// 		$(this).addClass('active');
-	// 		enableMedia($(this).attr('data-assoc'), $(this).attr('data-plain-id'));
-	// 	}
-	// });
-
-	$('.materiales-left').on('click', function(event) {
-		//event.preventDefault();
-		//console.log('materiales-left');
-	});
-
 	$('.modal-media-list-text').on('hide.bs.modal', function(e) {
 		$('#content-current-material').empty();
 		$('.list-materials').empty();
@@ -255,7 +230,7 @@ jQuery(document).ready(function($) {
 	});
 
 	$('.modal-media-list-text').on('shown.bs.modal', function(e) {
-		//console.log(activeMaterials);
+		
 		
 		var curtext = $('.curText');
 		curtext.empty();
@@ -265,13 +240,6 @@ jQuery(document).ready(function($) {
 				curtext.append('<span class="acot">' + activeParlamento + ':</span> ' + shortText);
 			}
 		enableMedia(activeMaterials, 'modal-media-text-lista-materiales');
-		// var modal = $(this).attr('id');
-		// var ispage = $(this).attr('data-ispage');
-
-		// var navMedia = loadMediaInModal(mediaid, modal, ispage, type);
-		// nextMedia = navMedia[0];
-		// prevMedia = navMedia[1];
-
 	});
 
 }//End check texto dramatico
