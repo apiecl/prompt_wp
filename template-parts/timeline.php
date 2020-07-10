@@ -12,7 +12,8 @@
 		language: "es",
 		initial_zoom: 5,
 		timenav_height_min: 60,
-		timenav_mobile_height_percentage: 35
+		timenav_mobile_height_percentage: 35,
+		script_path: "<?php echo get_template_directory_uri() . '/js/';?>"
 	}
 	var timeline_events = JSON.parse(prompt_hitos);
 	window.timeline = new TL.Timeline('timeline-embed', timeline_events, timeline_options);	

@@ -15,7 +15,8 @@
 </section>
 <script>
 	var timeline_options = {
-		language: "es"
+		language: "es",
+		script_path: "<?php echo get_template_directory_uri() . '/js/';?>"
 	}
 	var timeline_events = JSON.parse(<?php echo $term;?>);
 </script>
