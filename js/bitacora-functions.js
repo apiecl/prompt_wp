@@ -323,8 +323,15 @@ function disableMedia( target ) {
 		}
 	}
 
+	function cleanFilterInfo(itemNumber) {
+		var filterInfo = jQuery('.currentfilterinfo');
+		jQuery('#materialesTabsContent .btn-materialtype.active').removeClass('active');
+		
+		filterInfo.empty().append('<p><strong>' + itemNumber + ' items.</strong> </p>');
+	}
+
 	function showCurrentFilterInfo(tax, term, type, itemNumber) {
-		console.log(tax, term, type);
+		//console.log(tax, term, type);
 		var filterInfo = jQuery('.currentfilterinfo');
 		jQuery('.btn.clearfilters').hide();
 		if(tax !== undefined && term !== undefined) {

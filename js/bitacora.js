@@ -232,7 +232,8 @@ jQuery(document).ready(function($) {
 			filter: ''
 		});
 		$('.btn-taxfilter').removeClass('selected');
-		showCurrentFilterInfo(undefined, undefined, undefined, iso.filteredItems.length);
+		cleanFilterInfo(iso.filteredItems.length);
+		//showCurrentFilterInfo(curtax, curterm, curtype, iso.filteredItems.length);
 
 	});
 
