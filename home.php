@@ -23,6 +23,7 @@ $descteatro = $options['prompt_teatrotoptext'];
 						$fields = prompt_obra_metadata( $obra->term_id );
 						$baseurl = get_term_link( $obra->term_id, 'obra' );
 						$yearplay = prompt_format_date($fields['estreno'][0], '%Y');
+						$image = wp_get_attachment_image_src($fields['imagen_id'][0], 'large');
 						?>
 
 						<div class="obra-container obra-item-presentation">
@@ -54,7 +55,7 @@ $descteatro = $options['prompt_teatrotoptext'];
 									</ul>
 								</div>
 							</div>
-							<div class="obra-image" style="background-image: url(<?php echo $fields['imagen'][0];?>);">
+							<div class="obra-image" style="background-image: url(<?php echo $image[0];?>);">
 							</div>
 
 						</div>

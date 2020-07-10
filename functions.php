@@ -7,7 +7,7 @@
  * @package promptbook
  */
 
-define( 'PROMPT_VERSION', '1.0.9');
+define( 'PROMPT_VERSION', '1.0.10');
 
 if ( ! function_exists( 'prompt_setup' ) ) :
 	/**
@@ -134,6 +134,19 @@ add_action( 'widgets_init', 'prompt_widgets_init' );
 
 	add_action('wp_default_scripts', 'remove_jquery_migrate');
 
+
+// Async load
+function prompt_async_scripts($url)
+{
+    if ( strpos( $url, '#asyncload') === false )
+        return $url;
+    else if ( is_admin() )
+        return str_replace( '#asyncload', '', $url );
+    else
+	return str_replace( '#asyncload', '', $url )."' async='async"; 
+    }
+add_filter( 'clean_url', 'prompt_async_scripts', 11, 1 );
+
 /**
  * Enqueue scripts and styles.
  */
@@ -182,7 +195,7 @@ function prompt_scripts() {
 
 	//wp_enqueue_script('simplebar', 'https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js', array(), '5.0.0', false);
 	
-	wp_enqueue_script('bitacora', get_template_directory_uri() . '/dist/bitacoraBundle.js', array(), PROMPT_VERSION, false);
+	wp_enqueue_script('bitacora', get_template_directory_uri() . '/dist/bitacoraBundle.js#asyncload', array(), PROMPT_VERSION, false);
 
 
 	$taxonomies = get_taxonomies(array(), 'objects');
@@ -257,7 +270,7 @@ add_action( 'wp_enqueue_scripts', 'prompt_scripts' );
 
 function prompt_head() {
 	?>
-	<script src="https://kit.fontawesome.com/14643ca681.js" crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/14643ca681.js" crossorigin="anonymous" defer></script>
 	<?php
 }
 

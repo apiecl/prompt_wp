@@ -61,6 +61,7 @@ function prompt_obra_metadata( $obraid ) {
 	$field_data = [];
 	$fields = [
 				'imagen',
+				'imagen_id',
 				'video',
 				'estreno',
 				'temporada_inicio',
