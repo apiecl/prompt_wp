@@ -123,7 +123,7 @@ function disableMedia( target ) {
 		if(data.type == 'image') {
 			html += '<img src="' + data.mediaurl + '" alt="' + data.title + '" />';
 		}
-		else if(data.type == 'video') {
+		else if(data.type == 'video' || data.type == 'video/videopress') {
 			//html += '<div class="wp-video"><video class="wp-video-shortcode" data-src="' + data.mediaurl + '"></video></div>';
 			html += data.embedcode;
 		}
