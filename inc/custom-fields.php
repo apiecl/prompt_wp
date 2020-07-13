@@ -284,7 +284,8 @@ function prompt_media_fields( ) {
 		'options'	=> array( 
 						'imagen' 	=> 'Imagen',
 						'video'	 	=> 'Video',
-						'documento'	=> 'Documento'
+						'documento'	=> 'Documento',
+						'audio'		=> 'Audio'
 						),
 		'desc'		=> 'Tipo de material'
 	));
