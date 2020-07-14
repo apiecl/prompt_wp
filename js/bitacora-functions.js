@@ -140,16 +140,22 @@ function disableMedia( target ) {
 		html += '<h1 class="modal-title">' + data.title + '</h1>';
 		html += '<div class="mediainfotable">';
 
-		if(data.fecha.length > 0) {
-			html += '<div class="mediainforow fecha">' + data.fecha + '</div>';
+		if(data.fecha) {
+			if(data.fecha.length > 0) {
+				html += '<div class="mediainforow fecha">' + data.fecha + '</div>';
+			}
 		}
 
-		if(data.content.length > 0) {
-			html += '<div class="mediainforow content">' + data.content + '</div>';
+		if(data.content) {
+			if(data.content.length > 0) {
+				html += '<div class="mediainforow content">' + data.content + '</div>';
+			}
 		}
 
-		if(data.fuente.length > 0) {
-			html += '<div class="mediainforow fuente"><span class="label">Fuente: </span> ' + data.fuente + '</div>';
+		if(data.fuente) {
+			if(data.fuente.length > 0) {
+				html += '<div class="mediainforow fuente"><span class="label">Fuente: </span> ' + data.fuente + '</div>';
+			}
 		}
 
 
