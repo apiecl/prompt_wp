@@ -16,7 +16,7 @@ $playtext = bit_get_play($term->term_id);
 			<div class="modal-content">
 				<div class="modal-header">
 					<div class="navMateriales">
-						<span class="prevMediaItem" data-modal="modal-media-text-materiales"><i class="fas fa-chevron-left"></i></span> <span class="nextMediaItem" data-modal="modal-media-text-materiales"><i class="fas fa-chevron-right"></i></span>
+						
 					</div>
 					<span type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<i class="fas fa-times"></i>
