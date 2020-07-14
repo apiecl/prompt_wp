@@ -7,7 +7,7 @@
  * @package promptbook
  */
 
-define( 'PROMPT_VERSION', '1.0.13');
+define( 'PROMPT_VERSION', '1.0.14');
 
 if ( ! function_exists( 'prompt_setup' ) ) :
 	/**
@@ -333,3 +333,9 @@ require get_template_directory() . '/inc/custom-taxonomies.php';
  */
 
 require get_template_directory() . '/inc/ajax-functions.php';
+
+/* 
+* Mobile detection
+*/
+
+require_once( TEMPLATEPATH . '/inc/Mobile_Detect.php');

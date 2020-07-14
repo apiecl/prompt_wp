@@ -133,23 +133,27 @@ jQuery(document).ready(function($) {
 		}
 	});
 
-
-	instanceMini.options({
-		className: 'os-theme-none',
-		callbacks: {
-			onScrollStart: function() {
-				instanceFull.update();
-			},
-			onScroll: function() {
-				instanceFull.sleep();
-				scrollOtherInstance(this, instanceFull);
-				instanceFull.update();
-			},
-			onScrollStop: function() {
-				instanceFull.update();
+	if(ua.type != 'mobile') {
+		console.log('not mobile');
+		
+		instanceMini.options({
+			className: 'os-theme-none',
+			callbacks: {
+				onScrollStart: function() {
+					instanceFull.update();
+				},
+				onScroll: function() {
+					instanceFull.sleep();
+					scrollOtherInstance(this, instanceFull);
+					instanceFull.update();
+				},
+				onScrollStop: function() {
+					instanceFull.update();
+				}
 			}
-		}
-	});
+		});
+
+	}
 
 	inView('#texto-full .scene-row.scene-marker').on('enter', function(el) {
 		var activeScene = $(el).attr('id');
