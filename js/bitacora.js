@@ -164,19 +164,21 @@ jQuery(document).ready(function($) {
 		if($('body').hasClass('texto-dramatico')) {
 			$('.media-item-wrapper').removeClass('activeMedia');
 			$('#content-current-material').empty();
-			loadMediaInContainer(wpid, 'content-current-material', type, false);
+			loadMediaInContainer(wpid, '#content-current-material', type, false);
 		}
 
 		$(this).addClass('activeMedia');
-	})
+	});
 
 	$('.modal-media-text').on('shown.bs.modal', function(e) {
 		//console.log(mediaid);
 
-		var modal = $(this).attr('id');
+		var modal = '#' + $(this).attr('id');
+		var modalBody = $('.modal-body', this);
 		var ispage = $(this).attr('data-ispage');
-		$('.modal-body', this).empty();
-		var navMedia = loadMediaInModal(mediaid, modal, ispage, type);
+		//$('.modal-body', this).empty();
+		console.log(modalBody);
+		var navMedia = loadMediaInContainer(wpid, modalBody, ispage, type);
 		nextMedia = navMedia[0];
 		prevMedia = navMedia[1];
 

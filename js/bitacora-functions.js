@@ -61,7 +61,7 @@ function disableMedia( target ) {
 		
 		var nextMedia = jQuery('.activeMedia').next('.media-item-wrapper');
 		var prevMedia = jQuery('.activeMedia').prev('.media-item-wrapper');
-		var container = jQuery( '#' + container);
+		var container = jQuery( container);
 		jQuery('img, video', container).attr('src', '');
 		container.empty().append('<div class="loadingZone"><i class="fas fa-spin fa-slash fa-2x"></i> Cargando</div>');
 
