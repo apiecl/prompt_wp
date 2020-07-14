@@ -177,3 +177,18 @@ body.admin-bar .main-navigation {
 		}
 	}
 }
+
+.siteversion {
+	position: absolute;
+    bottom: 12px;
+    right: 8px;
+    font-size: 9px;
+    opacity: 0.5;
+    display: none;
+}
+
+.main-navigation.active {
+	.siteversion {
+		display: block;
+	}
+}

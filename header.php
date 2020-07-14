@@ -43,8 +43,9 @@
 						'container_class'	=> 'menu-principal-container'
 					) );
 					?>
+	
 
-
+		<span class="siteversion">v.<?php echo PROMPT_VERSION;?></span>
 		</nav>
-
+		
 		<div id="content" class="site-content">
