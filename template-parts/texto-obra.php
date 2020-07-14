@@ -4,7 +4,6 @@ $playtext = bit_get_play($term->term_id);
 $size = count($playtext);
 $fields = prompt_obra_metadata( $term->term_id );
 $escenas = get_term_meta( $term->term_id, '_prompt_escenas', true );
-$detect = new Mobile_Detect;
 ?>
 
 
@@ -32,7 +31,7 @@ $detect = new Mobile_Detect;
 			</div>
 			
 			
-			<?php if(!$detect->isMobile()) { ;?>
+			
 
 
 			<div id="texto-mini" class="texto-mini dragscroll transparent" data-sync="texto-full" name="textodramatico">
@@ -60,9 +59,7 @@ $detect = new Mobile_Detect;
 			?>
 			</div>
 
-			<?php 
-				}
-			?>
+			
 
 			</div>
 		</div>

@@ -28,6 +28,7 @@ jQuery(document).ready(function($) {
 	if(ua.type == 'mobile') {
 		var headerHeight = 68 + navh;
 		var scrollSpeed = 0;
+		$('.texto-mini').css({'display': 'none'});
 	} else {
 		var headerHeight = 128;
 		var scrollSpeed = 300;
@@ -135,7 +136,7 @@ jQuery(document).ready(function($) {
 
 	if(ua.type != 'mobile') {
 		console.log('not mobile');
-		
+
 		instanceMini.options({
 			className: 'os-theme-none',
 			callbacks: {
