@@ -5,15 +5,7 @@
 			"path": "."
 		},
 		{
-			"path": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bitacora_texto"
-		},
-		{
-			"path": "/home/pabloselin/Documents/WebDev/local_sites/bitacora/app/public/wp-content/plugins/bit_extensions"
+			"path": "/home/pablo/Local Sites/bitacora/app/public/wp-content/plugins/bit_extensions"
 		}
-	],
-	"settings": {
-		"xdebug": {
-			"url": "http://bitacora.local"
-		}
-	}
+	]
 }

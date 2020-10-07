@@ -67,6 +67,7 @@ const server = browserSync.create();
 
 export const serve = done => {
 	server.init({
+    port: 9999,
 		proxy: "http://bitacora.local"
 	});
 	done();

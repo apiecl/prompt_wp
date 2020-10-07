@@ -328,6 +328,7 @@ require get_template_directory() . '/inc/custom-content.php';
 require get_template_directory() . '/inc/custom-taxonomies.php';
 
 
+
 /**
  * Ajax Functions
  */
