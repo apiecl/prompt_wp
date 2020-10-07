@@ -31,45 +31,55 @@ get_header();
 										</div>
 
 										<div class="obras-slider">
-										<?php
-										foreach($obras as $obra) {
-											$fields = prompt_obra_metadata( $obra->term_id );
-												$baseurl = get_term_link( $obra->term_id, 'obra' );
+											<div class="splide">
+											<div class="splide__track">
+											<div class="splide__list">
+												<?php
+												foreach($obras as $obra) {
+													$fields = prompt_obra_metadata( $obra->term_id );
+													$baseurl = get_term_link( $obra->term_id, 'obra' );
 													$yearplay = prompt_format_date($fields['estreno'][0], '%Y');
-														$image = wp_get_attachment_image_src($fields['imagen_id'][0], 'large');
-														?>
-														<div class="obra-item" style="background-image: url(<?php echo $image[0];?>);">
-															<div class="obra-text-content">
-																<h2 class="obra-title"><a href="<?php echo $baseurl;?>"><?php echo $obra->name;?> / <?php echo $yearplay;?></a></h2>
+													$image = wp_get_attachment_image_src($fields['imagen_id'][0], 'large');
+													?>
+																<div class="splide__slide">
+																	<div class="o-item">
+																		<div class="o-img" style="background-image: url(<?php echo $image[0];?>);">
+																		</div>
+																		<div class="o-content">
+																			<h2 class="obra-title"><a href="<?php echo $baseurl;?>"><?php echo $obra->name;?> / <?php echo $yearplay;?></a></h2>
 
-																<ul>
-																	<li>
-																		<a href="<?php echo $baseurl;?>">Ficha artística</a>
-																	</li>
-																	<li>
-																		<a href="<?php echo $baseurl;?>linea-de-tiempo">Línea de tiempo</a>
-																	</li>
-																	<li>
-																		<a href="<?php echo $baseurl;?>texto-dramatico">Texto dramático</a>
-																	</li>
-																	<li>
-																		<a href="<?php echo $baseurl;?>galeria">Galería</a>
-																	</li>
-																</ul>
-															</div>
-														</div>
-														<?php
+																			<ul>
+																				<li>
+																					<a href="<?php echo $baseurl;?>">Ficha artística</a>
+																				</li>
+																				<li>
+																					<a href="<?php echo $baseurl;?>linea-de-tiempo">Línea de tiempo</a>
+																				</li>
+																				<li>
+																					<a href="<?php echo $baseurl;?>texto-dramatico">Texto dramático</a>
+																				</li>
+																				<li>
+																					<a href="<?php echo $baseurl;?>galeria">Galería</a>
+																				</li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+																<?php
 						}//endforeach obras
 
 						?>
-					</div>
-					</div>
-				</div>
-			</div>
-			<?php
-		}
-		?>	
+				</div><!-- splide track -->
+				</div><!-- splide list -->
+				</div><!-- splide -->
+				</div><!-- obras slider -->
+			</div><!-- obras content wrap -->
+		</div>
 	</div>
+	<?php
+}
+?>	
+</div>
 </section>			
 
 <?php 
@@ -120,7 +130,7 @@ $teatropage = get_posts($args);
 
 
 </div>
-<div class="obra-image" style="background-image: url(<?php echo $pageimgsrc[0];?>"></div>
+<div class="teatro-image" style="background-image: url(<?php echo $pageimgsrc[0];?>"></div>
 </div>
 </div>
 </section>

@@ -49,6 +49,19 @@ jQuery(document).ready(function($) {
 		$('#landing-overlay').fadeOut();
 	});
 
+	var splideItem = $('.splide');
+
+	if(splideItem.length > 0) {
+		var slideroptions = {
+			autoplay: true,
+			type: "loop",
+			interval: 5000
+		};
+	
+		new Splide('.splide', slideroptions).mount();	
+	}
+	
+
 
 
 	// var totalHeight = $('body').innerHeight();

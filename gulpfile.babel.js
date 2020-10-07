@@ -40,7 +40,8 @@ export const watchForChanges = () => {
 
 export const bundleJS = () => {
   return src(['js/jquery-3.5.1.min.js', 
-              'js/audio_vis.js', 
+              'js/audio_vis.js',
+              'js/splidejs/splide.min.js', 
               'js/popper.min.js', 
               'js/bootstrap.min.js', 
               'js/dragscroll.js', 
@@ -67,7 +68,7 @@ const server = browserSync.create();
 
 export const serve = done => {
 	server.init({
-    port: 9999,
+    port: 3000,
 		proxy: "http://bitacora.local"
 	});
 	done();

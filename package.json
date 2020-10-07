@@ -29,5 +29,8 @@
     "less": "^3.10.3",
     "terser": "^4.8.0",
     "yargs": "^14.2.0"
+  },
+  "dependencies": {
+    "@splidejs/splide": "^2.4.14"
   }
 }
